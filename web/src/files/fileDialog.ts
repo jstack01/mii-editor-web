@@ -1,3 +1,4 @@
+import {wiiExportNotice} from '../compatibility/wiiCompatibility';
 import {GUI_ASSETS,GUI_TEXTS,GUI_GRIDS} from '../generated/gui-assets';
 import type {MiiCharacterData} from '../model/MiiCharacterData';
 import {flattenScene} from '../render/headScene';
@@ -26,7 +27,7 @@ export class FileDialog {
   if(this.busy)return;this.busy=true;const generation=this.generation;
   try{const candidate=await importCharacterFile(file);if(generation!==this.generation)return;this.options.commit(candidate);this.message(`Loaded ${file.name}.`);}catch(e){if(generation===this.generation)this.error(e);}finally{this.busy=false;}
  }
- private save(type:'mii'|'xml'):void {try{downloadCharacter(this.options.getModel(),type);this.message(`Download requested (${type==='mii'?'74-byte .mii':'XML'}).`);}catch(e){this.error(e);}}
+ private save(type:'mii'|'xml'):void {try{downloadCharacter(this.options.getModel(),type);this.message(`Download requested (${type==='mii'?'74-byte .mii':'XML'}).${type==='mii'?' '+wiiExportNotice(this.options.getModel().toBytes()):''}`);}catch(e){this.error(e);}}
  mount(editor:SVGSVGElement):void {
   this.abort.abort();this.abort=new AbortController();if(!this.page)return;
   const signal=this.abort.signal,scene=buildFileScene(this.page),svg=renderHeadSvg(scene,{catalog:GUI_ASSETS});svg.dataset.filePage=this.page;svg.setAttribute('role','dialog');svg.setAttribute('aria-modal','true');svg.setAttribute('tabindex','-1');svg.setAttribute('aria-label',this.page==='files'?'Mii Files':'Mii XML');svg.setAttribute('width','640');svg.setAttribute('height','500');svg.querySelector('title')!.textContent=this.page==='files'?'Mii Files':'Mii XML';

@@ -18,7 +18,7 @@ Development diagnostics remain at http://127.0.0.1:5173/diagnostics.html, includ
 
 ```sh
 pnpm typecheck
-pnpm test                    # 251 data/rendering/GUI/persistence/file tests
+pnpm test                    # 265 data/rendering/GUI/persistence/file/compatibility tests
 pnpm build                   # standalone production output in dist/
 pnpm test:browser            # all prior checks + file/XML operations
 pnpm test:browser:production # production fixture regressions + real editor
@@ -28,3 +28,5 @@ pnpm preview
 Tests use installed Chrome and write ignored `test-results/` artifacts. Firefox/WebKit runtimes were unavailable here; `pnpm test:browser:firefox` / `pnpm test:browser:webkit` are provided for installed environments. The full original vector/glyph bundle is about 1.18 MB / 245 kB gzip, with Vite's standard large-chunk warning. Dependencies and lockfile versions are unchanged.
 
 From the project root, run `python3 -m unittest discover -s tools -p 'test_*.py' -v` for original evidence/integrity checks. `SOURCE/` and `EXTRACTED-SWF/` remain unchanged. See `../evidence/phase5a/` for edited browser/Ruffle comparisons and remaining visual limits; [DATA_COMPATIBILITY.md](DATA_COMPATIBILITY.md) documents the unchanged codecs.
+
+Randomized-file investigation: [WII_COMPATIBILITY.md](WII_COMPATIBILITY.md). The original Flash randomizer supports mole sizes 0–15; Wii RCD permits 0–8. File saving warns without changing bytes. DS detection errors must be distinguished from Wii values. Image export remains Phase 5B.

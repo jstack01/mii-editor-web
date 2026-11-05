@@ -23,3 +23,7 @@ Source _typewriter font 335 embeds no glyphs. XML uses Courier New/monospace 10p
 Unmodified SWFs were captured in Ruffle 0.7.1 wgpu-webgl at native/2× density. Canvas fails BitmapData.draw for this preview; its failed capture is separately recorded. The original offline PHP alert was dismissed through its own UI without source changes or service stubs. Comparisons use source coordinates without fitted alignment. No Adobe Flash runtime or pixel-perfect parity is claimed. Firefox/WebKit executables remain unavailable; file checks ran in installed Chrome.
 
 251 unit tests, existing XML/rendering/GUI/interaction suites, new development/production file suites, TypeScript/build and six Python recovery checks pass. Cases cover exact binary/reserved bits, invalid files, cancellation/stale reads, repeated operations, Unicode downloads, XML edit/apply/cancel/errors, unsafe declarations, current-character preservation, save-current behavior, persistence/share/refresh and offline operation without external requests. Evidence is in evidence/phase5a/. Diagnostics remain /diagnostics.html. Stop after Phase 5A; PNG/JPEG export is Phase 5B and tutorial remains deferred.
+
+## Wii range warnings
+
+Save Mii now adds a read-only warning in the existing status area for nonstandard Wii RCD ranges and applicable ID/calendar/padding cautions. It does not modify or block the downloaded bytes. Flash-compatible is distinct from Wii-compatible, and MiiJS acceptance is not hardware certification. See WII_COMPATIBILITY.md.

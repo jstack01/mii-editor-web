@@ -1,0 +1,324 @@
+[
+  {
+    "field": "gender",
+    "offset": 1,
+    "width": 1,
+    "min": 0,
+    "max": 1
+  },
+  {
+    "field": "birthMonth",
+    "offset": 2,
+    "width": 4,
+    "min": 0,
+    "max": 12
+  },
+  {
+    "field": "birthDate",
+    "offset": 6,
+    "width": 5,
+    "min": 0,
+    "max": 31
+  },
+  {
+    "field": "favoriteColor",
+    "offset": 11,
+    "width": 4,
+    "min": 0,
+    "max": 11
+  },
+  {
+    "field": "height",
+    "offset": 176,
+    "width": 8,
+    "min": 0,
+    "max": 127
+  },
+  {
+    "field": "weight",
+    "offset": 184,
+    "width": 8,
+    "min": 0,
+    "max": 127
+  },
+  {
+    "field": "headType",
+    "offset": 256,
+    "width": 3,
+    "min": 0,
+    "max": 7
+  },
+  {
+    "field": "skinColor",
+    "offset": 259,
+    "width": 3,
+    "min": 0,
+    "max": 5
+  },
+  {
+    "field": "facialFeaturesType",
+    "offset": 262,
+    "width": 4,
+    "min": 0,
+    "max": 11
+  },
+  {
+    "field": "mingles",
+    "offset": 269,
+    "width": 1,
+    "min": 0,
+    "max": 1
+  },
+  {
+    "field": "hairType",
+    "offset": 272,
+    "width": 7,
+    "min": 0,
+    "max": 71
+  },
+  {
+    "field": "hairColor",
+    "offset": 279,
+    "width": 3,
+    "min": 0,
+    "max": 7
+  },
+  {
+    "field": "hairPart",
+    "offset": 282,
+    "width": 1,
+    "min": 0,
+    "max": 1
+  },
+  {
+    "field": "eyebrowType",
+    "offset": 288,
+    "width": 5,
+    "min": 0,
+    "max": 23
+  },
+  {
+    "field": "eyebrowRotation",
+    "offset": 294,
+    "width": 4,
+    "min": 0,
+    "max": 11
+  },
+  {
+    "field": "eyebrowColor",
+    "offset": 304,
+    "width": 3,
+    "min": 0,
+    "max": 7
+  },
+  {
+    "field": "eyebrowSize",
+    "offset": 307,
+    "width": 4,
+    "min": 0,
+    "max": 8
+  },
+  {
+    "field": "eyebrowY",
+    "offset": 311,
+    "width": 5,
+    "min": 3,
+    "max": 18
+  },
+  {
+    "field": "eyebrowX",
+    "offset": 316,
+    "width": 4,
+    "min": 0,
+    "max": 12
+  },
+  {
+    "field": "eyeType",
+    "offset": 320,
+    "width": 6,
+    "min": 0,
+    "max": 47
+  },
+  {
+    "field": "eyeRotation",
+    "offset": 328,
+    "width": 3,
+    "min": 0,
+    "max": 7
+  },
+  {
+    "field": "eyeY",
+    "offset": 331,
+    "width": 5,
+    "min": 0,
+    "max": 18
+  },
+  {
+    "field": "eyeColor",
+    "offset": 336,
+    "width": 3,
+    "min": 0,
+    "max": 5
+  },
+  {
+    "field": "eyeSize",
+    "offset": 340,
+    "width": 3,
+    "min": 0,
+    "max": 7
+  },
+  {
+    "field": "eyeX",
+    "offset": 343,
+    "width": 4,
+    "min": 0,
+    "max": 12
+  },
+  {
+    "field": "noseType",
+    "offset": 352,
+    "width": 4,
+    "min": 0,
+    "max": 11
+  },
+  {
+    "field": "noseSize",
+    "offset": 356,
+    "width": 4,
+    "min": 0,
+    "max": 8
+  },
+  {
+    "field": "noseY",
+    "offset": 360,
+    "width": 5,
+    "min": 0,
+    "max": 18
+  },
+  {
+    "field": "mouthType",
+    "offset": 368,
+    "width": 5,
+    "min": 0,
+    "max": 23
+  },
+  {
+    "field": "mouthColor",
+    "offset": 373,
+    "width": 2,
+    "min": 0,
+    "max": 2
+  },
+  {
+    "field": "mouthSize",
+    "offset": 375,
+    "width": 4,
+    "min": 0,
+    "max": 8
+  },
+  {
+    "field": "mouthY",
+    "offset": 379,
+    "width": 5,
+    "min": 0,
+    "max": 18
+  },
+  {
+    "field": "glassesType",
+    "offset": 384,
+    "width": 4,
+    "min": 0,
+    "max": 8
+  },
+  {
+    "field": "glassesColor",
+    "offset": 388,
+    "width": 3,
+    "min": 0,
+    "max": 5
+  },
+  {
+    "field": "disablesMii",
+    "offset": 391,
+    "width": 1,
+    "min": 0,
+    "max": 0
+  },
+  {
+    "field": "glassesSize",
+    "offset": 392,
+    "width": 3,
+    "min": 0,
+    "max": 7
+  },
+  {
+    "field": "glassesY",
+    "offset": 395,
+    "width": 5,
+    "min": 0,
+    "max": 20
+  },
+  {
+    "field": "mustacheType",
+    "offset": 400,
+    "width": 2,
+    "min": 0,
+    "max": 3
+  },
+  {
+    "field": "beardType",
+    "offset": 402,
+    "width": 2,
+    "min": 0,
+    "max": 3
+  },
+  {
+    "field": "facialHairColor",
+    "offset": 404,
+    "width": 3,
+    "min": 0,
+    "max": 7
+  },
+  {
+    "field": "mustacheSize",
+    "offset": 407,
+    "width": 4,
+    "min": 0,
+    "max": 8
+  },
+  {
+    "field": "mustacheY",
+    "offset": 411,
+    "width": 5,
+    "min": 0,
+    "max": 16
+  },
+  {
+    "field": "moleType",
+    "offset": 416,
+    "width": 1,
+    "min": 0,
+    "max": 1
+  },
+  {
+    "field": "moleSize",
+    "offset": 417,
+    "width": 4,
+    "min": 0,
+    "max": 8
+  },
+  {
+    "field": "moleY",
+    "offset": 421,
+    "width": 5,
+    "min": 0,
+    "max": 30
+  },
+  {
+    "field": "moleX",
+    "offset": 426,
+    "width": 5,
+    "min": 0,
+    "max": 16
+  }
+]

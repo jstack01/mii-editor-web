@@ -1,0 +1,30 @@
+{
+  "seed": "0x5a74",
+  "iterations": 10000,
+  "failures": {
+    "moleSize": 4386
+  },
+  "histogram": [
+    630,
+    594,
+    617,
+    586,
+    593,
+    665,
+    636,
+    616,
+    677,
+    600,
+    602,
+    628,
+    648,
+    623,
+    604,
+    681
+  ],
+  "hardware": {
+    "calendar": 1196,
+    "temporaryId": 5014,
+    "specialMingle": 1222
+  }
+}

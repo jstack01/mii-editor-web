@@ -71,3 +71,7 @@ Exactly 49 draws: the 45 `MII_VALUE_NAMES` entries in source order, followed by 
 `pnpm test` covers 189 unit cases, including exhaustive allowed numeric values and boundary writes. `pnpm test:browser` includes 62 XML cases in native Chrome in addition to the existing UI checks. `pnpm test:browser:production` checks the production UI. `pnpm typecheck` and `pnpm build` validate the compiled app. Tests exercise source/language-derived behavior; they are not a differential certification against an executed original Flash VM. Cross-browser XML validation remains future release work.
 
 The data model now supplies the fields, normalized percentages, source frame mappings, names/IDs, and interchange needed for the Phase 3 character renderer. Phase 3 must still implement original graphics composition, color transforms, geometry, layer ordering and reference-image validation.
+
+## Wii decoder compatibility clarification (post Phase 5A)
+
+The ranges above describe the original Flash editor, not a Nintendo conformance certificate. In particular moleSize is source-defined 0–15 while Wii RCD decoders/RFL permit 0–8. The unchanged original randomizer can generate 9–15. DS fallback diagnostics must not be interpreted as Wii field values. See WII_COMPATIBILITY.md and evidence/randomization-compatibility/FIELD_COMPARISON.md for all-field decoding, ID/calendar/padding constraints and the nonblocking export warning. No data is silently repaired.

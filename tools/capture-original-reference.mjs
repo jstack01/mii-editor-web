@@ -47,7 +47,17 @@ try{
   const error=await page.evaluate(()=>window.referenceError??null);if(error)throw new Error(error);
   if(logs.some((x)=>x.type==='pageerror'||/Error dispatching event/.test(x.text??'')))throw new Error('Original runtime execution reported an error; inspect the log.');
   if(renderer!=='canvas'){await page.mouse.click(600,22);await page.waitForTimeout(300);}
-  if(process.argv.includes('--file-pages')){await page.mouse.click(114,417);await page.waitForTimeout(1200);await page.mouse.click(318,315);await page.waitForTimeout(400);await page.mouse.move(5,490);await page.screenshot({path:join(output,'files.png')});await page.mouse.click(114,242);await page.waitForTimeout(700);await page.mouse.move(5,490);await page.screenshot({path:join(output,'xml.png')});}
+  if(process.argv.includes('--random-probe')){
+ await page.context().grantPermissions(['clipboard-read','clipboard-write']);const collected=[];
+ for(let i=0;i<Number(argument('--random-count','24'));i++){
+ await page.mouse.click(190.95,119);await page.waitForTimeout(150);
+ await page.mouse.click(200,481);await page.keyboard.press(process.platform==='darwin'?'Meta+A':'Control+A');await page.keyboard.press(process.platform==='darwin'?'Meta+C':'Control+C');await page.waitForTimeout(40);
+ const text=await page.evaluate(()=>navigator.clipboard.readText());const match=text.match(/[?&]mii=([0-9a-f]{148})/i);if(!match)throw new Error('Original URL text could not be recovered through clipboard.');
+ collected.push({iteration:i,hex:match[1],moleSize:(parseInt(match[1].slice(104,108),16)>>>11)&15});
+ }
+ await writeFile(join(output,'randomized.json'),JSON.stringify(collected,null,2)+'\n');await page.screenshot({path:join(output,'randomized.png')});
+ }
+ else if(process.argv.includes('--file-pages')){await page.mouse.click(114,417);await page.waitForTimeout(1200);await page.mouse.click(318,315);await page.waitForTimeout(400);await page.mouse.move(5,490);await page.screenshot({path:join(output,'files.png')});await page.mouse.click(114,242);await page.waitForTimeout(700);await page.mouse.move(5,490);await page.screenshot({path:join(output,'xml.png')});}
   else if(process.argv.includes('--gui')){
     const screens=[['basic',[[67,43]]],['size',[[130,43]]],['face',[[193,43]]],['face2',[[193,43],[405,124]]],['hair',[[256,43]]],['eyebrows',[[319,43]]],['eyes',[[382,43]]],['nose',[[445,43]]],['lips',[[508,43]]],['accessories',[[571,43]]],['accessories2',[[571,43],[405,124]]],['accessories3',[[571,43],[292,172]]],['accessories4',[[571,43],[405,172]]]];
     for(const [name,clicks]of screens){if(process.argv.includes('--case-screen')&&fixture.id!==name)continue;for(const[x,y]of clicks){await page.mouse.click(x,y);await page.waitForTimeout(700);}await page.mouse.move(5,490);await page.waitForTimeout(300);await page.screenshot({path:join(output,`${name}-gui.png`)});}
