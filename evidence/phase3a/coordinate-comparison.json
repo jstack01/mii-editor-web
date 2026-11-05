@@ -1,0 +1,22 @@
+{
+  "sourceRoi": [
+    70,
+    30,
+    231,
+    230
+  ],
+  "originalGuiOffset": [
+    -34,
+    130
+  ],
+  "bestFitImageRegistrationUsed": false,
+  "mask": "SVG luminance <249, eroded by 5x5 minimum filter",
+  "maskedPixelCount": 14961,
+  "meanAbsoluteRGBDifference": [
+    0.7006216162021255,
+    0.7601764587928614,
+    0.6891918989372369
+  ],
+  "thresholdForParity": null,
+  "note": "Descriptive emulator comparison only; inspect original screenshots and unmasked regions separately."
+}

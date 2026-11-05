@@ -1,0 +1,1792 @@
+{
+  "sourceHashes": {
+    "evidence/manifests/assets.json": "c13d4023a6d59f06642b922e3dcbea452c04c21ca0e10650d42142105d63c675",
+    "EXTRACTED-SWF/assets.swf/scripts/mii/display/MiiCharacterGraphics.as": "3cfc59e81b8fca4f0abacd1e5ba5ddca17fbc788d574db5cfa6e63c40192ccb1",
+    "SOURCE/assets.swf": "ab8b3dd8f588b79001b6a8ed6cf12cc4cea0e9d1ac9460a37f607ec3f2461d92",
+    "EXTRACTED-SWF/assets.swf/shapes/1.svg": "3331eabbd101d85d22478f4c74eaf91786f566d820a0f078b445d12929752ce2",
+    "EXTRACTED-SWF/assets.swf/shapes/57.svg": "90f5e8d69c41b553704c4415090060fa57465c83d1ff2a070d21a6c8d1217718",
+    "EXTRACTED-SWF/assets.swf/shapes/139.svg": "8c2ce9ee9f8fbc040b3e13e8c619759a3a8c297148533075a547b94101821c8d",
+    "EXTRACTED-SWF/assets.swf/shapes/158.svg": "4f1ca4220bd49fea71a01220ddd53bfddc0757afdd1688f208d4f4838b9e7bec",
+    "EXTRACTED-SWF/assets.swf/shapes/170.svg": "7cd8ec284c4b3c1d740fc5cd7bb37a28b7d5fa91ebd4e8d4e9e57ac208a97982",
+    "EXTRACTED-SWF/assets.swf/shapes/244.svg": "afdd79bafe3f1ff067f8e13f687046d9a8f125a81a881fe7d02a27c03a14666b",
+    "EXTRACTED-SWF/assets.swf/shapes/268.svg": "bf51cebb1d3bd8e33bba07d993976d41ca2a8ba5f86c4f7427c3ed3b21cd02b3",
+    "EXTRACTED-SWF/assets.swf/shapes/349.svg": "46f121a2b81de5002a46cf995f58ae1b019ea17a93f432f85a64c3bf74a7e6c6",
+    "EXTRACTED-SWF/assets.swf/shapes/360.svg": "f40d6c663ae28df93e2f7a19760e360d06455943ac1376e0d7ef8c4fae839db2"
+  },
+  "roots": [
+    {
+      "depth": 1,
+      "matrix": [
+        0.8899993896484375,
+        0,
+        0,
+        0.8899993896484375,
+        150,
+        140
+      ],
+      "color": {
+        "multipliers": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "offsets": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "name": "headback",
+      "symbolId": 37,
+      "clipDepth": null,
+      "blendMode": 1,
+      "visible": true
+    },
+    {
+      "depth": 17,
+      "matrix": [
+        0.890869140625,
+        0,
+        0,
+        0.890228271484375,
+        150.05,
+        140
+      ],
+      "color": {
+        "multipliers": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "offsets": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "name": "head",
+      "symbolId": 385,
+      "clipDepth": null,
+      "blendMode": 1,
+      "visible": true
+    }
+  ],
+  "vectorShapes": [
+    {
+      "kind": "shape",
+      "id": 1,
+      "bounds": {
+        "x": 7.65,
+        "y": -42.95,
+        "width": 35,
+        "height": 35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/1.svg",
+      "sourceSha256": "3331eabbd101d85d22478f4c74eaf91786f566d820a0f078b445d12929752ce2"
+    },
+    {
+      "kind": "shape",
+      "id": 57,
+      "bounds": {
+        "x": -79.25,
+        "y": -106.5,
+        "width": 158.5,
+        "height": 207.35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/57.svg",
+      "sourceSha256": "90f5e8d69c41b553704c4415090060fa57465c83d1ff2a070d21a6c8d1217718"
+    },
+    {
+      "kind": "shape",
+      "id": 139,
+      "bounds": {
+        "x": -36.2,
+        "y": -4.1,
+        "width": 72.1,
+        "height": 8.2
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/139.svg",
+      "sourceSha256": "8c2ce9ee9f8fbc040b3e13e8c619759a3a8c297148533075a547b94101821c8d"
+    },
+    {
+      "kind": "shape",
+      "id": 158,
+      "bounds": {
+        "x": 14.5,
+        "y": -34.4,
+        "width": 31.2,
+        "height": 31.25
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/158.svg",
+      "sourceSha256": "4f1ca4220bd49fea71a01220ddd53bfddc0757afdd1688f208d4f4838b9e7bec"
+    },
+    {
+      "kind": "shape",
+      "id": 170,
+      "bounds": {
+        "x": 0.7,
+        "y": -43.9,
+        "width": 56.7,
+        "height": 43
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/170.svg",
+      "sourceSha256": "7cd8ec284c4b3c1d740fc5cd7bb37a28b7d5fa91ebd4e8d4e9e57ac208a97982"
+    },
+    {
+      "kind": "shape",
+      "id": 244,
+      "bounds": {
+        "x": 0.55,
+        "y": -85.8,
+        "width": 36.6,
+        "height": 88.2
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/244.svg",
+      "sourceSha256": "afdd79bafe3f1ff067f8e13f687046d9a8f125a81a881fe7d02a27c03a14666b"
+    },
+    {
+      "kind": "shape",
+      "id": 268,
+      "bounds": {
+        "x": -86.9,
+        "y": -114.6,
+        "width": 173.95,
+        "height": 130.85
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/268.svg",
+      "sourceSha256": "bf51cebb1d3bd8e33bba07d993976d41ca2a8ba5f86c4f7427c3ed3b21cd02b3"
+    },
+    {
+      "kind": "shape",
+      "id": 349,
+      "bounds": {
+        "x": -16.05,
+        "y": -27.05,
+        "width": 31.35,
+        "height": 48.3
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/349.svg",
+      "sourceSha256": "46f121a2b81de5002a46cf995f58ae1b019ea17a93f432f85a64c3bf74a7e6c6"
+    },
+    {
+      "kind": "shape",
+      "id": 360,
+      "bounds": {
+        "x": -21.95,
+        "y": -27,
+        "width": 25,
+        "height": 54.2
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/360.svg",
+      "sourceSha256": "f40d6c663ae28df93e2f7a19760e360d06455943ac1376e0d7ef8c4fae839db2"
+    }
+  ],
+  "spriteCoverage": [
+    {
+      "symbolId": 36,
+      "className": "assets_fla.hairBack_2",
+      "sourceFrameCount": 72,
+      "includedFrames": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        17,
+        18,
+        20,
+        21,
+        24,
+        25,
+        26,
+        28,
+        29,
+        30,
+        31,
+        33,
+        34,
+        35,
+        36,
+        40,
+        65
+      ],
+      "blankFrames": [
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        17,
+        18,
+        20,
+        21,
+        24,
+        25,
+        26,
+        28,
+        29,
+        30,
+        31,
+        33,
+        34,
+        35,
+        36,
+        40,
+        65
+      ],
+      "nonblankFramesOutsideProof": [
+        4,
+        13,
+        19,
+        22,
+        23,
+        27,
+        32,
+        37,
+        38,
+        39,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72
+      ]
+    },
+    {
+      "symbolId": 37,
+      "className": "assets_fla.headback_1",
+      "sourceFrameCount": 1,
+      "includedFrames": [
+        1
+      ],
+      "blankFrames": [],
+      "nonblankFramesOutsideProof": []
+    },
+    {
+      "symbolId": 65,
+      "className": "assets_fla.heads_15",
+      "sourceFrameCount": 8,
+      "includedFrames": [
+        1
+      ],
+      "blankFrames": [],
+      "nonblankFramesOutsideProof": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "symbolId": 106,
+      "className": "assets_fla.facefeatures_16",
+      "sourceFrameCount": 96,
+      "includedFrames": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "blankFrames": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nonblankFramesOutsideProof": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96
+      ]
+    },
+    {
+      "symbolId": 129,
+      "className": "assets_fla.beards_17",
+      "sourceFrameCount": 32,
+      "includedFrames": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "blankFrames": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "nonblankFramesOutsideProof": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "symbolId": 130,
+      "className": "assets_fla.mole_18",
+      "sourceFrameCount": 2,
+      "includedFrames": [
+        1
+      ],
+      "blankFrames": [
+        1
+      ],
+      "nonblankFramesOutsideProof": [
+        2
+      ]
+    },
+    {
+      "symbolId": 138,
+      "className": "assets_fla.lips_20",
+      "sourceFrameCount": 24,
+      "includedFrames": [
+        1,
+        3,
+        4,
+        5,
+        8,
+        9,
+        10,
+        11,
+        14,
+        15,
+        16,
+        17,
+        19,
+        21,
+        22,
+        23,
+        24
+      ],
+      "blankFrames": [
+        1,
+        3,
+        4,
+        5,
+        8,
+        9,
+        10,
+        11,
+        14,
+        15,
+        16,
+        17,
+        19,
+        21,
+        22,
+        23,
+        24
+      ],
+      "nonblankFramesOutsideProof": [
+        2,
+        6,
+        7,
+        12,
+        13,
+        18,
+        20
+      ]
+    },
+    {
+      "symbolId": 157,
+      "className": "assets_fla.mouths_19",
+      "sourceFrameCount": 24,
+      "includedFrames": [
+        1
+      ],
+      "blankFrames": [],
+      "nonblankFramesOutsideProof": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "symbolId": 169,
+      "className": "assets_fla.eyeball_22",
+      "sourceFrameCount": 48,
+      "includedFrames": [
+        1,
+        8,
+        19,
+        20,
+        21,
+        27,
+        47,
+        48
+      ],
+      "blankFrames": [
+        8,
+        19,
+        20,
+        21,
+        27,
+        47,
+        48
+      ],
+      "nonblankFramesOutsideProof": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        22,
+        23,
+        24,
+        25,
+        26,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46
+      ]
+    },
+    {
+      "symbolId": 243,
+      "className": "assets_fla.eyes_21",
+      "sourceFrameCount": 48,
+      "includedFrames": [
+        1
+      ],
+      "blankFrames": [],
+      "nonblankFramesOutsideProof": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48
+      ]
+    },
+    {
+      "symbolId": 267,
+      "className": "assets_fla.eyebrows_23",
+      "sourceFrameCount": 24,
+      "includedFrames": [
+        1,
+        24
+      ],
+      "blankFrames": [
+        24
+      ],
+      "nonblankFramesOutsideProof": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "symbolId": 339,
+      "className": "assets_fla.hairfront_24",
+      "sourceFrameCount": 72,
+      "includedFrames": [
+        1,
+        34
+      ],
+      "blankFrames": [
+        34
+      ],
+      "nonblankFramesOutsideProof": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72
+      ]
+    },
+    {
+      "symbolId": 344,
+      "className": "assets_fla.hats_25",
+      "sourceFrameCount": 72,
+      "includedFrames": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        62,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72
+      ],
+      "blankFrames": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        62,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72
+      ],
+      "nonblankFramesOutsideProof": [
+        35,
+        36,
+        61,
+        63
+      ]
+    },
+    {
+      "symbolId": 348,
+      "className": "assets_fla.mustaches_26",
+      "sourceFrameCount": 4,
+      "includedFrames": [
+        1
+      ],
+      "blankFrames": [
+        1
+      ],
+      "nonblankFramesOutsideProof": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "symbolId": 359,
+      "className": "assets_fla.noseskin_28",
+      "sourceFrameCount": 12,
+      "includedFrames": [
+        1,
+        3,
+        6
+      ],
+      "blankFrames": [
+        3,
+        6
+      ],
+      "nonblankFramesOutsideProof": [
+        2,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "symbolId": 372,
+      "className": "assets_fla.noses_27",
+      "sourceFrameCount": 12,
+      "includedFrames": [
+        1
+      ],
+      "blankFrames": [],
+      "nonblankFramesOutsideProof": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "symbolId": 376,
+      "className": "assets_fla.lenses_30",
+      "sourceFrameCount": 9,
+      "includedFrames": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "blankFrames": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "nonblankFramesOutsideProof": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "symbolId": 384,
+      "className": "assets_fla.glasses_29",
+      "sourceFrameCount": 9,
+      "includedFrames": [
+        1
+      ],
+      "blankFrames": [],
+      "nonblankFramesOutsideProof": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "symbolId": 385,
+      "className": "assets_fla.face_14",
+      "sourceFrameCount": 1,
+      "includedFrames": [
+        1
+      ],
+      "blankFrames": [],
+      "nonblankFramesOutsideProof": []
+    }
+  ],
+  "renderRules": {
+    "ranges": {
+      "eyeX": [
+        0,
+        54
+      ],
+      "eyeY": [
+        -69,
+        35
+      ],
+      "eyeSize": [
+        0.26,
+        1
+      ],
+      "eyeRotation": [
+        -81.5,
+        0
+      ],
+      "eyebrowX": [
+        0,
+        52.5
+      ],
+      "eyebrowY": [
+        -59,
+        25
+      ],
+      "eyebrowSize": [
+        0.25,
+        1
+      ],
+      "eyebrowRotation": [
+        -125,
+        0
+      ],
+      "noseY": [
+        -10,
+        70
+      ],
+      "noseSize": [
+        0.2,
+        1
+      ],
+      "mouthY": [
+        -11,
+        89
+      ],
+      "mouthSize": [
+        0.218,
+        1
+      ],
+      "glassesY": [
+        -47,
+        49
+      ],
+      "glassesSize": [
+        0.4,
+        1.46
+      ],
+      "mustacheY": [
+        0,
+        86
+      ],
+      "mustacheSize": [
+        0.25,
+        1
+      ],
+      "moleX": [
+        -71,
+        71
+      ],
+      "moleY": [
+        -60,
+        100
+      ],
+      "moleSize": [
+        0.4,
+        1.25
+      ]
+    },
+    "palettes": {
+      "skinColors": [
+        {
+          "multipliers": [
+            0.88,
+            0.85,
+            0.8,
+            1
+          ],
+          "offsets": [
+            235,
+            205,
+            187,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            -0.02,
+            0.23,
+            0.39,
+            1
+          ],
+          "offsets": [
+            248,
+            187,
+            124,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.13,
+            0.42,
+            0.44,
+            1
+          ],
+          "offsets": [
+            214,
+            134,
+            71,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            -0.02,
+            0.28,
+            0.38,
+            1
+          ],
+          "offsets": [
+            246,
+            174,
+            136,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.42,
+            0.44,
+            0.45,
+            1
+          ],
+          "offsets": [
+            142,
+            73,
+            31,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.44,
+            0.44,
+            0.43,
+            1
+          ],
+          "offsets": [
+            72,
+            38,
+            13,
+            0
+          ]
+        }
+      ],
+      "hairColors": [
+        {
+          "multipliers": [
+            0.43,
+            0.43,
+            0.42,
+            1
+          ],
+          "offsets": [
+            15,
+            14,
+            12,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.44,
+            0.44,
+            0.45,
+            1
+          ],
+          "offsets": [
+            46,
+            25,
+            6,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.4,
+            0.4,
+            0.39,
+            1
+          ],
+          "offsets": [
+            82,
+            37,
+            14,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.43,
+            0.43,
+            0.43,
+            1
+          ],
+          "offsets": [
+            102,
+            56,
+            22,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.43,
+            0.43,
+            0.43,
+            1
+          ],
+          "offsets": [
+            105,
+            106,
+            108,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.43,
+            0.42,
+            0.42,
+            1
+          ],
+          "offsets": [
+            61,
+            44,
+            14,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.44,
+            0.44,
+            0.44,
+            1
+          ],
+          "offsets": [
+            113,
+            82,
+            25,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.24,
+            0.37,
+            0.42,
+            1
+          ],
+          "offsets": [
+            185,
+            149,
+            87,
+            0
+          ]
+        }
+      ],
+      "eyeColors": [
+        {
+          "multipliers": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "offsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.09,
+            0.11,
+            0.1,
+            1
+          ],
+          "offsets": [
+            109,
+            123,
+            124,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.22,
+            0.24,
+            0.25,
+            1
+          ],
+          "offsets": [
+            108,
+            80,
+            65,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.13,
+            0.14,
+            0.22,
+            1
+          ],
+          "offsets": [
+            122,
+            122,
+            40,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.17,
+            0.17,
+            0.25,
+            1
+          ],
+          "offsets": [
+            24,
+            60,
+            184,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.16,
+            0.15,
+            0.11,
+            1
+          ],
+          "offsets": [
+            48,
+            140,
+            79,
+            0
+          ]
+        }
+      ],
+      "mouthColors": [
+        {
+          "multipliers": [
+            0.7,
+            0.6,
+            0.55,
+            1
+          ],
+          "offsets": [
+            180,
+            69,
+            35,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            1,
+            0.45,
+            0.3,
+            1
+          ],
+          "offsets": [
+            220,
+            51,
+            40,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            1,
+            0.6,
+            0.6,
+            1
+          ],
+          "offsets": [
+            197,
+            84,
+            86,
+            0
+          ]
+        }
+      ],
+      "glassesColors": [
+        {
+          "multipliers": [
+            0.17,
+            0.18,
+            0.18,
+            1
+          ],
+          "offsets": [
+            76,
+            85,
+            84,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.28,
+            0.31,
+            0.37,
+            1
+          ],
+          "offsets": [
+            105,
+            81,
+            21,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.09,
+            0.37,
+            0.41,
+            1
+          ],
+          "offsets": [
+            163,
+            43,
+            16,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.37,
+            0.31,
+            0.19,
+            1
+          ],
+          "offsets": [
+            23,
+            69,
+            128,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.15,
+            0.19,
+            0.29,
+            1
+          ],
+          "offsets": [
+            169,
+            107,
+            8,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.21,
+            0.22,
+            0.24,
+            1
+          ],
+          "offsets": [
+            171,
+            172,
+            164,
+            0
+          ]
+        }
+      ],
+      "favoriteColors": [
+        {
+          "multipliers": [
+            0.9911,
+            0.47,
+            0.51,
+            1
+          ],
+          "offsets": [
+            191,
+            38,
+            2,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.05,
+            0.37,
+            0.44,
+            1
+          ],
+          "offsets": [
+            240,
+            128,
+            42,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.32,
+            0.47,
+            0.55,
+            1
+          ],
+          "offsets": [
+            235,
+            190,
+            27,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.53,
+            0.52,
+            0.53,
+            1
+          ],
+          "offsets": [
+            131,
+            167,
+            19,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.58,
+            0.47,
+            0.47,
+            1
+          ],
+          "offsets": [
+            1,
+            82,
+            28,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.42,
+            0.43,
+            0.22,
+            1
+          ],
+          "offsets": [
+            5,
+            41,
+            151,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.51,
+            0.42,
+            0.36,
+            1
+          ],
+          "offsets": [
+            78,
+            142,
+            199,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.35,
+            0.5,
+            0.5,
+            1
+          ],
+          "offsets": [
+            241,
+            96,
+            96,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.38,
+            0.48,
+            0.32,
+            1
+          ],
+          "offsets": [
+            93,
+            30,
+            153,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.4,
+            0.42,
+            0.42,
+            1
+          ],
+          "offsets": [
+            82,
+            53,
+            22,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.45,
+            0.45,
+            0.45,
+            1
+          ],
+          "offsets": [
+            190,
+            190,
+            190,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.8,
+            0.8,
+            0.8,
+            1
+          ],
+          "offsets": [
+            5,
+            5,
+            5,
+            0
+          ]
+        }
+      ]
+    },
+    "faceShapeOffsets": [
+      0,
+      -3,
+      14,
+      6,
+      3,
+      -3,
+      13,
+      16
+    ],
+    "baseHeadY": 140,
+    "nativeWidth": 300,
+    "nativeHeight": 600
+  },
+  "scope": "Default head proof; no body, no substituted unsupported frames."
+}

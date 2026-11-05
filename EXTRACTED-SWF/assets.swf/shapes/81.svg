@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="shape" height="100.8px" width="155.65px" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1.0, 0.0, 0.0, 1.0, 77.8, -0.05)">
+    <path d="M0.0 100.85 Q-27.65 95.35 -49.75 71.05 -72.85 37.9 -77.8 0.1 L-77.8 0.05 -64.05 9.5 Q-66.25 32.2 -51.7 55.15 -37.2 78.1 -31.1 79.45 -25.0 80.75 -21.35 77.4 -17.75 74.05 -17.2 71.9 -8.6 76.5 0.0 77.35 L0.0 100.85" fill="url(#gradient0)" fill-rule="evenodd" stroke="none"/>
+    <path d="M0.0 77.35 Q8.6 76.5 17.2 71.9 17.75 74.05 21.35 77.4 25.0 80.75 31.1 79.45 37.2 78.1 51.7 55.15 66.25 32.2 64.05 9.5 L77.8 0.05 77.85 0.1 Q72.85 37.9 49.75 71.05 27.65 95.35 0.0 100.85 L0.0 77.35" fill="url(#gradient1)" fill-rule="evenodd" stroke="none"/>
+  </g>
+  <defs>
+    <linearGradient gradientTransform="matrix(0.0, -0.024, 0.061, 0.0, -39.15, 27.9)" gradientUnits="userSpaceOnUse" id="gradient0" spreadMethod="pad" x1="-819.2" x2="819.2">
+      <stop offset="0.0" stop-color="#857769" stop-opacity="0.5019608"/>
+      <stop offset="1.0" stop-color="#8e7760" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient gradientTransform="matrix(0.0, -0.024, -0.061, 0.0, 39.15, 27.9)" gradientUnits="userSpaceOnUse" id="gradient1" spreadMethod="pad" x1="-819.2" x2="819.2">
+      <stop offset="0.0" stop-color="#857769" stop-opacity="0.5019608"/>
+      <stop offset="1.0" stop-color="#8e7760" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+</svg>

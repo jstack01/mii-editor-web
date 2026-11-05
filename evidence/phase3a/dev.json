@@ -1,0 +1,353 @@
+{
+  "mode": "Vite dev",
+  "browser": "156.0.8078.80",
+  "checks": [
+    "default fixture decoded",
+    "74-byte hex shown read-only",
+    "ASCII, non-ASCII, surrogate pair and empty edits preserve all unrelated bytes",
+    "keyboard input limited to ten UTF-16 units",
+    "reset restores exact original bytes",
+    "original vector head, blank frames, name-edit pixel stability and diagnostic scope verified",
+    "640 × 500 surface scales uniformly at desktop and narrow widths",
+    "keyboard interaction verified",
+    "62 native-browser XML compatibility cases passed",
+    "no browser errors or external requests"
+  ],
+  "dataCompatibility": {
+    "count": 62,
+    "tests": [
+      "original default exports/imports every numeric field and both strings/IDs",
+      "XML beardType: min/max, reversal, order and clamp",
+      "XML birthDate: min/max, reversal, order and clamp",
+      "XML birthMonth: min/max, reversal, order and clamp",
+      "XML eyeColor: min/max, reversal, order and clamp",
+      "XML eyeRotation: min/max, reversal, order and clamp",
+      "XML eyeSize: min/max, reversal, order and clamp",
+      "XML eyeType: min/max, reversal, order and clamp",
+      "XML eyeX: min/max, reversal, order and clamp",
+      "XML eyeY: min/max, reversal, order and clamp",
+      "XML eyebrowColor: min/max, reversal, order and clamp",
+      "XML eyebrowRotation: min/max, reversal, order and clamp",
+      "XML eyebrowSize: min/max, reversal, order and clamp",
+      "XML eyebrowType: min/max, reversal, order and clamp",
+      "XML eyebrowX: min/max, reversal, order and clamp",
+      "XML eyebrowY: min/max, reversal, order and clamp",
+      "XML facialFeaturesType: min/max, reversal, order and clamp",
+      "XML facialHairColor: min/max, reversal, order and clamp",
+      "XML favoriteColor: min/max, reversal, order and clamp",
+      "XML gender: min/max, reversal, order and clamp",
+      "XML glassesColor: min/max, reversal, order and clamp",
+      "XML glassesSize: min/max, reversal, order and clamp",
+      "XML glassesType: min/max, reversal, order and clamp",
+      "XML glassesY: min/max, reversal, order and clamp",
+      "XML hairColor: min/max, reversal, order and clamp",
+      "XML hairPart: min/max, reversal, order and clamp",
+      "XML hairType: min/max, reversal, order and clamp",
+      "XML headType: min/max, reversal, order and clamp",
+      "XML height: min/max, reversal, order and clamp",
+      "XML mingles: min/max, reversal, order and clamp",
+      "XML moleSize: min/max, reversal, order and clamp",
+      "XML moleType: min/max, reversal, order and clamp",
+      "XML moleX: min/max, reversal, order and clamp",
+      "XML moleY: min/max, reversal, order and clamp",
+      "XML mouthColor: min/max, reversal, order and clamp",
+      "XML mouthSize: min/max, reversal, order and clamp",
+      "XML mouthType: min/max, reversal, order and clamp",
+      "XML mouthY: min/max, reversal, order and clamp",
+      "XML mustacheSize: min/max, reversal, order and clamp",
+      "XML mustacheType: min/max, reversal, order and clamp",
+      "XML mustacheY: min/max, reversal, order and clamp",
+      "XML noseSize: min/max, reversal, order and clamp",
+      "XML noseType: min/max, reversal, order and clamp",
+      "XML noseY: min/max, reversal, order and clamp",
+      "XML skinColor: min/max, reversal, order and clamp",
+      "XML weight: min/max, reversal, order and clamp",
+      "XML eyeType: every permutation slot",
+      "XML eyebrowType: every permutation slot",
+      "XML hairType: every permutation slot",
+      "XML noseType: every permutation slot",
+      "XML mouthType: every permutation slot",
+      "binary unknown bits survive individual edits but XML import deliberately clears them",
+      "XML declared hex is ignored, absent fields are zero even below declared min",
+      "root mii or first direct mii in arbitrary collection; duplicate fields last wins",
+      "XML names/creator entity decoding, escapes, CDATA and default whitespace trimming",
+      "IDs preserve source decimal-ten padding quirk while remaining re-importable",
+      "XML data entries may override name and creator text fields",
+      "malformed XML fails before reset; missing children fail after reset/partial writes",
+      "object parse errors propagate; string and generic wrappers swallow source errors",
+      "document/element import does not mutate caller DOM; namespaced children are not unqualified E4X children",
+      "unsupported internal DTDs fail without expanding entities or changing existing data",
+      "all original field values from deterministic randomization survive XML interchange"
+    ]
+  },
+  "rendering": {
+    "nativeChecks": {
+      "sRGBPixel": [
+        235,
+        205,
+        187,
+        255
+      ],
+      "clipInside": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "clipOutside": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "clipDepthRespected": true,
+      "svgInstanceIdsUnique": true
+    },
+    "selectedOriginalParts": [
+      {
+        "path": "headback",
+        "symbol": "37",
+        "frame": "1",
+        "matrix": "matrix(0.8899993896484375 0 0 0.8899993896484375 150 140)",
+        "blank": "false"
+      },
+      {
+        "path": "headback.hair",
+        "symbol": "36",
+        "frame": "1",
+        "matrix": "matrix(1 0 0 1 0 0)",
+        "blank": "false"
+      },
+      {
+        "path": "headback.hair.#1",
+        "symbol": "1",
+        "frame": "1",
+        "matrix": "matrix(1.4285736083984375 0 0 1.4285736083984375 -35.95 36.35)",
+        "blank": "false"
+      },
+      {
+        "path": "head",
+        "symbol": "385",
+        "frame": "1",
+        "matrix": "matrix(0.890869140625 0 0 0.890228271484375 150.05 140)",
+        "blank": "false"
+      },
+      {
+        "path": "head.face",
+        "symbol": "65",
+        "frame": "1",
+        "matrix": "matrix(1 0 0 1.000732421875 0 0)",
+        "blank": "false"
+      },
+      {
+        "path": "head.face.#1",
+        "symbol": "57",
+        "frame": "1",
+        "matrix": "matrix(1 0 0 1 0 0)",
+        "blank": "false"
+      },
+      {
+        "path": "head.features",
+        "symbol": "106",
+        "frame": "1",
+        "matrix": "matrix(1 0 0 1 0 0)",
+        "blank": "true"
+      },
+      {
+        "path": "head.beard",
+        "symbol": "129",
+        "frame": "1",
+        "matrix": "matrix(1 0 0 1 0 92.15)",
+        "blank": "true"
+      },
+      {
+        "path": "head.mole",
+        "symbol": "130",
+        "frame": "1",
+        "matrix": "matrix(0.6266666666666667 0 0 0.6266666666666667 -53.25 46.66666666666666)",
+        "blank": "true"
+      },
+      {
+        "path": "head.mouth",
+        "symbol": "157",
+        "frame": "1",
+        "matrix": "matrix(0.609 0 0 0.609 -0.15 61.222222222222214)",
+        "blank": "false"
+      },
+      {
+        "path": "head.mouth.lips",
+        "symbol": "138",
+        "frame": "1",
+        "matrix": "matrix(1 0 0 1 0 0)",
+        "blank": "true"
+      },
+      {
+        "path": "head.mouth.#3",
+        "symbol": "139",
+        "frame": "1",
+        "matrix": "matrix(1 0 0 1 0 0)",
+        "blank": "false"
+      },
+      {
+        "path": "head.eyesLeft",
+        "symbol": "243",
+        "frame": "1",
+        "matrix": "matrix(-0.5598516714761 0.39097312375205195 0.3909731237520519 0.5598516714761 -9 0.3333333333333286)",
+        "blank": "false"
+      },
+      {
+        "path": "head.eyesLeft.eyeball",
+        "symbol": "169",
+        "frame": "1",
+        "matrix": "matrix(1 0 0 1 0 0)",
+        "blank": "false"
+      },
+      {
+        "path": "head.eyesLeft.eyeball.#1",
+        "symbol": "158",
+        "frame": "1",
+        "matrix": "matrix(1 0 0 1 0 0)",
+        "blank": "false"
+      },
+      {
+        "path": "head.eyesLeft.#4",
+        "symbol": "170",
+        "frame": "1",
+        "matrix": "matrix(1 0 0 1 0 0)",
+        "blank": "false"
+      },
+      {
+        "path": "head.eyesRight",
+        "symbol": "243",
+        "frame": "1",
+        "matrix": "matrix(0.5598516714761003 0.39097312375205157 -0.39097312375205157 0.5598516714761003 9 0.3333333333333286)",
+        "blank": "false"
+      },
+      {
+        "path": "head.eyesRight.eyeball",
+        "symbol": "169",
+        "frame": "1",
+        "matrix": "matrix(1 0 0 1 0 0)",
+        "blank": "false"
+      },
+      {
+        "path": "head.eyesRight.eyeball.#1",
+        "symbol": "158",
+        "frame": "1",
+        "matrix": "matrix(1 0 0 1 0 0)",
+        "blank": "false"
+      },
+      {
+        "path": "head.eyesRight.#4",
+        "symbol": "170",
+        "frame": "1",
+        "matrix": "matrix(1 0 0 1 0 0)",
+        "blank": "false"
+      },
+      {
+        "path": "head.eyebrowsLeft",
+        "symbol": "267",
+        "frame": "1",
+        "matrix": "matrix(-0.3420610395870826 0.5230862693634811 0.523086269363481 0.34206103958708267 -8.75 -19.799999999999997)",
+        "blank": "false"
+      },
+      {
+        "path": "head.eyebrowsLeft.#1",
+        "symbol": "244",
+        "frame": "1",
+        "matrix": "matrix(1 0 0 1 0 0)",
+        "blank": "false"
+      },
+      {
+        "path": "head.eyebrowsRight",
+        "symbol": "267",
+        "frame": "1",
+        "matrix": "matrix(0.34206103958708267 0.523086269363481 -0.523086269363481 0.34206103958708267 8.75 -19.799999999999997)",
+        "blank": "false"
+      },
+      {
+        "path": "head.eyebrowsRight.#1",
+        "symbol": "244",
+        "frame": "1",
+        "matrix": "matrix(1 0 0 1 0 0)",
+        "blank": "false"
+      },
+      {
+        "path": "head.hairFront",
+        "symbol": "339",
+        "frame": "1",
+        "matrix": "matrix(1 0 0 0.9996185302734375 -0.05 0)",
+        "blank": "false"
+      },
+      {
+        "path": "head.hairFront.#1",
+        "symbol": "268",
+        "frame": "1",
+        "matrix": "matrix(1 0 0 1 0 0)",
+        "blank": "false"
+      },
+      {
+        "path": "head.hats",
+        "symbol": "344",
+        "frame": "1",
+        "matrix": "matrix(1 0 0 1 0 0)",
+        "blank": "true"
+      },
+      {
+        "path": "head.mustache",
+        "symbol": "348",
+        "frame": "1",
+        "matrix": "matrix(0.625 0 0 0.625 0 53.75)",
+        "blank": "true"
+      },
+      {
+        "path": "head.nose",
+        "symbol": "372",
+        "frame": "1",
+        "matrix": "matrix(0.6000000000000001 0 0 0.6000000000000001 0.05 30)",
+        "blank": "false"
+      },
+      {
+        "path": "head.nose.skin",
+        "symbol": "359",
+        "frame": "1",
+        "matrix": "matrix(1.0016021728515625 0 0 1 0 0)",
+        "blank": "false"
+      },
+      {
+        "path": "head.nose.skin.#1",
+        "symbol": "349",
+        "frame": "1",
+        "matrix": "matrix(1 0 0 1 0 0)",
+        "blank": "false"
+      },
+      {
+        "path": "head.nose.#3",
+        "symbol": "360",
+        "frame": "1",
+        "matrix": "matrix(1 0 0 1 0 0)",
+        "blank": "false"
+      },
+      {
+        "path": "head.glasses",
+        "symbol": "384",
+        "frame": "1",
+        "matrix": "matrix(1.0057142857142858 0 0 1.0057142857142858 0 1)",
+        "blank": "true"
+      },
+      {
+        "path": "head.glasses.lenses",
+        "symbol": "376",
+        "frame": "1",
+        "matrix": "matrix(1 0 0 1 0 0)",
+        "blank": "true"
+      }
+    ],
+    "visibleShapeInstances": 12,
+    "blankFramesPreserved": true,
+    "nameEditPixelInvariant": true,
+    "developmentDiagnostics": true
+  },
+  "errors": [],
+  "externalRequests": []
+}

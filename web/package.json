@@ -1,0 +1,25 @@
+{
+  "name": "mii-editor-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "node scripts/generate-character-assets.mjs && vite --host 127.0.0.1",
+    "build": "node scripts/generate-character-assets.mjs && tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node scripts/generate-character-assets.mjs --check && vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "test:browser": "node scripts/browser-smoke.mjs",
+    "test:browser:production": "node scripts/browser-smoke.mjs --preview"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1",
+    "typescript": "7.0.2",
+    "vite": "8.3.5",
+    "vitest": "5.1.0"
+  }
+}

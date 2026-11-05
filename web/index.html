@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Original-vector Mii head rendering proof with the existing name and binary data preview." />
+    <link rel="icon" href="data:," />
+    <title>Mii Editor · Phase 3A</title>
+  </head>
+  <body>
+    <div class="viewport" id="viewport">
+      <main class="stage" id="stage" aria-labelledby="title">
+        <header>
+          <p class="eyebrow">RENDERING PROOF · PHASE 3A</p>
+          <h1 id="title">Mii Editor</h1>
+          <p class="intro">Original default head · recovered Flash vectors</p>
+        </header>
+        <div class="proof-layout">
+        <section class="render-panel" aria-labelledby="render-heading">
+          <h2 id="render-heading">Character rendering</h2>
+          <div id="character-preview" aria-live="off"></div>
+          <div id="render-diagnostics"></div>
+          <p class="render-note">Original head vectors and transforms.<br>Body and editor interface are deferred.</p>
+          <p id="render-error" role="alert" hidden></p>
+        </section>
+        <div class="data-panel">
+        <section aria-labelledby="name-heading">
+          <h2 id="name-heading">Character name</h2>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" maxlength="10" autocomplete="off" spellcheck="false" aria-describedby="name-help" />
+          <p id="name-help" class="help">Up to 10 UTF-16 code units, matching the original format.</p>
+          <p class="decoded">Decoded name: <output id="decoded" for="name"></output></p>
+        </section>
+        <section aria-labelledby="data-heading">
+          <div class="data-heading"><h2 id="data-heading">Serialized character</h2><span>74 bytes · 37 words</span></div>
+          <label for="hex">Hexadecimal data</label>
+          <textarea id="hex" readonly spellcheck="false" rows="4" aria-describedby="hex-help"></textarea>
+          <p id="hex-help" class="help">148 hex characters. Only name bytes 2–21 can change.</p>
+        </section>
+        <footer>
+          <p id="status" role="status" aria-live="polite"></p>
+          <button id="reset" type="button">Reset to original default</button>
+        </footer>
+        </div></div>
+        <p class="scope">Phase 3A head proof with name editing and the Phase 2 data model. This is a development preview; the original editor interface is not reconstructed yet.</p>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

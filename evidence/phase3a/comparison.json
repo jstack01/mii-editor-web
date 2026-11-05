@@ -1,0 +1,41 @@
+{
+  "scope": "Default head only; source/language-derived rendering with an independent Ruffle emulator comparison, not Adobe Flash pixel certification.",
+  "runtime": {
+    "name": "@ruffle-rs/ruffle",
+    "version": "0.7.1",
+    "renderer": "canvas",
+    "archiveSha256": "dc9e7407549a91accc41a14932b0b9d9a9d51a3742ce6f020888c8a76682b157",
+    "downloadUrl": "https://registry.npmjs.org/@ruffle-rs/ruffle/-/ruffle-0.7.1.tgz",
+    "applicationDependency": false
+  },
+  "alignment": {
+    "sourceRoi": [
+      70,
+      30,
+      231,
+      230
+    ],
+    "originalGuiOffset": [
+      -34,
+      130
+    ],
+    "reason": "graphicsContainer x116,y130 and characterLoader x=-nativeWidth/2=-150; head editing page scale=1",
+    "imageRegistrationOrBestFitUsed": false
+  },
+  "comparison": {
+    "interiorMask": "SVG luminance <249, eroded by a 5x5 minimum filter to omit background/edge antialiasing",
+    "meanAbsoluteRGBDifference": [
+      0.7006216162021255,
+      0.7601764587928614,
+      0.6891918989372369
+    ],
+    "maskedPixelCount": 14961,
+    "thresholdForParity": null,
+    "interpretation": "Descriptive comparison only. Different renderer antialiasing, dynamic float/twip precision, SVG gradient precision and color quantization remain to be assessed."
+  },
+  "images": {
+    "screenshots/default-head-native.png": "978f1002df5ee0839cc74a59fea9430d5f0a6bc207122e87fca8d8998606c9c0",
+    "reference/original-ruffle-head.png": "15399e183e2b264fccce25b0a9fd991bf8d3f188cb35d4e08b2e02a9cb52a96b",
+    "head-comparison-ruffle.png": "1835909bb494cb4bce0a2eeccb0c7284c17579534722b50c155f49b798092c99"
+  }
+}

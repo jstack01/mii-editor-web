@@ -1,0 +1,17 @@
+{
+  "mode": "production preview",
+  "browser": "156.0.8078.80",
+  "checks": [
+    "default fixture decoded",
+    "74-byte hex shown read-only",
+    "ASCII, non-ASCII, surrogate pair and empty edits preserve all unrelated bytes",
+    "keyboard input limited to ten UTF-16 units",
+    "reset restores exact original bytes",
+    "640 × 500 surface scales uniformly at desktop and narrow widths",
+    "keyboard interaction verified",
+    "no browser errors or external requests"
+  ],
+  "dataCompatibility": null,
+  "errors": [],
+  "externalRequests": []
+}

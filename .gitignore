@@ -1,0 +1,41 @@
+# OS/editor metadata
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Dependencies, build output and caches
+node_modules/
+/web/dist/
+coverage/
+.vite/
+.vitest/
+.cache/
+__pycache__/
+*.py[cod]
+*.tsbuildinfo
+
+# Ephemeral test/diagnostic artifacts; selected milestone evidence stays tracked
+/web/test-results/
+playwright-report/
+blob-report/
+*.log
+*.tmp
+*.temp
+/tmp/
+/temp/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+!.env.sample
+*.key
+*.p12
+*.pfx
+
+# Keep SOURCE/, EXTRACTED-SWF/, recovery manifests/XML, generated source
+# snapshots, lockfiles, and selected evidence/ milestone reports/screenshots.
