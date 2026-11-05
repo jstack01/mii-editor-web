@@ -1,6 +1,6 @@
 # Mii Editor migration assessment and plan
 
-Status: Phases 0–3B and Phase 4A/4B are complete. All 13 original editing screens are interactive, with automatic validated browser persistence and working Mii share URLs. Stop after Phase 4B. Phase 5 file dialogs and image export remain deferred.
+Status: Phases 0–4B and Phase 5A are complete. Editing, persistence, sharing and local .mii/XML operations work. Stop after Phase 5A; PNG/JPEG export remains Phase 5B.
 Reviewed: November 4, 2026. Updated after inspecting the reorganized project and original source package.
 
 ## 1. Scope and evidence
@@ -599,3 +599,17 @@ The requested stroke review confirms `noHScaleFlag=false` and `noVScaleFlag=fals
 See `web/EDITOR_INTERACTIONS.md`, `web/STORAGE_CONTRACT.md` and `evidence/phase4b/README.md`. The evidence includes matching edited cases, native/2× screenshots, original runtime logs, comparison galleries/ROIs, full dev/production reports, source stroke/font review, slider-rounding characterization and browser availability.
 
 From `web/`, run `./dev.sh` and open `http://127.0.0.1:5173/`. All original editing tabs/sub-tabs now work; copy the Mii URL field to share. Development renderer diagnostics remain `/diagnostics.html`. Work stops after Phase 4B. **Phase 5** remains file/binary/XML dialogs and PNG/JPEG export; tutorial stays deferred. Firefox/WebKit/physical-device and exact Adobe Flash visual parity checks remain release work. No file/image export UI, remote repository or upload was implemented in this milestone.
+
+## 13. Phase 5A completed — original File interface and local Mii/XML operations
+
+Verified clean Phase 4B baseline **6ef4784**. Existing architecture, codecs, renderer and dependency versions are retained. FileOptions.as/ScrollBar.as and recovered sprite 352 frames 2/3 drive the Files/XML overlay at source depth 156. Eighteen original symbols, placements and source hashes were recovered. The glyph generator now respects the original X glyph's implicit initial origin. Source preview dimensions/centering, scroll coordinates and Save-current-model versus Back-applies-draft behavior are retained. Image export stays disabled for Phase 5B.
+
+Local .mii import validates exactly 74 bytes and original ranges; export retains all reserved bits and Unicode names. XML reuses the existing codec with a fresh candidate and transactional commit. Failed/cancelled imports preserve the active character. Successful explicit imports update selected controls, preview, persistence and sharing, including identical-byte imports. Late asynchronous reads cannot overwrite the character after closing/navigating away.
+
+Documented intentional differences: unchanged XML viewing avoids lossy reapplication; edited/imported XML validates before committing instead of partially mutating active data. XML remains lossy for unused bits and ignores embedded hex. The user boundary requires UTF-8 files, 1 MiB XML limit, case-insensitive extensions, valid XML characters and strict postdecode ranges. External header metadata is inert in the view and stripped before parsing; entities/internal DTDs are rejected. Downloads omit remote DTD/stylesheet headers while retaining original codec body/order. Browser focus/keyboard/cancel/download mechanisms replace Flash/PHP services.
+
+Verification: **251 unit tests**, all prior XML/rendering/GUI/interaction/browser persistence suites, development and production file tests, TypeScript, production build and six Python recovery tests pass. New checks cover binary exactness/unknown bits, malformed files, cancellation/stale reads, Unicode/repeated downloads, XML edit/apply/cancel, unsafe declarations, current-character preservation, save-current behavior, persistence/share/refresh and offline operation. Existing large-chunk warning remains; no dependency was added. All **1,725 protected SOURCE/ and EXTRACTED-SWF/ files** retain their hashes. Firefox/WebKit executables are unavailable and not certified.
+
+Matching-default native/2× captures compare against unmodified SWFs in Ruffle 0.7.1 wgpu-webgl; canvas fails this File preview and its failed attempt is recorded separately. Original PHP alert dismissal required no source modification or service stub. Comparisons use source coordinates without fitted registration or parity threshold. XML device-font/line metrics (no embedded _typewriter glyphs), bitmap versus SVG rasterization, existing nine-slice/stroke/gradient precision and antialiasing remain differences. Version labeling/current share origin are intentional. No Adobe Flash or pixel-perfect certification is claimed.
+
+See web/FILE_OPERATIONS.md, web/STORAGE_CONTRACT.md and evidence/phase5a/README.md. Launch web/dev.sh and open http://127.0.0.1:5173/; File exposes Load/Save Mii/XML. Work stops after Phase 5A. Phase 5B remains original PNG/JPEG page reconstruction and sizing/rendering/download behavior, with image-specific tests. Tutorial and cross-engine/Adobe visual certification remain deferred. No remote or upload was created.

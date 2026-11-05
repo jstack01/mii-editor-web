@@ -1,0 +1,17 @@
+{
+  "phase": "5A",
+  "baseline": "6ef4784",
+  "unitTests": 251,
+  "pythonRecoveryTests": 6,
+  "typecheck": "passed",
+  "productionBuild": "passed",
+  "developmentBrowserSuite": "passed",
+  "productionBrowserSuite": "passed",
+  "browser": "Chrome 156.0.8078.80",
+  "firefoxRuntimeAvailable": false,
+  "webkitRuntimeAvailable": false,
+  "protectedInputsUnchanged": 1725,
+  "dependenciesAdded": 0,
+  "visualParityCertified": false,
+  "resolvedDuringFinalVerification": "Immediate Escape after keyboard opening now focuses the dialog synchronously; editor focus restoration cannot steal modal focus."
+}

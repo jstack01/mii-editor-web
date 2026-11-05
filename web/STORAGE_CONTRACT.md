@@ -1,6 +1,6 @@
 # Browser storage and shared URLs — version 1
 
-The application stores one current character, entirely locally. No account, backend, Flash storage, remote service or file dialog participates.
+The application stores one current character, entirely locally. No account, backend, Flash storage, remote service participates. File imports use this same contract.
 
 ## Exact contract
 
@@ -11,7 +11,9 @@ The application stores one current character, entirely locally. No account, back
 
 Startup chooses the original default, then a valid saved character, then a valid **single `?mii=` parameter** at highest priority. Empty, malformed, duplicated or out-of-range URL values are ignored, with a visible status message; saved/default data remains usable. Storage access failures never prevent a valid URL or default from opening.
 
-Initialization resolves precedence before it renders or writes anything. A valid URL import is saved as the final chosen character; it cannot be overwritten by an intermediate old local value. A saved/default startup does not write merely because the page opened. Invalid saved data is left untouched until a real valid edit replaces it.
+Initialization resolves precedence before it renders or writes anything. A valid URL import is saved as the final chosen character; it cannot be overwritten by an intermediate old local value. A saved/default startup does not write merely because the page opened. Invalid saved data is left untouched until a real valid edit or successful explicit import replaces it.
+
+A successful explicit file/XML import also saves, even when its bytes equal the current character. Failed imports, cancelled selections and unchanged XML viewing do not write. Imports update the displayed share URL and an existing address-bar mii parameter using the same policy.
 
 Every actual binary edit saves synchronously through localStorage: text, IDs, toggles, randomization, every tile/palette/option, and each changed integer slider value. No-op clamping, navigation and page browsing do not write. A failed read/write/getter is caught; the editor remains usable in memory and reports storage unavailability. A failure to read on startup keeps the status conservative until reload. No other application keys are read or deleted. No storage-event listener replaces an actively edited character; multiple tabs follow last successful writer wins. Private-browser cleanup and browser settings remain browser policy.
 
@@ -29,4 +31,4 @@ Opening that URL restores the exact binary, ahead of saved browser data. Editing
 
 Original Size updates **both** attributes from each thumb's floating-point position using `int(127 * getPercent())`. Reconstructing `x = 301 + 227 * value/127`, then computing `(x-301)/227 * 127`, can truncate some untouched values one unit lower. The browser preserves the original drag formula for the edited dimension and keeps the other dimension's bytes intact. Category entry and navigation never re-quantize either value. Evidence includes an exhaustive 0–127 characterization in `evidence/phase4b/legacy-slider-rounding.json`.
 
-There is no automatic SharedObject/LSO migration, multi-character library, schema conversion, cross-device sync or file import/export in this contract. Those features are not represented as complete.
+There is no automatic SharedObject/LSO migration, multi-character library, schema conversion, cross-device sync in this contract. File operations are documented in FILE_OPERATIONS.md. Those features are not represented as complete.

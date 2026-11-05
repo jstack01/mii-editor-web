@@ -47,7 +47,8 @@ try{
   const error=await page.evaluate(()=>window.referenceError??null);if(error)throw new Error(error);
   if(logs.some((x)=>x.type==='pageerror'||/Error dispatching event/.test(x.text??'')))throw new Error('Original runtime execution reported an error; inspect the log.');
   if(renderer!=='canvas'){await page.mouse.click(600,22);await page.waitForTimeout(300);}
-  if(process.argv.includes('--gui')){
+  if(process.argv.includes('--file-pages')){await page.mouse.click(114,417);await page.waitForTimeout(1200);await page.mouse.click(318,315);await page.waitForTimeout(400);await page.mouse.move(5,490);await page.screenshot({path:join(output,'files.png')});await page.mouse.click(114,242);await page.waitForTimeout(700);await page.mouse.move(5,490);await page.screenshot({path:join(output,'xml.png')});}
+  else if(process.argv.includes('--gui')){
     const screens=[['basic',[[67,43]]],['size',[[130,43]]],['face',[[193,43]]],['face2',[[193,43],[405,124]]],['hair',[[256,43]]],['eyebrows',[[319,43]]],['eyes',[[382,43]]],['nose',[[445,43]]],['lips',[[508,43]]],['accessories',[[571,43]]],['accessories2',[[571,43],[405,124]]],['accessories3',[[571,43],[292,172]]],['accessories4',[[571,43],[405,172]]]];
     for(const [name,clicks]of screens){if(process.argv.includes('--case-screen')&&fixture.id!==name)continue;for(const[x,y]of clicks){await page.mouse.click(x,y);await page.waitForTimeout(700);}await page.mouse.move(5,490);await page.waitForTimeout(300);await page.screenshot({path:join(output,`${name}-gui.png`)});}
   }else{

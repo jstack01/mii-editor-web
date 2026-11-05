@@ -1,0 +1,71 @@
+{
+  "bestFitRegistrationUsed": false,
+  "thresholdForParity": null,
+  "note": "Native and 2x matching-default comparisons. Footer URL origins and truthful Web version label excluded from numeric measurements. XML font/line metrics and original bitmap vs SVG preview differ. No Adobe Flash pixel-parity claim.",
+  "measurements": [
+    {
+      "page": "files",
+      "deviceScaleFactor": 1,
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ],
+      "versionLabelExcluded": true,
+      "meanAbsoluteRGBDifference": [
+        0.709541731237547,
+        0.7720596507910008,
+        0.7657955192950493
+      ]
+    },
+    {
+      "page": "xml",
+      "deviceScaleFactor": 1,
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ],
+      "versionLabelExcluded": false,
+      "meanAbsoluteRGBDifference": [
+        20.886051671485138,
+        20.915266832511776,
+        20.913639049799535
+      ]
+    },
+    {
+      "page": "files",
+      "deviceScaleFactor": 2,
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ],
+      "versionLabelExcluded": true,
+      "meanAbsoluteRGBDifference": [
+        0.7047092394514672,
+        0.7692999754632448,
+        0.7642199583783931
+      ]
+    },
+    {
+      "page": "xml",
+      "deviceScaleFactor": 2,
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ],
+      "versionLabelExcluded": false,
+      "meanAbsoluteRGBDifference": [
+        22.02785880475969,
+        22.057613507943895,
+        22.057526645837488
+      ]
+    }
+  ]
+}

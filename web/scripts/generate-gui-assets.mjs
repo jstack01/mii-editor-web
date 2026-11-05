@@ -17,8 +17,8 @@ function glyphPath(glyph){
  let x=0,y=0,path='',open=false;
  for(const r of children(glyph,'shapeRecords')){const a=r.attributes;
   if(a.type==='StyleChangeRecord'&&a.stateMoveTo==='true'){if(open)path+='Z';x=Number(a.moveDeltaX);y=Number(a.moveDeltaY);path+=`M${x} ${y}`;open=true;}
-  else if(a.type==='StraightEdgeRecord'){x+=Number(a.deltaX??0);y+=Number(a.deltaY??0);path+=`L${x} ${y}`;}
-  else if(a.type==='CurvedEdgeRecord'){const cx=x+Number(a.controlDeltaX),cy=y+Number(a.controlDeltaY);x=cx+Number(a.anchorDeltaX);y=cy+Number(a.anchorDeltaY);path+=`Q${cx} ${cy} ${x} ${y}`;}
+  else if(a.type==='StraightEdgeRecord'){if(!open){path+=`M${x} ${y}`;open=true;}x+=Number(a.deltaX??0);y+=Number(a.deltaY??0);path+=`L${x} ${y}`;}
+  else if(a.type==='CurvedEdgeRecord'){if(!open){path+=`M${x} ${y}`;open=true;}const cx=x+Number(a.controlDeltaX),cy=y+Number(a.controlDeltaY);x=cx+Number(a.anchorDeltaX);y=cy+Number(a.anchorDeltaY);path+=`Q${cx} ${cy} ${x} ${y}`;}
   else if(!['EndShapeRecord','StyleChangeRecord'].includes(a.type))throw Error(`Unsupported font edge ${a.type}`);
  }
  return path+(open?'Z':'');
@@ -49,15 +49,18 @@ function visit(id){if(symbols[id])return;const s=m.symbols[id];if(!s)throw Error
  else if(s.kind==='DefineEditTextTag'){texts[id]={attributes:s.rawDefinition.attributes,bounds:s.bounds.bounds,color:child(s.rawDefinition,'textColor')?.attributes};symbols[id]={kind:'sprite',id,className:null,frames:[[]]};}
  else throw Error(`Unsupported GUI dependency ${id}: ${s.kind}`);
 }
-// File dialogs, startup warning, loader/version and invisible homepage hit target
+// Startup warning, loader/version and invisible homepage hit target
 // are intentionally excluded. No whole-screen PNG is used.
 const excluded=new Set(['screens','updateFPMessage','versionText','homepage']);
 const frames=m.rootTimeline.frames.slice(1).map((f)=>({frame:f.frame,label:f.labels[0],placements:f.displayList.filter((p)=>!excluded.has(p.name)).map(placement)}));
 frames.flatMap((f)=>f.placements).forEach((p)=>visit(p.symbolId));
 for(const s of Object.values(m.symbols))if(s.className?.startsWith('Icons_')||['ItemSelected','ItemFaceSelected','ColorSelected'].includes(s.className))visit(s.id);
+const fileFrames=m.symbols['352'].timeline.frames.filter((f)=>[2,3].includes(f.frame)).map((f)=>({frame:f.frame,label:f.labels[0],placements:f.displayList.map(placement)}));
+fileFrames.flatMap((f)=>f.placements).forEach((p)=>visit(p.symbolId));
+for(const name of ['dialogs/FileOptions','controls/ScrollBar']){const p=`EXTRACTED-SWF/classicGUI.swf/scripts/mii/authoring/${name}.as`;hashes[p]=hash(read(p));}
 const grids=Object.fromEntries(m.scalingGrids.map((g)=>{const a=child(g,'splitter').attributes;return [g.attributes.characterId,{x:Number(a.Xmin)/20,y:Number(a.Ymin)/20,width:(Number(a.Xmax)-Number(a.Xmin))/20,height:(Number(a.Ymax)-Number(a.Ymin))/20}];}));
 const classes=Object.fromEntries(Object.values(m.symbols).filter((s)=>s.className).map((s)=>[s.className,s.id]));
-const output=`// Generated from original GUI SWF placements, vectors and embedded glyph outlines.\nimport type {AssetCatalog} from '../render/types';\nexport const GUI_ASSETS:AssetCatalog=${JSON.stringify({sourceHashes:hashes,roots:[],symbols})};\nexport const GUI_FRAMES=${JSON.stringify(frames)} as const;\nexport const GUI_TEXTS=${JSON.stringify(texts)} as const;\nexport const GUI_GRIDS=${JSON.stringify(grids)} as const;\nexport const GUI_CLASSES=${JSON.stringify(classes)} as const;\n`;
+const output=`// Generated from original GUI SWF placements, vectors and embedded glyph outlines.\nimport type {AssetCatalog} from '../render/types';\nexport const GUI_ASSETS:AssetCatalog=${JSON.stringify({sourceHashes:hashes,roots:[],symbols})};\nexport const GUI_FRAMES=${JSON.stringify(frames)} as const;\nexport const FILE_FRAMES=${JSON.stringify(fileFrames)} as const;\nexport const GUI_TEXTS=${JSON.stringify(texts)} as const;\nexport const GUI_GRIDS=${JSON.stringify(grids)} as const;\nexport const GUI_CLASSES=${JSON.stringify(classes)} as const;\n`;
 const target=new URL('../src/generated/gui-assets.ts',import.meta.url);
 if(process.argv.includes('--check')){if(readFileSync(target,'utf8')!==output)throw Error('Stale GUI catalog');}else writeFileSync(target,output);
 console.log(`Original GUI catalog: ${Object.keys(symbols).length} symbols, ${frames.length} screens; static text uses recovered glyph paths.`);

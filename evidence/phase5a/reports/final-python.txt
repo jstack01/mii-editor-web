@@ -1,0 +1,11 @@
+test_known_root_layout_and_blank_symbol_frames (test_recover_evidence.OriginalEvidenceTests) ... ok
+test_manifest_matches_binary_tags_and_all_placement_matrices (test_recover_evidence.OriginalEvidenceTests) ... ok
+test_protected_inputs_unchanged (test_recover_evidence.OriginalEvidenceTests) ... ok
+test_affine_order_negative_translation_and_fixed_precision (test_recover_evidence.TimelineTests) ... ok
+test_bad_frame_count_and_orphan_moves_fail (test_recover_evidence.TimelineTests) ... ok
+test_move_inherits_transform_and_name_but_new_placement_resets (test_recover_evidence.TimelineTests) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.327s
+
+OK

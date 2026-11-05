@@ -11,7 +11,8 @@ import {buildGuiScene,characterCamera} from './gui/guiScene';
 import {SCREENS,colorField} from './gui/screens';
 import {applyNineSlice} from './gui/nineSlice';
 import type {SceneNode} from './render/types';
-const SVG='http://www.w3.org/2000/svg';
+import {make,addHover} from './gui/svgDom';
+import {FileDialog} from './files/fileDialog';
 const storage=()=>window.localStorage;
 const startup=startupCharacter(location.href,storage);
 const model=MiiCharacterData.fromHex(startup.hex);
@@ -21,9 +22,9 @@ let storageAvailable=!startup.storageUnavailable;
 if(startup.source==='url')storageAvailable=saveCharacter(model.toHex(),storage)&&!startup.storageUnavailable;
 let interactions=new AbortController();
 const host=document.getElementById('editor')!,stage=document.getElementById('stage')!,viewport=document.getElementById('viewport')!;
-const controls:Record<string,string>={tab_basic:'General',tab_size:'Body size',tab_face:'Head',tab_hair:'Hair',tab_eyebrows:'Eyebrows',tab_eyes:'Eyes',tab_nose:'Nose',tab_lips:'Mouth',tab_accessories:'Glasses',nav_face:'Head shapes',nav_face2:'Facial features',nav_accessories:'Glasses',nav_accessories2:'Mustache',nav_accessories3:'Mole',nav_accessories4:'Beard',toggle_gender:'Change gender',toggle_mingles:'Change mingle setting',actionRandom:'Randomize character',screenFile:'File — deferred',page_next:'Next feature page',page_prev:'Previous feature page',toggle_hairPart:'Mirror hairstyle'};
+const controls:Record<string,string>={tab_basic:'General',tab_size:'Body size',tab_face:'Head',tab_hair:'Hair',tab_eyebrows:'Eyebrows',tab_eyes:'Eyes',tab_nose:'Nose',tab_lips:'Mouth',tab_accessories:'Glasses',nav_face:'Head shapes',nav_face2:'Facial features',nav_accessories:'Glasses',nav_accessories2:'Mustache',nav_accessories3:'Mole',nav_accessories4:'Beard',toggle_gender:'Change gender',toggle_mingles:'Change mingle setting',actionRandom:'Randomize character',screenFile:'File',page_next:'Next feature page',page_prev:'Previous feature page',toggle_hairPart:'Mirror hairstyle'};
 const fieldNames:Record<string,string>={nameText:'Name',creatorText:'Creator',idText:'Mii ID',wiiText:'Wii ID',birthDateText:'Birthday day',birthMonthText:'Birthday month',URLText:'Mii share URL'};
-function make<K extends keyof SVGElementTagNameMap>(name:K,attrs:Record<string,string|number>={}):SVGElementTagNameMap[K]{const e=document.createElementNS(SVG,name);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,String(v));return e;}
+
 function updateReadout():void {const field=host.querySelector<HTMLInputElement>('[data-field="URLText"]');if(field)field.value=shareURL(location.href,model.toHex());stage.dataset.hex=model.toHex();}
 function renderCharacter():void {
  const group=host.querySelector<SVGGElement>('[data-instance-path="graphicsContainer"]')!;
@@ -61,15 +62,10 @@ function applyText(input:HTMLInputElement,name:string):void {
  else {input.value=input.value.slice(0,10);model.setValue(field,input.value);}
  persistEdit(before);updateReadout();if(field==='id')renderCharacter();
 }
-function addHover(svg:SVGSVGElement,group:SVGGElement):void {
- const defs=svg.querySelector('defs')!;
- const filters=[20,-20].map((offset)=>{const id=`gui-hover-${offset<0?'down':'over'}-${group.dataset.control}`;const filter=make('filter',{id,x:'-20%',y:'-30%',width:'140%',height:'160%','color-interpolation-filters':'sRGB'});filter.append(make('feColorMatrix',{type:'matrix',values:`1 0 0 0 ${offset/255} 0 1 0 0 ${offset/255} 0 0 1 0 ${offset/255} 0 0 0 1 0`}));defs.append(filter);return `url(#${id})`;});
- let down=false;group.addEventListener('pointerenter',()=>{if(!down)group.style.filter=filters[0]!;});group.addEventListener('pointerleave',()=>{if(!down)group.style.filter='';});group.addEventListener('pointerdown',()=>{down=true;group.style.filter=filters[1]!;window.addEventListener('pointerup',()=>{down=false;group.style.filter='';},{once:true,signal:interactions.signal});});
- group.addEventListener('pointerup',()=>{down=false;group.style.filter=filters[0]!;});
- group.addEventListener('pointercancel',()=>{down=false;group.style.filter='';},{signal:interactions.signal});
-}
+
 function bindControl(svg:SVGSVGElement,group:SVGGElement,node:SceneNode):void {
  const name=node.name??'';let label=controls[name],action:(()=>void)|undefined;
+ if(name==='screenFile')action=()=>fileDialog.open();
  if(name.startsWith('tab_')||name.startsWith('nav_')){const target=name.slice(name.indexOf('_')+1);action=()=>{session.navigate(target);screen=session.screen;render();};}
  if(screen.id==='basic'){
   if(name==='toggle_gender'||name==='toggle_mingles'){const field=name.slice(7);action=()=>edit(()=>model.setValue(field,model.getValue(field)?0:1));group.setAttribute('aria-pressed',String(!!model.getValue(field)));}
@@ -88,10 +84,10 @@ function bindControl(svg:SVGSVGElement,group:SVGGElement,node:SceneNode):void {
  if(name.startsWith('option_')){label=`${screen.name} ${name.slice(7,-2)} ${name.endsWith('_1')?'increase':'decrease'}`;action=()=>edit(()=>session.adjust(name));}
  if(name==='toggle_hairPart'){action=()=>edit(()=>session.toggle('hairPart'));group.setAttribute('aria-pressed',String(!!model.getValue('hairPart')));}
  if(name==='page_next'||name==='page_prev')action=()=>{session.turnPage(name==='page_next'?1:-1);render();};
- if(name==='slider_height'||name==='slider_weight'){const field=name.slice(7) as 'height'|'weight';bindSlider(group,svg,field,()=>model.getValue(field),(value)=>{const before=model.toHex();model.setValue(field,value);persistEdit(before);updateReadout();renderCharacter();},interactions.signal);addHover(svg,group);return;}
+ if(name==='slider_height'||name==='slider_weight'){const field=name.slice(7) as 'height'|'weight';bindSlider(group,svg,field,()=>model.getValue(field),(value)=>{const before=model.toHex();model.setValue(field,value);persistEdit(before);updateReadout();renderCharacter();},interactions.signal);addHover(svg,group,interactions.signal);return;}
  if(!label)return;
  group.dataset.control=name;group.setAttribute('role','button');group.setAttribute('aria-label',label);group.setAttribute('aria-disabled',String(!action));
- if(action){group.classList.add('gui-action');group.setAttribute('tabindex','0');group.addEventListener('click',action);group.addEventListener('keydown',(e)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();action!();}});if([272,294,318].includes(node.symbolId))addHover(svg,group);}
+ if(action){group.classList.add('gui-action');group.setAttribute('tabindex','0');group.addEventListener('click',action);group.addEventListener('keydown',(e)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();action!();}});if([272,294,318].includes(node.symbolId))addHover(svg,group,interactions.signal);}
  else{group.classList.add('gui-disabled');const title=make('title');title.textContent=`${label}: file dialogs are deferred to Phase 5`;group.append(title);}
 }
 function render():void {
@@ -109,20 +105,21 @@ function render():void {
   if(node.path.includes('.'))continue;addText(group,node);bindControl(svg,group,node);
   if(!group.hasAttribute('role')&&!GUI_TEXTS[String(node.symbolId) as keyof typeof GUI_TEXTS])group.classList.add('gui-label');
  }
- host.replaceChildren(svg);renderCharacter();updateReadout();
+ host.replaceChildren(svg);renderCharacter();updateReadout();fileDialog.mount(svg);
  document.getElementById('screen-status')!.textContent=`${screen.name} — editing available.`;
- if(focused)host.querySelector<SVGGElement>(`[data-control="${focused}"]`)?.focus({preventScroll:true});
+ if(focused&&!svg.querySelector('[data-file-page]'))host.querySelector<SVGGElement>(`[data-control="${focused}"]`)?.focus({preventScroll:true});
 }
 function storageStatus():void {
  const notices=[startup.invalidURL?'Ignored invalid Mii URL.':'',startup.invalidSaved?'Ignored invalid saved Mii.':'',storageAvailable?'Edits save automatically in this browser.':'Browser storage is unavailable. Keep a share URL to retain your Mii.'];document.getElementById('storage-status')!.textContent=notices.filter(Boolean).join(' ');
 }
-function persistEdit(before:string):void {
- if(model.toHex()===before)return;storageAvailable=saveCharacter(model.toHex(),storage)&&!startup.storageUnavailable;
+function persistEdit(before:string,force=false):void {
+ if(!force&&model.toHex()===before)return;storageAvailable=saveCharacter(model.toHex(),storage)&&!startup.storageUnavailable;
  // Refreshing an opened share must restore the latest edit, not its old URL.
  if(new URL(location.href).searchParams.has('mii')){try{history.replaceState(null,'',shareURL(location.href,model.toHex()));}catch{/* Share field still has the current URL/data. */}}
  storageStatus();
 }
 function edit(action:()=>unknown):void {const before=model.toHex();action();persistEdit(before);render();}
+const fileDialog=new FileDialog({getModel:()=>model,commit:(candidate)=>{const before=model.toHex();model.setData(candidate.toBytes());persistEdit(before,true);session.navigate(screen.id);screen=session.screen;render();},renderEditor:render});
 stage.dataset.startupSource=startup.source;storageStatus();
 if(import.meta.env.DEV)document.getElementById('development-tools')!.hidden=false;
 new ResizeObserver(()=>{stage.style.setProperty('--stage-scale',String(viewport.clientWidth/640));}).observe(viewport);
