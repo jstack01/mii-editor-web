@@ -1,3 +1,4 @@
+import {legacyRandomize} from '../../test-support/legacyRandomize';
 import { describe, expect, it } from 'vitest';
 import source from '../../../EXTRACTED-SWF/classicGUI.swf/scripts/mii/MiiCharacterData.as?raw';
 import { MiiCharacterData, MII_FIELDS, MII_VALUE_NAMES, MII_PERMUTATIONS } from './MiiCharacterData';
@@ -188,7 +189,7 @@ describe('creator and IDs', () => {
 describe('randomization', () => {
   it.each([0, 0.5, 1 - Number.EPSILON])('follows all 49 draws at percent %f, preserving Wii ID and unknown bits', (percent) => {
     const original = patterned(); const model = MiiCharacterData.fromBytes(original);
-    let draws = 0; model.randomize(() => { draws += 1; return percent; });
+    let draws = 0; legacyRandomize(model,() => { draws += 1; return percent; });
     expect(draws).toBe(49);
     const expected = original.slice();
     for (const field of sourceFields) {
@@ -209,7 +210,7 @@ describe('randomization', () => {
   it('uses original alphabetical field order then ID high-to-low with a nonconstant RNG', () => {
     const model = new MiiCharacterData(); let draws = 0;
     const rng = () => ((draws++ * 17 + 3) % 101) / 101;
-    model.randomize(rng);
+    legacyRandomize(model,rng);
     const names = JSON.parse(source.match(/valueNames:Array = (\[[^;]+\]);/)![1]!) as string[];
     names.forEach((name, index) => {
       const field = sourceFields.find((f) => f.name === name)!;

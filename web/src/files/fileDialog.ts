@@ -1,5 +1,5 @@
 import {ImagePage} from './imagePage';
-import {wiiExportNotice} from '../compatibility/wiiCompatibility';
+import {requireWii,validateWii} from '../compatibility/wiiProfile';
 import {GUI_ASSETS,GUI_TEXTS,GUI_GRIDS} from '../generated/gui-assets';
 import type {MiiCharacterData} from '../model/MiiCharacterData';
 import {flattenScene} from '../render/headScene';
@@ -7,13 +7,13 @@ import {renderHeadSvg} from '../render/svgRenderer';
 import {applyNineSlice} from '../gui/nineSlice';
 import {make,addHover} from '../gui/svgDom';
 import {buildFileScene,filePreviewScene,type FilePage} from './fileScene';
-import {downloadCharacter,exportXML,importCharacterFile,importXML} from './characterFiles';
+import {downloadCharacter,exportXML,importCharacterFile,importXML,xmlChangesFor} from './characterFiles';
 import {bindXMLScroll} from './xmlScroll';
 const INFO:Record<string,string>={actionLoadMii:'Load Mii characters from your computer into the Mii Editor. Valid Mii files include .mii binary files or Mii\'s saved as XML.',actionSaveMii:'Save your current Mii character to your computer as a .mii binary file. If you ever want to reload your Mii into the editor, you can use the Load option to load this file to get your character back.',screenXML:'View the XML for your current Mii character. You can edit the XML to have its changes affect your Mii or save the XML to your computer as an .xml file.',screenImage:'Export your Mii character to your computer as a bitmap image.  You can choose between JPEG or PNG formats.'};
 export class FileDialog {
  private page:FilePage|null=null;private draft='';private baselineDraft='';private abort=new AbortController();private generation=0;private busy=false;
  private readonly picker=document.createElement('input');private readonly image=new ImagePage(()=>this.options.getModel(),(text,error)=>this.message(text,error));
- constructor(private readonly options:{getModel:()=>MiiCharacterData;commit:(candidate:MiiCharacterData)=>void;renderEditor:()=>void}){
+ constructor(private readonly options:{getModel:()=>MiiCharacterData;commit:(candidate:MiiCharacterData)=>void;renderEditor:()=>void;review:(candidate:MiiCharacterData,label:string,file?:File,accepted?:()=>void)=>void;reviewCurrent:()=>void}){
   this.picker.type='file';this.picker.accept='.mii,.xml';this.picker.hidden=true;this.picker.id='mii-file-picker';this.picker.setAttribute('aria-label','Open Mii or XML file');document.body.append(this.picker);
   this.picker.addEventListener('change',()=>{const file=this.picker.files?.[0];this.picker.value='';if(file)void this.load(file);});
   this.picker.addEventListener('cancel',()=>this.message('File selection cancelled; the character is unchanged.'));
@@ -21,15 +21,15 @@ export class FileDialog {
  private message(text:string,error=false):void {const status=document.getElementById('file-status')!;status.textContent=text;status.setAttribute('role',error?'alert':'status');status.dataset.error=String(error);}
  open():void {this.page='files';this.generation++;this.message('');this.options.renderEditor();}
  private close():void {this.page=null;this.generation++;this.abort.abort();this.message('');this.options.renderEditor();document.querySelector<SVGGElement>('[data-control="screenFile"]')?.focus();}
- private xml():void {try{this.draft=exportXML(this.options.getModel(),true);this.baselineDraft=this.draft;this.generation++;this.page='xml';this.message('Back applies XML edits and may clear unused binary bits. Escape discards edits. Save downloads the current character.');this.options.renderEditor();}catch(e){this.error(e);}}
+ private xml():void {try{this.draft=exportXML(this.options.getModel(),true);this.baselineDraft=this.draft;this.generation++;this.page='xml';this.message(validateWii(this.options.getModel().toBytes()).valid?'Back applies XML edits and may clear unused binary bits. Escape discards edits. Save downloads the current character.':'Unresolved original: XML view is read-only until repairs are approved. XML saving is lossy archival data, not validated Wii export.');this.options.renderEditor();}catch(e){this.error(e);}}
  private imagePage():void {this.page='image';this.generation++;this.message('Drag the preview to pan. Image settings do not alter Mii data.');this.options.renderEditor();}
- private files():void {if(this.page==='image'){this.page='files';this.generation++;this.options.renderEditor();this.message('');return;}if(this.draft===this.baselineDraft){this.page='files';this.generation++;this.options.renderEditor();this.message('XML unchanged; the original binary is preserved.');return;}try{const candidate=importXML(this.draft);this.page='files';this.generation++;this.options.commit(candidate);this.message('XML applied. XML import follows the original field mappings and resets unused binary bits.');}catch(e){this.error(e);}}
+ private files():void {if(this.page==='image'){this.page='files';this.generation++;this.options.renderEditor();this.message('');return;}if(this.draft===this.baselineDraft){this.page='files';this.generation++;this.options.renderEditor();this.message('XML unchanged; the original binary is preserved.');return;}try{const candidate=importXML(this.draft);if(!validateWii(candidate.toBytes()).valid||xmlChangesFor(candidate).length){this.options.review(candidate,'Edited XML',undefined,()=>{this.page='files';this.generation++;});return;}this.page='files';this.generation++;this.options.commit(candidate);this.message('XML applied. XML import follows the original field mappings and resets unused binary bits.');}catch(e){this.error(e);}}
  private error(error:unknown):void {this.message(error instanceof Error?error.message:String(error),true);}
  private async load(file:File):Promise<void> {
   if(this.busy)return;this.busy=true;const generation=this.generation;
-  try{const candidate=await importCharacterFile(file);if(generation!==this.generation)return;this.options.commit(candidate);this.message(`Loaded ${file.name}.`);}catch(e){if(generation===this.generation)this.error(e);}finally{this.busy=false;}
+  try{const candidate=await importCharacterFile(file);if(generation!==this.generation)return;if(!validateWii(candidate.toBytes()).valid||xmlChangesFor(candidate).length){this.message('Import staged unchanged. Review compatibility issues and proposed repairs.',true);this.options.review(candidate,'Imported '+file.name,file,()=>this.message('Reviewed import accepted: '+file.name+'. Check the compatibility status for any unresolved issues.'));return;}this.options.commit(candidate);this.message(`Loaded ${file.name}.`);}catch(e){if(generation===this.generation)this.error(e);}finally{this.busy=false;}
  }
- private save(type:'mii'|'xml'):void {try{downloadCharacter(this.options.getModel(),type);this.message(`Download requested (${type==='mii'?'74-byte .mii':'XML'}).${type==='mii'?' '+wiiExportNotice(this.options.getModel().toBytes()):''}`);}catch(e){this.error(e);}}
+ private save(type:'mii'|'xml'):void {try{if(type==='mii'){const result=validateWii(this.options.getModel().toBytes());if(!result.valid){this.options.reviewCurrent();requireWii(this.options.getModel().toBytes());}}downloadCharacter(this.options.getModel(),type);this.message(`Download requested (${type==='mii'?'74-byte .mii':'XML'}).${type==='mii'?' '+'Software profile validated; ownership, hardware and games are not certified.':''}`);}catch(e){this.error(e);}}
  mount(editor:SVGSVGElement):void {
   this.abort.abort();this.abort=new AbortController();if(!this.page)return;
   const signal=this.abort.signal,scene=buildFileScene(this.page,this.page==='image'?this.image.frames:{}),svg=renderHeadSvg(scene,{catalog:GUI_ASSETS});svg.dataset.filePage=this.page;svg.setAttribute('role','dialog');svg.setAttribute('aria-modal','true');svg.setAttribute('tabindex','-1');svg.setAttribute('aria-label',this.page==='files'?'Mii Files':this.page==='xml'?'Mii XML':'Export Mii image');svg.setAttribute('width','640');svg.setAttribute('height','500');svg.querySelector('title')!.textContent=this.page==='files'?'Mii Files':this.page==='xml'?'Mii XML':'Export Mii image';
@@ -43,7 +43,7 @@ export class FileDialog {
    if(name==='previewHolder'){const preview=renderHeadSvg(filePreviewScene(this.options.getModel()));preview.setAttribute('width','120');preview.setAttribute('height','260');preview.style.overflow='hidden';preview.dataset.filePreview='original';group.append(preview);}
    const metadata=GUI_TEXTS[String(node.symbolId) as keyof typeof GUI_TEXTS];
    if(metadata){const b=metadata.bounds,a=metadata.attributes,c=metadata.color;const foreign=make('foreignObject',{x:b.x,y:b.y,width:b.width,height:b.height});
-    if(name==='xmlText'){const text=document.createElement('textarea');text.id='file-xml';text.className='file-xml';text.setAttribute('aria-label','Mii XML');text.wrap='off';text.spellcheck=false;text.value=this.draft;text.addEventListener('input',()=>{this.draft=text.value;},{signal});foreign.append(text);group.append(foreign);}
+    if(name==='xmlText'){const text=document.createElement('textarea');text.id='file-xml';text.className='file-xml';text.setAttribute('aria-label','Mii XML');text.wrap='off';text.spellcheck=false;text.readOnly=!validateWii(this.options.getModel().toBytes()).valid;text.value=this.draft;text.addEventListener('input',()=>{this.draft=text.value;},{signal});foreign.append(text);group.append(foreign);}
     else if(name==='informationText'||name==='versions'){const text=document.createElement('div');text.className='file-text';text.dataset.fileText=name;text.style.fontSize=`${Number(a.fontHeight)/20}px`;text.style.lineHeight=`${Number(a.fontHeight)/20+2}px`;text.style.color=`rgb(${c?.red??0},${c?.green??0},${c?.blue??0})`;text.style.textAlign=name==='versions'?'right':'left';text.textContent=name==='versions'?'Editor: Web\nCharacter: original vectors':'';foreign.append(text);group.append(foreign);}
    }
    const labels:Record<string,string>={actionLoadMii:'Load Mii or XML',actionSaveMii:'Save Mii',screenXML:'View and edit XML',screenImage:'Export image',screenOK:'Return to editor',screenFile:this.page==='image'?'Return to Files':'Return to Files and apply XML',actionImage:'Save image',actionSaveXML:'Save current Mii as XML'};

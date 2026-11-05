@@ -27,3 +27,10 @@ Unmodified SWFs were captured in Ruffle 0.7.1 wgpu-webgl at native/2× density. 
 ## Wii range warnings
 
 Save Mii now adds a read-only warning in the existing status area for nonstandard Wii RCD ranges and applicable ID/calendar/padding cautions. It does not modify or block the downloaded bytes. Flash-compatible is distinct from Wii-compatible, and MiiJS acceptance is not hardware certification. See WII_COMPATIBILITY.md.
+
+
+## Phase 6 superseding import/export policy
+
+The historical Phase 5A behavior above is now guarded by [WII_PROFILE.md](WII_PROFILE.md). Exact 74-byte binary imports are staged and validated before replacing the current character. Incompatible records require an explicit review with original/proposed previews and ordered changes; Cancel leaves current bytes unchanged. Source-renderable unresolved records may be explicitly inspected read-only. Normal Save Mii blocks unresolved records; distinct archival downloads preserve exact originals without compatibility claims. The latest pre-repair record is retained as described in STORAGE_CONTRACT.md.
+
+XML still uses the original codec. Detected legacy coercions/clamping/truncation/ignored fields now require review, even when the decoded result is valid. Original XML file/text can be archived; a decoded binary backup does not preserve all original XML or unknown bits. User-facing mole max metadata is 8, while source-fidelity serializer tests remain unchanged. No remote DTD/entities are loaded. PNG/JPEG export is unchanged and is not a binary compatibility claim.

@@ -1,0 +1,18 @@
+{
+  "engine": "chromium",
+  "browserVersion": "156.0.8078.80",
+  "mode": "production",
+  "checks": [
+    "219 original selections, 59 palette choices, 570 option actions with whole-binary isolation",
+    "Both source sliders: keyboard, dragging, off-center grab, narrow scaling, outside release; untouched dimension preserved",
+    "Automatic persistence and reload preserve the complete edited binary",
+    "URL overrides old saved data, saves the final import, and follows edits on refresh",
+    "Native emulated touch: captured dragging, outside release and cancellation",
+    "Missing/corrupt/out-of-range storage, malformed/duplicate URL and blocked read/write/getter handled"
+  ],
+  "selected": 219,
+  "colors": 59,
+  "options": 570,
+  "errors": [],
+  "externalRequests": []
+}

@@ -1,3 +1,7 @@
+# Current Phase 6 policy
+
+The raw codec/source fidelity documentation below remains valid. Production creation, editing, repair and Save Mii additionally enforce [WII_PROFILE.md](WII_PROFILE.md); raw source ranges (notably mole 0–15) do not define normal editor limits. Original randomization/controller oracles remain test-only. No compatibility mode toggle exists. XML is lossy for unknown binary bits.
+
 # Phase 2 data API
 
 Phase 2 implements the data model; the browser screen remains the existing Phase 1 name preview. Original renderer/UI, file dialogs and persistence have not been added. No dependency was added for Phase 2.

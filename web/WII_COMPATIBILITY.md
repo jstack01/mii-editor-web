@@ -1,4 +1,6 @@
-# Randomized .mii compatibility investigation
+# Randomized .mii compatibility investigation (historical)
+
+**Current policy — Phase 6:** the original findings below remain evidence. Production generation/editing now use [WII_PROFILE.md](WII_PROFILE.md), with no legacy toggle. Imports require explicit reviewed corrections, and normal Save Mii blocks unresolved records. The earlier warn-only/optional-mode recommendation below is superseded. Physical Wii/game certification remains unverified; see [PHASE7_VERIFICATION.md](PHASE7_VERIFICATION.md).
 
 ## Finding
 

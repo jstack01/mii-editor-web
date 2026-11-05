@@ -1,3 +1,4 @@
+import {legacyRandomize} from '../../test-support/legacyRandomize';
 // Node-only corpus/ActionScript differential tests; production audit remains TypeScript.
 import { expect, it } from "vitest";
 import { readFileSync, writeFileSync } from "node:fs";
@@ -114,7 +115,7 @@ it("matches original random arithmetic byte-for-byte over 10,000 draws; only mol
 	const failures = {}, histogram = Array(16).fill(0), hardware = {}, samples = [];
 	for (let i = 0; i < 1e4; i++) {
 		const wanted = oracle(model.toBytes(), ref);
-		model.randomize(rng);
+		legacyRandomize(model,rng);
 		expect(model.toBytes()).toEqual(wanted);
 		for (const f of Object.keys(MII_FIELDS)) {
 			const d = definitions.get(f), value = model.getValue(f);
@@ -153,13 +154,13 @@ it("preserves reserved bytes during randomization and cannot create the reported
 	for (let i = 0; i < 200; i++) {
 		const wanted = oracle(model.toBytes(), seeded(i + 1));
 		const next = seeded(i + 1);
-		model.randomize(next);
+		legacyRandomize(model,next);
 		expect(model.toBytes()).toEqual(wanted);
 		expect(model.getValue("eyebrowSize")).toBeLessThanOrEqual(8);
 		expect(model.getValue("eyebrowY")).toBeLessThanOrEqual(18);
 		expect(model.getValue("birthMonth")).toBeLessThanOrEqual(12);
 	}
-	model.randomize(rng);
+	legacyRandomize(model,rng);
 	expect(model.toBytes()[0] & 128).toBe(128);
 	expect(auditWiiRCD(model.toBytes()).cautions.some((c) => c.includes("padding"))).toBe(true);
 });
@@ -190,4 +191,4 @@ it("checks ID validity, temporary/special flags, calendar, wider RFL fields and 
 	expect(auditWiiRCD(Buffer.from(corpus[2].hex, "hex")).cautions.some((x) => x.startsWith("Birthday 11/31"))).toBe(true);
 });
 
-it('keeps exact source randomization endpoints rather than imposing Wii limits',()=>{for(const [rng,max]of [[()=>0,false],[()=>1-Number.EPSILON,true]]){const m=MiiCharacterData.fromHex(DEFAULT_MII_HEX);m.randomize(rng);for(const [name,f]of definitions)expect(m.getValue(name)).toBe(max?f.max:f.min);expect(m.getValue('moleSize')).toBe(max?15:0);}});
+it('keeps exact source randomization endpoints rather than imposing Wii limits',()=>{for(const [rng,max]of [[()=>0,false],[()=>1-Number.EPSILON,true]]){const m=MiiCharacterData.fromHex(DEFAULT_MII_HEX);legacyRandomize(m,rng);for(const [name,f]of definitions)expect(m.getValue(name)).toBe(max?f.max:f.min);expect(m.getValue('moleSize')).toBe(max?15:0);}});

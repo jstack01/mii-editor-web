@@ -1,7 +1,9 @@
+// Historical transport precedence uses an explicit reference-record fixture.
 import {expect,it} from 'vitest';
 import {DEFAULT_MII_HEX} from '../generated/default-character';
 import {MiiCharacterData} from '../model/MiiCharacterData';
-import {validatedHex,startupCharacter,saveCharacter,shareURL,STORAGE_KEY,type CharacterStorage} from './browserPersistence';
+import {validatedHex,startupCharacter as start,saveCharacter,shareURL,STORAGE_KEY,type CharacterStorage} from './browserPersistence';
+const startupCharacter=(url:string,storage:()=>CharacterStorage)=>start(url,storage,()=>MiiCharacterData.fromHex(DEFAULT_MII_HEX).toBytes());
 function memory(raw:string|null=null){const writes:string[]=[];const store:CharacterStorage={getItem:(key)=>{expect(key).toBe(STORAGE_KEY);return raw;},setItem:(key,value)=>{expect(key).toBe(STORAGE_KEY);raw=value;writes.push(value);}};return {store:()=>store,writes};}
 const other=MiiCharacterData.fromHex(DEFAULT_MII_HEX);other.name='Stored';const saved=other.toHex();other.name='URL';const imported=other.toHex();
 it('applies default < validated saved < validated URL precedence without intermediate writes',()=>{

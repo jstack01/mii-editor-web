@@ -1,7 +1,8 @@
+import {randomizeWii,wiiIds,type WiiIdAllocator} from '../compatibility/wiiProfile';
 /** Original Wii Mii data model. Source: mii/MiiCharacterData.as and values/*.as.
  * Binary loads preserve all 592 bits; individual edits change only their bit field.
  */
-import { MII_FIELDS, MII_VALUE_NAMES } from '../generated/mii-schema';
+import { MII_FIELDS } from '../generated/mii-schema';
 import { MiiDataValue, asInt } from './MiiDataValue';
 import { valueToFrame, frameToValue } from './featureOrder';
 import { applyMiiXML, serializeMiiXML, parseXMLDocument } from './miiXml';
@@ -141,12 +142,7 @@ export class MiiCharacterData {
     return typeof value === 'number' ? valueToFrame(name, value) : 0;
   }
   frameToValue(name: string, frame: number): number { return frameToValue(name, frame); }
-  randomize(rng: () => number = Math.random): void {
-    for (const name of MII_VALUE_NAMES) (this.values.get(name) as MiiDataValue).randomize(rng);
-    for (const field of this.values.get('id') as MiiDataValue[]) field.randomize(rng);
-    this.name = 'Random';
-    this.creator = 'Mii Editor';
-  }
+  randomize(rng:()=>number=Math.random,ids:WiiIdAllocator=wiiIds):void {randomizeWii(this,rng,ids);}
   /** Internal reset used ONLY by the legacy XML import path. */
   defaultBlocks(): void { this.words.fill(0); }
   toXMLString(): string { return serializeMiiXML(this, true); }

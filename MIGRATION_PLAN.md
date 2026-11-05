@@ -1,6 +1,6 @@
 # Mii Editor migration assessment and plan
 
-Status: Phases 0–4B and Phase 5A are complete. Editing, persistence, sharing and local .mii/XML operations work. Phase 5B is complete. Commit the tested functional reproduction baseline before Phase 6 default Wii-compatibility corrections; none has begun in this milestone.
+Status: Phases 0–5B and Phase 6 are complete against the documented Wii software profile. The tested original reproduction baseline is committed as `ebc0373`. New/default/randomized characters and normal editing now enforce the default Wii software constraints; incompatible imports require explicit review/repair and unresolved Save Mii is blocked. There is no permanent compatibility toggle. Physical Wii, emulator transfer and individual-game certification remain Phase 7 and are unverified. Historical milestone records below retain their original policies/results; section 17 and web/WII_PROFILE.md supersede earlier warn-only/optional-mode behavior.
 Reviewed: November 4, 2026. Updated November 5, 2026 after Phase 5B and the approved final product direction.
 
 ## 1. Scope and evidence
@@ -294,7 +294,7 @@ Smallest purely internal unit: `Range.clamp`. The name-field slice is the smalle
 - Establish a thoroughly tested functional reproduction baseline: all prior data/XML/rendering/editor/file/persistence suites, image-export checks, TypeScript/build and source-integrity checks pass; diagnostics remain available. Record the parity matrix and unresolved/deferred features, including incomplete tutorial and unverified browser engines.
 - **Gate: complete and locally commit this reproduction milestone before implementing Wii-compatibility corrections.** The original Flash application is the reference for UI, graphics, functionality and record reconstruction, not a permanent requirement to preserve its bugs. Phase 5B must not change generation, editing ranges, import correction or binary-export validation policies.
 
-### Phase 6 — Wii-compatible creation and editing as standard behavior (after committed reproduction baseline)
+### Phase 6 — Wii-compatible creation and editing as standard behavior (complete for documented software profile)
 
 - New/default and randomized characters must conform to the intended Wii format by default. **No permanent legacy/Wii compatibility toggle.** Do not replace the faithful reproduction baseline until its commit exists.
 - Review every editable attribute against independent Wii RCD/RFL evidence; constrain controls and generation to supported ranges, including mole size. Keep preview, controls and serialized character data consistent after corrections.
@@ -307,7 +307,7 @@ Smallest purely internal unit: `Range.clamp`. The name-field slice is the smalle
 
 ### Phase 7 — physical Wii and game/destination verification
 
-- Define a physical test matrix covering real Wii hardware, supported transfer/import routes, Mii Channel, relevant games, normal/special/temporary IDs, duplicate IDs, console ownership and local-only/mingling behavior. Confirm required RCD/RSD/database/remote wrappers and checksums in each route.
+- The approved targets are real Wii consoles, emulators (including Dolphin), and Wii games. Define an evidence-based matrix for transfer/import routes, Mii Channel, relevant games, normal/special/temporary IDs, duplicate IDs, console ownership and local-only/mingling behavior. Confirm required RCD/RSD/database/remote wrappers and checksums in each route. See web/PHASE7_VERIFICATION.md. Unknown-owner browser records do not prove destination uniqueness; separate origins/concurrent tabs can collide. Establish a verified importer/owner/identity policy before extending compatibility claims.
 - Document hardware, firmware, game versions, destination tools, test fixtures and outcomes. Identify any requirements that cannot be checked without physical equipment; do not mark these verified based on MiiJS, Ruffle or a decompilation.
 - **Certification gate: no claim of real-Wii or individual-game compatibility until the relevant physical tests pass.** Keep scope-specific limitations visible even after other targets pass.
 
@@ -660,3 +660,43 @@ The complete existing SVG character scene rasterizes into local Canvas with sour
 Native/2× default, head-only and transparent-page captures compare exact source coordinates against unmodified SWFs in Ruffle 0.7.1 wgpu-webgl. The original connectivity alert was dismissed; no service was stubbed and no original encoded-image download was obtained. Source body blur is preserved despite Ruffle's different shadow rasterization. Device-font metrics, CSS approximation of the source text drop shadow, SVG versus bitmap antialiasing and browser versus Adobe JPEG encoding remain limits. No Adobe Flash pixel-perfect or physical Wii/game certification is claimed.
 
 See web/IMAGE_EXPORT.md and evidence/phase5b/ for source maps, reference captures, decoded browser images, comparisons, integrity records and reports. Launch web/dev.sh, open http://127.0.0.1:5173/, then File → Export. This completes the approved functional reproduction scope, with incomplete tutorial and documented visual/engine limits still disclosed. Commit this baseline and stop. **Next is Phase 6: Wii-compatible generation/editing as the standard, no permanent mode toggle, explicit non-destructive correction of imported legacy data and pre-export validation.** Keep original fidelity and corrected compatibility tests separate; physical certification remains Phase 7. No Phase 6 changes were started here.
+
+
+## 17. Phase 6 completed — default Wii software compatibility (November 5, 2026)
+
+### Baseline gate and architecture
+
+The existing Phase 5B reproduction commit `ebc0373` was already present and clean. Before compatibility implementation, the complete baseline passed 272 unit tests, seven Python recovery/integrity tests, TypeScript, production build, development and production browser suites. Evidence is in `evidence/phase6/baseline-verification.json` and baseline transcripts. Git remains local with no remote; no history was restructured.
+
+The existing model/renderer, source vectors, mappings and file/image interface are retained. `web/src/compatibility/wiiProfile.ts` supplies shared creation/edit/repair/export validation; no new dependency or permanent legacy-mode toggle was added. The unchanged raw 37-word codec remains lossless/permissive. Original randomizer/controller behavior survives only in test-support modules, separate from production policy and the corrected tests.
+
+### Rules and intentional corrections
+
+`web/WII_PROFILE.md` lists all 45 numeric attributes, physical offsets/widths, the wider RFL fields, source classifications and every intentional deviation. Mole is now 0–8. Body bytes and high bits of known RFL fields are checked, rather than relying only on masked Flash getters. Birthday pairs are valid or unset; February 29 is supported because the format stores no year. The inspected RFL body maximum 128 differs from the conservative decoder/editor maximum 127; this is documented rather than invented as a universal Nintendo rule. Unknown padding/source flags are preserved with advisory warnings, not silently zeroed.
+
+New defaults keep the recovered appearance but receive a new normal non-temporary ID and unknown/zero owner bytes. Random creates a fresh bounded record with valid dates, no inherited console identity and separate ID allocation. The new logical four-second ID sequence avoids in-session and sequential-origin reuse, but **does not guarantee cross-tab/global/destination uniqueness**. Separate browsers/origins can collide. No fake console owner is generated; imported owner halves survive corrections. The policy is software-valid, not a claim of real-console ownership or transferability. Existing valid specials remain special/local-only; temporary records require an explicitly reviewed conversion for the persistent profile.
+
+Normal controls cannot create out-of-range data. Invalid calendar/ID/name drafts do not commit; full physical fields are edited without touching unrelated bits. Existing art transforms remain source-based, including the mole's original interpolation; control/preview use the same stored value. Two-digit ID display fixes the prior cosmetic byte-padding bug without rewriting the raw legacy codec.
+
+### Imported data and export safety
+
+Incompatible imports are staged with original/proposed previews, exact hex, problems and ordered before/after corrections. Cancel leaves the active character and its persistence unchanged. Explicit approval applies/revalidates the proposal. Unsupported original feature values are never approximately rendered; supported unresolved originals may be explicitly inspected read-only. Normal editing and Save Mii remain blocked until repair. Archival originals are clearly separate downloads with no compatibility claim; the original files and latest pre-repair bytes are preserved. `STORAGE_CONTRACT.md` documents the bounded backup and ID high-water keys, unavailable storage behavior, saved/shared quarantine and URL precedence.
+
+XML still uses the original codec. User-facing import detects/discloses clamping/coercion/truncation/ignored data before acceptance; source-fidelity XML tests remain intact. Original XML is downloadable during review, while the decoded-record backup is not claimed lossless XML. User-facing mole maximum metadata is 8. No external DTD/entities, new record padding, invented CRC or format change was introduced. PNG/JPEG export and development renderer diagnostics remain working.
+
+### Verification
+
+- **338 unit tests / 11 files** pass, including original data/XML/graphics/GUI/storage/file/image suites and distinct corrected-policy tests. Original legacy randomization assertions remain test-only and continue characterizing its 10,000-record incompatibility rate.
+- **10,000 deterministic new randomized records** (seed `0x6a74`) satisfy profile rules; the independent pinned, unmodified MiiJS 3.1.1 RCD validator accepts **10,000/10,000**, with no external requests. MiiJS does not prove calendar/ID semantics; independent RFL-derived fixtures cover those separately.
+- All scalar min/max boundaries, all 512 encoded month/day pairs, flags/contradictions, sequential reload/rollback/exhaustion and known collision limits, reserved-bit isolation, and transactional repairs pass. All seven original corpus files remain unchanged. Their reviewed outputs all pass independent RCD validation; the two originally fully valid samples remain byte-identical.
+- Full development **and production** Chrome 156 browser suites pass: 62 native XML cases, 992 rendering sweeps, 13 screens at native/2×, 219 selections/59 palette selections/570 adjustment checks, sliders/pointers/keyboard, prior file/XML/image operations, and new repair/cancel/archival/export/persistence/share checks. Each new suite also checks 32 actual Random-button binary downloads and all seven reviewed sample exports, with no browser errors or external requests.
+- TypeScript, production build and all seven Python recovery/integrity tests pass. All **1,718 protected content files** retain the exact file set and hashes; original corpus hashes are unchanged. Finder metadata is excluded as previously documented. No SOURCE/ or EXTRACTED-SWF/ content was modified.
+- Firefox and WebKit checks were attempted but their installed runtimes are missing. They remain unverified. The existing Vite bundle-size advisory and documented original-renderer/font/antialiasing discrepancies remain; no speculative artwork changes were made.
+
+Selected reports, independent decoder results, repaired corpus hex, baseline/current transcripts and an inspected actual browser repair screenshot are retained in `evidence/phase6/`. Large deterministic hex corpora remain reproducible temporary artifacts rather than unnecessary committed outputs. Existing visual regressions use the historical default as an explicit saved input fixture; a separate fresh-origin browser suite verifies the actual new-default factory, so fixture fidelity does not conceal creation behavior.
+
+### Manual review, remaining limits and stop point
+
+Launch `web/dev.sh`, open the reported local URL (normally http://127.0.0.1:5173/), and use Random/edit/File as before. Load FAIL-1/2/3 through File → Load: review listed changes and previews, cancel to verify no replacement, then reload and Apply reviewed repairs → Save Mii. The bytes stay 74 long. Inspect `evidence/phase6/repair-review.png`. Try impossible birthday drafts, mole increase at 8, share/reload and the explicit archival backup. Do not describe acceptance in a software dashboard as physical certification.
+
+Phase 6 stops here. **Next is Phase 7 destination verification**, targeting real Wii consoles, emulators and Wii games, with a verified transfer/container/checksum/owner/duplicate-ID policy and actual hardware evidence. `web/PHASE7_VERIFICATION.md` records the matrix and known limits. No physical test, game certification, database insertion or speculative console-identity modification was performed. Unknown ownership and cross-browser/concurrent ID collision risk remain explicit; no unsafe guessed identity solution is represented as complete.

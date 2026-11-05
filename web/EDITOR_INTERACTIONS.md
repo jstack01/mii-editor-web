@@ -1,3 +1,7 @@
+# Phase 6 constraints
+
+The original interactions below now share [WII_PROFILE.md](WII_PROFILE.md). Mole size stops at 8; birthdays commit valid pairs; normal editing rejects invalid ID/Mingle/name combinations. Unresolved legacy originals are preserved read-only until explicit reviewed repair. The raw source controller remains only a test oracle. Original graphics and feature permutation mappings are unchanged.
+
 # Phase 4B — complete editor interactions
 
 All **13 original editing screens** are functional. Open http://127.0.0.1:5173/ after running `./dev.sh` in `web/`. The original nine top tabs, Head/Facial Features sub-tabs and four accessory sub-tabs retain their recovered graphics and layout.

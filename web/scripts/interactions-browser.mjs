@@ -1,3 +1,4 @@
+import {referenceInput} from './reference-input.mjs';
 import assert from 'node:assert/strict';
 import {spawn} from 'node:child_process';
 import {once} from 'node:events';
@@ -5,7 +6,8 @@ import {readFileSync,mkdirSync,writeFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {chromium,firefox,webkit} from 'playwright';
 const cwd=fileURLToPath(new URL('..',import.meta.url)),preview=process.argv.includes('--preview'),engine=process.env.MII_BROWSER_ENGINE||'chromium',port=preview?5184:5183,origin=`http://127.0.0.1:${port}`;
-const schema=JSON.parse(readFileSync(`${cwd}/../evidence/phase2/schema.json`));const defaultHex=JSON.parse(readFileSync(`${cwd}/../evidence/default-character.json`)).hex;
+const schema=JSON.parse(readFileSync(`${cwd}/../evidence/phase2/schema.json`));schema.fields.moleSize.max=8; // Intentional Wii default; Flash 0–15 oracle remains test-only.
+const defaultHex=JSON.parse(readFileSync(`${cwd}/../evidence/default-character.json`)).hex;
 const out=`${cwd}/test-results/interactions-${engine}${preview?'-production':''}`;mkdirSync(out,{recursive:true});
 const server=spawn(process.execPath,['node_modules/vite/bin/vite.js',...(preview?['preview']:[]),'--host','127.0.0.1','--port',String(port),'--strictPort'],{cwd,stdio:'pipe'});let serverOutput='';server.stdout.on('data',(c)=>serverOutput+=c);server.stderr.on('data',(c)=>serverOutput+=c);
 const storageKey='mii-editor.character.v1',errors=[],external=[];let browser;const checks=[];
@@ -18,7 +20,7 @@ async function navigate(page,id){if(['face2'].includes(id)){await click(page,'ta
 try{
  let ready=false;for(let i=0;i<100;i++){try{ready=(await fetch(origin)).ok;}catch{}if(ready)break;await new Promise((r)=>setTimeout(r,100));}assert.ok(ready,serverOutput);
  browser=await ({chromium,firefox,webkit}[engine]).launch(engine==='chromium'?{channel:process.env.PLAYWRIGHT_CHANNEL||'chrome',headless:true}:{headless:true});
- const context=await browser.newContext({viewport:{width:900,height:760}}),page=await pageFor(context);
+ const context=await browser.newContext({viewport:{width:900,height:760}}),page=await (async()=>{await referenceInput(context);return pageFor(context);})();
  let expected=defaultHex,selected=0,colors=0,options=0;
  for(const [id,prop,count,pages,palette,adjustments]of configurations){
   await navigate(page,id);assert.equal(await hex(page),expected);
@@ -51,13 +53,13 @@ try{
  const current=MiiName(expected,'Shared');
  await page.goto(share.replace(expected,current));assert.equal(await hex(page),current);assert.equal(await page.locator('#stage').getAttribute('data-startup-source'),'url');assert.equal(await page.evaluate((key)=>localStorage.getItem(key),storageKey),current);await page.getByRole('textbox',{name:'Name',exact:true}).fill('Updated');const updated=await hex(page);assert.equal(new URL(page.url()).searchParams.get('mii'),updated);await page.reload();assert.equal(await hex(page),updated);checks.push('URL overrides old saved data, saves the final import, and follows edits on refresh');
  await context.close();
- if(engine==='chromium'){const touchContext=await browser.newContext({hasTouch:true,isMobile:true,viewport:{width:360,height:760},deviceScaleFactor:2});const touchPage=await pageFor(touchContext);await navigate(touchPage,'size');const thumb=touchPage.getByRole('slider',{name:'Height',exact:true});
+ if(engine==='chromium'){const touchContext=await browser.newContext({hasTouch:true,isMobile:true,viewport:{width:360,height:760},deviceScaleFactor:2});await referenceInput(touchContext);const touchPage=await pageFor(touchContext);await navigate(touchPage,'size');const thumb=touchPage.getByRole('slider',{name:'Height',exact:true});
  const cdp=await touchContext.newCDPSession(touchPage),box=await thumb.boundingBox();await thumb.evaluate((e)=>e.addEventListener('pointerdown',(event)=>e.dataset.testPointerId=String(event.pointerId),{once:true}));
   await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:box.x+box.width/2,y:box.y+box.height/2}]});assert.equal(await thumb.evaluate((e)=>e.hasPointerCapture(Number(e.dataset.testPointerId))),true);
   await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:350,y:700}]});assert.equal(await hex(touchPage),setField(defaultHex,'height',127));await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});assert.equal(await thumb.evaluate((e)=>e.hasPointerCapture(Number(e.dataset.testPointerId))),false);
   const next=await thumb.boundingBox();await thumb.evaluate((e)=>e.addEventListener('pointerdown',(event)=>e.dataset.testPointerId=String(event.pointerId),{once:true}));await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:next.x+next.width/2,y:next.y+next.height/2}]});await cdp.send('Input.dispatchTouchEvent',{type:'touchCancel',touchPoints:[]});assert.equal(await thumb.evaluate((e)=>e.hasPointerCapture(Number(e.dataset.testPointerId))),false);assert.ok(!(await thumb.getAttribute('style')).includes('gui-hover-down'));checks.push('Native emulated touch: captured dragging, outside release and cancellation');
  await touchContext.close();}
- for(const [raw,query,expectedSource]of [[null,'','default'],['bad','','default'],['ff'.repeat(74),'','default'],[defaultHex,'?mii=bad','storage'],[defaultHex,'?mii='+current+'&mii='+current,'storage']]){const isolated=await browser.newContext();await isolated.addInitScript(({raw,key})=>{if(raw!==null)localStorage.setItem(key,raw);},{raw,key:storageKey});const p=await pageFor(isolated,origin+'/'+query);assert.equal(await p.locator('#stage').getAttribute('data-startup-source'),expectedSource);assert.equal(await hex(p),defaultHex);await isolated.close();}
+ for(const [raw,query,expectedSource]of [[null,'','default'],['bad','','default'],['ff'.repeat(74),'','default'],[defaultHex,'?mii=bad','storage'],[defaultHex,'?mii='+current+'&mii='+current,'storage']]){const isolated=await browser.newContext();await isolated.addInitScript(({raw,key})=>{if(raw!==null)localStorage.setItem(key,raw);},{raw,key:storageKey});const p=await pageFor(isolated,origin+'/'+query);assert.equal(await p.locator('#stage').getAttribute('data-startup-source'),expectedSource);if(expectedSource==='default'){const current=Buffer.from(await hex(p),'hex'),expected=Buffer.from(defaultHex,'hex');assert.equal(current.readUInt32BE(24)>>>29,4);assert.equal(current.readUInt32BE(28),0);current.copy(expected,24,24,32);assert.equal(current.toString('hex'),expected.toString('hex'));}else assert.equal(await hex(p),defaultHex);await isolated.close();}
  for(const failure of ['getter','read','write']){const isolated=await browser.newContext();await isolated.addInitScript((kind)=>{const fail=()=>{throw new DOMException('Blocked','SecurityError');};if(kind==='getter')Object.defineProperty(window,'localStorage',{get:fail});else Object.defineProperty(Storage.prototype,kind==='read'?'getItem':'setItem',{value:fail});},failure);const p=await pageFor(isolated,origin+'/?mii='+current);assert.equal(await hex(p),current);await p.getByRole('textbox',{name:'Name',exact:true}).fill('Usable');assert.ok((await p.locator('#storage-status').textContent()).includes('unavailable'));assert.equal(new URL(await p.getByRole('textbox',{name:'Mii share URL'}).inputValue()).searchParams.get('mii'),await hex(p));await isolated.close();}
  checks.push('Missing/corrupt/out-of-range storage, malformed/duplicate URL and blocked read/write/getter handled');assert.deepEqual(errors,[]);assert.deepEqual(external,[]);writeFileSync(`${out}/report.json`,JSON.stringify({engine,browserVersion:await browser.version(),mode:preview?'production':'development',checks,selected,colors,options,errors,externalRequests:external},null,2)+'\n');console.log(JSON.stringify({engine,checks,selected,colors,options}));
 }finally{if(browser)await browser.close();server.kill('SIGTERM');await once(server,'exit');}

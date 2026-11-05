@@ -4,7 +4,7 @@ import sliderSource from '../../../EXTRACTED-SWF/classicGUI.swf/scripts/mii/auth
 import {MiiCharacterData,MII_FIELDS} from '../model/MiiCharacterData';
 import {DEFAULT_MII_HEX} from '../generated/default-character';
 import {SCREENS,colorField} from './screens';
-import {EditorSession,OPTIONS} from './editorSession';
+import {LegacyEditorSession as EditorSession,OPTIONS} from '../../test-support/LegacyEditorSession';
 import {buildGuiScene} from './guiScene';
 import {flattenScene} from '../render/headScene';
 import {sliderKey,sliderX,sliderValue} from './slider';
