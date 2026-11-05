@@ -1,4 +1,6 @@
-# Phase 4A — original editor interface reconstruction
+# Phase 4A — original editor interface reconstruction (historical record)
+
+**Phase 4B now enables every category and browser persistence. See [EDITOR_INTERACTIONS.md](EDITOR_INTERACTIONS.md) and [STORAGE_CONTRACT.md](STORAGE_CONTRACT.md) for current behavior. The scope/deferrals below record the earlier Phase 4A milestone.**
 
 The main page reconstructs the original **640 × 500** `classicGUI.swf` editor from its display lists, extracted vectors and embedded static-text glyph outlines. It uses the existing Mii data model and complete character renderer. No whole-screen PNG, Flash runtime, PHP, backend or new dependency is used by the application.
 

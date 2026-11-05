@@ -4,13 +4,12 @@ import {IDENTITY,transformBounds,unionBounds} from '../render/geometry';
 import {IDENTITY_COLOR} from '../render/color';
 import type {MiiCharacterData} from '../model/MiiCharacterData';
 import type {HeadScene,Placement,SceneNode,Matrix} from '../render/types';
-import type {Screen} from './screens';
+import {colorField,type Screen} from './screens';
 export function pageFor(model:MiiCharacterData,screen:Screen):number {return screen.count?Math.floor((model.getFrame(`${screen.prop}Type`)-1)/screen.count):0;}
 export function characterCamera(screen:Screen,footing:readonly[number,number]):Matrix {
  return screen.id==='basic'||screen.id==='size'?[.53,0,0,.53,116,405-.53*footing[1]]:[1,0,0,1,116,130];
 }
-export function buildGuiScene(model:MiiCharacterData,screen:Screen):HeadScene {
- const page=pageFor(model,screen);
+export function buildGuiScene(model:MiiCharacterData,screen:Screen,page=pageFor(model,screen)):HeadScene {
  const make=(p:Placement,path:string,ancestors:number[]):SceneNode=>{
   const a=GUI_ASSETS.symbols[p.symbolId];if(!a)throw Error(`Missing GUI symbol ${p.symbolId}`);if(ancestors.includes(a.id))throw Error('Cyclic GUI dependency');
   const frame=path==='status_gender'?model.getFrame('gender'):path==='status_mingles'?model.getFrame('mingles'):1;
@@ -22,7 +21,7 @@ export function buildGuiScene(model:MiiCharacterData,screen:Screen):HeadScene {
   };
   let color=p.color,matrix=p.matrix;
   if(path.endsWith('.well')&&/^color\d+\.well$/.test(path)){const i=Number(path.split('.')[0]!.slice(5));color=CHARACTER_RULES.palettes[`${screen.palette}Colors`]![i]!;}
-  if(/^color\d+$/.test(path)&&model.getValue(`${screen.palette==='hair'&&(screen.prop==='mustache'||screen.prop==='beard')?'facialHair':screen.prop==='eyebrow'?'eyebrow':screen.palette}Color`)===Number(path.slice(5)))children.push(extra(GUI_CLASSES.ColorSelected,'hilite',100));
+  if(/^color\d+$/.test(path)&&model.getValue(colorField(screen))===Number(path.slice(5)))children.push(extra(GUI_CLASSES.ColorSelected,'hilite',100));
   if(/^item\d+$/.test(path)&&screen.prop){
    const index=Number(path.slice(4)),iconFrame=1+index+screen.count*page,id=GUI_CLASSES[`Icons_${screen.prop}` as keyof typeof GUI_CLASSES];
    if(!id)throw Error(`Missing original icon set ${screen.prop}`);

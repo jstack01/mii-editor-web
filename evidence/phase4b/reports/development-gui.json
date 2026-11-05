@@ -1,0 +1,33 @@
+{
+  "mode": "development",
+  "screens": [
+    "basic",
+    "size",
+    "face",
+    "face2",
+    "hair",
+    "eyebrows",
+    "eyes",
+    "nose",
+    "lips",
+    "accessories",
+    "accessories2",
+    "accessories3",
+    "accessories4"
+  ],
+  "pixelDensities": [
+    1,
+    2
+  ],
+  "nameCreatorByteIsolation": true,
+  "headSkinBitIsolation": true,
+  "stateAcrossScreens": true,
+  "generalControls": true,
+  "sourceHoverPress": true,
+  "immediateCharacterFramesAndTint": true,
+  "keyboard": true,
+  "uniformScaling": true,
+  "diagnosticsDevelopmentOnly": true,
+  "errors": [],
+  "externalRequests": []
+}

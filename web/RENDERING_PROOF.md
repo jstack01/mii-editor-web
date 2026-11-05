@@ -55,4 +55,4 @@ python3 tools/compare-character-reference.py evidence/phase3b
 python3 -m unittest discover -s tools -p 'test_*.py' -v
 ```
 
-Phase 3B is the historical renderer milestone. Phase 4A now reconstructs the original interface; see GUI_RECONSTRUCTION.md. The renderer test bench is retained separately in development. Browser persistence and the remaining category interactions are Phase 4B; file dialogs/export and tutorial remain deferred.
+Phase 3B is the historical renderer milestone. Phase 4B now makes the original interface fully interactive; see EDITOR_INTERACTIONS.md. The renderer test bench is retained separately in development. Browser persistence and all category interactions are implemented. File dialogs/export and tutorial remain deferred.

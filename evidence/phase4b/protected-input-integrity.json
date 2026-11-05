@@ -1,0 +1,8 @@
+{
+  "protectedFiles": 1725,
+  "allMatchMilestoneStart": true,
+  "addedModifiedRemoved": [],
+  "baselineReference": "evidence/phase2/protected-inputs.sha256.json",
+  "baselineHashesSha256": "f405a19d8510e5f383a77c7be57f74daa8bf0ec206c44e6f108ae12ccd023f80",
+  "note": "Full protected file set and SHA-256 checked before and after Phase 4B, including ignored OS metadata."
+}

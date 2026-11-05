@@ -1,0 +1,338 @@
+{
+  "sameBinaryFixtures": true,
+  "bestFitRegistrationUsed": false,
+  "thresholdForParity": null,
+  "note": "Footer URL origin differs; excluded from quantitative ROI. Includes source-grid/font/stroke/antialiasing differences. Ruffle is an emulator, not Adobe Flash certification.",
+  "cases": [
+    {
+      "screen": "accessories",
+      "deviceScaleFactor": 1,
+      "meanAbsoluteRGBDifference": [
+        0.92352585961921,
+        0.9277244955953395,
+        0.9459292412617221
+      ],
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ]
+    },
+    {
+      "screen": "accessories2",
+      "deviceScaleFactor": 1,
+      "meanAbsoluteRGBDifference": [
+        0.9745453253765274,
+        0.9705846831486218,
+        0.982459505541347
+      ],
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ]
+    },
+    {
+      "screen": "accessories3",
+      "deviceScaleFactor": 1,
+      "meanAbsoluteRGBDifference": [
+        0.9512574595055413,
+        0.9498756749076442,
+        0.9592995169082126
+      ],
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ]
+    },
+    {
+      "screen": "accessories4",
+      "deviceScaleFactor": 1,
+      "meanAbsoluteRGBDifference": [
+        0.9141837169650469,
+        0.908518044899119,
+        0.9067242114237
+      ],
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ]
+    },
+    {
+      "screen": "eyebrows",
+      "deviceScaleFactor": 1,
+      "meanAbsoluteRGBDifference": [
+        0.7123437055981813,
+        0.7240764421710714,
+        0.7460571184995738
+      ],
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ]
+    },
+    {
+      "screen": "eyes",
+      "deviceScaleFactor": 1,
+      "meanAbsoluteRGBDifference": [
+        0.7004795396419438,
+        0.7177820403523728,
+        0.7427287581699347
+      ],
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ]
+    },
+    {
+      "screen": "face",
+      "deviceScaleFactor": 1,
+      "meanAbsoluteRGBDifference": [
+        0.6845126456379653,
+        0.642512077294686,
+        0.6142760727479397
+      ],
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ]
+    },
+    {
+      "screen": "face2",
+      "deviceScaleFactor": 1,
+      "meanAbsoluteRGBDifference": [
+        0.659757743677181,
+        0.6367114236999147,
+        0.6086175049730037
+      ],
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ]
+    },
+    {
+      "screen": "hair",
+      "deviceScaleFactor": 1,
+      "meanAbsoluteRGBDifference": [
+        0.6169259732878659,
+        0.6271845694799659,
+        0.6426612674055129
+      ],
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ]
+    },
+    {
+      "screen": "lips",
+      "deviceScaleFactor": 1,
+      "meanAbsoluteRGBDifference": [
+        0.6780193236714975,
+        0.6852728047740836,
+        0.7029589371980677
+      ],
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ]
+    },
+    {
+      "screen": "nose",
+      "deviceScaleFactor": 1,
+      "meanAbsoluteRGBDifference": [
+        0.476179312304632,
+        0.5104930377948281,
+        0.5272165387894289
+      ],
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ]
+    },
+    {
+      "screen": "accessories",
+      "deviceScaleFactor": 2,
+      "meanAbsoluteRGBDifference": [
+        0.7640531756180733,
+        0.7197339443023586,
+        0.716126740551293
+      ],
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ]
+    },
+    {
+      "screen": "accessories2",
+      "deviceScaleFactor": 2,
+      "meanAbsoluteRGBDifference": [
+        0.6423149332196647,
+        0.6087915601023018,
+        0.6074035592497868
+      ],
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ]
+    },
+    {
+      "screen": "accessories3",
+      "deviceScaleFactor": 2,
+      "meanAbsoluteRGBDifference": [
+        0.6318707374254049,
+        0.599117291844274,
+        0.5956166524580847
+      ],
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ]
+    },
+    {
+      "screen": "accessories4",
+      "deviceScaleFactor": 2,
+      "meanAbsoluteRGBDifference": [
+        0.6285308326229042,
+        0.5962311736288718,
+        0.5926177536231884
+      ],
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ]
+    },
+    {
+      "screen": "eyebrows",
+      "deviceScaleFactor": 2,
+      "meanAbsoluteRGBDifference": [
+        0.6175023088945724,
+        0.5718980889457232,
+        0.5697446007388463
+      ],
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ]
+    },
+    {
+      "screen": "eyes",
+      "deviceScaleFactor": 2,
+      "meanAbsoluteRGBDifference": [
+        0.5818245595339585,
+        0.5433201903949986,
+        0.5410601378232452
+      ],
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ]
+    },
+    {
+      "screen": "face",
+      "deviceScaleFactor": 2,
+      "meanAbsoluteRGBDifference": [
+        0.4492300724637681,
+        0.41486306479113383,
+        0.39213554987212274
+      ],
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ]
+    },
+    {
+      "screen": "face2",
+      "deviceScaleFactor": 2,
+      "meanAbsoluteRGBDifference": [
+        0.6282075873827792,
+        0.5756953324808184,
+        0.5455891233304916
+      ],
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ]
+    },
+    {
+      "screen": "hair",
+      "deviceScaleFactor": 2,
+      "meanAbsoluteRGBDifference": [
+        0.6067339798238136,
+        0.5648719451548735,
+        0.5606022662688264
+      ],
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ]
+    },
+    {
+      "screen": "lips",
+      "deviceScaleFactor": 2,
+      "meanAbsoluteRGBDifference": [
+        0.5813574524012504,
+        0.5429649758454106,
+        0.5418567064506962
+      ],
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ]
+    },
+    {
+      "screen": "nose",
+      "deviceScaleFactor": 2,
+      "meanAbsoluteRGBDifference": [
+        0.38994210002841717,
+        0.3720117576015914,
+        0.3715473145780051
+      ],
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ]
+    }
+  ]
+}

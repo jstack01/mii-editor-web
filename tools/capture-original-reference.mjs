@@ -49,7 +49,7 @@ try{
   if(renderer!=='canvas'){await page.mouse.click(600,22);await page.waitForTimeout(300);}
   if(process.argv.includes('--gui')){
     const screens=[['basic',[[67,43]]],['size',[[130,43]]],['face',[[193,43]]],['face2',[[193,43],[405,124]]],['hair',[[256,43]]],['eyebrows',[[319,43]]],['eyes',[[382,43]]],['nose',[[445,43]]],['lips',[[508,43]]],['accessories',[[571,43]]],['accessories2',[[571,43],[405,124]]],['accessories3',[[571,43],[292,172]]],['accessories4',[[571,43],[405,172]]]];
-    for(const [name,clicks]of screens){for(const[x,y]of clicks){await page.mouse.click(x,y);await page.waitForTimeout(100);}await page.mouse.move(5,490);await page.waitForTimeout(150);await page.screenshot({path:join(output,`${name}-gui.png`)});}
+    for(const [name,clicks]of screens){if(process.argv.includes('--case-screen')&&fixture.id!==name)continue;for(const[x,y]of clicks){await page.mouse.click(x,y);await page.waitForTimeout(700);}await page.mouse.move(5,490);await page.waitForTimeout(300);await page.screenshot({path:join(output,`${name}-gui.png`)});}
   }else{
   await page.screenshot({path:join(output,`${fixture.id}-ruffle.png`)});
   // Original head tab, observed in the first screenshot and original GUI timeline.
@@ -57,6 +57,7 @@ try{
   await page.screenshot({path:join(output,`${fixture.id}-ruffle-head.png`)});}
   }
   }
+  if(logs.some((x)=>x.type==='pageerror'||/Error dispatching event/.test(x.text??'')))throw new Error('Original GUI transition reported an error; inspect the log.');
   const hashes={};for(const file of sourceFiles)hashes[`SOURCE/${file}`]=createHash('sha256').update(await readFile(join(project,'SOURCE',file))).digest('hex');
   const report={runtime:{name:metadata.name,version:metadata.version,renderer,deviceScaleFactor:Number(argument('--device-scale','1'))},originalInputsUnmodified:true,sourceHashes:hashes,adobeFlashParityCertified:false,loaded:true,cases,logs};
   await writeFile(join(output,'reference-log.json'),JSON.stringify(report,null,2)+'\n');

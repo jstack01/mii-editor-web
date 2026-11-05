@@ -1,6 +1,6 @@
 # Mii Editor migration assessment and plan
 
-Status: Phases 0–3B and Phase 4A original interface reconstruction are complete. General and Head editing work; all 13 original screens can be navigated. Other category editing and browser persistence remain Phase 4B. Stop after Phase 4A.
+Status: Phases 0–3B and Phase 4A/4B are complete. All 13 original editing screens are interactive, with automatic validated browser persistence and working Mii share URLs. Stop after Phase 4B. Phase 5 file dialogs and image export remain deferred.
 Reviewed: November 4, 2026. Updated after inspecting the reorganized project and original source package.
 
 ## 1. Scope and evidence
@@ -277,7 +277,7 @@ Smallest purely internal unit: `Range.clamp`. The name-field slice is the smalle
 - Visual acceptance: compare on a stable browser/OS/font baseline at native dimensions and 2× scale. Review overlays/diffs; agree pixel tolerances after measuring Flash-versus-browser antialiasing. No invented universal pixel threshold.
 - Exit requirement: representative reference characters match geometry/layering/color, with remaining rasterization differences recorded and accepted.
 
-### Phase 4 — editor screens and persistence (4A complete; 4B pending)
+### Phase 4 — editor screens and persistence (4A and 4B complete)
 
 - Implement the 13 editing screens with source order, pagination, palette choices, selections and adjustments. Reuse extracted icons/button art with correct bounds.
 - Add General fields, randomize, height/weight drags, page-dependent close-up/full-body view and share-link display.
@@ -496,7 +496,7 @@ See `evidence/phase3b/README.md`, `source-map.json`, screenshot/report snapshots
 Launch from `web/` with `./dev.sh`, open `http://127.0.0.1:5173/`, and use Reference character, Character view and the renderer test controls. Try `?case=hat`, `?case=accessories`, `?case=maximum`, or `?case=compact&diagnostics=1` in development. Phase 3B is complete and work stops here. The next recommended milestone is Phase 4: faithfully reconstruct the original editor screens and browser persistence using this renderer. Local file dialogs/export remain later work and tutorial stays deferred. No full editor-interface or persistence implementation is claimed by this renderer milestone.
 
 
-## 11. Phase 4A completed — original editor interface reconstruction
+## 11. Phase 4A completed — original editor interface reconstruction (historical handoff)
 
 ### Baseline and scope
 
@@ -542,3 +542,60 @@ See `web/GUI_RECONSTRUCTION.md` and `evidence/phase4a/README.md` for implementat
 Phase 4A is complete and work stops here. Open `web/dev.sh` then `http://127.0.0.1:5173/` for the original-style editor; use top tabs and sub-tabs, with General and Head editing enabled. The development-only renderer test bench is `http://127.0.0.1:5173/diagnostics.html`.
 
 Phase 4B should implement the remaining category selectors and page navigation, original feature option adjustments and limits, hair parting, Size sliders/dragging, and browser-based persistence with a separately characterized storage contract. Resolve the documented scale-grid/non-scaling-stroke/device-font questions, extend edited-state reference comparisons, and verify Firefox/WebKit. Keep existing binary behavior and source graphics. File dialogs/import/export remain later work; tutorial remains deferred. Do not treat disabled Phase 4A category controls, saving or sharing as completed features.
+
+
+## 12. Phase 4B completed — all editor interactions and browser persistence
+
+### Baseline and architecture
+
+Confirmed a clean local working tree and existing Phase 4A commit **`2fa7104`** before implementation; no duplicate milestone, remote, push or upload was created. Retained the established TypeScript/Vite/SVG architecture, original graphics/manifests, Phase 2 binary/hex/XML model and complete character renderer. No dependency or lockfile version was changed.
+
+New `gui/editorSession.ts` owns category/page state and routes original item, palette, toggle and option actions to the existing model. The visible page is independent of the selected feature: browsing changes no binary data, highlights appear only on the selected feature's page, page boundaries do not wrap, and category entry returns to the selected feature's original permutation page. `guiScene.ts` now accepts that page explicitly while retaining its prior default API.
+
+### Complete interactions
+
+All 13 screens now work. General retains name, creator, gender, birthday, mingle, IDs, favorite colors and randomization. Size implements height/weight dragging. Head and Facial Features supply 8/12 choices and skin colors. Hair has all 72 styles across six pages, eight colors and mirroring. Eyebrows have 24 styles/two pages, eight colors and X/Y/size/rotation. Eyes have 48 styles/four pages, six colors and X/Y/size/rotation. Nose has 12 styles and Y/size. Mouth has 24 styles/two pages, three colors and Y/size. Glasses have nine styles, six colors and Y/size. Mustache has four states, eight shared facial-hair colors and Y/size. Mole has both states and X/Y/size. Beard has four states and the same facial-hair color field as mustache. All 45 numeric attributes are represented by their original controls, alongside names/IDs.
+
+All field names, palette ownership, item/page counts and option declarations were checked against the original category controllers, `ClassicGUI.as` and `AbstractGUIPage.as`. Selections reuse original one-based frame/permutation mapping; options apply +/-1 and existing source clamping. Existing graphics, green highlights, zoom, registration, nesting and layer order remain. Original page/option buttons retain their artwork and bounded/no-op behavior; no invented disabled state is added at a numeric/page boundary. File is the sole still-unavailable interface button, clearly deferred to Phase 5.
+
+`gui/slider.ts` retains source X=301–528, span 227, noncentral grab offset, continuous thumb position and `int(127 * percent)`. It converts browser coordinates through the inverse SVG screen matrix under uniform scaling, uses native pointer capture, and cleans up on release, cancel, lost capture or category teardown. The captured thumb stays in the DOM while the character/share/storage update. Button keyboard activation uses Enter/Space; sliders add accessible arrows (+/-1), Home/End and Page Up/Down (+/-10). These keyboard/touch protections are intentional browser accessibility extensions, without new artwork.
+
+### Saving, startup and sharing
+
+`storage/browserPersistence.ts` defines **`mii-editor.character.v1`**: one canonical 148-character lowercase hex string / 74 original bytes, without a JSON envelope or format changes. Validation checks exact hex length/syntax and all original numeric ranges; unknown/reserved bits and complex fields remain intact. Strict transport validation is separate from unchanged permissive legacy codec APIs.
+
+Startup is **original default → valid saved browser Mii → valid single `?mii=` parameter**. Resolution completes before any hydration write; only the final valid URL import is saved at initialization, so old local data cannot overwrite it. Saved/default startup does not write solely because the page opened. Malformed, empty, duplicated or out-of-range URL values and invalid saved data fall back gracefully with visible status. Invalid stored content is left untouched until a real valid edit replaces it. Storage getter/read/write errors do not prevent editing or valid URL import; the UI reports actual storage unavailability.
+
+Every real valid mutation, including Size, immediately saves through localStorage. Navigation, browsing and no-op clamping do not save. The original footer now supplies a working current-application share URL, preserving other query parameters/fragment and containing exactly one current Mii payload. Opening it restores the binary ahead of local data. Editing an opened share also replaces its address-bar parameter, preserving latest edits on normal refresh. The current footer URL remains available even if storage fails. No backend, historical server, Clipboard API, automatic upload or external navigation is required.
+
+The detailed contract is `web/STORAGE_CONTRACT.md`, including origin scope, validation, cross-tab last-writer policy and History API fallback. No multi-character library or automatic SharedObject migration is claimed.
+
+### Characterized legacy inconsistencies and intentional changes
+
+Original `LocalSharedStorage.as` stores `localMiis.data.miiArray`, wrapping a single value in an array and flushing. It catches errors but the GUI ignores its return value. Original startup accepts truthy saved/URL data through permissive decoding. Strict validation and user-visible storage status are intentional modern transport behavior; the underlying codecs were not changed.
+
+`ClassicGUI.updateURLText()` also saves, and most handlers/category entries call it. **Original Size changes update the character without calling it**, so URL/storage can lag until a later action. The browser intentionally saves all valid edits consistently. It does not reproduce stale Size saves.
+
+Original Size reads both floating-point thumb positions on every drag. The source expression `int(127 * ((301 + 227 * value/127 - 301)/227))` can decrement some untouched integer values through truncation. The browser preserves the formula for the actively edited dimension while keeping the other dimension's bytes intact; navigation never re-quantizes either field. The exhaustive 0–127 characterization is `evidence/phase4b/legacy-slider-rounding.json`. This is an explicitly documented correction required by unrelated-field preservation, not a silent compatibility change.
+
+### Automated verification
+
+- **242 unit tests pass**, including all previous 223, source declarations/permutations, every tile/page/palette, source option families and limits, off-page highlights, shared colors, mirroring, reserved-bit sentinels, slider math, keyboard behavior and strict storage/URL contract cases.
+- Existing **62 native-browser XML cases**, **992 rendering scenes / all 355 original character shapes**, tint/mask/box-blur pixels and previous dev/production renderer regressions still pass. The development-only diagnostic application remains separate; normal production output excludes it.
+- Native Chrome development and production GUI checks cover all 13 screens at native/2× density. New suites verify **219 original feature selections**, **59 category palette choices** (plus General's 12 in prior GUI checks), **584 adjustment actions** across declared limits, exact whole-binary isolation, page boundaries and selections. Physical pointer hits verify each distinct option family and representative tiles/wells/pages; exhaustive actions also exercise real DOM listeners directly.
+- Both Size sliders pass keyboard, real mouse dragging, noncentral grab, narrow-screen coordinate scaling, pointer capture, outside release, cancel and untouched-dimension preservation checks. Native Chromium touch emulation verifies captured dragging, outside release and cancellation. This is not physical-device certification.
+- Saved data is checked and reloaded after each edited category. Shared URLs override older data, save only the final import, preserve the full binary and follow subsequent edits on refresh. Missing/corrupt/out-of-range saved values, malformed/duplicate URL input, and storage getter/read/write failures remain usable. No page errors or external application requests were observed.
+- TypeScript, production build and all six original SWF recovery/integrity checks pass. The complete bundle remains about **1.14 MB / 238 kB gzip** with Vite's existing large-chunk warning. All **1,725 protected SOURCE/ and EXTRACTED-SWF/ files** match the milestone-start file set and hashes.
+- Firefox and WebKit Playwright runtime executables are **not installed** here. Their paths/availability are recorded; neither engine is certified. Runnable new-suite commands are provided for installed environments. No speculative cross-engine success is claimed.
+
+### Visual review and remaining precision limits
+
+Captured the exact edited binary from all **11 feature screens**, including last pages, palette extremes, mirroring and adjustment extremes. The same bytes were loaded into unmodified original SWFs running in Ruffle 0.7.1 canvas and captured at native and **2× density**. Source-aligned browser/reference galleries and descriptive RGB measurements use no fitted registration or invented parity threshold. Reference transition settling was lengthened to avoid capturing a submenu before its listeners/timeline were ready. Existing Phase 3B/4A evidence retains representative body-size and original General/Size references.
+
+The requested stroke review confirms `noHScaleFlag=false` and `noVScaleFlag=false` on examined panel LINESTYLE2 records. Forcing non-scaling strokes would contradict this evidence, so it was not introduced. The original device face still has zero embedded glyphs; browser Arial/sans-serif remains a documented substitute for editable fields/page counters, while static labels retain recovered glyph paths. Source nine-slice grids remain unchanged. Panel curvature/border/gradient, font metrics, hairlines, rounding and browser/emulator antialiasing remain visual precision limits. No speculative visual changes were made solely to fit Ruffle. No Adobe Flash runtime was executed and **pixel-perfect compatibility is not claimed**.
+
+### Artifacts, launch and stop point
+
+See `web/EDITOR_INTERACTIONS.md`, `web/STORAGE_CONTRACT.md` and `evidence/phase4b/README.md`. The evidence includes matching edited cases, native/2× screenshots, original runtime logs, comparison galleries/ROIs, full dev/production reports, source stroke/font review, slider-rounding characterization and browser availability.
+
+From `web/`, run `./dev.sh` and open `http://127.0.0.1:5173/`. All original editing tabs/sub-tabs now work; copy the Mii URL field to share. Development renderer diagnostics remain `/diagnostics.html`. Work stops after Phase 4B. **Phase 5** remains file/binary/XML dialogs and PNG/JPEG export; tutorial stays deferred. Firefox/WebKit/physical-device and exact Adobe Flash visual parity checks remain release work. No file/image export UI, remote repository or upload was implemented in this milestone.
