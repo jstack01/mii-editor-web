@@ -1,0 +1,130 @@
+{
+  "deviceScaleFactor": 1,
+  "sourceCamera": "AbstractGUIPage: scale .53; x=116-150*.53; y=405-.53*source globalFooting.y",
+  "bestFitRegistrationUsed": false,
+  "mask": "Fully opaque SVG alpha, eroded 3x3, restricted to left preview ROI; excludes shadow, edges, translucent lenses and foreground File-button overlap",
+  "thresholdForParity": null,
+  "cases": [
+    {
+      "id": "default",
+      "opaqueInteriorPixels": 10135,
+      "meanAbsoluteRGBDifference": [
+        1.3161322150962014,
+        1.5948692649235323,
+        1.5534287123828319
+      ],
+      "roi": [
+        28,
+        90,
+        206,
+        390
+      ]
+    },
+    {
+      "id": "feminine",
+      "opaqueInteriorPixels": 12505,
+      "meanAbsoluteRGBDifference": [
+        0.6845261895241903,
+        0.7590563774490204,
+        0.6175929628148741
+      ],
+      "roi": [
+        28,
+        90,
+        206,
+        390
+      ]
+    },
+    {
+      "id": "compact",
+      "opaqueInteriorPixels": 8352,
+      "meanAbsoluteRGBDifference": [
+        0.8479406130268199,
+        0.7939415708812261,
+        0.7789750957854407
+      ],
+      "roi": [
+        28,
+        90,
+        206,
+        390
+      ]
+    },
+    {
+      "id": "maximum",
+      "opaqueInteriorPixels": 20389,
+      "meanAbsoluteRGBDifference": [
+        0.8388346657511403,
+        1.0519888174996321,
+        1.101868654666732
+      ],
+      "roi": [
+        28,
+        90,
+        206,
+        390
+      ]
+    },
+    {
+      "id": "accessories",
+      "opaqueInteriorPixels": 9975,
+      "meanAbsoluteRGBDifference": [
+        1.0890225563909774,
+        0.9103759398496241,
+        0.8449122807017544
+      ],
+      "roi": [
+        28,
+        90,
+        206,
+        390
+      ]
+    },
+    {
+      "id": "foreign",
+      "opaqueInteriorPixels": 8867,
+      "meanAbsoluteRGBDifference": [
+        1.5889252283748732,
+        1.4570880793955114,
+        1.1519115822713433
+      ],
+      "roi": [
+        28,
+        90,
+        206,
+        390
+      ]
+    },
+    {
+      "id": "spacing",
+      "opaqueInteriorPixels": 10035,
+      "meanAbsoluteRGBDifference": [
+        0.8200298953662183,
+        0.7842551071250623,
+        0.8285999003487793
+      ],
+      "roi": [
+        28,
+        90,
+        206,
+        390
+      ]
+    },
+    {
+      "id": "hat",
+      "opaqueInteriorPixels": 14615,
+      "meanAbsoluteRGBDifference": [
+        1.6590489223400615,
+        1.2868970236058843,
+        1.2091686623332194
+      ],
+      "roi": [
+        28,
+        90,
+        206,
+        390
+      ]
+    }
+  ],
+  "note": "Descriptive interior RGB differences. Inspect full source/reference images for silhouettes, shadow and transparent accessories. Ruffle is an emulator, not Adobe Flash certification."
+}

@@ -1,3 +1,4 @@
+import { blurKernels } from './filters';
 import { CHARACTER_ASSETS } from '../generated/character-assets';
 import { concatenateColors, IDENTITY_COLOR, colorMatrix, isIdentityColor } from './color';
 import { IDENTITY, matrixAttribute, multiply, transformPoint } from './geometry';
@@ -12,8 +13,8 @@ function svgElement<K extends keyof SVGElementTagNameMap>(name:K,attrs:Record<st
 }
 export function renderHeadSvg(scene:HeadScene,options:{diagnostics?:boolean;catalog?:AssetCatalog}={}):SVGSVGElement {
   const catalog=options.catalog??CHARACTER_ASSETS;const prefix=`mii-${++sequence}-`;let effect=0;
-  const root=svgElement('svg',{viewBox:`${scene.viewBox.x} ${scene.viewBox.y} ${scene.viewBox.width} ${scene.viewBox.height}`,role:'img','aria-label':'Original default Mii head, rendered from recovered Flash vectors','color-interpolation':'sRGB','data-renderer':'original-vectors'});
-  const title=svgElement('title');title.textContent='Default Mii head · original vector rendering proof';root.append(title);
+  const root=svgElement('svg',{viewBox:`${scene.viewBox.x} ${scene.viewBox.y} ${scene.viewBox.width} ${scene.viewBox.height}`,role:'img','aria-label':scene.mode==='full'?'Mii character rendered from original Flash vectors':'Mii head rendered from original Flash vectors','color-interpolation':'sRGB','data-renderer':'original-vectors'});
+  const title=svgElement('title');title.textContent=scene.mode==='full'?'Complete Mii character · original vector renderer':'Mii head · original vector renderer';root.append(title);
   const defs=svgElement('defs');root.append(defs);const defined=new Set<number>();
   const diagnostics:{node:SceneNode;world:Matrix}[]=[];
   const defineShape=(id:number)=>{
@@ -75,15 +76,28 @@ export function renderHeadSvg(scene:HeadScene,options:{diagnostics?:boolean;cata
         group.append(rendered);
       }
     }
+    if(!forMask&&node.filters?.length&&node.bounds){
+      const marginX=node.filters.reduce((sum,f)=>sum+f.blurX*f.passes,0)+2;
+      const marginY=node.filters.reduce((sum,f)=>sum+f.blurY*f.passes,0)+2;
+      const b=node.bounds;const id=`${prefix}blur-${++effect}`;
+      const filter=svgElement('filter',{id,filterUnits:'userSpaceOnUse',x:b.x-marginX,y:b.y-marginY,width:b.width+2*marginX,height:b.height+2*marginY,'color-interpolation-filters':'sRGB','data-original-blur':node.filters.map((f)=>`${f.blurX}x${f.blurY}/${f.passes}`).join(',')});
+      for(const f of node.filters)for(const kernel of blurKernels(f))filter.append(svgElement('feConvolveMatrix',{order:kernel.order.join(' '),kernelMatrix:kernel.values,divisor:kernel.divisor,edgeMode:'none',preserveAlpha:'false',kernelUnitLength:'1 1'}));
+      defs.append(filter);
+      // An outer wrapper keeps original local filter coordinates independent of
+      // the node placement and preserves the source filter's alpha multiplier.
+      const wrapper=svgElement('g',{filter:`url(#${id})`});
+      for(const element of Array.from(group.childNodes))wrapper.append(element);
+      group.append(wrapper);
+    }
     if(!forMask&&node.name)diagnostics.push({node,world});
     return group;
   };
-  const artwork=svgElement('g',{'data-artwork':'head'});artwork.style.isolation='isolate';
+  const artwork=svgElement('g',{'data-artwork':scene.mode==='full'?'character':'head'});artwork.style.isolation='isolate';
   for(const node of scene.roots)artwork.append(render(node,IDENTITY,IDENTITY_COLOR));root.append(artwork);
   // Vite eliminates this branch and diagnostic artwork in production builds.
   if(import.meta.env.DEV&&options.diagnostics){
     const overlay=svgElement('g',{'data-diagnostics':'alignment','pointer-events':'none'});
-    overlay.append(svgElement('path',{d:'M0 0H300 M0 0V280',stroke:'#aa3344','stroke-width':1,fill:'none'}));
+    overlay.append(svgElement('path',{d:`M0 0H${scene.sourceStage.width} M0 0V${scene.sourceStage.height}`,stroke:'#aa3344','stroke-width':1,fill:'none'}));
     const origin=svgElement('text',{x:4,y:12,fill:'#aa3344','font-size':8});origin.textContent='source origin (0,0)';overlay.append(origin);
     for(const {node,world}of diagnostics){
       const g=svgElement('g',{transform:matrixAttribute(world),'data-diagnostic-part':node.path});

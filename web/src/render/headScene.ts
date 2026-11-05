@@ -1,6 +1,7 @@
 import type { MiiCharacterData } from '../model/MiiCharacterData';
 import { MiiDataValue } from '../model/MiiDataValue';
 import { CHARACTER_ASSETS, CHARACTER_RULES } from '../generated/character-assets';
+import { updateBody } from './bodyScene';
 import { IDENTITY_COLOR, reduceMouthColor } from './color';
 import { patchMatrix, transformBounds, unionBounds } from './geometry';
 import type { AssetCatalog, ColorTransform, HeadScene, Placement, RenderRules, SceneNode } from './types';
@@ -12,7 +13,7 @@ export function getFrame(assetId: number, frame: number, catalog: AssetCatalog =
   if (asset.kind!=='sprite') throw new CharacterAssetError(`Symbol ${assetId} is not a timeline.`);
   const selected=asset.frames[frame-1];
   if (!Number.isInteger(frame)||selected===undefined) throw new CharacterAssetError(`Missing frame ${frame} of original symbol ${assetId}.`);
-  if(selected===null) throw new CharacterAssetError(`Original frame ${frame} of symbol ${assetId} is outside the Phase 3A proof.`);
+  if(selected===null) throw new CharacterAssetError(`Original frame ${frame} of symbol ${assetId} has no recovered display list.`);
   return selected; // An empty list is a valid intentionally blank frame.
 }
 export function rangeValue(model: MiiCharacterData, name: string, rules: RenderRules = CHARACTER_RULES): number {
@@ -28,7 +29,7 @@ function palette(model: MiiCharacterData, field: string, name: string, rules: Re
 function selectedFrame(model: MiiCharacterData, path: string): number {
   const head=model.getFrame('headType');
   const frames: Record<string,number>={
-    'head.face':head,'head.features':Number(model.getValue('facialFeaturesType'))*8+head,
+    'body.shirt.torso':model.getFrame('gender'),'head.face':head,'head.features':Number(model.getValue('facialFeaturesType'))*8+head,
     'head.beard':Number(model.getValue('beardType'))*8+head,
     'head.nose':model.getFrame('noseType'),'head.nose.skin':model.getFrame('noseType'),
     'head.mouth':model.getFrame('mouthType'),'head.mouth.lips':model.getFrame('mouthType'),
@@ -43,6 +44,11 @@ function selectedFrame(model: MiiCharacterData, path: string): number {
 }
 function placeForModel(model: MiiCharacterData, source: Placement, path: string, rules: RenderRules): Placement {
   const placed={...source};
+  if(path==='body.shirt')placed.color=palette(model,'favoriteColor','favoriteColors',rules);
+  if(path==='body.pants'){
+    const first=model.id[0]!;const name=first>=192&&first<=223?'foreignColor':first<=31||(first>=64&&first<=95)?'specialColor':'normalColor';
+    if(!rules.body)throw new CharacterAssetError('Original body rules are missing');placed.color=rules.body.colors[name]!;
+  }
   const skin=()=>palette(model,'skinColor','skinColors',rules);
   const hair=()=>palette(model,'hairColor','hairColors',rules);
   if (path==='head'||path==='headback') {
@@ -87,7 +93,7 @@ function reorderHead(children: SceneNode[], model: MiiCharacterData, rules: Rend
   // The source condition deliberately references eyeY, including for brows.
   if(rangeValue(model,'eyebrowX',rules)>37||eyeY< -67) {move('eyebrowsLeft');move('eyebrowsRight');}
 }
-export function buildHeadScene(model: MiiCharacterData, catalog: AssetCatalog=CHARACTER_ASSETS, rules: RenderRules=CHARACTER_RULES): HeadScene {
+function buildScene(model: MiiCharacterData, includeBody:boolean,catalog: AssetCatalog, rules: RenderRules): HeadScene {
   const build=(source:Placement,path:string,ancestors:readonly number[]):SceneNode=>{
     const asset=catalog.symbols[source.symbolId];
     if(!asset) throw new CharacterAssetError(`Missing original symbol ${source.symbolId} at ${path}.`);
@@ -99,8 +105,13 @@ export function buildHeadScene(model: MiiCharacterData, catalog: AssetCatalog=CH
     const bounds=asset.kind==='shape'?asset.bounds:unionBounds(children.filter((c)=>c.visible&&c.bounds).map((c)=>transformBounds(c.matrix,c.bounds!)));
     return {...placed,path,frame,kind:asset.kind,children,bounds};
   };
-  return {roots:catalog.roots.map((root)=>build(root,root.name??`root${root.depth}`,[])),sourceStage:{x:0,y:0,width:rules.nativeWidth,height:rules.nativeHeight},viewBox:{x:0,y:0,width:300,height:280}};
+  const roots=catalog.roots.filter((root)=>includeBody||root.name!=='body').map((root)=>build(root,root.name??`root${root.depth}`,[]));
+  const scene:HeadScene={roots,sourceStage:{x:0,y:0,width:rules.nativeWidth,height:rules.nativeHeight},viewBox:{x:includeBody?-20:0,y:0,width:includeBody?340:300,height:includeBody?640:280},mode:includeBody?'full':'head'};
+  if(includeBody){if(!rules.body)throw new CharacterAssetError('Original body controller rules missing');const body=roots.find((root)=>root.name==='body');if(!body)throw new CharacterAssetError('Original body root missing');scene.footing=updateBody(body,model.getValue('height'),model.getValue('weight'),rules.body);}
+  return scene;
 }
+export function buildHeadScene(model:MiiCharacterData,catalog:AssetCatalog=CHARACTER_ASSETS,rules:RenderRules=CHARACTER_RULES):HeadScene{return buildScene(model,false,catalog,rules);}
+export function buildCharacterScene(model:MiiCharacterData,catalog:AssetCatalog=CHARACTER_ASSETS,rules:RenderRules=CHARACTER_RULES):HeadScene{return buildScene(model,true,catalog,rules);}
 export function flattenScene(scene: HeadScene): SceneNode[] {
   const output:SceneNode[]=[];const visit=(node:SceneNode)=>{output.push(node);node.children.forEach(visit);};scene.roots.forEach(visit);return output;
 }

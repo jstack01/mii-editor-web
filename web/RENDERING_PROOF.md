@@ -1,66 +1,58 @@
-# Phase 3A — original-vector head proof
+# Phase 3B — complete original-vector character renderer
 
-The existing browser application now displays the original default head. This is a rendering proof, not the full editor interface or a finished character renderer. The body, other nonblank feature frames and the complete editor remain Phase 3B/later work. Name editing, exact binary data display and all Phase 2 APIs remain functional.
+The browser renders every original head, hair, eyebrow, eye, nose, mouth, facial feature, mustache, beard, glasses, mole, hat, body part and clothing variation. The established Phase 2 data model and Phase 3A head API are retained. The original editor interface is a later milestone.
 
-## Open it
+Run `./dev.sh` from `web/`, then open http://127.0.0.1:5173/. Full body is the default. **Character view** selects the unchanged source-coordinate head camera. **Reference character** offers eight independently packed comparison cases; **Original attribute / Value / Apply attribute** exercises all 45 fields using the existing clamping and serialization rules. Name editing affects only the current character's name bytes. Reset restores the original default.
 
-```sh
-cd web
-./dev.sh
-```
+Development diagnostics retain source origins, bounds and registration crosses for head and body. Use the checkbox or `?diagnostics=1`; production builds omit the checkbox and overlay. `?case=hat&view=head` opens a selected case directly.
 
-Open <http://127.0.0.1:5173/>. For development alignment markers, check **Alignment diagnostics (development)** or open <http://127.0.0.1:5173/?diagnostics=1>. The checkbox/overlay are excluded from production builds, even when the query parameter is supplied.
+## Evidence and composition
 
-The application still uses a 640 × 500 surface with uniform scaling. Its head viewport displays source coordinates `(0,0)–(300,280)`, the head portion of the original 300 × 600 character stage. The viewport scales the picture; it does not recenter individual parts. This proof layout is not presented as a recreation of the original editor UI.
+`evidence/manifests/assets.json`, original extracted vector SVGs, `MiiCharacterGraphics.as` and `controllers/MiiBody.as` are authoritative. The read-only generator verifies original SWF and SVG hashes and includes all **385 reachable symbols: 30 timelines and 355 vector shapes**. All timeline frames, including intentionally blank frames, are represented; missing/cyclic dependencies fail explicitly. The unrelated version text/font definitions are not character artwork and are excluded.
 
-## Original evidence and asset scope
+The pure scene graph preserves original nesting, local registration, slight source scale differences, signed/skewed transforms, exact permutations, head offsets and sequential layer moves. Source root order is headback → body → head. Body order is pants → shadow → shirt, including the original unusual shadow placement. No layer order was aesthetically corrected. Tints use affine RGB/alpha multipliers and offsets in sRGB, including negative multipliers, palette ownership, attenuated mouth color, shaded-glasses exceptions and multiply-mode facial features.
 
-- `evidence/manifests/assets.json` supplies root/nested depth lists, symbol IDs, names, matrices, local origins, bounds, frame counts, color transforms and clip depths.
-- `EXTRACTED-SWF/assets.swf/scripts/mii/display/MiiCharacterGraphics.as` supplies geometric ranges, palettes, head offsets, frame selection, mirrored feature operations and runtime layer reorder rules.
-- Asset wrapper classes stop their feature timelines at frame 1; the controller then chooses explicit frames with `gotoAndStop`. `MiiBody.as` was examined; body deformation/footing is deliberately outside this proof.
-- `scripts/generate-character-assets.mjs` reads those inputs without modifying them, checks original SWF/SVG provenance hashes, and produces `src/generated/character-assets.ts`.
-- The compact proof catalog has 28 original symbols: 19 sprite timelines and **nine original SVG shapes**, instantiated 12 times for the default head. It includes frame 1 and every originally blank frame in those timelines. Other nonblank frames are explicitly marked outside Phase 3A rather than misrepresented as blank or substituted.
-- Original shapes: **1** (back hair component), **57** (head), **139** (mouth outline), **158/170** (eye/eyeball components), **244** (brows), **268** (front hair), **349/360** (nose skin/outline). Source SVGs are copied as geometry, not redrawn or approximated.
+The body controller ports original scale ranges and all six anchor points. Torso/legs use width/height; arms use height/width; hands **and feet** use width/width. Neck remains at source Y=220; shadow Y comes from original pants bounds and global footing includes the preserved shadow X. Shirt tint includes hands, as in the original. Pants retain normal, special gold and foreign blue ID-byte classifications.
 
-The default packed values are not all zero: hair=33, eyebrows=6, eyes=2, nose=1 and mouth=23 map to frame 1 through Phase 2's original permutations. Lip tint, facial features, beard, mole, hats, mustache and glasses are intentionally blank for the default. Their original layer slots remain present.
+The full camera is source coordinates `(-20,0)–(320,640)`, providing room around the authored 300 × 600 stage for wide arms and shadow; the head camera remains `(0,0)–(300,280)`. This only changes the view, not individual origins or body placement. Source stage metadata is retained; no invented stage mask is applied. The app preview retains uniform scaling of its 640 × 500 surface. Controls below it are explicitly a renderer test bench.
 
-## Module boundaries
+## Filters and export discoveries
 
-- `render/headScene.ts`: pure data → source scene graph, frame selection, controller equations and original sequential `setChildIndex` operations. Reads the existing data model and never modifies it.
-- `render/geometry.ts`: affine composition, source bounds, and DisplayObject-style scale/rotation updates that preserve skew/reflection. It retains the tiny independent root X/Y scales and the face/nose nested scales.
-- `render/color.ts`: Flash affine color multipliers/offsets, concatenation and the exact mouth `reduceColor` arithmetic.
-- `render/svgRenderer.ts`: SVG definitions/uses, unique paint-server IDs, manifest-driven filled-path depth masks, sRGB color filters, and development-only source bounds/origin overlays.
+The complete character contains one source filter: shadow **25 × 15, one-pass blur**, with alpha multiplier **179/256**. SVG uses two centered separable box convolutions, preserving local units, filter bounds and alpha. It does not substitute a Gaussian. The [Adobe SWF 19 specification, printed page 44](https://open-flash.github.io/mirrors/swf-spec-19.pdf) describes the centered odd-sized box filter. Browser pixel checks verify the plateau/support of this kernel independently. Fractional/even filters and unsupported blend/filter kinds fail explicitly; none occur in the recovered character catalog.
 
-The exported SVG outer group translates source geometry into an image bounding box. The generated markup wraps it in the exact inverse translation; original path data, gradients and nested placements remain intact. Using image-center pivots or keeping that export translation twice would misalign the face.
+FFDec SVGs 162 and 217 enlarge an original one-twip red stroke to one pixel for export and include custom namespace metadata. Generated markup restores the recorded 0.05-pixel source width, verifies it against the raw SWF line style, and removes the export-only attributes. Original paths, color and all protected source files remain unchanged. Flash/emulator minimum-width rasterization may still differ at this tiny stroke.
 
-A reflected left feature has positive scale magnitudes, rotation 180° and skew −180°. The original scale/rotation setters retain that skew. Simple uniform rotation/scale from identity would invert the left eye incorrectly. The proof reproduces the reflected matrix and retains original offsets such as mouth X=−0.15 and nose X=0.05.
+No clipDepth masks occur in the recovered character timelines. The generic filled-path mask foundation remains pixel-tested, including clip termination. All 355 shape definitions are parsed and instantiated by the native browser sweep, so failures in less common frames are not hidden by default-only tests.
 
-Tint filters use `feColorMatrix` with RGB offsets divided by 255 and explicit `color-interpolation-filters="sRGB"`. This preserves shading and negative multipliers. Color transforms concatenate before channel clamping. Native-browser tests verify a known original black shape becomes `[235,205,187,255]` under skin palette 0.
+## Verification and limits
 
-No stencil masks are used in the recovered head timelines. The authored 300 × 600 stage is retained as metadata; it is not invented as an extra clipping mask around a loaded character. The generic depth-mask foundation is nevertheless tested with original filled paths, including inside/outside pixels and clipDepth termination. Stroke-only masks and unsupported source filters/blend modes fail explicitly; they require separate support if later assets need them. No blurred body shadow has been approximated.
+- 216 unit tests: unchanged 189 data cases, ten original head cases broadened to full catalog coverage, and 17 complete-renderer cases. Every selectable source timeline frame is reached, including 8 heads × 12 facial-feature families and 8 heads × 4 beards. Tests independently check source placements, colors, body constants, min/mid/max joints, feet, neck, footing, IDs, layers and blank frames.
+- Development browser checks instantiate 992 scenes reaching all 355 original shapes, retain 62 XML compatibility cases, verify native color/mask/box-blur pixels and name-edit pixel stability for head and full body, test actual feature controls, and capture eight complete characters. Production checks cover the same UI and eight fixtures with diagnostics excluded.
+- TypeScript, production build and six original evidence checks pass. No dependency was added. Full vectors make the production JavaScript about 596 kB / 135 kB gzip; Vite reports its standard 500 kB chunk warning. No runtime Flash or Ruffle, remote services, PHP or backend is needed.
 
-## Visual evidence
+See `evidence/phase3b/` for the source map, screenshots, source-aligned comparison and Ruffle reference logs. The unmodified original SWFs run in a temporary Ruffle 0.7.1 canvas harness at native and 2× pixel density. The reference tool blocks external requests. Its warnings (font fallback, Security/Loader stubs) are retained. Ruffle is not shipped in the browser app.
 
-See `../evidence/phase3a/README.md` for screenshot paths, the emulator reference and coordinate-aligned comparison. Default, diagnostic and production screenshots come from the actual browser renderer.
+Comparison uses the recovered General-page camera (scale .53, graphicsContainer X=116, loader X=−150, footing Y=405), not fitted image alignment. The original File button overlaps shoes/shadow; quantitative comparison therefore excludes that region, translucent edges and shadow. Inspect unmasked originals too. Original head-tab screenshots provide additional feature evidence. Rasterization, twip/float rounding, color quantization, extracted gradient precision and blur/subpixel behavior can differ. Neither all feature combinations nor other browser engines have been visually certified. No Adobe Flash runtime was run, and pixel-perfect Adobe Flash parity is not claimed.
 
-The unmodified original executable SWFs were successfully run in a temporary **Ruffle 0.7.1 canvas** harness. Both the General screen and original head-editing screen were captured. Ruffle is an emulator, not Adobe Flash; it is not an application dependency. Its recorded warnings include font fallback and stubbed Security/Loader details. No Adobe Flash runtime was used, so Adobe Flash pixel-perfect parity remains unverified.
-
-Comparison uses the recovered original GUI transform, not an image best-fit: graphicsContainer `(116,130)`, loader X=−150, scale=1 on the head-editing page. SVG source ROI `(70,30)–(231,230)` aligns to original screenshot ROI `(36,160)–(197,360)`. Backgrounds differ and the original body can appear below the head; quantitative comparison therefore uses an eroded SVG foreground mask and is descriptive only.
-
-Remaining differences to investigate include browser/emulator antialiasing, dynamic float versus twip precision, original color-transform quantization, and the precision of the extracted SVG gradients. Matching an emulator does not independently certify Adobe Flash output.
-
-## Verify
+## Reproduce
 
 ```sh
-pnpm test
 pnpm typecheck
+pnpm test
 pnpm build
 pnpm test:browser
 pnpm test:browser:production
 ```
 
-The original 189 data tests remain. Ten added rendering tests cover source rule extraction, source placements/origins, default asset/frame selection, geometry, reflection, layering, field mappings, blank/missing/out-of-proof frames, palettes and bounds. Browser checks additionally cover the actual 12 vector instances, pixel-invariant name editing, sRGB tint pixels, stencil masks, unique SVG IDs and development/production diagnostic behavior. The 62 native XML cases still run.
+From the project root (offline evidence tools use Python/Pillow):
 
-## Next: Phase 3B
+```sh
+python3 tools/generate-render-cases.py
+node tools/capture-original-reference.mjs --runtime-dir /path/to/ruffle/package --cases web/src/generated/render-cases.json --output evidence/phase3b/reference
+node tools/capture-original-reference.mjs --runtime-dir /path/to/ruffle/package --cases web/src/generated/render-cases.json --output evidence/phase3b/reference2x --device-scale 2 --skip-head
+# Copy selected web/test-results outputs into evidence/phase3b/screenshots, then:
+python3 tools/compare-character-reference.py evidence/phase3b
+python3 -m unittest discover -s tools -p 'test_*.py' -v
+```
 
-Expand the proof catalog to validated nonblank variants, then add original body/limb/shadow composition and size/footing behavior. Add the remaining filters/masks/accessory-specific behavior as evidence requires. Validate each newly included frame/palette combination against original geometry and runtime references before exposing it through editor controls. Keep the existing data layer and original vectors; do not replace the proof with raster approximations.
+Phase 3B stops at the renderer and its test bench. The next recommended milestone is the original editor screens and browser persistence; file dialogs/export and the deferred tutorial remain separate work.

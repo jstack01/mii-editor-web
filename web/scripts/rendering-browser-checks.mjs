@@ -4,6 +4,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 export async function renderingBrowserChecks(page, { preview, reportDir }) {
   mkdirSync(reportDir, { recursive: true });
   const area=page.locator('#character-preview');
+  await page.selectOption('#render-view','head');
   await page.waitForSelector('#character-preview svg [data-artwork] use');
   assert.equal(await page.locator('#render-error').isVisible(),false);
   assert.equal(await area.locator('img,image,canvas').count(),0);
@@ -66,9 +67,15 @@ export async function renderingBrowserChecks(page, { preview, reportDir }) {
     const other=renderHeadSvg(source);const first=renderHeadSvg(source);
     const ids=new Set(Array.from(first.querySelectorAll('[id]')).map((n)=>n.id));
     if(Array.from(other.querySelectorAll('[id]')).some((n)=>ids.has(n.id)))throw new Error('SVG instance IDs collide');
-    return {sRGBPixel:tintPixel,clipInside:inside,clipOutside:outside,clipDepthRespected:true,svgInstanceIdsUnique:true};
+    const box={...circle,symbolId:9999,matrix:[1,0,0,1,0,0],bounds:{x:25,y:-25,width:5,height:5},filters:[{kind:'blur',blurX:25,blurY:15,passes:1}]};
+    const catalog={sourceHashes:{},roots:[],symbols:{9999:{kind:'shape',id:9999,bounds:box.bounds,markup:'<path d="M25 -25h5v5h-5z" fill="black"/>',sourcePath:'test-only',sourceSha256:''}}};
+    const blurred=renderHeadSvg(testScene([box]),{catalog});
+    const boxCenter=await pixel(blurred,27,27),boxPlateau=await pixel(blurred,20,27),boxOutside=await pixel(blurred,10,27);
+    if(Math.abs(boxCenter[3]-17)>1||Math.abs(boxPlateau[3]-17)>1||boxOutside[3]!==0)throw new Error('Centered box-blur pixel mismatch '+JSON.stringify({boxCenter,boxPlateau,boxOutside}));
+    return {sRGBPixel:tintPixel,boxBlurPixels:{boxCenter,boxPlateau,boxOutside},clipInside:inside,clipOutside:outside,clipDepthRespected:true,svgInstanceIdsUnique:true};
   });
   const report={nativeChecks,selectedOriginalParts:parts,visibleShapeInstances:12,blankFramesPreserved:true,nameEditPixelInvariant:true,developmentDiagnostics:!preview};
   writeFileSync(`${reportDir}/${preview?'production':'dev'}-rendering.json`,JSON.stringify(report,null,2)+'\n');
+  await page.selectOption('#render-view','full');
   return report;
 }

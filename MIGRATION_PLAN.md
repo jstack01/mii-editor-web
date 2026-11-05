@@ -1,6 +1,6 @@
 # Mii Editor migration assessment and plan
 
-Status: Phase 0 recovery, Phase 1 name preview, Phase 2 data compatibility and Phase 3A default-head rendering proof are complete. Stop after Phase 3A. The full character renderer/editor remains unfinished; Phase 3B is next.
+Status: Phase 0 recovery, Phases 1–2 data compatibility, Phase 3A head proof, local Git baseline, and Phase 3B complete character renderer are complete. Stop after Phase 3B. Phase 4 original editor screens and browser persistence are next; the full editor remains unfinished.
 Reviewed: November 4, 2026. Updated after inspecting the reorganized project and original source package.
 
 ## 1. Scope and evidence
@@ -268,7 +268,7 @@ Smallest purely internal unit: `Range.clamp`. The name-field slice is the smalle
 - Tests: every field at min/max and out-of-range writes; neighboring/reserved-bit preservation; all frame/value mappings round trip; names/creator/IDs; short/long/malformed hex; wrong binary lengths; XML Y/mingle inversions and missing fields; first-Mii collection handling; deterministic random bounds and unchanged Wii ID.
 - Exit requirement: default plus supplied fixtures round trip and legacy deviations are approved and documented. XML semantic comparison rather than incidental whitespace comparison.
 
-### Phase 3 — rendering proof and complete avatar (3A proof complete; 3B pending)
+### Phase 3 — rendering proof and complete avatar (3A and 3B complete)
 
 - Begin with one head shape plus eyes/nose/mouth and required tint regions using recovered pivots. Compare SVG output against source assets before expanding.
 - Implement all part frames, palettes, head offsets, pairing/rotation, hair mirroring, multiply features and glasses exceptions.
@@ -398,7 +398,7 @@ At the Phase 2 handoff, work stopped here as requested. The user subsequently ap
 Next priority is Phase 3: render an actual Mii in the browser from the recovered original vector graphics and display-list origins. Begin with the renderer proof, then validate palettes/color transforms, nested part alignment, layer order, head offsets, hair mirroring and body geometry against original evidence. No Phase 3 rendering work has been started in this milestone.
 
 
-## 9. Phase 3A completed — character rendering proof
+## 9. Phase 3A completed — character rendering proof (historical handoff)
 
 The user approved the default-head proof only. The browser now displays the original default Mii head using the actual extracted vectors, with original data and placement evidence. Phase 1 name editing/hex display and the Phase 2 data layer remain intact. No model implementation, dependency versions, source assets or original SWFs were replaced.
 
@@ -454,3 +454,43 @@ Unresolved visual precision differences include browser/emulator antialiasing an
 Phase 3A is complete; stop here. The actual default head is visible using original geometry, colors, frame mappings and recovered registration information.
 
 Next, expand and verify nonblank head variants, then add the original body/limbs/shadow and height/weight/footing logic. Implement original blur/filter/accessory cases as their assets require, maintain source layer order and mirrored transformations, and validate each newly supported frame/palette against original geometry and runtime references. Keep diagnostics and broaden browser/runtime comparison coverage before exposing the full editor controls. Full editor UI, local file dialogs, share links/persistence and tutorial remain outside this proof; tutorial stays deferred.
+
+
+## 10. Local Git baseline and Phase 3B completed — November 5, 2026
+
+### Git setup
+
+Git 2.54.0 was available; the project had no repository. Initialized local branch `main` in the existing project directory and used the user's existing Git identity unchanged. Reviewed the staged 1,795 files (about 28.4 MB), checked for credential filenames and secret patterns, and retained protected originals, source, lockfile, recovery manifests/raw XML and selected reproducibility evidence. Dependencies, build output, caches, temporary files, OS metadata and unselected browser artifacts are ignored. Initial commit **`b9b362e` — `chore: establish completed Phase 3A baseline`** represents the completed prior milestone. No remote, GitHub repository, push or upload was created.
+
+### Complete renderer
+
+- Continued the existing TypeScript/Vite/SVG architecture and unchanged Phase 2 model. Expanded the read-only asset generator from 28 to **385 reachable original symbols**, including **30 timelines / 355 original vector shapes**, with all frames and intentional blanks. It verifies original SWF/SVG hashes and extracts body ranges, anchors and colors directly from `MiiBody.as`.
+- Supports all eight head shapes, 72 hairstyles (front/back/hat selection), 24 brows, 48 eyes, 12 noses, 24 mouths, nine glasses, four mustache states, four beard states, twelve facial-feature families per head, moles, hair parting, original palettes, shaded-glasses exceptions and multiply features. Frame selection uses the original Phase 2 permutations. No artwork was invented or replaced with raster approximations.
+- Ports body, arms, hands, pants, legs, feet, torso gender frames, height/weight ratios, six original joint anchors, neck Y=220 and global footing. Arms use height/width scaling; hands and feet use width/width. Root/nested matrices, mirroring, small registration offsets and original depth order are retained. Pants → shadow → shirt is preserved even though the shadow layering is unusual. Shirt tint includes hands as authored; pants preserve normal/special-gold/foreign-blue ID behavior.
+- Implements source shadow alpha 179/256 and 25 × 15 single-pass centered box blur via SVG separable convolution. This follows the original filter metadata and SWF specification, without substituting a Gaussian. No clipDepth masks occur in the complete recovered character; the generic filled-path clipping support remains tested.
+- Found two FFDec export issues during exhaustive browser parsing: shapes 162 and 217 include FFDec attributes and promote a one-twip stroke to one pixel. Generated markup restores source width 0.05 after checking the original SWF line style, removes only export metadata, and preserves the original red color/path. Protected extracted files are untouched. This is an evidence-backed export correction, not a change to original behavior.
+- Keeps `buildHeadScene()` and adds `buildCharacterScene()` on the same pure scene graph. Full view shows source camera `(-20,0,340,640)` to leave room around the authored 300 × 600 coordinates; head view remains `(0,0,300,280)`. Camera changes do not recenter individual parts or invent clipping.
+- Existing name, exact hex and reset functionality remains. Full/head selector, eight reference presets and all 45 numeric attribute controls form a clearly labeled **renderer test bench**, below the uniformly scaled 640 × 500 preview. They are working test tools, not the finished original editor UI. Name edits preserve every unrelated byte of the current selected character. Development-only source bounds/origins/registration diagnostics cover the complete body and remain excluded from production.
+
+### Tests and actual browser evidence
+
+- **216 unit tests pass**, including the original 189 data cases and ten broadened Phase 3A rendering cases. Seventeen additional tests check original body constants, min/mid/max height/weight joint equations and neck/footing, width-scaled feet, gender, exact ID boundaries, all favorite/tint palettes, layers, source shadow metadata, blur kernels and independently packed representative fixtures.
+- Every legal numeric value can construct a finite scene. Additional 8 × 12 facial-feature and 8 × 4 beard combinations reach **every frame of all 30 original sprite timelines**, including blank states.
+- Native Chrome development checks instantiate **992 scenes covering all 355 shapes**, parse every original SVG definition, exercise actual preset/attribute controls and verify full-body/head pixel invariance after name edits. Native SVG pixels verify sRGB tint, filled masks/clip termination, unique instance IDs and the centered box filter's support/plateau. **62 browser XML compatibility cases still pass**.
+- Development and production browser checks pass for all eight complete fixtures, original name/hex/reset/keyboard behavior, layout fit at desktop/narrow widths, uniform 640 × 500 scaling, and diagnostic exclusion in production. Both report no page errors or external requests.
+- TypeScript and production build pass. The full original-vector bundle is approximately **596 kB / 135 kB gzip**. Vite emits its standard chunk-size warning above 500 kB; this is documented rather than hidden. No dependency was added. Original vectors remain inline/static and no Flash/AIR/PHP/backend/Ruffle is required by the app.
+- All six original SWF evidence checks pass. All **1,725 protected files in SOURCE/ and EXTRACTED-SWF/** match the milestone-start hashes; no protected file was added, modified or removed.
+
+### Ruffle comparison and remaining visual differences
+
+The unmodified original executable SWFs ran successfully in **Ruffle 0.7.1, canvas renderer**, for eight independently packed reference fixtures. Cases cover all eight heads, masculine/feminine torsos, min/max height and weight, normal/gold/blue pants, tinted/shaded glasses, facial hair, mole, hair mirroring, hat color and layer-threshold extremes. Both native and **2× pixel-density** screenshots were captured; head-tab images provide additional original feature evidence. External requests were blocked; font fallback and Security/Loader warnings remain in logs. Ruffle is a temporary reference tool only.
+
+Source-aligned comparisons use the recovered General-page camera: scale .53, graphicsContainer X=116, loader X=−150 and footing Y=405. No image best-fit registration was used. Opaque-interior mean absolute differences per RGB channel range about **0.62–1.66 / 255 at native density** and **0.39–1.18 / 255 at 2×**, across these cases. These are descriptive measurements, not a parity threshold: the mask excludes edges, translucent lenses, shadow and the original File button's overlap with shoes. Full screenshots and amplified difference galleries must also be inspected.
+
+Remaining precision limits are browser/emulator antialiasing, twip/float and pixel-grid rounding, color-transform quantization, extracted gradient precision, minimum-width stroke rasterization and shadow/subpixel filtering. The original GUI obscures part of the shoes/shadow, so that region lacks an independent unobscured original-app visual comparison; its source placement/alpha/kernel are tested. All source frames are covered structurally and in native SVG parsing, but every combined appearance has not been visually certified. Firefox/WebKit and an Adobe Flash runtime have not been tested. **Pixel-perfect Adobe Flash compatibility is not claimed.** No artistic compensation or silent source-behavior correction was introduced.
+
+### Review artifacts and reproduction
+
+See `evidence/phase3b/README.md`, `source-map.json`, screenshot/report snapshots, `character-comparison-ruffle.png` / `character-comparison-ruffle@2x.png`, corresponding coordinate-comparison JSON, and `reference/` / `reference2x/` original screenshots/logs. `web/RENDERING_PROOF.md` documents rendering behavior, source/export issues, limitations and reproduction. `tools/generate-render-cases.py` generates fixtures from independent recovered schema arithmetic; reference/comparison tools accept explicit local input/output paths.
+
+Launch from `web/` with `./dev.sh`, open `http://127.0.0.1:5173/`, and use Reference character, Character view and the renderer test controls. Try `?case=hat`, `?case=accessories`, `?case=maximum`, or `?case=compact&diagnostics=1` in development. Phase 3B is complete and work stops here. The next recommended milestone is Phase 4: faithfully reconstruct the original editor screens and browser persistence using this renderer. Local file dialogs/export remain later work and tutorial stays deferred. No full editor-interface or persistence implementation is claimed by this renderer milestone.

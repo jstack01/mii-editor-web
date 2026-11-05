@@ -5,6 +5,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 import { xmlCompatibilityChecks } from './xml-browser-checks.mjs';
+import { fullRenderingBrowserChecks } from './full-rendering-browser-checks.mjs';
 import { renderingBrowserChecks } from './rendering-browser-checks.mjs';
 
 const cwd = fileURLToPath(new URL('..', import.meta.url));
@@ -58,6 +59,8 @@ try {
   assert.equal(await input.inputValue(), 'defaultBoy');
   checks.push('reset restores exact original bytes');
   const rendering = await renderingBrowserChecks(page, {preview,reportDir});
+  const fullRendering=await fullRenderingBrowserChecks(page,{preview,reportDir});
+  checks.push('eight complete original-vector characters, feature controls, native SVG sweep and source shadow checked');
   checks.push('original vector head, blank frames, name-edit pixel stability and diagnostic scope verified');
   for (const width of [900, 360]) {
     await page.setViewportSize({ width, height: 650 });
@@ -87,7 +90,7 @@ try {
   checks.push('no browser errors or external requests');
   mkdirSync(reportDir, { recursive: true });
   await page.screenshot({ path: `${reportDir}/${preview ? 'production' : 'dev'}.png` });
-  const report = { mode: preview ? 'production preview' : 'Vite dev', browser: await browser.version(), checks, dataCompatibility, rendering, errors, externalRequests };
+  const report = { mode: preview ? 'production preview' : 'Vite dev', browser: await browser.version(), checks, dataCompatibility, rendering, fullRendering, errors, externalRequests };
   writeFileSync(`${reportDir}/${preview ? 'production' : 'dev'}.json`, JSON.stringify(report, null, 2) + '\n');
   console.log(JSON.stringify(report, null, 2));
 } finally {

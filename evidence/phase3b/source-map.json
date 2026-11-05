@@ -1,0 +1,5491 @@
+{
+  "sourceHashes": {
+    "evidence/manifests/assets.json": "c13d4023a6d59f06642b922e3dcbea452c04c21ca0e10650d42142105d63c675",
+    "EXTRACTED-SWF/assets.swf/scripts/mii/display/MiiCharacterGraphics.as": "3cfc59e81b8fca4f0abacd1e5ba5ddca17fbc788d574db5cfa6e63c40192ccb1",
+    "SOURCE/assets.swf": "ab8b3dd8f588b79001b6a8ed6cf12cc4cea0e9d1ac9460a37f607ec3f2461d92",
+    "EXTRACTED-SWF/assets.swf/shapes/1.svg": "3331eabbd101d85d22478f4c74eaf91786f566d820a0f078b445d12929752ce2",
+    "EXTRACTED-SWF/assets.swf/shapes/2.svg": "0e464f5b359068af8279fc1b493e54abb01a6670bebcfd7ae9264c122166b38d",
+    "EXTRACTED-SWF/assets.swf/shapes/3.svg": "e8b221fc48cf3c5bd6a874ac1b371adec08dd35b31d9f84489c33cbb117f12dd",
+    "EXTRACTED-SWF/assets.swf/shapes/4.svg": "d419a580604ac8ca86fa933c4f4594b9c2dfae2cd78cec099131a7aaea879b4d",
+    "EXTRACTED-SWF/assets.swf/shapes/5.svg": "1a99b4fe0228f447ef3d8044960b72cc6458ff54748743fd8bf0d78432dd3704",
+    "EXTRACTED-SWF/assets.swf/shapes/6.svg": "cdb86f576c5c85f6ec1f6466e4efd320ac125a3a0dbdb490d4c580a654092623",
+    "EXTRACTED-SWF/assets.swf/shapes/7.svg": "becea7f08e6bba243567aaf4352bd3a64ee33fc8b15bc37ae13226ed325e0562",
+    "EXTRACTED-SWF/assets.swf/shapes/8.svg": "1a7c394e7141c7dc16d0efe6bd898534f235ba4d6f2ffeaccfe04c83073b6426",
+    "EXTRACTED-SWF/assets.swf/shapes/9.svg": "640877360164fe94f174fcebb2feae108ea97724ff65b37896380246b3bcaa97",
+    "EXTRACTED-SWF/assets.swf/shapes/10.svg": "0b3ca67589b72025938eb8882ca9c1869fc725c05a6fd36d5a84a672937b129c",
+    "EXTRACTED-SWF/assets.swf/shapes/11.svg": "6ee8debcd22fc681d8be8ab33843562f3226d5234258f91bab7f7b18fc36c306",
+    "EXTRACTED-SWF/assets.swf/shapes/12.svg": "fd3ac4cc93db862cf951162ae3b43bdac0b2cd33d9de8b135fb225f911e370ca",
+    "EXTRACTED-SWF/assets.swf/shapes/13.svg": "7baa7aeaed1e765026c735b8007c5aab5407d58929201fb3589875bf92082e40",
+    "EXTRACTED-SWF/assets.swf/shapes/14.svg": "c2a5eb622368451f794160166bb2470edced4d3de3b130ccdfb58af7c09b5cac",
+    "EXTRACTED-SWF/assets.swf/shapes/15.svg": "efedb08dfa5243629354e8218750c51320ab73109dc7b89cbf5a399bf31bcd79",
+    "EXTRACTED-SWF/assets.swf/shapes/16.svg": "4af074b40f59a8f1c58d6d30f7f63140b1390b1ef48e60293b2f0de428f8708c",
+    "EXTRACTED-SWF/assets.swf/shapes/17.svg": "a17de40e704923e36cfe26b6c87ae016d1298dcf5c30db7260b5f617144254b0",
+    "EXTRACTED-SWF/assets.swf/shapes/18.svg": "dfef51d9adbaedcc70d6d6e23dd2de48a3dc2eae0cbef641605f5bc8b43cffbd",
+    "EXTRACTED-SWF/assets.swf/shapes/19.svg": "5cb426243d8a854ffd977e1695b16030260ffc23465dd26838e4c55d210c0bd1",
+    "EXTRACTED-SWF/assets.swf/shapes/20.svg": "f9e085ff7dbd83b16e88d9b0b0abc74740c05618820930e14631a6191398fea7",
+    "EXTRACTED-SWF/assets.swf/shapes/21.svg": "595cad1fa6e8d0da131dbdfb2bc26e7de8418276b783e713554ed1cdbbe35656",
+    "EXTRACTED-SWF/assets.swf/shapes/22.svg": "be3f9513441fb8f57b53bb19ec41fef0c6d69e008a7f8c8afc29c7b11f9da35c",
+    "EXTRACTED-SWF/assets.swf/shapes/23.svg": "9868a1890dfd2cbb1aa7d0fa2934358d7b0b96142af36711d35c7bfb90e094a6",
+    "EXTRACTED-SWF/assets.swf/shapes/24.svg": "1b7ff4b7c21a5a79bc83d28aa96d77ffefd14068658ec7876f4d52739859a443",
+    "EXTRACTED-SWF/assets.swf/shapes/25.svg": "ccf093531144bf750a82f7ee93cca9617049567f93d5e02a72b2b9dbd0ce05b0",
+    "EXTRACTED-SWF/assets.swf/shapes/26.svg": "064daab2bd84f180a9f447fc2a7c345f6da807e04950d9ef4fa7cbfcc3261d5e",
+    "EXTRACTED-SWF/assets.swf/shapes/27.svg": "4aba0f7f1b5addfe4575b6abd210d8c725f30f54f42c1c88766923cb671642ef",
+    "EXTRACTED-SWF/assets.swf/shapes/28.svg": "fb826556dcc23e5f01c626495023ee8d95af488f0aeda77d5b403a0c4ca5f79f",
+    "EXTRACTED-SWF/assets.swf/shapes/29.svg": "5f87fae96a959ca25594c8dde23e33d291bdaa3f5538d3ec4e9c0e5ea70d1217",
+    "EXTRACTED-SWF/assets.swf/shapes/30.svg": "f6b32ada00385890a292bd79d7995beb42966d6e9f40f031229124b2c1505e72",
+    "EXTRACTED-SWF/assets.swf/shapes/31.svg": "1d341a8d4ba69bcee9604923e9bea6ab4dbc9a8ea03c0fb0b79b25ec58674ef6",
+    "EXTRACTED-SWF/assets.swf/shapes/32.svg": "08cf1f830d778ecc218d1eb920df9cffeea17d2c7010c66f15e696083af389c3",
+    "EXTRACTED-SWF/assets.swf/shapes/33.svg": "7daacf7abd1fea965e5ad4c4b8ee9a25baf03b1fe1138101c00874c3b7a681b7",
+    "EXTRACTED-SWF/assets.swf/shapes/34.svg": "c2e802cfbc97c63b8a2f2059841090606d7e5952f14d3bc769567c4ac2f765cc",
+    "EXTRACTED-SWF/assets.swf/shapes/35.svg": "c5281d60da22088a0175b559b3ac1df65ef95d3b35f9b0eb7f8b3dae3cb660cb",
+    "EXTRACTED-SWF/assets.swf/shapes/38.svg": "e9209c2b951d704d4fd9f19411314eded02ab571bee9e4f6538fd118c55ed16b",
+    "EXTRACTED-SWF/assets.swf/shapes/40.svg": "a7d79df2b675fd864221e4f47649f393d2117e88a74e4cd0ec658ddc7d257e9b",
+    "EXTRACTED-SWF/assets.swf/shapes/42.svg": "0f77f7831f4fe9cf9e72175ebeb5c1affc738b514716e3ff08ef3c33ff7e238f",
+    "EXTRACTED-SWF/assets.swf/shapes/46.svg": "378eb0c56c0174db953f180d3cb4f91c1114d60d45fcece379c114a25c11e20c",
+    "EXTRACTED-SWF/assets.swf/shapes/48.svg": "aa782cd3833ac41ca5f8db29296c7b23c4b93ed85c9af3b1c1827029b1050505",
+    "EXTRACTED-SWF/assets.swf/shapes/50.svg": "d2f15bf0f613b99ec8991da287f3696ed91b5aee08eac69db00350b4604e02b9",
+    "EXTRACTED-SWF/assets.swf/shapes/51.svg": "ca02bdf6ddc011dc9b364611cc74c9bbfb5089872ee06410d55784679c98dc94",
+    "EXTRACTED-SWF/assets.swf/shapes/53.svg": "ce7dba9024ed58b7f4fa5ba8095e6f06b88976c5127eba78dffd15cebe0242bc",
+    "EXTRACTED-SWF/assets.swf/shapes/57.svg": "90f5e8d69c41b553704c4415090060fa57465c83d1ff2a070d21a6c8d1217718",
+    "EXTRACTED-SWF/assets.swf/shapes/58.svg": "2eb0668e6543ee2d5daf8ffff59793f1bb8a0970fb77c0f5a116c91e3889fac8",
+    "EXTRACTED-SWF/assets.swf/shapes/59.svg": "02a922782bcbf8316b57ff7fed4be533e497b5ea98f1baa492ffd3b996a63628",
+    "EXTRACTED-SWF/assets.swf/shapes/60.svg": "d31b0145596e63964706beb566cae84e6ac5e583b8f910a7013d142b3e994163",
+    "EXTRACTED-SWF/assets.swf/shapes/61.svg": "557e19a9fc5d9f8b151f1ec7db63bdd2be623c135dfaf8ccf87c01a24a26dbd3",
+    "EXTRACTED-SWF/assets.swf/shapes/62.svg": "948d2cdf77f811f47afed7c7c2090e8098c6da1f0b28cf82a859adf0cf8fa671",
+    "EXTRACTED-SWF/assets.swf/shapes/63.svg": "c69e48c0f6467a61f1b94cdef33f341cd9f48469911c29ee294178c823bcc0ae",
+    "EXTRACTED-SWF/assets.swf/shapes/64.svg": "20e18ef2d7a23e447f2087e510cf8a6548877065dce44cbdb183446967add224",
+    "EXTRACTED-SWF/assets.swf/shapes/66.svg": "80be15a971127a2073fb6f48156598a449edbe6716fe7f58ab3c0eb232e41283",
+    "EXTRACTED-SWF/assets.swf/shapes/67.svg": "328231742c87742be24234c885f4b8ae01140a09c88267ac889dc07eb3d586b2",
+    "EXTRACTED-SWF/assets.swf/shapes/68.svg": "c1334eb16e385696f3b84400bbcebb827541a7801283a4df773c526278cec34a",
+    "EXTRACTED-SWF/assets.swf/shapes/69.svg": "042c678fca9af8eae5d9de3970504ab1da3bed80b9f3aa65c8aff9c9cb2cf48b",
+    "EXTRACTED-SWF/assets.swf/shapes/70.svg": "adbcc456c1807011f2765ead83567ba9dbe4f73bf0589d2f6aa9e00be5d4fcf8",
+    "EXTRACTED-SWF/assets.swf/shapes/71.svg": "173bc70d21a4c911cd49ce2ff19edaa9db75353d0355ab254cc087888ab58bb5",
+    "EXTRACTED-SWF/assets.swf/shapes/72.svg": "38c33ef21f8b62d445e391ecd07504d8b8ce522b9d628bc86f5eb5324621a866",
+    "EXTRACTED-SWF/assets.swf/shapes/73.svg": "629f61651b79e7aadd43fc3335bc0b91b8a77e6ab58c82e48f85279da4b955f9",
+    "EXTRACTED-SWF/assets.swf/shapes/74.svg": "2a095e30c07f5eea92e70a23a07df409a2b99bc128c8debc1b55480144a2a108",
+    "EXTRACTED-SWF/assets.swf/shapes/75.svg": "ac8ec1d933347e2b27455e0a0a66fcfc33309663d7a12f82b85a0424d14a08c6",
+    "EXTRACTED-SWF/assets.swf/shapes/76.svg": "cac9f7ec59437868c9ed9a0b4a1d4638ba3526223a9b6949a66952e63e144b40",
+    "EXTRACTED-SWF/assets.swf/shapes/77.svg": "a6f4c00a5b8db40af5c3d0ec8bbe61ab24e617574ddd88275c27265249097b2b",
+    "EXTRACTED-SWF/assets.swf/shapes/78.svg": "aa5f5a520d878def6da41c0de6586bf314d62f3678fc7578e0285c19049b6024",
+    "EXTRACTED-SWF/assets.swf/shapes/79.svg": "21b010b62c7dfac9308793021527544bb9b45301fd37b06e2625bfea0fad2ad7",
+    "EXTRACTED-SWF/assets.swf/shapes/80.svg": "3324a14fc3c3314bcb89848fe1ea3297f5a1aedea02b74129d02d5ebe58baba4",
+    "EXTRACTED-SWF/assets.swf/shapes/81.svg": "78c783e4b5af00a735efd301a14739e226c020e7403198a986042bf3a222dc5d",
+    "EXTRACTED-SWF/assets.swf/shapes/82.svg": "a6181ad8b591c70159c238b67961b6af6ef868eb087f3b4c960350bbebeef185",
+    "EXTRACTED-SWF/assets.swf/shapes/83.svg": "cb496a79dfeda270b46f3465f547b0818f3ab4741af12971ecf6325524a5617a",
+    "EXTRACTED-SWF/assets.swf/shapes/84.svg": "9bfb2c7b474c031d34400924c6b06c75da475d0bca6577015517b4e5ec89f96a",
+    "EXTRACTED-SWF/assets.swf/shapes/85.svg": "7c33d30a2550b81cc15b9cfb2c1aa2950d38db49bf687141fc2882af9741f2d9",
+    "EXTRACTED-SWF/assets.swf/shapes/86.svg": "42eb098a693367f72cb2adb858fe5ec9cf4023e16249e0537dd3176abb8a8c66",
+    "EXTRACTED-SWF/assets.swf/shapes/87.svg": "495bde99bcd04920108f308a25b989e08bb6dea948dfb045c107d1b31ccb1403",
+    "EXTRACTED-SWF/assets.swf/shapes/88.svg": "d2ae6a2942aef7817f489a108c2c92182e8cb69c26407c81b302df6918eccc9c",
+    "EXTRACTED-SWF/assets.swf/shapes/89.svg": "6b5b037694020483c2a4a3630e084fe22b5ef4ce061f9877ea3687f3b284ea10",
+    "EXTRACTED-SWF/assets.swf/shapes/90.svg": "6f7580b03f8f5b37a30d46b214ad0399a60e659a4f6707ebeb519113e5c6f584",
+    "EXTRACTED-SWF/assets.swf/shapes/91.svg": "16e1d43304e6d17e80ef731a1b049f5f65c4f25698eb4f7cfe22a9fb2409ebc8",
+    "EXTRACTED-SWF/assets.swf/shapes/92.svg": "fd13efcdeca5deb33e0634c76fa0ba66e6650af7d6f82d3a117c4f74aec766c2",
+    "EXTRACTED-SWF/assets.swf/shapes/93.svg": "3ddac4a6dcd334b671bb9a45f4d34e7e1b295e6928ae0189f9c52ac02648467c",
+    "EXTRACTED-SWF/assets.swf/shapes/94.svg": "ebcc05968fa65f20613cf9a27d800ec2c44ca9bd2c07989ec29f540b4cd8d1b9",
+    "EXTRACTED-SWF/assets.swf/shapes/95.svg": "843c8b1f52c6dbdccb426262b0ee2659b8517672070aac979c6324d5a91185b7",
+    "EXTRACTED-SWF/assets.swf/shapes/96.svg": "e1bdf58bb034da1848e0ba399231ee074c4975b44e4b61b0c230078a4e7de82e",
+    "EXTRACTED-SWF/assets.swf/shapes/97.svg": "e768c0cd671ed8f69ad695792e9372a0527d2e6869ee7dc841a80347459afa73",
+    "EXTRACTED-SWF/assets.swf/shapes/98.svg": "d7a1b44e05994c87b2039ade7b070842fffc786a45d5ba0d02d76e046b47ebf6",
+    "EXTRACTED-SWF/assets.swf/shapes/99.svg": "ea87690264b091aed1d57e66f89d3ed72e011ab9dc8792bdb227e6c0936764ad",
+    "EXTRACTED-SWF/assets.swf/shapes/100.svg": "be1f9c08b21718fb1617a815ef7548e4f049d0566fed2916f7ae852db011a824",
+    "EXTRACTED-SWF/assets.swf/shapes/101.svg": "0ca05ec8fbb39cd14ce5ed6fea6cab24947521278da546a2c98275627ec8af78",
+    "EXTRACTED-SWF/assets.swf/shapes/102.svg": "79c1afddc9f8c62ac40761603e0e860dcf63293232313570acc4ee28a91f4943",
+    "EXTRACTED-SWF/assets.swf/shapes/103.svg": "6aa86be814e38f3c06c37ed33d63a7067e6e16d3ff7aec382877a0e6ac0894e6",
+    "EXTRACTED-SWF/assets.swf/shapes/104.svg": "a9dba481157cac290a470930fad83e094f542bba963a50c8f6711d47c1d01060",
+    "EXTRACTED-SWF/assets.swf/shapes/105.svg": "af872bf413aaeef404c1625c2c77f84c991b79b7ef20dca8dcd82848f44a0ec4",
+    "EXTRACTED-SWF/assets.swf/shapes/107.svg": "5c054f9c6dc7bcd16a9b7fd76c8851b92325738f137718c2269628e20d41ff69",
+    "EXTRACTED-SWF/assets.swf/shapes/108.svg": "59e108e1bc9b30c29c3e289e2d28fb21540bcaa88d0679785fb7393f6cdaeda0",
+    "EXTRACTED-SWF/assets.swf/shapes/109.svg": "1a7d88cbf1ea6d54cb4116603dd847c7838335b36f843c4b863c71428a36049c",
+    "EXTRACTED-SWF/assets.swf/shapes/110.svg": "4f7da5f5fa7ac50616bb1c9306980c12efed4d1f95ed58fd101587775e60b649",
+    "EXTRACTED-SWF/assets.swf/shapes/111.svg": "f880224bb8a673ea17ad16415789d873bcd21ac7f81e5b612e2df1b59bf822a0",
+    "EXTRACTED-SWF/assets.swf/shapes/112.svg": "a0472efbdd412592b797691aa87a5944420bf05e12cc7dd6c732cbefed9fa1af",
+    "EXTRACTED-SWF/assets.swf/shapes/113.svg": "5ca3056856fbe5477906b5e9806f2c715fdcd6227b7cc243f5783dbb5bf82454",
+    "EXTRACTED-SWF/assets.swf/shapes/114.svg": "f8d556cda4930299189a37a63133022b2891395ee3b691069460f1e74dfef33e",
+    "EXTRACTED-SWF/assets.swf/shapes/115.svg": "7f24465c89f0bc720c9f25586c7e249b2fc34514f22de370749fd2a6e69435d3",
+    "EXTRACTED-SWF/assets.swf/shapes/116.svg": "a9b9be3550fea26efba1858846aa6f353996c9352de71f07f9e670903bf9e98f",
+    "EXTRACTED-SWF/assets.swf/shapes/117.svg": "f6b9ef7e2212ac93f0c6ff18ba070338eb58a3b4827549a8e5a357d7a96cd900",
+    "EXTRACTED-SWF/assets.swf/shapes/118.svg": "25765516953a73bddb8f419930a1d6ed07e431f89a316df944efcd223e9f03bd",
+    "EXTRACTED-SWF/assets.swf/shapes/119.svg": "a9fab31ef17feb7e9d69768d9de77a2289e7a80ab360aae9f2afd877456832bc",
+    "EXTRACTED-SWF/assets.swf/shapes/120.svg": "b43ad9e1eb4123371404a626caf4310e5374e2b3b58df1c21bd2f121cdf829df",
+    "EXTRACTED-SWF/assets.swf/shapes/121.svg": "82bbe5cb8a28ed8c6be77e2b17aeed72d0fe28debc623ee13c8e605bddf168b7",
+    "EXTRACTED-SWF/assets.swf/shapes/122.svg": "6dc3e806710d847f68b87cbc06455ec1193ac40147255e45b8af4ef05f40f457",
+    "EXTRACTED-SWF/assets.swf/shapes/123.svg": "02449dd86276e46ce264ec8ae6447059db19feae0a2cce466a8f23b68950c1a3",
+    "EXTRACTED-SWF/assets.swf/shapes/124.svg": "f1a1b258d87feb9bb199f0341517165f6be32230c7fd3c3f1d2da7cc358c4cc7",
+    "EXTRACTED-SWF/assets.swf/shapes/125.svg": "d5fbc85aa9dc4556d16b4ec4f6d9cf144ae16fb585ad78f62a72e7ace4c173e0",
+    "EXTRACTED-SWF/assets.swf/shapes/126.svg": "a599b062fa55e66c975e404c01c065a404d35176073ac13c5fd3b6208ca3784d",
+    "EXTRACTED-SWF/assets.swf/shapes/127.svg": "de8c99f599351b951df6baf2fec1df97dc46b320f48c166667cd859834aef05b",
+    "EXTRACTED-SWF/assets.swf/shapes/128.svg": "17ecc6bb219321ff9ee71474f4cdf4d89f38693038133e0e5c3e0cf952557a48",
+    "EXTRACTED-SWF/assets.swf/shapes/131.svg": "2afc4d46b5400f4aca44becb07e7d4f4de1a7dd9c80df1166f58dfb40860f38b",
+    "EXTRACTED-SWF/assets.swf/shapes/132.svg": "54619881ff38062a8784cfa8f4adab85f3102b7ab273f4f468559983ef2be807",
+    "EXTRACTED-SWF/assets.swf/shapes/133.svg": "6bc5b64f2f14050c07f54cb92bf771fd798e9ad05867849c458df0a46c11bfa1",
+    "EXTRACTED-SWF/assets.swf/shapes/134.svg": "6eb12273c734e33bf5712c1b2b08fbff752475e4fcb186faae999c137f392b38",
+    "EXTRACTED-SWF/assets.swf/shapes/135.svg": "2da829bac02a7a29f907870cae3e157fdaf6c628ba7688e15a1a6d902176eb44",
+    "EXTRACTED-SWF/assets.swf/shapes/136.svg": "f2db0487903e3aca859820c85b0b5009c580ed6153b8fc58e20a3dc74ee2b63e",
+    "EXTRACTED-SWF/assets.swf/shapes/137.svg": "a28d89b000b279b6adb2f3c750484723245339489f4b6dc32d539d2b904f2d84",
+    "EXTRACTED-SWF/assets.swf/shapes/139.svg": "8c2ce9ee9f8fbc040b3e13e8c619759a3a8c297148533075a547b94101821c8d",
+    "EXTRACTED-SWF/assets.swf/shapes/140.svg": "adfce189cc16dd70c41459044731f02723932514c8712f52cb8bd43753e05eb6",
+    "EXTRACTED-SWF/assets.swf/shapes/141.svg": "eaf8f48f3957a296fa653270a15bd2d2e29699ba550f2c1ef9128bb713ea360b",
+    "EXTRACTED-SWF/assets.swf/shapes/142.svg": "853d50610319471afd1697373c3690784683f4c092c1e99f2214ee79ab01a2e8",
+    "EXTRACTED-SWF/assets.swf/shapes/143.svg": "e00ace6477597617acc9f23686312f6aa4d42bf2728b57273cb630736dc691f2",
+    "EXTRACTED-SWF/assets.swf/shapes/144.svg": "8cce09a64a0c280591b5f1d18c171b50705857359de34a81842d329de63fb552",
+    "EXTRACTED-SWF/assets.swf/shapes/145.svg": "257ebc1358d27fa8012201137e9b5427ca59c68767019fa3a28d8487b04a0b8f",
+    "EXTRACTED-SWF/assets.swf/shapes/146.svg": "6838e02bf2f4ba250dd5af8ba37f74f4c9eb55435cd34990b0f432b5c2ad4906",
+    "EXTRACTED-SWF/assets.swf/shapes/147.svg": "b886c16497f824b9bac86d50ce041317d08ff6d1de1187f7878c1cbeca6ef55b",
+    "EXTRACTED-SWF/assets.swf/shapes/148.svg": "55bbab7cb669731ae865b8abcbecceee396fdc5e030f91c5315dfd501c7cc5be",
+    "EXTRACTED-SWF/assets.swf/shapes/149.svg": "ee6349b85c564d0302c37963f7ccb7b1fac270ad18b0d9d176864ba5f65223f2",
+    "EXTRACTED-SWF/assets.swf/shapes/150.svg": "cd07957c74a70f57b8a8e221de6ac6af40969f6f443d4b38bef64484b8f615da",
+    "EXTRACTED-SWF/assets.swf/shapes/151.svg": "1b9ae727da0ee5f2f6c7d8d7e734965b77cb0b9e7f4c1cef2ea3d910492a3e3c",
+    "EXTRACTED-SWF/assets.swf/shapes/152.svg": "bad8c1181d7f67f577d9e6b44858e1ab93de0fc56c785a4b988f7e906cc4d5be",
+    "EXTRACTED-SWF/assets.swf/shapes/153.svg": "ecc8382d66342dc07e46a63dd634ffcde72dfdecf8b3b308eec735cb7e442993",
+    "EXTRACTED-SWF/assets.swf/shapes/154.svg": "8377cdc062346456b1729a49c80e126aa4e53b290f6e9340513de050e281121d",
+    "EXTRACTED-SWF/assets.swf/shapes/155.svg": "3cd38417606ce77145146c70fc9c7862148d50864a8b0160a2516f544ff8be96",
+    "EXTRACTED-SWF/assets.swf/shapes/156.svg": "7cba046df0083512a3493637d52b3a211ee70ae82aa15ffb7011250523987c67",
+    "EXTRACTED-SWF/assets.swf/shapes/158.svg": "4f1ca4220bd49fea71a01220ddd53bfddc0757afdd1688f208d4f4838b9e7bec",
+    "EXTRACTED-SWF/assets.swf/shapes/159.svg": "f72051617d913925d5f4c997c302283f5ed7043ae7f1207958262132c978dd18",
+    "EXTRACTED-SWF/assets.swf/shapes/160.svg": "475b02c5cbd6cb230ea8b5b16f6e0fd801e16416a771ff65d65735bae75cd967",
+    "EXTRACTED-SWF/assets.swf/shapes/161.svg": "6e6c02b605253b60dbeba190017759b1d71c18ba87ec2ad1ce8f7d40f96521bb",
+    "EXTRACTED-SWF/assets.swf/shapes/162.svg": "ee5ff6560d3408e816a0f58756107b5b701b98de1c7373e5e86c5a903c9f46ed",
+    "EXTRACTED-SWF/assets.swf/shapes/163.svg": "c0663e65c398d3df5125add7027a6d9af1d7171c32148e5d3ca665aca16f434f",
+    "EXTRACTED-SWF/assets.swf/shapes/164.svg": "aa75b94404cefd0ecf9a2ae88e84d739465545fa0c2eed03122d67d4fc736a30",
+    "EXTRACTED-SWF/assets.swf/shapes/165.svg": "1de67c411c13dcccc7523c3158a4eb888cdb868f8a00c36e9672e9ce58855d71",
+    "EXTRACTED-SWF/assets.swf/shapes/166.svg": "1124c37ae8b7cb268a76d2a55092dac0542408e3d0ca88c777f9c98176a17503",
+    "EXTRACTED-SWF/assets.swf/shapes/167.svg": "557fac17f72f7b49841ac0f233b56b6638b89aaccc077a6781663ceca102ef9b",
+    "EXTRACTED-SWF/assets.swf/shapes/168.svg": "354545975f331a3c3a6a92ae4ec1fe1c6240d5251ad24dcb78d9ef11bd8b3117",
+    "EXTRACTED-SWF/assets.swf/shapes/170.svg": "7cd8ec284c4b3c1d740fc5cd7bb37a28b7d5fa91ebd4e8d4e9e57ac208a97982",
+    "EXTRACTED-SWF/assets.swf/shapes/171.svg": "9a8a2164091b1474526770808e303b910ab6244141fd1ba0129416de18a97230",
+    "EXTRACTED-SWF/assets.swf/shapes/172.svg": "ccc94446c4f8c3e2b0abbb1e3606f0be7891195adbf0477d93a551c9164deb82",
+    "EXTRACTED-SWF/assets.swf/shapes/173.svg": "c1745bcb7f8b2e451a814c310af2db26eb2f2a06b87ba03c61bc8d627a67b475",
+    "EXTRACTED-SWF/assets.swf/shapes/174.svg": "ba3d9d55003fcb3f5706949334a0641e5d19bd97b61715a4602c50c3113eb48a",
+    "EXTRACTED-SWF/assets.swf/shapes/175.svg": "eb217646c9a66a51f122d9d79a6b6578ba5bc65bd07d342f13152097b6089887",
+    "EXTRACTED-SWF/assets.swf/shapes/176.svg": "e5d37a9fe558967a940d66031a286191d62e8418db190a5f46eeda28fb4da28a",
+    "EXTRACTED-SWF/assets.swf/shapes/177.svg": "f710437bd07a080945b2ea6bd8c9784f97e5f561405e29a243e28030c2d7b7d9",
+    "EXTRACTED-SWF/assets.swf/shapes/178.svg": "4c7d4704437a4f47a0369c466c97211c0f5f6d596b22962191f7894326bcb3f7",
+    "EXTRACTED-SWF/assets.swf/shapes/179.svg": "05f4539aebe2cd6e6735c9268add5cb55e5f15ac9dae46546ea9847b83b18731",
+    "EXTRACTED-SWF/assets.swf/shapes/180.svg": "5f6202b1618a82d18fe0c203c86012643a20afcc993a5fc9ab3a8269ecbe125f",
+    "EXTRACTED-SWF/assets.swf/shapes/181.svg": "93209078564c4e0bd28aa2ff8db6b40e8bde073f1c2299ca5ac371c45e5ffd99",
+    "EXTRACTED-SWF/assets.swf/shapes/182.svg": "35a4c8b659d89f5e176db8582af5c1d489ed93b14d5fdcbcfae4b1e245f39da2",
+    "EXTRACTED-SWF/assets.swf/shapes/183.svg": "9561a6318c8769c2fda81dc60a24e20944796dc51c97592bef3b52e31d837886",
+    "EXTRACTED-SWF/assets.swf/shapes/184.svg": "805e6413a5e5f3dc3316e81ebc513394579209d8c081f1010a2504facbe93111",
+    "EXTRACTED-SWF/assets.swf/shapes/185.svg": "54965d3504baa9fde5eec40c4a275da40f9065680f5980ba023dce97b513f916",
+    "EXTRACTED-SWF/assets.swf/shapes/186.svg": "43f238bb3741024cc005465c536c14ebbe52e435192d21662a5411dc4bfbc289",
+    "EXTRACTED-SWF/assets.swf/shapes/187.svg": "da2586a9a8cde4aa4c2136a027f9b38ccadc0078816df7eb3e2915b667f3e82b",
+    "EXTRACTED-SWF/assets.swf/shapes/188.svg": "acf84080e81709e2df34ca662ab3dd1baa3e362024e2854bee2847e6f3a7b38a",
+    "EXTRACTED-SWF/assets.swf/shapes/189.svg": "038ac823ea1ac08b5ce93bbd477ccc7ce9d43c27eb7fefa61f268e62796d4d63",
+    "EXTRACTED-SWF/assets.swf/shapes/190.svg": "bc56e03863fee4ec42adaf6813006ac5b1210b19ab3b23ce21026a9af6a3e5dc",
+    "EXTRACTED-SWF/assets.swf/shapes/191.svg": "4d3fa78f1e1f242110a74e1a984cf7c1ef7447b909a7d4d0a7be5ac8aeb01163",
+    "EXTRACTED-SWF/assets.swf/shapes/192.svg": "ae64b910358664c03aa43a4091cb939e82514ac46d9399f37eb2a44bdb5dd1fe",
+    "EXTRACTED-SWF/assets.swf/shapes/193.svg": "8fe7e2c6b46763d08cfb65522b43f1c8a5924ad2c0c5cb0f288979f7aa2290de",
+    "EXTRACTED-SWF/assets.swf/shapes/194.svg": "8456011ad3a751945f293f123e3156773da8e3673815cd632007ca4512e991f3",
+    "EXTRACTED-SWF/assets.swf/shapes/195.svg": "6efe338adf2605303916bc826cdf6f362bfdc7fc5ab88abf0c88ee66ced82da8",
+    "EXTRACTED-SWF/assets.swf/shapes/196.svg": "00c189f7249e76d7f37fbc3aad724610b427e5394dfa3fc1d85a544d7b89bf79",
+    "EXTRACTED-SWF/assets.swf/shapes/197.svg": "bad8eb5755491863bace0de64dd5e9bb1beea991ecb8cb93e730575946836841",
+    "EXTRACTED-SWF/assets.swf/shapes/198.svg": "caa19adb422000df36f425ed858316a84e79d10719d0ee59469a1a18643b2b00",
+    "EXTRACTED-SWF/assets.swf/shapes/199.svg": "15dc5a24731a83ec0984f5d9cbd0051f6589cb52e69e04c66c7d135121ed6664",
+    "EXTRACTED-SWF/assets.swf/shapes/200.svg": "fe30332db3ef38b2beef5d7a32abf15337eaa8b3011b4adec5b567e183b4ba2a",
+    "EXTRACTED-SWF/assets.swf/shapes/201.svg": "8f3352067434750bb0503e8b70f784df4453805e6d52bb3b3aa55370cebb4686",
+    "EXTRACTED-SWF/assets.swf/shapes/202.svg": "a5b89ab80fbb05c83d985fbb652d6e312a84950da5b94cb163764ffcc8736ff5",
+    "EXTRACTED-SWF/assets.swf/shapes/203.svg": "ec687545bcff11049f65c1e59e0c9b6c59b0c3f26affc92b77f19cfd0d34bf6c",
+    "EXTRACTED-SWF/assets.swf/shapes/204.svg": "d3d1e610cf12e05448df465fdf844dd3df0d24a7305df5c61f8fb9d578ea316f",
+    "EXTRACTED-SWF/assets.swf/shapes/205.svg": "7ded045b1cdfd464b981329c186aa0fe1c0611fe70db1f863b804adf0759e7ad",
+    "EXTRACTED-SWF/assets.swf/shapes/206.svg": "fcc717a50e6e31c944052aa8842761310eb3c16062f306476dd1610299e3dae9",
+    "EXTRACTED-SWF/assets.swf/shapes/207.svg": "459cb30b733e192574b86261e4d1744e7385bc94fbb10633c7985cf265155e6c",
+    "EXTRACTED-SWF/assets.swf/shapes/208.svg": "5348ece83676d35992197874685fac49c0b63ed2e9b744665bf6b018655cd21c",
+    "EXTRACTED-SWF/assets.swf/shapes/209.svg": "84110db38fdf95fc6433f06599f52538d90dab5ee6c7808fe3895d5d2bdc19c4",
+    "EXTRACTED-SWF/assets.swf/shapes/210.svg": "53963b5bea6134cb6f5003173ffeb698d0a2c8421b0b8657f7ab5889fc75cda2",
+    "EXTRACTED-SWF/assets.swf/shapes/211.svg": "356a630d76cca7efa3b0da249e057b1453d8e711ab511706fdecaded994ad329",
+    "EXTRACTED-SWF/assets.swf/shapes/212.svg": "2847dd479439d5fbbff843d47be9125b4a2bd1bcaa07db2f5231d35b645a816a",
+    "EXTRACTED-SWF/assets.swf/shapes/213.svg": "156c9cb25324505d1ebb854535efc494ac0432990e0b7cc322f16027c545a114",
+    "EXTRACTED-SWF/assets.swf/shapes/214.svg": "1cfdf69b66861cb9f7083a4dc110af186ba384b7287f3dd198886675971a8958",
+    "EXTRACTED-SWF/assets.swf/shapes/215.svg": "59de9cfa6e5329cb01cc7f762eccd6f4ffb4d4e54b7b9f90208b035045d43a32",
+    "EXTRACTED-SWF/assets.swf/shapes/216.svg": "2962f30d88806cd900ea63d145601ed0f8eed866d44c3c0219dc2b5e4de268e4",
+    "EXTRACTED-SWF/assets.swf/shapes/217.svg": "868fc0c09f1c60a63bbb06d1a1976734a110027d5336016cf7548b60b0657245",
+    "EXTRACTED-SWF/assets.swf/shapes/218.svg": "6fb935b31853bfec2ccbead8ebee62adaf2e956b043108e006195c5b62a8f175",
+    "EXTRACTED-SWF/assets.swf/shapes/219.svg": "f5407070da9555e0f3499a5843a4db6d865d84e56f02f2f04b8b82e19334f933",
+    "EXTRACTED-SWF/assets.swf/shapes/220.svg": "389b656d01e620087375b57e67a169fd4841c4804fe9d33954a556e70932158b",
+    "EXTRACTED-SWF/assets.swf/shapes/221.svg": "60be72aceb5aa6ec85bc36036a07ac61fa2a715d79684678c6f8b5db23946685",
+    "EXTRACTED-SWF/assets.swf/shapes/222.svg": "8b7d975d5d4d3d08c33ae0230c1dbf02def04b75904ca4d90f4c2ac0d46a518d",
+    "EXTRACTED-SWF/assets.swf/shapes/223.svg": "6a9dd22296e89c81543461fc0b41b7ebb70d9a27ec706e3e5aed87ef13417560",
+    "EXTRACTED-SWF/assets.swf/shapes/224.svg": "8985f8c495d360054e4c96a99b5cd0d00c53c3362d3a65f2580e68d9fbc48c44",
+    "EXTRACTED-SWF/assets.swf/shapes/225.svg": "60b05e81d0c0639d8cb1c30d8d396cc721180aced0988a9541524b2f6386fa03",
+    "EXTRACTED-SWF/assets.swf/shapes/226.svg": "fa653825a6108951e19bfef1246a71053120d7c28b36fedb53b696cdbdcb4e88",
+    "EXTRACTED-SWF/assets.swf/shapes/227.svg": "c67faeb61680c471ffc22f133f61e13c4652c370414c59ac41effdf14c65993c",
+    "EXTRACTED-SWF/assets.swf/shapes/228.svg": "69bbc2ccccaf15d9782848e2cf8e1d9645efbbcbe38a6d3b6aaa0da09efc6cd0",
+    "EXTRACTED-SWF/assets.swf/shapes/229.svg": "53e72129021a72cb0ae50af5e2f331e27db4cd6fa7098805c4ac5cfc20f2f61b",
+    "EXTRACTED-SWF/assets.swf/shapes/230.svg": "c24d753bd812e8d10dd0d7869e8947f65c97ed2566142351ebfeb6ecf7833ec3",
+    "EXTRACTED-SWF/assets.swf/shapes/231.svg": "76a67dc85cc2bed9f59b0b567f4edc69b1d79c78c28434422cf4f72db6f5cb06",
+    "EXTRACTED-SWF/assets.swf/shapes/232.svg": "abf9407d91fe061c7e93935b2e03138c70ce98bf3fee8e0bb5f27795110bd4fc",
+    "EXTRACTED-SWF/assets.swf/shapes/233.svg": "adbb302f8666226fbcc7dbb0c0c895ffb6aca8b1996939386d0315bcd2964743",
+    "EXTRACTED-SWF/assets.swf/shapes/234.svg": "04534f761a864f013ac541608a8885b71e6582eeb8886bbd1ddd9eb3a7ee6196",
+    "EXTRACTED-SWF/assets.swf/shapes/235.svg": "daf50a01671c824d97b9ef2acaa65248293a99c3977e27dae3362497e317d774",
+    "EXTRACTED-SWF/assets.swf/shapes/236.svg": "12824e74a7ae7d8075bd89af68de81118ac58261647ce33be6d43cd0164b4564",
+    "EXTRACTED-SWF/assets.swf/shapes/237.svg": "a3d425883756d61447d38764c88f08062149c763b66464cefc72511c578fb801",
+    "EXTRACTED-SWF/assets.swf/shapes/238.svg": "22f5e9ebf66b547cd6b597d887812d8241881e0d043122378a40ca3ed769cd48",
+    "EXTRACTED-SWF/assets.swf/shapes/239.svg": "58c969913f1b2f089cd01e98f82cb705d1753be2e7ba1b31424ea8759c27b4c4",
+    "EXTRACTED-SWF/assets.swf/shapes/240.svg": "74e6656f36688516a07bcca0ef3dd20db2551759bd5be1c0fb53020f8a5b3f84",
+    "EXTRACTED-SWF/assets.swf/shapes/241.svg": "af9a71e37f046064022df45bc625721fd1daaa6da6412a2d71539ee2d9a0effe",
+    "EXTRACTED-SWF/assets.swf/shapes/242.svg": "3ccb2189ff319ffe822380b4c59e8eebacc5ee8254437f9b9d1aeaa8bde6dde7",
+    "EXTRACTED-SWF/assets.swf/shapes/244.svg": "afdd79bafe3f1ff067f8e13f687046d9a8f125a81a881fe7d02a27c03a14666b",
+    "EXTRACTED-SWF/assets.swf/shapes/245.svg": "18ca5925b0de8260a9e8b305e92a579385aae515665f9d8b838e3c21789b5bf3",
+    "EXTRACTED-SWF/assets.swf/shapes/246.svg": "e9b55f1b06f04b41ddd3e09ba1433ea058609bc471d919ed19e81795c7f1d9a2",
+    "EXTRACTED-SWF/assets.swf/shapes/247.svg": "eb1d4aef1168cbfcd77bbc4c36b7804b585d21feb8df88f009b233f39d38f6bf",
+    "EXTRACTED-SWF/assets.swf/shapes/248.svg": "62a99a1c05bfb76825a6e83c71a00de869a2bbe77eebce727a3ade02083ae987",
+    "EXTRACTED-SWF/assets.swf/shapes/249.svg": "ff276821c5dc9d7201211b445dcf24ab3a12a033c1c93420830ae2e9e3d6ced2",
+    "EXTRACTED-SWF/assets.swf/shapes/250.svg": "f026069c0a03260b7c79f7caa405ce5886e2cf192895cb1dc7a1fbf5fc71745f",
+    "EXTRACTED-SWF/assets.swf/shapes/251.svg": "342317ad97904b71d37983c2250ba909a355eb431fb79fecebf6da24f8e82692",
+    "EXTRACTED-SWF/assets.swf/shapes/252.svg": "b77c6fca77432ea251fe15bff291ee2fb6606a9d9fedae681772080abc54b6ce",
+    "EXTRACTED-SWF/assets.swf/shapes/253.svg": "aa985903318198c951265ef3e7cc52555c92c3990886ade2a3139b5cb2e2f2f2",
+    "EXTRACTED-SWF/assets.swf/shapes/254.svg": "bad04cc3186ef63ecdf13841812668fb5aa7234f84516da6fdd48591c3714c25",
+    "EXTRACTED-SWF/assets.swf/shapes/255.svg": "2f857f9d8542d4e8584d3dcb12647c6946f294bda9d334ee8e97d5df4d334dcb",
+    "EXTRACTED-SWF/assets.swf/shapes/256.svg": "27972f12b1b14a45c17a36106e60e2b6511a46bef3088065690e8a0bb6675bf6",
+    "EXTRACTED-SWF/assets.swf/shapes/257.svg": "7f00ca308bd7fb0bd9e4d63a0453a8403cb25058113ca0e9c3dc63bb8692b841",
+    "EXTRACTED-SWF/assets.swf/shapes/258.svg": "7739fa2d188fee843205b311aca31ef636dfd3e51315858ac7b389bc2c309f01",
+    "EXTRACTED-SWF/assets.swf/shapes/259.svg": "5673f39ee7a4ac0d09963e49addc19fcd93d384de7cfd49fa31c549e1a10148d",
+    "EXTRACTED-SWF/assets.swf/shapes/260.svg": "b429c5ad340c0fbd1fa422e5773646314e664fc1678fea1f55dfba87cb0d228c",
+    "EXTRACTED-SWF/assets.swf/shapes/261.svg": "d010c5f49607300467ae1bb11b2c98368738b4be706c66f07e33fd88898f3869",
+    "EXTRACTED-SWF/assets.swf/shapes/262.svg": "65c592630a842132325f97cb560ed8eec0d3a65c8599e9cd72680ef27f027392",
+    "EXTRACTED-SWF/assets.swf/shapes/263.svg": "d02101dc389c910c20d5c19ae143622b4a06c455fbf81683c751c172b9055ceb",
+    "EXTRACTED-SWF/assets.swf/shapes/264.svg": "fc5097a2eeb2932393e203363a11b08fc3998c3d21902094a07ea1c17f991566",
+    "EXTRACTED-SWF/assets.swf/shapes/265.svg": "cc825f41c3f4d11bffd764ffaaf6f2f606625e65eb59806aa6fcd903c29ebe71",
+    "EXTRACTED-SWF/assets.swf/shapes/266.svg": "99ee6ee725a7ec5b82ae09afdfbd8afaf8243670401cf2fcceb36401b417c4f9",
+    "EXTRACTED-SWF/assets.swf/shapes/268.svg": "bf51cebb1d3bd8e33bba07d993976d41ca2a8ba5f86c4f7427c3ed3b21cd02b3",
+    "EXTRACTED-SWF/assets.swf/shapes/269.svg": "b0a42a34c65a6c0ff41cba54be3c59b57baf7546815bab50cc66cb8912845c7f",
+    "EXTRACTED-SWF/assets.swf/shapes/270.svg": "c3388076b24d3d3c244fd333cc6bd2b9322e4c096e970085975a58514c6f135d",
+    "EXTRACTED-SWF/assets.swf/shapes/271.svg": "d0408db4560ffdaf80b5805952b226ef397e664b30007fdcf02d6243093dd576",
+    "EXTRACTED-SWF/assets.swf/shapes/272.svg": "933e08ccfb08ba82989d7518dc716eb5889d0c74ce12fcc06c97f43c659656d1",
+    "EXTRACTED-SWF/assets.swf/shapes/273.svg": "2980e4c8e5c8da22004e6101cd52e8a2f6ff538eae53c33c906f3edfcd0a31c2",
+    "EXTRACTED-SWF/assets.swf/shapes/274.svg": "e086210b5ee5105e2a9daa033a0e7a5dfa5459c81bf607b26ca06b809cc9c3ec",
+    "EXTRACTED-SWF/assets.swf/shapes/275.svg": "5c10e9d14037686b4071074b886911f275083a2cedd66f72a8eb48b18a0f15d0",
+    "EXTRACTED-SWF/assets.swf/shapes/276.svg": "7eee0e1dcb8a598b4c64e3bf2c20464f8fb24a66663b3ebb81affe7fa35ed546",
+    "EXTRACTED-SWF/assets.swf/shapes/277.svg": "7da49300f17d71fe4fc3d9fcc1e70a70b6af1e5358d16b38e29e3b88e66906b1",
+    "EXTRACTED-SWF/assets.swf/shapes/278.svg": "31a4e8a75813a7cdbe54c76be29b67feaeed7597c4b29c3678eaf49d70694009",
+    "EXTRACTED-SWF/assets.swf/shapes/279.svg": "6f35651903c9993929ab9cf355f1b5a0ca5aec7d80dc15794b640a37c7038ee3",
+    "EXTRACTED-SWF/assets.swf/shapes/280.svg": "ecb65af0a6d896deef149bc1480bf15db3f7f54efc1890dcc5e64f75c9070eae",
+    "EXTRACTED-SWF/assets.swf/shapes/281.svg": "512ea10dbe90efcecdc46ffbae32c4d7c6638afc7dbc8c91909daea48a4673b0",
+    "EXTRACTED-SWF/assets.swf/shapes/282.svg": "066ed783fb8f0b1d4d207fe292862da84a365472a36d90357db86cdcfe3e7f17",
+    "EXTRACTED-SWF/assets.swf/shapes/283.svg": "0449bf32c1dddc4f0c360d381e59b5b260a1ece8013055ff58de05238752c677",
+    "EXTRACTED-SWF/assets.swf/shapes/284.svg": "b2e9238072209bd831ab6a12b290f6a3fc5253309d206c2bd8da6c9bf9f1bc92",
+    "EXTRACTED-SWF/assets.swf/shapes/285.svg": "3b419eb4c9c2298d44f1a5a481f667f65918cd6224a2976fb3792bafececa67d",
+    "EXTRACTED-SWF/assets.swf/shapes/286.svg": "6583fcc4e4b9b1c621f4ae61e157db30ae8c7938eefbdd2b210aa3e26bd65716",
+    "EXTRACTED-SWF/assets.swf/shapes/287.svg": "a9b4ca914efc47df4c12b8d6551d964e41a1d0250b55cd40d95adfb31044f5bb",
+    "EXTRACTED-SWF/assets.swf/shapes/288.svg": "dbd0cfba7d9d130a3cafdc9d9180ecd62a42125b6c5fea840147b560c66823ff",
+    "EXTRACTED-SWF/assets.swf/shapes/289.svg": "b746f776a5963e73f8e7374b3d8472b98a80be48943c9f9e7b414187527b86e1",
+    "EXTRACTED-SWF/assets.swf/shapes/290.svg": "0a5ab50b0bbe95327c51eaa3f01207aa402eb6281a234d932e2e78a8715df879",
+    "EXTRACTED-SWF/assets.swf/shapes/291.svg": "b3d5c297e9d526eba4a0d881844babee3e305fa9cd07fa732309ee79d0adee35",
+    "EXTRACTED-SWF/assets.swf/shapes/292.svg": "c65f6935f77668865ce0b03808478f876cf5d4626e04011bcf8405b609244ff4",
+    "EXTRACTED-SWF/assets.swf/shapes/293.svg": "44edc6ff58d2e08157452c1c6f616db3332c00a22c78e1710e9a7ff23fc90704",
+    "EXTRACTED-SWF/assets.swf/shapes/294.svg": "f7b62d610c7a01b36976ae3f94dcfdb75f73cd867d2f8e910f6d894d4128bfde",
+    "EXTRACTED-SWF/assets.swf/shapes/295.svg": "b128d003508f593f00749f65574965dc05ad42f3a6b6976928b4c647667ddad1",
+    "EXTRACTED-SWF/assets.swf/shapes/296.svg": "0ca611ab8e505cacbb66081cf43e33e886c3275de1ce89c7ee711fefebc44b58",
+    "EXTRACTED-SWF/assets.swf/shapes/297.svg": "386dd984a1c83e3a740f9f7b75d98c8248b459025ebc59375584631bdea42fc5",
+    "EXTRACTED-SWF/assets.swf/shapes/298.svg": "fabb4002c3919d2857d321189e975918083f39a8fb1f7531bb3615b3ed58ace2",
+    "EXTRACTED-SWF/assets.swf/shapes/299.svg": "c4f63ffe2b752f59d08d2bbb00046fe0078ffd16a860969de85c41cd3b29832d",
+    "EXTRACTED-SWF/assets.swf/shapes/300.svg": "304e6943318438801d96f9f5f87cdce84abce288eb3f809034568fed44514578",
+    "EXTRACTED-SWF/assets.swf/shapes/301.svg": "eade7a0bc092d86e553d1b56c32b748b56555b5f298d750e4c275b562a4cfeee",
+    "EXTRACTED-SWF/assets.swf/shapes/302.svg": "aea9f6331c49b5043a206320f68b21eccf9840bee3a91aae6818ad2a3eaeb7ab",
+    "EXTRACTED-SWF/assets.swf/shapes/303.svg": "ff92ac9d4b5389db7e95ac7a30d12faef4027a27a8df61476c58b0206a15cb99",
+    "EXTRACTED-SWF/assets.swf/shapes/304.svg": "fa5c694c0df8a5a55500f1ec319e8ad69a5d7a75fe59785b15e334cd46370ab5",
+    "EXTRACTED-SWF/assets.swf/shapes/305.svg": "61ed6add7b02bb97574119ee9ba96f0c856862696d1985f76678bac70208585a",
+    "EXTRACTED-SWF/assets.swf/shapes/306.svg": "b3d2113c702f45c38189cf8b557066736faf01d9fbce0f5acb40fab7245fba31",
+    "EXTRACTED-SWF/assets.swf/shapes/307.svg": "c8ad3560b6161b22416dd22471e7c29e2ec5b02e5b8d07344f8d855727f868fb",
+    "EXTRACTED-SWF/assets.swf/shapes/308.svg": "72dce48feccf9b2af22d73e989f4e4897a2ed01f2197ec8d15986950b569ce73",
+    "EXTRACTED-SWF/assets.swf/shapes/309.svg": "b4be533643e2d47280654128ab3d24d0357b24d2da06b93408b98d7dc4e39cf6",
+    "EXTRACTED-SWF/assets.swf/shapes/310.svg": "eda5f13666b71e58acc7e127bb8892ce4ed4e82cd2a838668a77e105276c42b3",
+    "EXTRACTED-SWF/assets.swf/shapes/311.svg": "f2d7e6eea8854efd5e154125ec615fca29757ae164937765c9eca73aade5bff3",
+    "EXTRACTED-SWF/assets.swf/shapes/312.svg": "b3e7ad087f220f32d434fc00946394a10fc49a0aba419d24fdedee84c1fbef22",
+    "EXTRACTED-SWF/assets.swf/shapes/313.svg": "18d692117d15abf208bbb468480080ef34b6af79011d7fbaf172169e79a75672",
+    "EXTRACTED-SWF/assets.swf/shapes/314.svg": "bb1c23a3e5965707843cd509c2b161d2828f2593329d34f9a4cfafe5d1066e01",
+    "EXTRACTED-SWF/assets.swf/shapes/315.svg": "97e8bc7cb7d7455d21594acae4a6719f33236a988e4c9f38a475f4d964dccf98",
+    "EXTRACTED-SWF/assets.swf/shapes/316.svg": "a7930780e4f8faa341062f3186a9ea8a8c2cc2d55acd2919e994c8b16d35d19b",
+    "EXTRACTED-SWF/assets.swf/shapes/317.svg": "6cabf2f821e6ed793d5b3b752b8ea4872d657a8e8dfd6f72db54d75eb9b96b23",
+    "EXTRACTED-SWF/assets.swf/shapes/318.svg": "8bf60c10be46417a212bf09d840462093126ad5d8a26192baebff3b43219ffc2",
+    "EXTRACTED-SWF/assets.swf/shapes/319.svg": "360ec3e28c144e70a9423d400f29e1a1244358bde10a197ba44e5d378ce88ed1",
+    "EXTRACTED-SWF/assets.swf/shapes/320.svg": "44faf9f15411d43c5eed828d8b1eb92490c1256a121cdbcac697aa24954b1a0f",
+    "EXTRACTED-SWF/assets.swf/shapes/321.svg": "000e9a938d06e3523d1d0800aff78ef4f7fc50d7a33fa0a6decdfe5bbeef30c6",
+    "EXTRACTED-SWF/assets.swf/shapes/322.svg": "3ab091e66ca1cdabd127851c2e85e2f0a27695f81fc9b2391d3a6776d888da6f",
+    "EXTRACTED-SWF/assets.swf/shapes/323.svg": "ef8350cf08b75345da89b6cbe4ca6c780aa8cb5e2e2c5dc44596e99c83f06cc6",
+    "EXTRACTED-SWF/assets.swf/shapes/324.svg": "9055da45a769fd7fdcfacb8176e119b2954ff870eae23a7fa1c72678fe42237b",
+    "EXTRACTED-SWF/assets.swf/shapes/325.svg": "c04bcd15c91769e80d7d1431cce1a4a77bb0428a379bd42ae60041f27b4e3d65",
+    "EXTRACTED-SWF/assets.swf/shapes/326.svg": "444e6c5841aa296c5e91a6559c9db590b9a4d344c05f14e03d53302194b07253",
+    "EXTRACTED-SWF/assets.swf/shapes/327.svg": "6ff16ea6b94d914133cefbc9befa0f0f626ddc4744fcbf11544d6bfa759b200b",
+    "EXTRACTED-SWF/assets.swf/shapes/328.svg": "f7c9497c945b65c9fb6d5cabbfd284227db11f9eb2fe6b2814f51ee6dba75fd1",
+    "EXTRACTED-SWF/assets.swf/shapes/329.svg": "da16bbb37b3cd4cc98aac34c7ab58269d07f6ed5beccf8e5bbd56445f96c3de6",
+    "EXTRACTED-SWF/assets.swf/shapes/330.svg": "4fc915133ed754025214eb12775089cef2489603bc4b6a8cce3f262b0c962e26",
+    "EXTRACTED-SWF/assets.swf/shapes/331.svg": "cd1858f08cf061b0ac09087c0b96a15ad89dea6e62ae49dfc3d5d95025a9aa31",
+    "EXTRACTED-SWF/assets.swf/shapes/332.svg": "8f52282ce19b4d7fbadae231e3b897052e25f8087184c1bc8974345c4396e0b4",
+    "EXTRACTED-SWF/assets.swf/shapes/333.svg": "cd524b2b7cfbd730c8db05bb3089dfbd0a5b33b78ddd834578810a62dc4106f6",
+    "EXTRACTED-SWF/assets.swf/shapes/334.svg": "ec57ad061425780bab04bb54b8008f8126e8ed084d68e363add945a487aaee7d",
+    "EXTRACTED-SWF/assets.swf/shapes/335.svg": "0f6c4dbbf294232854b61e3ccb21d1e2b4451f1549a878b375784c2f89698587",
+    "EXTRACTED-SWF/assets.swf/shapes/336.svg": "3d15e5ab80531b03bdb65fc0f2f0367dc8430fa9164eef6adc330fb954c9044c",
+    "EXTRACTED-SWF/assets.swf/shapes/337.svg": "713a8a70cd0277725168fbb1fd4cc824a1fc1fafad1cc8462210bd0ca4a939b9",
+    "EXTRACTED-SWF/assets.swf/shapes/338.svg": "4eb442aa648e2a4ca9db8bbb599a432ce415b262961da55efc4610546088f7d4",
+    "EXTRACTED-SWF/assets.swf/shapes/340.svg": "8cf4a223c9ea852a65e3def57fcf07046ec535abc05d8ab3f2e2a6bedcd486f0",
+    "EXTRACTED-SWF/assets.swf/shapes/341.svg": "7270b9400ca24bac91346da9bea3bead56cfd658f332efdd5d194be724429d1d",
+    "EXTRACTED-SWF/assets.swf/shapes/342.svg": "3ac6794454eba2d62a453318e1e3dc971d42c09b3408ac59962771c19bee0fec",
+    "EXTRACTED-SWF/assets.swf/shapes/343.svg": "6eb1906f28d8141dbff22446f5631da26b3bc175168c124704a2b3186172d2bc",
+    "EXTRACTED-SWF/assets.swf/shapes/345.svg": "f59843cf501dc9b2852ac1c14090198efa3f8dd824864322e88cc6f3b184f979",
+    "EXTRACTED-SWF/assets.swf/shapes/346.svg": "1cf08fc5eae4525aa7648ad4431829f45c4d026e703ae11120d1c8c9bfaee006",
+    "EXTRACTED-SWF/assets.swf/shapes/347.svg": "faee30394c3450b8fb1992afb7ca2ed0ccc1045d8d1aa24496491054b63c48e4",
+    "EXTRACTED-SWF/assets.swf/shapes/349.svg": "46f121a2b81de5002a46cf995f58ae1b019ea17a93f432f85a64c3bf74a7e6c6",
+    "EXTRACTED-SWF/assets.swf/shapes/350.svg": "05b20d0ff4896cba2821777df218d66dfd779c2a668132ddce2aef70d9bfb841",
+    "EXTRACTED-SWF/assets.swf/shapes/351.svg": "af58803d638d293272f08945a2d62f511b0a8497aa93847449b8bd95c7236a2b",
+    "EXTRACTED-SWF/assets.swf/shapes/352.svg": "494d0c69936c27ac317b9c1a9e27dc069fa36421511f8c5beb24418e8235acbf",
+    "EXTRACTED-SWF/assets.swf/shapes/353.svg": "019486841d0c9ea2fea5db0c1658ea3596bf4c845b46738e69539746256569b1",
+    "EXTRACTED-SWF/assets.swf/shapes/354.svg": "3b0ef09524c5b1f9070ebba84fc0f21d0b22c35a0feaab21a30acba22b0d4070",
+    "EXTRACTED-SWF/assets.swf/shapes/355.svg": "6af28c8889abf345999bf5eced640a327b14b30b9c511cf904576d02e8f5b115",
+    "EXTRACTED-SWF/assets.swf/shapes/356.svg": "aa07f2c4d0cd8c3b9229f8914b0fd02dc3d1f446fd278800f71e4ef484618be0",
+    "EXTRACTED-SWF/assets.swf/shapes/357.svg": "5dce6b5d1c32740e8795c2c1f381a173adcb23361c7088fc16817b24a61c9afc",
+    "EXTRACTED-SWF/assets.swf/shapes/358.svg": "77d900f0b7e4ff3c2a5086d8aaa94893592ccb220ca6bab25f137df05b976c69",
+    "EXTRACTED-SWF/assets.swf/shapes/360.svg": "f40d6c663ae28df93e2f7a19760e360d06455943ac1376e0d7ef8c4fae839db2",
+    "EXTRACTED-SWF/assets.swf/shapes/361.svg": "b55d9cc4b73a05cc868cd19bef264f4423cea101e15bfb67c0ad7694eb09356f",
+    "EXTRACTED-SWF/assets.swf/shapes/362.svg": "94b613f2f0d3a436e952f7f2d4ab0894ddb16517564dce07b4b2c59d6293c3d7",
+    "EXTRACTED-SWF/assets.swf/shapes/363.svg": "d30f48c2274e66969f94f10067d013da87eca886a4b7b057c6dcd7e3ef32f268",
+    "EXTRACTED-SWF/assets.swf/shapes/364.svg": "dd2ff4fce9831eedc2447fd9d42e409342b828c77174ed9dd4cd0819ee048736",
+    "EXTRACTED-SWF/assets.swf/shapes/365.svg": "5534158977fa24ddb495ae91553bc0bf2f32203880c2b360ff84229d09ee542d",
+    "EXTRACTED-SWF/assets.swf/shapes/366.svg": "d2a1cb7af583a923efb26d6b98d542f60cc7f0d64122ed087cb5793ed8c610d2",
+    "EXTRACTED-SWF/assets.swf/shapes/367.svg": "06a3d6ab066145c4e4eefacc52347b5fcb62db554702cfaa30c71845791a28ee",
+    "EXTRACTED-SWF/assets.swf/shapes/368.svg": "20ef174813cc77c17fb05f0e2e6981656e24a5e5a9f4c10c39abf2be7b834111",
+    "EXTRACTED-SWF/assets.swf/shapes/369.svg": "0710c0403492c0a37f628d3c5b52e9dd857fabc945f5d2c562588f158e41ebbf",
+    "EXTRACTED-SWF/assets.swf/shapes/370.svg": "5ba03f9b12707e2bf75da584dc934b6b760abb939bb9ba00988c58c7be1feb98",
+    "EXTRACTED-SWF/assets.swf/shapes/371.svg": "3495c6aebdd1970b32b3e473bc0f70c9b39b1a6e4463f0c1ddee62eec2344e4a",
+    "EXTRACTED-SWF/assets.swf/shapes/373.svg": "5dc7bddb26a078d6f9dc6560b5458bde5fcbfb2886d26ac81765f12b5e142c94",
+    "EXTRACTED-SWF/assets.swf/shapes/374.svg": "421b2c0ca35772f766d1614b07edbfd163bdcef56eda03c07e5163e32b7d641a",
+    "EXTRACTED-SWF/assets.swf/shapes/375.svg": "e9115555c3e97e2b7bca37e973433e2f97d43889a80e4a66113ab5b2c37e61ab",
+    "EXTRACTED-SWF/assets.swf/shapes/377.svg": "bc2a4c8c1394e6e6dda820d810387393952d73a52da6afd193cac330f75e397c",
+    "EXTRACTED-SWF/assets.swf/shapes/378.svg": "c748355de97bd97f85ad84b956a0c3f0760109b4543376cf2eeb25851dba63d8",
+    "EXTRACTED-SWF/assets.swf/shapes/379.svg": "9d18c4ab470f1971c5c0a4927ae124615efd604774bddde1430eee47a500d68c",
+    "EXTRACTED-SWF/assets.swf/shapes/380.svg": "1bc22bb25dedc53f0ea813ffe5324cd77a48f8018d933ed5112b40a4c386d6f6",
+    "EXTRACTED-SWF/assets.swf/shapes/381.svg": "5bea6f243b627f92d82319fee892c93515c0f92ac250062bcb358f3424a96cb9",
+    "EXTRACTED-SWF/assets.swf/shapes/382.svg": "ace9bd3f77c2292f00514c8863b3619dd8c8076f36846a79ad39dd60128f046b",
+    "EXTRACTED-SWF/assets.swf/shapes/383.svg": "cc16ca6462ce3534ddda790884a02695f69b1979d69103bfb18b9b1f90e83e5d",
+    "EXTRACTED-SWF/assets.swf/scripts/mii/display/controllers/MiiBody.as": "f57ccfaaca55a9b8881e9a3524e4cdea7b56ad830c96685067a63b72a079e304"
+  },
+  "roots": [
+    {
+      "depth": 1,
+      "matrix": [
+        0.8899993896484375,
+        0,
+        0,
+        0.8899993896484375,
+        150,
+        140
+      ],
+      "color": {
+        "multipliers": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "offsets": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "name": "headback",
+      "symbolId": 37,
+      "clipDepth": null,
+      "blendMode": 1,
+      "visible": true
+    },
+    {
+      "depth": 3,
+      "matrix": [
+        1.7960052490234375,
+        0,
+        0,
+        1.7952423095703125,
+        150,
+        350
+      ],
+      "color": {
+        "multipliers": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "offsets": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "name": "body",
+      "symbolId": 56,
+      "clipDepth": null,
+      "blendMode": 1,
+      "visible": true
+    },
+    {
+      "depth": 17,
+      "matrix": [
+        0.890869140625,
+        0,
+        0,
+        0.890228271484375,
+        150.05,
+        140
+      ],
+      "color": {
+        "multipliers": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "offsets": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "name": "head",
+      "symbolId": 385,
+      "clipDepth": null,
+      "blendMode": 1,
+      "visible": true
+    }
+  ],
+  "symbols": {
+    "1": {
+      "kind": "shape",
+      "bounds": {
+        "x": 7.65,
+        "y": -42.95,
+        "width": 35,
+        "height": 35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/1.svg",
+      "sourceSha256": "3331eabbd101d85d22478f4c74eaf91786f566d820a0f078b445d12929752ce2"
+    },
+    "2": {
+      "kind": "shape",
+      "bounds": {
+        "x": -80.9,
+        "y": -86.25,
+        "width": 164.3,
+        "height": 193.35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/2.svg",
+      "sourceSha256": "0e464f5b359068af8279fc1b493e54abb01a6670bebcfd7ae9264c122166b38d"
+    },
+    "3": {
+      "kind": "shape",
+      "bounds": {
+        "x": -90.3,
+        "y": -96.5,
+        "width": 180.6,
+        "height": 208.75
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/3.svg",
+      "sourceSha256": "e8b221fc48cf3c5bd6a874ac1b371adec08dd35b31d9f84489c33cbb117f12dd"
+    },
+    "4": {
+      "kind": "shape",
+      "bounds": {
+        "x": -77.3,
+        "y": -104.9,
+        "width": 158.65,
+        "height": 227
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/4.svg",
+      "sourceSha256": "d419a580604ac8ca86fa933c4f4594b9c2dfae2cd78cec099131a7aaea879b4d"
+    },
+    "5": {
+      "kind": "shape",
+      "bounds": {
+        "x": -86.95,
+        "y": -85.6,
+        "width": 173.85,
+        "height": 139.75
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/5.svg",
+      "sourceSha256": "1a99b4fe0228f447ef3d8044960b72cc6458ff54748743fd8bf0d78432dd3704"
+    },
+    "6": {
+      "kind": "shape",
+      "bounds": {
+        "x": -85.7,
+        "y": -87.25,
+        "width": 170.7,
+        "height": 194.7
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/6.svg",
+      "sourceSha256": "cdb86f576c5c85f6ec1f6466e4efd320ac125a3a0dbdb490d4c580a654092623"
+    },
+    "7": {
+      "kind": "shape",
+      "bounds": {
+        "x": -100.35,
+        "y": -37.25,
+        "width": 200.7,
+        "height": 169.6
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/7.svg",
+      "sourceSha256": "becea7f08e6bba243567aaf4352bd3a64ee33fc8b15bc37ae13226ed325e0562"
+    },
+    "8": {
+      "kind": "shape",
+      "bounds": {
+        "x": -95.95,
+        "y": -100.8,
+        "width": 191.25,
+        "height": 178.3
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/8.svg",
+      "sourceSha256": "1a7c394e7141c7dc16d0efe6bd898534f235ba4d6f2ffeaccfe04c83073b6426"
+    },
+    "9": {
+      "kind": "shape",
+      "bounds": {
+        "x": -110.8,
+        "y": -95.85,
+        "width": 221.6,
+        "height": 197.25
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/9.svg",
+      "sourceSha256": "640877360164fe94f174fcebb2feae108ea97724ff65b37896380246b3bcaa97"
+    },
+    "10": {
+      "kind": "shape",
+      "bounds": {
+        "x": -94.15,
+        "y": -87.65,
+        "width": 189.35,
+        "height": 180.55
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/10.svg",
+      "sourceSha256": "0b3ca67589b72025938eb8882ca9c1869fc725c05a6fd36d5a84a672937b129c"
+    },
+    "11": {
+      "kind": "shape",
+      "bounds": {
+        "x": -86.2,
+        "y": -100.75,
+        "width": 172.4,
+        "height": 219.3
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/11.svg",
+      "sourceSha256": "6ee8debcd22fc681d8be8ab33843562f3226d5234258f91bab7f7b18fc36c306"
+    },
+    "12": {
+      "kind": "shape",
+      "bounds": {
+        "x": -97.25,
+        "y": -100.65,
+        "width": 194.5,
+        "height": 231.9
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/12.svg",
+      "sourceSha256": "fd3ac4cc93db862cf951162ae3b43bdac0b2cd33d9de8b135fb225f911e370ca"
+    },
+    "13": {
+      "kind": "shape",
+      "bounds": {
+        "x": -102.55,
+        "y": -103.9,
+        "width": 205.05,
+        "height": 244.2
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/13.svg",
+      "sourceSha256": "7baa7aeaed1e765026c735b8007c5aab5407d58929201fb3589875bf92082e40"
+    },
+    "14": {
+      "kind": "shape",
+      "bounds": {
+        "x": -89.35,
+        "y": -107,
+        "width": 178.95,
+        "height": 252.05
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/14.svg",
+      "sourceSha256": "c2a5eb622368451f794160166bb2470edced4d3de3b130ccdfb58af7c09b5cac"
+    },
+    "15": {
+      "kind": "shape",
+      "bounds": {
+        "x": -100.55,
+        "y": -21.9,
+        "width": 202.6,
+        "height": 141.3
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/15.svg",
+      "sourceSha256": "efedb08dfa5243629354e8218750c51320ab73109dc7b89cbf5a399bf31bcd79"
+    },
+    "16": {
+      "kind": "shape",
+      "bounds": {
+        "x": -91.65,
+        "y": -18.55,
+        "width": 183.35,
+        "height": 130.6
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/16.svg",
+      "sourceSha256": "4af074b40f59a8f1c58d6d30f7f63140b1390b1ef48e60293b2f0de428f8708c"
+    },
+    "17": {
+      "kind": "shape",
+      "bounds": {
+        "x": -89,
+        "y": -80.1,
+        "width": 178,
+        "height": 211.8
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/17.svg",
+      "sourceSha256": "a17de40e704923e36cfe26b6c87ae016d1298dcf5c30db7260b5f617144254b0"
+    },
+    "18": {
+      "kind": "shape",
+      "bounds": {
+        "x": -77.85,
+        "y": 3.3,
+        "width": 155.95,
+        "height": 130.35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/18.svg",
+      "sourceSha256": "dfef51d9adbaedcc70d6d6e23dd2de48a3dc2eae0cbef641605f5bc8b43cffbd"
+    },
+    "19": {
+      "kind": "shape",
+      "bounds": {
+        "x": -90.8,
+        "y": -92.1,
+        "width": 181.65,
+        "height": 224.8
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/19.svg",
+      "sourceSha256": "5cb426243d8a854ffd977e1695b16030260ffc23465dd26838e4c55d210c0bd1"
+    },
+    "20": {
+      "kind": "shape",
+      "bounds": {
+        "x": -91.9,
+        "y": -103.25,
+        "width": 183.8,
+        "height": 177.7
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/20.svg",
+      "sourceSha256": "f9e085ff7dbd83b16e88d9b0b0abc74740c05618820930e14631a6191398fea7"
+    },
+    "21": {
+      "kind": "shape",
+      "bounds": {
+        "x": -94.5,
+        "y": -88.6,
+        "width": 191.1,
+        "height": 192.35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/21.svg",
+      "sourceSha256": "595cad1fa6e8d0da131dbdfb2bc26e7de8418276b783e713554ed1cdbbe35656"
+    },
+    "22": {
+      "kind": "shape",
+      "bounds": {
+        "x": -91.2,
+        "y": -91.6,
+        "width": 180.35,
+        "height": 210.65
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/22.svg",
+      "sourceSha256": "be3f9513441fb8f57b53bb19ec41fef0c6d69e008a7f8c8afc29c7b11f9da35c"
+    },
+    "23": {
+      "kind": "shape",
+      "bounds": {
+        "x": -90,
+        "y": -64.95,
+        "width": 180,
+        "height": 184.5
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/23.svg",
+      "sourceSha256": "9868a1890dfd2cbb1aa7d0fa2934358d7b0b96142af36711d35c7bfb90e094a6"
+    },
+    "24": {
+      "kind": "shape",
+      "bounds": {
+        "x": -102,
+        "y": -90.8,
+        "width": 206.8,
+        "height": 197.25
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/24.svg",
+      "sourceSha256": "1b7ff4b7c21a5a79bc83d28aa96d77ffefd14068658ec7876f4d52739859a443"
+    },
+    "25": {
+      "kind": "shape",
+      "bounds": {
+        "x": -88.35,
+        "y": -95.2,
+        "width": 222.45,
+        "height": 202.7
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/25.svg",
+      "sourceSha256": "ccf093531144bf750a82f7ee93cca9617049567f93d5e02a72b2b9dbd0ce05b0"
+    },
+    "26": {
+      "kind": "shape",
+      "bounds": {
+        "x": -90,
+        "y": -84.7,
+        "width": 180,
+        "height": 212.2
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/26.svg",
+      "sourceSha256": "064daab2bd84f180a9f447fc2a7c345f6da807e04950d9ef4fa7cbfcc3261d5e"
+    },
+    "27": {
+      "kind": "shape",
+      "bounds": {
+        "x": -121.85,
+        "y": -86.35,
+        "width": 244.4,
+        "height": 111.35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/27.svg",
+      "sourceSha256": "4aba0f7f1b5addfe4575b6abd210d8c725f30f54f42c1c88766923cb671642ef"
+    },
+    "28": {
+      "kind": "shape",
+      "bounds": {
+        "x": -10,
+        "y": 9.05,
+        "width": 55.05,
+        "height": 86.95
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/28.svg",
+      "sourceSha256": "fb826556dcc23e5f01c626495023ee8d95af488f0aeda77d5b403a0c4ca5f79f"
+    },
+    "29": {
+      "kind": "shape",
+      "bounds": {
+        "x": -94.8,
+        "y": -88.55,
+        "width": 189.8,
+        "height": 138.5
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/29.svg",
+      "sourceSha256": "5f87fae96a959ca25594c8dde23e33d291bdaa3f5538d3ec4e9c0e5ea70d1217"
+    },
+    "30": {
+      "kind": "shape",
+      "bounds": {
+        "x": -121.3,
+        "y": -97.3,
+        "width": 243.1,
+        "height": 235.95
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/30.svg",
+      "sourceSha256": "f6b32ada00385890a292bd79d7995beb42966d6e9f40f031229124b2c1505e72"
+    },
+    "31": {
+      "kind": "shape",
+      "bounds": {
+        "x": -90,
+        "y": -106.15,
+        "width": 179.45,
+        "height": 208.65
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/31.svg",
+      "sourceSha256": "1d341a8d4ba69bcee9604923e9bea6ab4dbc9a8ea03c0fb0b79b25ec58674ef6"
+    },
+    "32": {
+      "kind": "shape",
+      "bounds": {
+        "x": -94.9,
+        "y": -34.6,
+        "width": 189.8,
+        "height": 161.6
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/32.svg",
+      "sourceSha256": "08cf1f830d778ecc218d1eb920df9cffeea17d2c7010c66f15e696083af389c3"
+    },
+    "33": {
+      "kind": "shape",
+      "bounds": {
+        "x": -104.05,
+        "y": -96.5,
+        "width": 210,
+        "height": 219.1
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/33.svg",
+      "sourceSha256": "7daacf7abd1fea965e5ad4c4b8ee9a25baf03b1fe1138101c00874c3b7a681b7"
+    },
+    "34": {
+      "kind": "shape",
+      "bounds": {
+        "x": -98.75,
+        "y": -85.15,
+        "width": 197.8,
+        "height": 224.85
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/34.svg",
+      "sourceSha256": "c2e802cfbc97c63b8a2f2059841090606d7e5952f14d3bc769567c4ac2f765cc"
+    },
+    "35": {
+      "kind": "shape",
+      "bounds": {
+        "x": -89.75,
+        "y": -107.05,
+        "width": 179.4,
+        "height": 259.25
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/35.svg",
+      "sourceSha256": "c5281d60da22088a0175b559b3ac1df65ef95d3b35f9b0eb7f8b3dae3cb660cb"
+    },
+    "36": {
+      "kind": "sprite",
+      "className": "assets_fla.hairBack_2",
+      "frameCount": 72,
+      "blankFrames": [
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        17,
+        18,
+        20,
+        21,
+        24,
+        25,
+        26,
+        28,
+        29,
+        30,
+        31,
+        33,
+        34,
+        35,
+        36,
+        40,
+        65
+      ]
+    },
+    "37": {
+      "kind": "sprite",
+      "className": "assets_fla.headback_1",
+      "frameCount": 1,
+      "blankFrames": []
+    },
+    "38": {
+      "kind": "shape",
+      "bounds": {
+        "x": -18.5,
+        "y": -1.8,
+        "width": 35.05,
+        "height": 104.35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/38.svg",
+      "sourceSha256": "e9209c2b951d704d4fd9f19411314eded02ab571bee9e4f6538fd118c55ed16b"
+    },
+    "39": {
+      "kind": "sprite",
+      "className": null,
+      "frameCount": 1,
+      "blankFrames": []
+    },
+    "40": {
+      "kind": "shape",
+      "bounds": {
+        "x": -14.1,
+        "y": 0,
+        "width": 28,
+        "height": 26.25
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/40.svg",
+      "sourceSha256": "a7d79df2b675fd864221e4f47649f393d2117e88a74e4cd0ec658ddc7d257e9b"
+    },
+    "41": {
+      "kind": "sprite",
+      "className": null,
+      "frameCount": 1,
+      "blankFrames": []
+    },
+    "42": {
+      "kind": "shape",
+      "bounds": {
+        "x": -37.55,
+        "y": -29.9,
+        "width": 75.1,
+        "height": 59.85
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/42.svg",
+      "sourceSha256": "0f77f7831f4fe9cf9e72175ebeb5c1affc738b514716e3ff08ef3c33ff7e238f"
+    },
+    "43": {
+      "kind": "sprite",
+      "className": null,
+      "frameCount": 1,
+      "blankFrames": []
+    },
+    "44": {
+      "kind": "sprite",
+      "className": "assets_fla.pants_4",
+      "frameCount": 1,
+      "blankFrames": []
+    },
+    "45": {
+      "kind": "sprite",
+      "className": null,
+      "frameCount": 1,
+      "blankFrames": []
+    },
+    "46": {
+      "kind": "shape",
+      "bounds": {
+        "x": -8.1,
+        "y": -11,
+        "width": 65.1,
+        "height": 22
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/46.svg",
+      "sourceSha256": "378eb0c56c0174db953f180d3cb4f91c1114d60d45fcece379c114a25c11e20c"
+    },
+    "47": {
+      "kind": "sprite",
+      "className": null,
+      "frameCount": 1,
+      "blankFrames": []
+    },
+    "48": {
+      "kind": "shape",
+      "bounds": {
+        "x": -2.85,
+        "y": -11,
+        "width": 57.9,
+        "height": 22
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/48.svg",
+      "sourceSha256": "aa782cd3833ac41ca5f8db29296c7b23c4b93ed85c9af3b1c1827029b1050505"
+    },
+    "49": {
+      "kind": "sprite",
+      "className": null,
+      "frameCount": 1,
+      "blankFrames": []
+    },
+    "50": {
+      "kind": "shape",
+      "bounds": {
+        "x": -37.9,
+        "y": -97.2,
+        "width": 75.8,
+        "height": 97.2
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/50.svg",
+      "sourceSha256": "d2f15bf0f613b99ec8991da287f3696ed91b5aee08eac69db00350b4604e02b9"
+    },
+    "51": {
+      "kind": "shape",
+      "bounds": {
+        "x": -50.15,
+        "y": -97.2,
+        "width": 100.3,
+        "height": 129.4
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/51.svg",
+      "sourceSha256": "ca02bdf6ddc011dc9b364611cc74c9bbfb5089872ee06410d55784679c98dc94"
+    },
+    "52": {
+      "kind": "sprite",
+      "className": "assets_fla.upperbody_12",
+      "frameCount": 2,
+      "blankFrames": []
+    },
+    "53": {
+      "kind": "shape",
+      "bounds": {
+        "x": -15.5,
+        "y": -15.5,
+        "width": 31,
+        "height": 31
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/53.svg",
+      "sourceSha256": "ce7dba9024ed58b7f4fa5ba8095e6f06b88976c5127eba78dffd15cebe0242bc"
+    },
+    "54": {
+      "kind": "sprite",
+      "className": null,
+      "frameCount": 1,
+      "blankFrames": []
+    },
+    "55": {
+      "kind": "sprite",
+      "className": "assets_fla.shirt_9",
+      "frameCount": 1,
+      "blankFrames": []
+    },
+    "56": {
+      "kind": "sprite",
+      "className": "assets_fla.fullbody_3",
+      "frameCount": 1,
+      "blankFrames": []
+    },
+    "57": {
+      "kind": "shape",
+      "bounds": {
+        "x": -79.25,
+        "y": -106.5,
+        "width": 158.5,
+        "height": 207.35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/57.svg",
+      "sourceSha256": "90f5e8d69c41b553704c4415090060fa57465c83d1ff2a070d21a6c8d1217718"
+    },
+    "58": {
+      "kind": "shape",
+      "bounds": {
+        "x": -79.5,
+        "y": -106.5,
+        "width": 159,
+        "height": 203.25
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/58.svg",
+      "sourceSha256": "2eb0668e6543ee2d5daf8ffff59793f1bb8a0970fb77c0f5a116c91e3889fac8"
+    },
+    "59": {
+      "kind": "shape",
+      "bounds": {
+        "x": -79.5,
+        "y": -106.5,
+        "width": 159,
+        "height": 220.55
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/59.svg",
+      "sourceSha256": "02a922782bcbf8316b57ff7fed4be533e497b5ea98f1baa492ffd3b996a63628"
+    },
+    "60": {
+      "kind": "shape",
+      "bounds": {
+        "x": -85.1,
+        "y": -106.5,
+        "width": 170.25,
+        "height": 212.3
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/60.svg",
+      "sourceSha256": "d31b0145596e63964706beb566cae84e6ac5e583b8f910a7013d142b3e994163"
+    },
+    "61": {
+      "kind": "shape",
+      "bounds": {
+        "x": -79,
+        "y": -106.5,
+        "width": 158,
+        "height": 209.55
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/61.svg",
+      "sourceSha256": "557e19a9fc5d9f8b151f1ec7db63bdd2be623c135dfaf8ccf87c01a24a26dbd3"
+    },
+    "62": {
+      "kind": "shape",
+      "bounds": {
+        "x": -79.15,
+        "y": -106.5,
+        "width": 158.3,
+        "height": 203.4
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/62.svg",
+      "sourceSha256": "948d2cdf77f811f47afed7c7c2090e8098c6da1f0b28cf82a859adf0cf8fa671"
+    },
+    "63": {
+      "kind": "shape",
+      "bounds": {
+        "x": -79.25,
+        "y": -106.5,
+        "width": 158.5,
+        "height": 219.6
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/63.svg",
+      "sourceSha256": "c69e48c0f6467a61f1b94cdef33f341cd9f48469911c29ee294178c823bcc0ae"
+    },
+    "64": {
+      "kind": "shape",
+      "bounds": {
+        "x": -81.15,
+        "y": -106.5,
+        "width": 162.3,
+        "height": 223.05
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/64.svg",
+      "sourceSha256": "20e18ef2d7a23e447f2087e510cf8a6548877065dce44cbdb183446967add224"
+    },
+    "65": {
+      "kind": "sprite",
+      "className": "assets_fla.heads_15",
+      "frameCount": 8,
+      "blankFrames": []
+    },
+    "66": {
+      "kind": "shape",
+      "bounds": {
+        "x": -64.6,
+        "y": 21,
+        "width": 129.45,
+        "height": 38
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/66.svg",
+      "sourceSha256": "80be15a971127a2073fb6f48156598a449edbe6716fe7f58ab3c0eb232e41283"
+    },
+    "67": {
+      "kind": "shape",
+      "bounds": {
+        "x": -67.65,
+        "y": 20.3,
+        "width": 135.6,
+        "height": 37.7
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/67.svg",
+      "sourceSha256": "328231742c87742be24234c885f4b8ae01140a09c88267ac889dc07eb3d586b2"
+    },
+    "68": {
+      "kind": "shape",
+      "bounds": {
+        "x": -65.7,
+        "y": 24.2,
+        "width": 131.4,
+        "height": 42.95
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/68.svg",
+      "sourceSha256": "c1334eb16e385696f3b84400bbcebb827541a7801283a4df773c526278cec34a"
+    },
+    "69": {
+      "kind": "shape",
+      "bounds": {
+        "x": -78.6,
+        "y": 22.75,
+        "width": 157.1,
+        "height": 44.15
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/69.svg",
+      "sourceSha256": "042c678fca9af8eae5d9de3970504ab1da3bed80b9f3aa65c8aff9c9cb2cf48b"
+    },
+    "70": {
+      "kind": "shape",
+      "bounds": {
+        "x": -67.85,
+        "y": 19.75,
+        "width": 135.95,
+        "height": 40.1
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/70.svg",
+      "sourceSha256": "adbcc456c1807011f2765ead83567ba9dbe4f73bf0589d2f6aa9e00be5d4fcf8"
+    },
+    "71": {
+      "kind": "shape",
+      "bounds": {
+        "x": -70.8,
+        "y": 20.75,
+        "width": 141.95,
+        "height": 41.9
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/71.svg",
+      "sourceSha256": "173bc70d21a4c911cd49ce2ff19edaa9db75353d0355ab254cc087888ab58bb5"
+    },
+    "72": {
+      "kind": "shape",
+      "bounds": {
+        "x": -66.15,
+        "y": 21,
+        "width": 133.15,
+        "height": 45.45
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/72.svg",
+      "sourceSha256": "38c33ef21f8b62d445e391ecd07504d8b8ce522b9d628bc86f5eb5324621a866"
+    },
+    "73": {
+      "kind": "shape",
+      "bounds": {
+        "x": -71.1,
+        "y": 22.25,
+        "width": 141.85,
+        "height": 49.75
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/73.svg",
+      "sourceSha256": "629f61651b79e7aadd43fc3335bc0b91b8a77e6ab58c82e48f85279da4b955f9"
+    },
+    "74": {
+      "kind": "shape",
+      "bounds": {
+        "x": -62.75,
+        "y": -19.25,
+        "width": 125.85,
+        "height": 38.35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/74.svg",
+      "sourceSha256": "2a095e30c07f5eea92e70a23a07df409a2b99bc128c8debc1b55480144a2a108"
+    },
+    "75": {
+      "kind": "shape",
+      "bounds": {
+        "x": -56.45,
+        "y": 19.1,
+        "width": 111.3,
+        "height": 17.95
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/75.svg",
+      "sourceSha256": "ac8ec1d933347e2b27455e0a0a66fcfc33309663d7a12f82b85a0424d14a08c6"
+    },
+    "76": {
+      "kind": "shape",
+      "bounds": {
+        "x": -68.95,
+        "y": 26.85,
+        "width": 135.3,
+        "height": 26.1
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/76.svg",
+      "sourceSha256": "cac9f7ec59437868c9ed9a0b4a1d4638ba3526223a9b6949a66952e63e144b40"
+    },
+    "77": {
+      "kind": "shape",
+      "bounds": {
+        "x": -68.95,
+        "y": 23.5,
+        "width": 136.45,
+        "height": 48.7
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/77.svg",
+      "sourceSha256": "a6f4c00a5b8db40af5c3d0ec8bbe61ab24e617574ddd88275c27265249097b2b"
+    },
+    "78": {
+      "kind": "shape",
+      "bounds": {
+        "x": -72.3,
+        "y": 7.95,
+        "width": 142.85,
+        "height": 27.65
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/78.svg",
+      "sourceSha256": "aa5f5a520d878def6da41c0de6586bf314d62f3678fc7578e0285c19049b6024"
+    },
+    "79": {
+      "kind": "shape",
+      "bounds": {
+        "x": -27.3,
+        "y": 90.4,
+        "width": 54.1,
+        "height": 13.15
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/79.svg",
+      "sourceSha256": "21b010b62c7dfac9308793021527544bb9b45301fd37b06e2625bfea0fad2ad7"
+    },
+    "80": {
+      "kind": "shape",
+      "bounds": {
+        "x": -72.7,
+        "y": -29.15,
+        "width": 145.8,
+        "height": 45.4
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/80.svg",
+      "sourceSha256": "3324a14fc3c3314bcb89848fe1ea3297f5a1aedea02b74129d02d5ebe58baba4"
+    },
+    "81": {
+      "kind": "shape",
+      "bounds": {
+        "x": -77.8,
+        "y": 0.05,
+        "width": 155.65,
+        "height": 100.8
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/81.svg",
+      "sourceSha256": "78c783e4b5af00a735efd301a14739e226c020e7403198a986042bf3a222dc5d"
+    },
+    "82": {
+      "kind": "shape",
+      "bounds": {
+        "x": -79.4,
+        "y": 0.15,
+        "width": 158.75,
+        "height": 96.6
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/82.svg",
+      "sourceSha256": "a6181ad8b591c70159c238b67961b6af6ef868eb087f3b4c960350bbebeef185"
+    },
+    "83": {
+      "kind": "shape",
+      "bounds": {
+        "x": -78.9,
+        "y": 0.75,
+        "width": 157.8,
+        "height": 113.3
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/83.svg",
+      "sourceSha256": "cb496a79dfeda270b46f3465f547b0818f3ab4741af12971ecf6325524a5617a"
+    },
+    "84": {
+      "kind": "shape",
+      "bounds": {
+        "x": -85.1,
+        "y": 1.15,
+        "width": 170.25,
+        "height": 104.65
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/84.svg",
+      "sourceSha256": "9bfb2c7b474c031d34400924c6b06c75da475d0bca6577015517b4e5ec89f96a"
+    },
+    "85": {
+      "kind": "shape",
+      "bounds": {
+        "x": -77.4,
+        "y": 4.35,
+        "width": 154.8,
+        "height": 98.7
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/85.svg",
+      "sourceSha256": "7c33d30a2550b81cc15b9cfb2c1aa2950d38db49bf687141fc2882af9741f2d9"
+    },
+    "86": {
+      "kind": "shape",
+      "bounds": {
+        "x": -78.95,
+        "y": 0.45,
+        "width": 157.9,
+        "height": 96.45
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/86.svg",
+      "sourceSha256": "42eb098a693367f72cb2adb858fe5ec9cf4023e16249e0537dd3176abb8a8c66"
+    },
+    "87": {
+      "kind": "shape",
+      "bounds": {
+        "x": -77.65,
+        "y": 8.35,
+        "width": 155.3,
+        "height": 104.8
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/87.svg",
+      "sourceSha256": "495bde99bcd04920108f308a25b989e08bb6dea948dfb045c107d1b31ccb1403"
+    },
+    "88": {
+      "kind": "shape",
+      "bounds": {
+        "x": -81.1,
+        "y": 14.35,
+        "width": 162.25,
+        "height": 102.2
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/88.svg",
+      "sourceSha256": "d2ae6a2942aef7817f489a108c2c92182e8cb69c26407c81b302df6918eccc9c"
+    },
+    "89": {
+      "kind": "shape",
+      "bounds": {
+        "x": -46.6,
+        "y": 38.05,
+        "width": 92.6,
+        "height": 27.35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/89.svg",
+      "sourceSha256": "6b5b037694020483c2a4a3630e084fe22b5ef4ce061f9877ea3687f3b284ea10"
+    },
+    "90": {
+      "kind": "shape",
+      "bounds": {
+        "x": -57.15,
+        "y": 33.85,
+        "width": 114.4,
+        "height": 27.95
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/90.svg",
+      "sourceSha256": "6f7580b03f8f5b37a30d46b214ad0399a60e659a4f6707ebeb519113e5c6f584"
+    },
+    "91": {
+      "kind": "shape",
+      "bounds": {
+        "x": -50.35,
+        "y": 40.7,
+        "width": 100.1,
+        "height": 33.25
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/91.svg",
+      "sourceSha256": "16e1d43304e6d17e80ef731a1b049f5f65c4f25698eb4f7cfe22a9fb2409ebc8"
+    },
+    "92": {
+      "kind": "shape",
+      "bounds": {
+        "x": -61.9,
+        "y": 44.5,
+        "width": 124.7,
+        "height": 27.9
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/92.svg",
+      "sourceSha256": "fd13efcdeca5deb33e0634c76fa0ba66e6650af7d6f82d3a117c4f74aec766c2"
+    },
+    "93": {
+      "kind": "shape",
+      "bounds": {
+        "x": -52.65,
+        "y": 37.85,
+        "width": 106.85,
+        "height": 29.5
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/93.svg",
+      "sourceSha256": "3ddac4a6dcd334b671bb9a45f4d34e7e1b295e6928ae0189f9c52ac02648467c"
+    },
+    "94": {
+      "kind": "shape",
+      "bounds": {
+        "x": -58.4,
+        "y": 39,
+        "width": 116.95,
+        "height": 30
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/94.svg",
+      "sourceSha256": "ebcc05968fa65f20613cf9a27d800ec2c44ca9bd2c07989ec29f540b4cd8d1b9"
+    },
+    "95": {
+      "kind": "shape",
+      "bounds": {
+        "x": -52,
+        "y": 42.6,
+        "width": 104.2,
+        "height": 34.85
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/95.svg",
+      "sourceSha256": "843c8b1f52c6dbdccb426262b0ee2659b8517672070aac979c6324d5a91185b7"
+    },
+    "96": {
+      "kind": "shape",
+      "bounds": {
+        "x": -58.6,
+        "y": 44.5,
+        "width": 117.3,
+        "height": 33.85
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/96.svg",
+      "sourceSha256": "e1bdf58bb034da1848e0ba399231ee074c4975b44e4b61b0c230078a4e7de82e"
+    },
+    "97": {
+      "kind": "shape",
+      "bounds": {
+        "x": -54.6,
+        "y": 36.35,
+        "width": 108.65,
+        "height": 29.05
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/97.svg",
+      "sourceSha256": "e768c0cd671ed8f69ad695792e9372a0527d2e6869ee7dc841a80347459afa73"
+    },
+    "98": {
+      "kind": "shape",
+      "bounds": {
+        "x": -65.15,
+        "y": 1,
+        "width": 132.9,
+        "height": 26.05
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/98.svg",
+      "sourceSha256": "d7a1b44e05994c87b2039ade7b070842fffc786a45d5ba0d02d76e046b47ebf6"
+    },
+    "99": {
+      "kind": "shape",
+      "bounds": {
+        "x": -63.3,
+        "y": 30.4,
+        "width": 126.7,
+        "height": 31.4
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/99.svg",
+      "sourceSha256": "ea87690264b091aed1d57e66f89d3ed72e011ab9dc8792bdb227e6c0936764ad"
+    },
+    "100": {
+      "kind": "shape",
+      "bounds": {
+        "x": -58.05,
+        "y": 38.85,
+        "width": 115.5,
+        "height": 35.1
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/100.svg",
+      "sourceSha256": "be1f9c08b21718fb1617a815ef7548e4f049d0566fed2916f7ae852db011a824"
+    },
+    "101": {
+      "kind": "shape",
+      "bounds": {
+        "x": -68.1,
+        "y": 40.4,
+        "width": 137.15,
+        "height": 32
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/101.svg",
+      "sourceSha256": "0ca05ec8fbb39cd14ce5ed6fea6cab24947521278da546a2c98275627ec8af78"
+    },
+    "102": {
+      "kind": "shape",
+      "bounds": {
+        "x": -59.3,
+        "y": 33.9,
+        "width": 120.15,
+        "height": 33.45
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/102.svg",
+      "sourceSha256": "79c1afddc9f8c62ac40761603e0e860dcf63293232313570acc4ee28a91f4943"
+    },
+    "103": {
+      "kind": "shape",
+      "bounds": {
+        "x": -64.35,
+        "y": 34.9,
+        "width": 128.85,
+        "height": 34.1
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/103.svg",
+      "sourceSha256": "6aa86be814e38f3c06c37ed33d63a7067e6e16d3ff7aec382877a0e6ac0894e6"
+    },
+    "104": {
+      "kind": "shape",
+      "bounds": {
+        "x": -59.65,
+        "y": 38.45,
+        "width": 119.5,
+        "height": 39
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/104.svg",
+      "sourceSha256": "a9dba481157cac290a470930fad83e094f542bba963a50c8f6711d47c1d01060"
+    },
+    "105": {
+      "kind": "shape",
+      "bounds": {
+        "x": -64.5,
+        "y": 40.4,
+        "width": 129.15,
+        "height": 37.95
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/105.svg",
+      "sourceSha256": "af872bf413aaeef404c1625c2c77f84c991b79b7ef20dca8dcd82848f44a0ec4"
+    },
+    "106": {
+      "kind": "sprite",
+      "className": "assets_fla.facefeatures_16",
+      "frameCount": 96,
+      "blankFrames": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    "107": {
+      "kind": "shape",
+      "bounds": {
+        "x": -18.6,
+        "y": -8.1,
+        "width": 35.5,
+        "height": 20.05
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/107.svg",
+      "sourceSha256": "5c054f9c6dc7bcd16a9b7fd76c8851b92325738f137718c2269628e20d41ff69"
+    },
+    "108": {
+      "kind": "shape",
+      "bounds": {
+        "x": -18.6,
+        "y": 7.9,
+        "width": 35.5,
+        "height": 20.05
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/108.svg",
+      "sourceSha256": "59e108e1bc9b30c29c3e289e2d28fb21540bcaa88d0679785fb7393f6cdaeda0"
+    },
+    "109": {
+      "kind": "shape",
+      "bounds": {
+        "x": -18.6,
+        "y": 1.65,
+        "width": 35.5,
+        "height": 20.05
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/109.svg",
+      "sourceSha256": "1a7d88cbf1ea6d54cb4116603dd847c7838335b36f843c4b863c71428a36049c"
+    },
+    "110": {
+      "kind": "shape",
+      "bounds": {
+        "x": -18.6,
+        "y": -2.35,
+        "width": 35.5,
+        "height": 20.05
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/110.svg",
+      "sourceSha256": "4f7da5f5fa7ac50616bb1c9306980c12efed4d1f95ed58fd101587775e60b649"
+    },
+    "111": {
+      "kind": "shape",
+      "bounds": {
+        "x": -18.6,
+        "y": -4.35,
+        "width": 35.5,
+        "height": 20.05
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/111.svg",
+      "sourceSha256": "f880224bb8a673ea17ad16415789d873bcd21ac7f81e5b612e2df1b59bf822a0"
+    },
+    "112": {
+      "kind": "shape",
+      "bounds": {
+        "x": -18.6,
+        "y": 11.9,
+        "width": 35.5,
+        "height": 20.05
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/112.svg",
+      "sourceSha256": "a0472efbdd412592b797691aa87a5944420bf05e12cc7dd6c732cbefed9fa1af"
+    },
+    "113": {
+      "kind": "shape",
+      "bounds": {
+        "x": -48.6,
+        "y": -25.15,
+        "width": 97.1,
+        "height": 42.45
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/113.svg",
+      "sourceSha256": "5ca3056856fbe5477906b5e9806f2c715fdcd6227b7cc243f5783dbb5bf82454"
+    },
+    "114": {
+      "kind": "shape",
+      "bounds": {
+        "x": -43.15,
+        "y": -19.4,
+        "width": 86.2,
+        "height": 36
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/114.svg",
+      "sourceSha256": "f8d556cda4930299189a37a63133022b2891395ee3b691069460f1e74dfef33e"
+    },
+    "115": {
+      "kind": "shape",
+      "bounds": {
+        "x": -46.75,
+        "y": -8.75,
+        "width": 93.4,
+        "height": 41.8
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/115.svg",
+      "sourceSha256": "7f24465c89f0bc720c9f25586c7e249b2fc34514f22de370749fd2a6e69435d3"
+    },
+    "116": {
+      "kind": "shape",
+      "bounds": {
+        "x": -41.85,
+        "y": -7.8,
+        "width": 83.6,
+        "height": 36
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/116.svg",
+      "sourceSha256": "a9b9be3550fea26efba1858846aa6f353996c9352de71f07f9e670903bf9e98f"
+    },
+    "117": {
+      "kind": "shape",
+      "bounds": {
+        "x": -45.05,
+        "y": -14.75,
+        "width": 90,
+        "height": 36
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/117.svg",
+      "sourceSha256": "f6b9ef7e2212ac93f0c6ff18ba070338eb58a3b4827549a8e5a357d7a96cd900"
+    },
+    "118": {
+      "kind": "shape",
+      "bounds": {
+        "x": -41.35,
+        "y": -15.25,
+        "width": 82.6,
+        "height": 37.4
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/118.svg",
+      "sourceSha256": "25765516953a73bddb8f419930a1d6ed07e431f89a316df944efcd223e9f03bd"
+    },
+    "119": {
+      "kind": "shape",
+      "bounds": {
+        "x": -48.75,
+        "y": -6.15,
+        "width": 97.4,
+        "height": 43.2
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/119.svg",
+      "sourceSha256": "a9fab31ef17feb7e9d69768d9de77a2289e7a80ab360aae9f2afd877456832bc"
+    },
+    "120": {
+      "kind": "shape",
+      "bounds": {
+        "x": -42.1,
+        "y": 0.55,
+        "width": 84.1,
+        "height": 36.5
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/120.svg",
+      "sourceSha256": "b43ad9e1eb4123371404a626caf4310e5374e2b3b58df1c21bd2f121cdf829df"
+    },
+    "121": {
+      "kind": "shape",
+      "bounds": {
+        "x": -79.85,
+        "y": -85.9,
+        "width": 159.6,
+        "height": 111.2
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/121.svg",
+      "sourceSha256": "82bbe5cb8a28ed8c6be77e2b17aeed72d0fe28debc623ee13c8e605bddf168b7"
+    },
+    "122": {
+      "kind": "shape",
+      "bounds": {
+        "x": -80.85,
+        "y": -80.95,
+        "width": 161.65,
+        "height": 105.15
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/122.svg",
+      "sourceSha256": "6dc3e806710d847f68b87cbc06455ec1193ac40147255e45b8af4ef05f40f457"
+    },
+    "123": {
+      "kind": "shape",
+      "bounds": {
+        "x": -79.85,
+        "y": -75.9,
+        "width": 159.6,
+        "height": 116.55
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/123.svg",
+      "sourceSha256": "02449dd86276e46ce264ec8ae6447059db19feae0a2cce466a8f23b68950c1a3"
+    },
+    "124": {
+      "kind": "shape",
+      "bounds": {
+        "x": -76.6,
+        "y": -21.4,
+        "width": 153.1,
+        "height": 57.8
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/124.svg",
+      "sourceSha256": "f1a1b258d87feb9bb199f0341517165f6be32230c7fd3c3f1d2da7cc358c4cc7"
+    },
+    "125": {
+      "kind": "shape",
+      "bounds": {
+        "x": -81.6,
+        "y": -85.9,
+        "width": 163.1,
+        "height": 114.75
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/125.svg",
+      "sourceSha256": "d5fbc85aa9dc4556d16b4ec4f6d9cf144ae16fb585ad78f62a72e7ace4c173e0"
+    },
+    "126": {
+      "kind": "shape",
+      "bounds": {
+        "x": -80.6,
+        "y": -82.4,
+        "width": 161.1,
+        "height": 110.8
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/126.svg",
+      "sourceSha256": "a599b062fa55e66c975e404c01c065a404d35176073ac13c5fd3b6208ca3784d"
+    },
+    "127": {
+      "kind": "shape",
+      "bounds": {
+        "x": -80.6,
+        "y": -69.65,
+        "width": 161.1,
+        "height": 113.05
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/127.svg",
+      "sourceSha256": "de8c99f599351b951df6baf2fec1df97dc46b320f48c166667cd859834aef05b"
+    },
+    "128": {
+      "kind": "shape",
+      "bounds": {
+        "x": -79.6,
+        "y": -61.75,
+        "width": 159.1,
+        "height": 103.65
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/128.svg",
+      "sourceSha256": "17ecc6bb219321ff9ee71474f4cdf4d89f38693038133e0e5c3e0cf952557a48"
+    },
+    "129": {
+      "kind": "sprite",
+      "className": "assets_fla.beards_17",
+      "frameCount": 32,
+      "blankFrames": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    "130": {
+      "kind": "sprite",
+      "className": "assets_fla.mole_18",
+      "frameCount": 2,
+      "blankFrames": [
+        1
+      ]
+    },
+    "131": {
+      "kind": "shape",
+      "bounds": {
+        "x": -42.25,
+        "y": -10.45,
+        "width": 83.2,
+        "height": 23.8
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/131.svg",
+      "sourceSha256": "2afc4d46b5400f4aca44becb07e7d4f4de1a7dd9c80df1166f58dfb40860f38b"
+    },
+    "132": {
+      "kind": "shape",
+      "bounds": {
+        "x": -54,
+        "y": -11,
+        "width": 108,
+        "height": 17.45
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/132.svg",
+      "sourceSha256": "54619881ff38062a8784cfa8f4adab85f3102b7ab273f4f468559983ef2be807"
+    },
+    "133": {
+      "kind": "shape",
+      "bounds": {
+        "x": -38.35,
+        "y": -12,
+        "width": 79,
+        "height": 28.45
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/133.svg",
+      "sourceSha256": "6bc5b64f2f14050c07f54cb92bf771fd798e9ad05867849c458df0a46c11bfa1"
+    },
+    "134": {
+      "kind": "shape",
+      "bounds": {
+        "x": -34.55,
+        "y": -19.6,
+        "width": 69.25,
+        "height": 42.45
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/134.svg",
+      "sourceSha256": "6eb12273c734e33bf5712c1b2b08fbff752475e4fcb186faae999c137f392b38"
+    },
+    "135": {
+      "kind": "shape",
+      "bounds": {
+        "x": -44.65,
+        "y": -13.55,
+        "width": 88.6,
+        "height": 13.25
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/135.svg",
+      "sourceSha256": "2da829bac02a7a29f907870cae3e157fdaf6c628ba7688e15a1a6d902176eb44"
+    },
+    "136": {
+      "kind": "shape",
+      "bounds": {
+        "x": -18.55,
+        "y": -15.45,
+        "width": 37.8,
+        "height": 37.5
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/136.svg",
+      "sourceSha256": "f2db0487903e3aca859820c85b0b5009c580ed6153b8fc58e20a3dc74ee2b63e"
+    },
+    "137": {
+      "kind": "shape",
+      "bounds": {
+        "x": -29.5,
+        "y": -18.9,
+        "width": 59.4,
+        "height": 39.3
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/137.svg",
+      "sourceSha256": "a28d89b000b279b6adb2f3c750484723245339489f4b6dc32d539d2b904f2d84"
+    },
+    "138": {
+      "kind": "sprite",
+      "className": "assets_fla.lips_20",
+      "frameCount": 24,
+      "blankFrames": [
+        1,
+        3,
+        4,
+        5,
+        8,
+        9,
+        10,
+        11,
+        14,
+        15,
+        16,
+        17,
+        19,
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    "139": {
+      "kind": "shape",
+      "bounds": {
+        "x": -36.2,
+        "y": -4.1,
+        "width": 72.1,
+        "height": 8.2
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/139.svg",
+      "sourceSha256": "8c2ce9ee9f8fbc040b3e13e8c619759a3a8c297148533075a547b94101821c8d"
+    },
+    "140": {
+      "kind": "shape",
+      "bounds": {
+        "x": -49.95,
+        "y": -12.35,
+        "width": 100.4,
+        "height": 22.3
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/140.svg",
+      "sourceSha256": "adfce189cc16dd70c41459044731f02723932514c8712f52cb8bd43753e05eb6"
+    },
+    "141": {
+      "kind": "shape",
+      "bounds": {
+        "x": -53.2,
+        "y": -17.6,
+        "width": 106.45,
+        "height": 23.15
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/141.svg",
+      "sourceSha256": "eaf8f48f3957a296fa653270a15bd2d2e29699ba550f2c1ef9128bb713ea360b"
+    },
+    "142": {
+      "kind": "shape",
+      "bounds": {
+        "x": -50.9,
+        "y": -11.45,
+        "width": 102.3,
+        "height": 29.35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/142.svg",
+      "sourceSha256": "853d50610319471afd1697373c3690784683f4c092c1e99f2214ee79ab01a2e8"
+    },
+    "143": {
+      "kind": "shape",
+      "bounds": {
+        "x": -52.15,
+        "y": -8.8,
+        "width": 104.15,
+        "height": 18.7
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/143.svg",
+      "sourceSha256": "e00ace6477597617acc9f23686312f6aa4d42bf2728b57273cb630736dc691f2"
+    },
+    "144": {
+      "kind": "shape",
+      "bounds": {
+        "x": -48.5,
+        "y": -14.15,
+        "width": 96.7,
+        "height": 21.85
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/144.svg",
+      "sourceSha256": "8cce09a64a0c280591b5f1d18c171b50705857359de34a81842d329de63fb552"
+    },
+    "145": {
+      "kind": "shape",
+      "bounds": {
+        "x": -42.85,
+        "y": -21.45,
+        "width": 85.35,
+        "height": 49.2
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/145.svg",
+      "sourceSha256": "257ebc1358d27fa8012201137e9b5427ca59c68767019fa3a28d8487b04a0b8f"
+    },
+    "146": {
+      "kind": "shape",
+      "bounds": {
+        "x": -27.8,
+        "y": -14.3,
+        "width": 55.8,
+        "height": 29.35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/146.svg",
+      "sourceSha256": "6838e02bf2f4ba250dd5af8ba37f74f4c9eb55435cd34990b0f432b5c2ad4906"
+    },
+    "147": {
+      "kind": "shape",
+      "bounds": {
+        "x": -34.55,
+        "y": -2.8,
+        "width": 69.25,
+        "height": 8
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/147.svg",
+      "sourceSha256": "b886c16497f824b9bac86d50ce041317d08ff6d1de1187f7878c1cbeca6ef55b"
+    },
+    "148": {
+      "kind": "shape",
+      "bounds": {
+        "x": -50.25,
+        "y": -13.8,
+        "width": 100.9,
+        "height": 27.65
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/148.svg",
+      "sourceSha256": "55bbab7cb669731ae865b8abcbecceee396fdc5e030f91c5315dfd501c7cc5be"
+    },
+    "149": {
+      "kind": "shape",
+      "bounds": {
+        "x": -10.1,
+        "y": -13.35,
+        "width": 20.25,
+        "height": 21.35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/149.svg",
+      "sourceSha256": "ee6349b85c564d0302c37963f7ccb7b1fac270ad18b0d9d176864ba5f65223f2"
+    },
+    "150": {
+      "kind": "shape",
+      "bounds": {
+        "x": -45.1,
+        "y": -14.05,
+        "width": 90.25,
+        "height": 29.4
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/150.svg",
+      "sourceSha256": "cd07957c74a70f57b8a8e221de6ac6af40969f6f443d4b38bef64484b8f615da"
+    },
+    "151": {
+      "kind": "shape",
+      "bounds": {
+        "x": -40.65,
+        "y": -18.25,
+        "width": 81.55,
+        "height": 32.8
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/151.svg",
+      "sourceSha256": "1b9ae727da0ee5f2f6c7d8d7e734965b77cb0b9e7f4c1cef2ea3d910492a3e3c"
+    },
+    "152": {
+      "kind": "shape",
+      "bounds": {
+        "x": -37.85,
+        "y": -17.7,
+        "width": 86.9,
+        "height": 24.1
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/152.svg",
+      "sourceSha256": "bad8c1181d7f67f577d9e6b44858e1ab93de0fc56c785a4b988f7e906cc4d5be"
+    },
+    "153": {
+      "kind": "shape",
+      "bounds": {
+        "x": -41.65,
+        "y": -7.9,
+        "width": 82.95,
+        "height": 26.1
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/153.svg",
+      "sourceSha256": "ecc8382d66342dc07e46a63dd634ffcde72dfdecf8b3b308eec735cb7e442993"
+    },
+    "154": {
+      "kind": "shape",
+      "bounds": {
+        "x": -43.75,
+        "y": -9.85,
+        "width": 88,
+        "height": 22.15
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/154.svg",
+      "sourceSha256": "8377cdc062346456b1729a49c80e126aa4e53b290f6e9340513de050e281121d"
+    },
+    "155": {
+      "kind": "shape",
+      "bounds": {
+        "x": -51.5,
+        "y": -21.75,
+        "width": 103.5,
+        "height": 41.25
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/155.svg",
+      "sourceSha256": "3cd38417606ce77145146c70fc9c7862148d50864a8b0160a2516f544ff8be96"
+    },
+    "156": {
+      "kind": "shape",
+      "bounds": {
+        "x": -47.15,
+        "y": -9.65,
+        "width": 93.95,
+        "height": 19.6
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/156.svg",
+      "sourceSha256": "7cba046df0083512a3493637d52b3a211ee70ae82aa15ffb7011250523987c67"
+    },
+    "157": {
+      "kind": "sprite",
+      "className": "assets_fla.mouths_19",
+      "frameCount": 24,
+      "blankFrames": []
+    },
+    "158": {
+      "kind": "shape",
+      "bounds": {
+        "x": 14.5,
+        "y": -34.4,
+        "width": 31.2,
+        "height": 31.25
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/158.svg",
+      "sourceSha256": "4f1ca4220bd49fea71a01220ddd53bfddc0757afdd1688f208d4f4838b9e7bec"
+    },
+    "159": {
+      "kind": "shape",
+      "bounds": {
+        "x": 5.85,
+        "y": -22.75,
+        "width": 15,
+        "height": 15
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/159.svg",
+      "sourceSha256": "f72051617d913925d5f4c997c302283f5ed7043ae7f1207958262132c978dd18"
+    },
+    "160": {
+      "kind": "shape",
+      "bounds": {
+        "x": 0.2,
+        "y": -46.65,
+        "width": 35.95,
+        "height": 35.95
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/160.svg",
+      "sourceSha256": "475b02c5cbd6cb230ea8b5b16f6e0fd801e16416a771ff65d65735bae75cd967"
+    },
+    "161": {
+      "kind": "shape",
+      "bounds": {
+        "x": 8.6,
+        "y": -41.4,
+        "width": 34.45,
+        "height": 31.45
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/161.svg",
+      "sourceSha256": "6e6c02b605253b60dbeba190017759b1d71c18ba87ec2ad1ce8f7d40f96521bb"
+    },
+    "162": {
+      "kind": "shape",
+      "bounds": {
+        "x": 3.55,
+        "y": -22.75,
+        "width": 26.2,
+        "height": 25.85
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/162.svg",
+      "sourceSha256": "ee5ff6560d3408e816a0f58756107b5b701b98de1c7373e5e86c5a903c9f46ed"
+    },
+    "163": {
+      "kind": "shape",
+      "bounds": {
+        "x": -3.25,
+        "y": -41.3,
+        "width": 37.85,
+        "height": 37.8
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/163.svg",
+      "sourceSha256": "c0663e65c398d3df5125add7027a6d9af1d7171c32148e5d3ca665aca16f434f"
+    },
+    "164": {
+      "kind": "shape",
+      "bounds": {
+        "x": 9.65,
+        "y": -39.8,
+        "width": 35,
+        "height": 35.4
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/164.svg",
+      "sourceSha256": "aa75b94404cefd0ecf9a2ae88e84d739465545fa0c2eed03122d67d4fc736a30"
+    },
+    "165": {
+      "kind": "shape",
+      "bounds": {
+        "x": 13.6,
+        "y": -41.35,
+        "width": 28.25,
+        "height": 28.2
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/165.svg",
+      "sourceSha256": "1de67c411c13dcccc7523c3158a4eb888cdb868f8a00c36e9672e9ce58855d71"
+    },
+    "166": {
+      "kind": "shape",
+      "bounds": {
+        "x": 12.7,
+        "y": -35.35,
+        "width": 28.95,
+        "height": 31.3
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/166.svg",
+      "sourceSha256": "1124c37ae8b7cb268a76d2a55092dac0542408e3d0ca88c777f9c98176a17503"
+    },
+    "167": {
+      "kind": "shape",
+      "bounds": {
+        "x": 2.75,
+        "y": -48.55,
+        "width": 33.55,
+        "height": 34.3
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/167.svg",
+      "sourceSha256": "557fac17f72f7b49841ac0f233b56b6638b89aaccc077a6781663ceca102ef9b"
+    },
+    "168": {
+      "kind": "shape",
+      "bounds": {
+        "x": 17.6,
+        "y": -27.25,
+        "width": 22,
+        "height": 22
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/168.svg",
+      "sourceSha256": "354545975f331a3c3a6a92ae4ec1fe1c6240d5251ad24dcb78d9ef11bd8b3117"
+    },
+    "169": {
+      "kind": "sprite",
+      "className": "assets_fla.eyeball_22",
+      "frameCount": 48,
+      "blankFrames": [
+        8,
+        19,
+        20,
+        21,
+        27,
+        47,
+        48
+      ]
+    },
+    "170": {
+      "kind": "shape",
+      "bounds": {
+        "x": 0.7,
+        "y": -43.9,
+        "width": 56.7,
+        "height": 43
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/170.svg",
+      "sourceSha256": "7cd8ec284c4b3c1d740fc5cd7bb37a28b7d5fa91ebd4e8d4e9e57ac208a97982"
+    },
+    "171": {
+      "kind": "shape",
+      "bounds": {
+        "x": -1.35,
+        "y": -67.1,
+        "width": 54.4,
+        "height": 69.1
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/171.svg",
+      "sourceSha256": "9a8a2164091b1474526770808e303b910ab6244141fd1ba0129416de18a97230"
+    },
+    "172": {
+      "kind": "shape",
+      "bounds": {
+        "x": 4.85,
+        "y": -53.55,
+        "width": 55.4,
+        "height": 61.95
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/172.svg",
+      "sourceSha256": "ccc94446c4f8c3e2b0abbb1e3606f0be7891195adbf0477d93a551c9164deb82"
+    },
+    "173": {
+      "kind": "shape",
+      "bounds": {
+        "x": 0.95,
+        "y": -76.7,
+        "width": 64.75,
+        "height": 91.2
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/173.svg",
+      "sourceSha256": "c1745bcb7f8b2e451a814c310af2db26eb2f2a06b87ba03c61bc8d627a67b475"
+    },
+    "174": {
+      "kind": "shape",
+      "bounds": {
+        "x": -6.55,
+        "y": -42.05,
+        "width": 56.65,
+        "height": 52.25
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/174.svg",
+      "sourceSha256": "ba3d9d55003fcb3f5706949334a0641e5d19bd97b61715a4602c50c3113eb48a"
+    },
+    "175": {
+      "kind": "shape",
+      "bounds": {
+        "x": -16.3,
+        "y": -46.85,
+        "width": 72.45,
+        "height": 40.25
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/175.svg",
+      "sourceSha256": "eb217646c9a66a51f122d9d79a6b6578ba5bc65bd07d342f13152097b6089887"
+    },
+    "176": {
+      "kind": "shape",
+      "bounds": {
+        "x": -3.05,
+        "y": -45,
+        "width": 53,
+        "height": 42.45
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/176.svg",
+      "sourceSha256": "e5d37a9fe558967a940d66031a286191d62e8418db190a5f46eeda28fb4da28a"
+    },
+    "177": {
+      "kind": "shape",
+      "bounds": {
+        "x": -7.1,
+        "y": -52.85,
+        "width": 61,
+        "height": 54.75
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/177.svg",
+      "sourceSha256": "f710437bd07a080945b2ea6bd8c9784f97e5f561405e29a243e28030c2d7b7d9"
+    },
+    "178": {
+      "kind": "shape",
+      "bounds": {
+        "x": 4.05,
+        "y": -44.45,
+        "width": 51.9,
+        "height": 45.7
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/178.svg",
+      "sourceSha256": "4c7d4704437a4f47a0369c466c97211c0f5f6d596b22962191f7894326bcb3f7"
+    },
+    "179": {
+      "kind": "shape",
+      "bounds": {
+        "x": -1.5,
+        "y": -48.6,
+        "width": 63.2,
+        "height": 55.05
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/179.svg",
+      "sourceSha256": "05f4539aebe2cd6e6735c9268add5cb55e5f15ac9dae46546ea9847b83b18731"
+    },
+    "180": {
+      "kind": "shape",
+      "bounds": {
+        "x": 0.75,
+        "y": -35.4,
+        "width": 28.55,
+        "height": 36.35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/180.svg",
+      "sourceSha256": "5f6202b1618a82d18fe0c203c86012643a20afcc993a5fc9ab3a8269ecbe125f"
+    },
+    "181": {
+      "kind": "shape",
+      "bounds": {
+        "x": -0.35,
+        "y": -38.3,
+        "width": 37.05,
+        "height": 38.3
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/181.svg",
+      "sourceSha256": "93209078564c4e0bd28aa2ff8db6b40e8bde073f1c2299ca5ac371c45e5ffd99"
+    },
+    "182": {
+      "kind": "shape",
+      "bounds": {
+        "x": -6.2,
+        "y": -36.55,
+        "width": 51.95,
+        "height": 35.6
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/182.svg",
+      "sourceSha256": "35a4c8b659d89f5e176db8582af5c1d489ed93b14d5fdcbcfae4b1e245f39da2"
+    },
+    "183": {
+      "kind": "shape",
+      "bounds": {
+        "x": 1.8,
+        "y": -44,
+        "width": 52.05,
+        "height": 46.1
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/183.svg",
+      "sourceSha256": "9561a6318c8769c2fda81dc60a24e20944796dc51c97592bef3b52e31d837886"
+    },
+    "184": {
+      "kind": "shape",
+      "bounds": {
+        "x": -2.1,
+        "y": -48.3,
+        "width": 59.9,
+        "height": 54.8
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/184.svg",
+      "sourceSha256": "805e6413a5e5f3dc3316e81ebc513394579209d8c081f1010a2504facbe93111"
+    },
+    "185": {
+      "kind": "shape",
+      "bounds": {
+        "x": 8.05,
+        "y": -46.95,
+        "width": 43,
+        "height": 51.4
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/185.svg",
+      "sourceSha256": "54965d3504baa9fde5eec40c4a275da40f9065680f5980ba023dce97b513f916"
+    },
+    "186": {
+      "kind": "shape",
+      "bounds": {
+        "x": 4.05,
+        "y": -50.3,
+        "width": 51,
+        "height": 58.7
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/186.svg",
+      "sourceSha256": "43f238bb3741024cc005465c536c14ebbe52e435192d21662a5411dc4bfbc289"
+    },
+    "187": {
+      "kind": "shape",
+      "bounds": {
+        "x": 2.65,
+        "y": -51.4,
+        "width": 55.9,
+        "height": 58.75
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/187.svg",
+      "sourceSha256": "da2586a9a8cde4aa4c2136a027f9b38ccadc0078816df7eb3e2915b667f3e82b"
+    },
+    "188": {
+      "kind": "shape",
+      "bounds": {
+        "x": 6.65,
+        "y": -52.35,
+        "width": 59.65,
+        "height": 63
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/188.svg",
+      "sourceSha256": "acf84080e81709e2df34ca662ab3dd1baa3e362024e2854bee2847e6f3a7b38a"
+    },
+    "189": {
+      "kind": "shape",
+      "bounds": {
+        "x": -1.4,
+        "y": -48,
+        "width": 48.55,
+        "height": 49.85
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/189.svg",
+      "sourceSha256": "038ac823ea1ac08b5ce93bbd477ccc7ce9d43c27eb7fefa61f268e62796d4d63"
+    },
+    "190": {
+      "kind": "shape",
+      "bounds": {
+        "x": -4.7,
+        "y": -51.35,
+        "width": 58.05,
+        "height": 52.75
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/190.svg",
+      "sourceSha256": "bc56e03863fee4ec42adaf6813006ac5b1210b19ab3b23ce21026a9af6a3e5dc"
+    },
+    "191": {
+      "kind": "shape",
+      "bounds": {
+        "x": -6.9,
+        "y": -38.5,
+        "width": 57.55,
+        "height": 38.65
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/191.svg",
+      "sourceSha256": "4d3fa78f1e1f242110a74e1a984cf7c1ef7447b909a7d4d0a7be5ac8aeb01163"
+    },
+    "192": {
+      "kind": "shape",
+      "bounds": {
+        "x": -0.4,
+        "y": -45.55,
+        "width": 52.7,
+        "height": 52.7
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/192.svg",
+      "sourceSha256": "ae64b910358664c03aa43a4091cb939e82514ac46d9399f37eb2a44bdb5dd1fe"
+    },
+    "193": {
+      "kind": "shape",
+      "bounds": {
+        "x": 0.1,
+        "y": -57.8,
+        "width": 66.75,
+        "height": 65
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/193.svg",
+      "sourceSha256": "8fe7e2c6b46763d08cfb65522b43f1c8a5924ad2c0c5cb0f288979f7aa2290de"
+    },
+    "194": {
+      "kind": "shape",
+      "bounds": {
+        "x": 0.55,
+        "y": -42.55,
+        "width": 58.3,
+        "height": 53.35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/194.svg",
+      "sourceSha256": "8456011ad3a751945f293f123e3156773da8e3673815cd632007ca4512e991f3"
+    },
+    "195": {
+      "kind": "shape",
+      "bounds": {
+        "x": 1.1,
+        "y": -47.65,
+        "width": 56.5,
+        "height": 48.55
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/195.svg",
+      "sourceSha256": "6efe338adf2605303916bc826cdf6f362bfdc7fc5ab88abf0c88ee66ced82da8"
+    },
+    "196": {
+      "kind": "shape",
+      "bounds": {
+        "x": 8.55,
+        "y": -47.85,
+        "width": 59.15,
+        "height": 57.9
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/196.svg",
+      "sourceSha256": "00c189f7249e76d7f37fbc3aad724610b427e5394dfa3fc1d85a544d7b89bf79"
+    },
+    "197": {
+      "kind": "shape",
+      "bounds": {
+        "x": -0.6,
+        "y": -51.95,
+        "width": 49.7,
+        "height": 50.3
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/197.svg",
+      "sourceSha256": "bad8eb5755491863bace0de64dd5e9bb1beea991ecb8cb93e730575946836841"
+    },
+    "198": {
+      "kind": "shape",
+      "bounds": {
+        "x": 2.75,
+        "y": -33.6,
+        "width": 34.05,
+        "height": 36.4
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/198.svg",
+      "sourceSha256": "caa19adb422000df36f425ed858316a84e79d10719d0ee59469a1a18643b2b00"
+    },
+    "199": {
+      "kind": "shape",
+      "bounds": {
+        "x": 0.8,
+        "y": -32.7,
+        "width": 41,
+        "height": 38.4
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/199.svg",
+      "sourceSha256": "15dc5a24731a83ec0984f5d9cbd0051f6589cb52e69e04c66c7d135121ed6664"
+    },
+    "200": {
+      "kind": "shape",
+      "bounds": {
+        "x": -0.05,
+        "y": -43.8,
+        "width": 71,
+        "height": 39.9
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/200.svg",
+      "sourceSha256": "fe30332db3ef38b2beef5d7a32abf15337eaa8b3011b4adec5b567e183b4ba2a"
+    },
+    "201": {
+      "kind": "shape",
+      "bounds": {
+        "x": 6.7,
+        "y": -43.1,
+        "width": 46.1,
+        "height": 47.95
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/201.svg",
+      "sourceSha256": "8f3352067434750bb0503e8b70f784df4453805e6d52bb3b3aa55370cebb4686"
+    },
+    "202": {
+      "kind": "shape",
+      "bounds": {
+        "x": 1.35,
+        "y": -61.35,
+        "width": 62.35,
+        "height": 70
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/202.svg",
+      "sourceSha256": "a5b89ab80fbb05c83d985fbb652d6e312a84950da5b94cb163764ffcc8736ff5"
+    },
+    "203": {
+      "kind": "shape",
+      "bounds": {
+        "x": 6.15,
+        "y": -49.1,
+        "width": 48.1,
+        "height": 53.6
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/203.svg",
+      "sourceSha256": "ec687545bcff11049f65c1e59e0c9b6c59b0c3f26affc92b77f19cfd0d34bf6c"
+    },
+    "204": {
+      "kind": "shape",
+      "bounds": {
+        "x": 0.7,
+        "y": -65.35,
+        "width": 63.35,
+        "height": 77.65
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/204.svg",
+      "sourceSha256": "d3d1e610cf12e05448df465fdf844dd3df0d24a7305df5c61f8fb9d578ea316f"
+    },
+    "205": {
+      "kind": "shape",
+      "bounds": {
+        "x": 2.95,
+        "y": -54.9,
+        "width": 32.85,
+        "height": 55.85
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/205.svg",
+      "sourceSha256": "7ded045b1cdfd464b981329c186aa0fe1c0611fe70db1f863b804adf0759e7ad"
+    },
+    "206": {
+      "kind": "shape",
+      "bounds": {
+        "x": 4,
+        "y": -49.8,
+        "width": 44.9,
+        "height": 51.85
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/206.svg",
+      "sourceSha256": "fcc717a50e6e31c944052aa8842761310eb3c16062f306476dd1610299e3dae9"
+    },
+    "207": {
+      "kind": "shape",
+      "bounds": {
+        "x": -1,
+        "y": -31.75,
+        "width": 29.9,
+        "height": 31.85
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/207.svg",
+      "sourceSha256": "459cb30b733e192574b86261e4d1744e7385bc94fbb10633c7985cf265155e6c"
+    },
+    "208": {
+      "kind": "shape",
+      "bounds": {
+        "x": 9.7,
+        "y": -49.75,
+        "width": 48.8,
+        "height": 50.55
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/208.svg",
+      "sourceSha256": "5348ece83676d35992197874685fac49c0b63ed2e9b744665bf6b018655cd21c"
+    },
+    "209": {
+      "kind": "shape",
+      "bounds": {
+        "x": 4.3,
+        "y": -53.3,
+        "width": 56.9,
+        "height": 61.6
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/209.svg",
+      "sourceSha256": "84110db38fdf95fc6433f06599f52538d90dab5ee6c7808fe3895d5d2bdc19c4"
+    },
+    "210": {
+      "kind": "shape",
+      "bounds": {
+        "x": 8.4,
+        "y": -52.9,
+        "width": 47.75,
+        "height": 61.05
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/210.svg",
+      "sourceSha256": "53963b5bea6134cb6f5003173ffeb698d0a2c8421b0b8657f7ab5889fc75cda2"
+    },
+    "211": {
+      "kind": "shape",
+      "bounds": {
+        "x": 4.35,
+        "y": -56.85,
+        "width": 55,
+        "height": 69.35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/211.svg",
+      "sourceSha256": "356a630d76cca7efa3b0da249e057b1453d8e711ab511706fdecaded994ad329"
+    },
+    "212": {
+      "kind": "shape",
+      "bounds": {
+        "x": 3.3,
+        "y": -53.15,
+        "width": 50.05,
+        "height": 60.05
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/212.svg",
+      "sourceSha256": "2847dd479439d5fbbff843d47be9125b4a2bd1bcaa07db2f5231d35b645a816a"
+    },
+    "213": {
+      "kind": "shape",
+      "bounds": {
+        "x": -1,
+        "y": -58.4,
+        "width": 58.3,
+        "height": 69.8
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/213.svg",
+      "sourceSha256": "156c9cb25324505d1ebb854535efc494ac0432990e0b7cc322f16027c545a114"
+    },
+    "214": {
+      "kind": "shape",
+      "bounds": {
+        "x": 11.4,
+        "y": -50.4,
+        "width": 40.25,
+        "height": 52.35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/214.svg",
+      "sourceSha256": "1cfdf69b66861cb9f7083a4dc110af186ba384b7287f3dd198886675971a8958"
+    },
+    "215": {
+      "kind": "shape",
+      "bounds": {
+        "x": 7.7,
+        "y": -69.15,
+        "width": 49.85,
+        "height": 78.7
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/215.svg",
+      "sourceSha256": "59de9cfa6e5329cb01cc7f762eccd6f4ffb4d4e54b7b9f90208b035045d43a32"
+    },
+    "216": {
+      "kind": "shape",
+      "bounds": {
+        "x": 11.1,
+        "y": -48.15,
+        "width": 42.75,
+        "height": 57.75
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/216.svg",
+      "sourceSha256": "2962f30d88806cd900ea63d145601ed0f8eed866d44c3c0219dc2b5e4de268e4"
+    },
+    "217": {
+      "kind": "shape",
+      "bounds": {
+        "x": 8.65,
+        "y": -65.85,
+        "width": 51.4,
+        "height": 79.4
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/217.svg",
+      "sourceSha256": "868fc0c09f1c60a63bbb06d1a1976734a110027d5336016cf7548b60b0657245"
+    },
+    "218": {
+      "kind": "shape",
+      "bounds": {
+        "x": 1,
+        "y": -42.05,
+        "width": 56.7,
+        "height": 43.65
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/218.svg",
+      "sourceSha256": "6fb935b31853bfec2ccbead8ebee62adaf2e956b043108e006195c5b62a8f175"
+    },
+    "219": {
+      "kind": "shape",
+      "bounds": {
+        "x": -3.1,
+        "y": -46.4,
+        "width": 66.5,
+        "height": 48.35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/219.svg",
+      "sourceSha256": "f5407070da9555e0f3499a5843a4db6d865d84e56f02f2f04b8b82e19334f933"
+    },
+    "220": {
+      "kind": "shape",
+      "bounds": {
+        "x": -0.3,
+        "y": -46.15,
+        "width": 54.8,
+        "height": 51.8
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/220.svg",
+      "sourceSha256": "389b656d01e620087375b57e67a169fd4841c4804fe9d33954a556e70932158b"
+    },
+    "221": {
+      "kind": "shape",
+      "bounds": {
+        "x": -2.2,
+        "y": -53.8,
+        "width": 64.85,
+        "height": 67.65
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/221.svg",
+      "sourceSha256": "60be72aceb5aa6ec85bc36036a07ac61fa2a715d79684678c6f8b5db23946685"
+    },
+    "222": {
+      "kind": "shape",
+      "bounds": {
+        "x": -7.05,
+        "y": -67.5,
+        "width": 59.8,
+        "height": 75.6
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/222.svg",
+      "sourceSha256": "8b7d975d5d4d3d08c33ae0230c1dbf02def04b75904ca4d90f4c2ac0d46a518d"
+    },
+    "223": {
+      "kind": "shape",
+      "bounds": {
+        "x": 2.25,
+        "y": -48.9,
+        "width": 57.95,
+        "height": 54.5
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/223.svg",
+      "sourceSha256": "6a9dd22296e89c81543461fc0b41b7ebb70d9a27ec706e3e5aed87ef13417560"
+    },
+    "224": {
+      "kind": "shape",
+      "bounds": {
+        "x": -2.25,
+        "y": -55.1,
+        "width": 66.1,
+        "height": 65.4
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/224.svg",
+      "sourceSha256": "8985f8c495d360054e4c96a99b5cd0d00c53c3362d3a65f2580e68d9fbc48c44"
+    },
+    "225": {
+      "kind": "shape",
+      "bounds": {
+        "x": -1.5,
+        "y": -51.45,
+        "width": 51.1,
+        "height": 49.8
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/225.svg",
+      "sourceSha256": "60b05e81d0c0639d8cb1c30d8d396cc721180aced0988a9541524b2f6386fa03"
+    },
+    "226": {
+      "kind": "shape",
+      "bounds": {
+        "x": -5,
+        "y": -55.55,
+        "width": 59.8,
+        "height": 58.4
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/226.svg",
+      "sourceSha256": "fa653825a6108951e19bfef1246a71053120d7c28b36fedb53b696cdbdcb4e88"
+    },
+    "227": {
+      "kind": "shape",
+      "bounds": {
+        "x": 3.25,
+        "y": -49.2,
+        "width": 51.1,
+        "height": 54.35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/227.svg",
+      "sourceSha256": "c67faeb61680c471ffc22f133f61e13c4652c370414c59ac41effdf14c65993c"
+    },
+    "228": {
+      "kind": "shape",
+      "bounds": {
+        "x": -2,
+        "y": -53.9,
+        "width": 59.75,
+        "height": 63
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/228.svg",
+      "sourceSha256": "69bbc2ccccaf15d9782848e2cf8e1d9645efbbcbe38a6d3b6aaa0da09efc6cd0"
+    },
+    "229": {
+      "kind": "shape",
+      "bounds": {
+        "x": 2.85,
+        "y": -40.45,
+        "width": 52.95,
+        "height": 44.7
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/229.svg",
+      "sourceSha256": "53e72129021a72cb0ae50af5e2f331e27db4cd6fa7098805c4ac5cfc20f2f61b"
+    },
+    "230": {
+      "kind": "shape",
+      "bounds": {
+        "x": -2.4,
+        "y": -48.65,
+        "width": 62.2,
+        "height": 56.75
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/230.svg",
+      "sourceSha256": "c24d753bd812e8d10dd0d7869e8947f65c97ed2566142351ebfeb6ecf7833ec3"
+    },
+    "231": {
+      "kind": "shape",
+      "bounds": {
+        "x": -1.05,
+        "y": -49.7,
+        "width": 47.15,
+        "height": 49.35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/231.svg",
+      "sourceSha256": "76a67dc85cc2bed9f59b0b567f4edc69b1d79c78c28434422cf4f72db6f5cb06"
+    },
+    "232": {
+      "kind": "shape",
+      "bounds": {
+        "x": -7.8,
+        "y": -55.95,
+        "width": 67.6,
+        "height": 59.85
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/232.svg",
+      "sourceSha256": "abf9407d91fe061c7e93935b2e03138c70ce98bf3fee8e0bb5f27795110bd4fc"
+    },
+    "233": {
+      "kind": "shape",
+      "bounds": {
+        "x": -6.15,
+        "y": -52.2,
+        "width": 57.6,
+        "height": 46.45
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/233.svg",
+      "sourceSha256": "adbb302f8666226fbcc7dbb0c0c895ffb6aca8b1996939386d0315bcd2964743"
+    },
+    "234": {
+      "kind": "shape",
+      "bounds": {
+        "x": -8.05,
+        "y": -55.75,
+        "width": 75.7,
+        "height": 53.4
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/234.svg",
+      "sourceSha256": "04534f761a864f013ac541608a8885b71e6582eeb8886bbd1ddd9eb3a7ee6196"
+    },
+    "235": {
+      "kind": "shape",
+      "bounds": {
+        "x": -3.45,
+        "y": -50.5,
+        "width": 59.55,
+        "height": 62.4
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/235.svg",
+      "sourceSha256": "daf50a01671c824d97b9ef2acaa65248293a99c3977e27dae3362497e317d774"
+    },
+    "236": {
+      "kind": "shape",
+      "bounds": {
+        "x": -4.05,
+        "y": -55.8,
+        "width": 51.25,
+        "height": 52.5
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/236.svg",
+      "sourceSha256": "12824e74a7ae7d8075bd89af68de81118ac58261647ce33be6d43cd0164b4564"
+    },
+    "237": {
+      "kind": "shape",
+      "bounds": {
+        "x": -8.85,
+        "y": -61.5,
+        "width": 59.4,
+        "height": 62.45
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/237.svg",
+      "sourceSha256": "a3d425883756d61447d38764c88f08062149c763b66464cefc72511c578fb801"
+    },
+    "238": {
+      "kind": "shape",
+      "bounds": {
+        "x": 4.8,
+        "y": -58.15,
+        "width": 50.8,
+        "height": 61.25
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/238.svg",
+      "sourceSha256": "22f5e9ebf66b547cd6b597d887812d8241881e0d043122378a40ca3ed769cd48"
+    },
+    "239": {
+      "kind": "shape",
+      "bounds": {
+        "x": 1.05,
+        "y": -67.8,
+        "width": 58.1,
+        "height": 74.45
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/239.svg",
+      "sourceSha256": "58c969913f1b2f089cd01e98f82cb705d1753be2e7ba1b31424ea8759c27b4c4"
+    },
+    "240": {
+      "kind": "shape",
+      "bounds": {
+        "x": -2.9,
+        "y": -63.85,
+        "width": 67.2,
+        "height": 68.35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/240.svg",
+      "sourceSha256": "74e6656f36688516a07bcca0ef3dd20db2551759bd5be1c0fb53020f8a5b3f84"
+    },
+    "241": {
+      "kind": "shape",
+      "bounds": {
+        "x": 2.25,
+        "y": -57.45,
+        "width": 60.35,
+        "height": 56.85
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/241.svg",
+      "sourceSha256": "af9a71e37f046064022df45bc625721fd1daaa6da6412a2d71539ee2d9a0effe"
+    },
+    "242": {
+      "kind": "shape",
+      "bounds": {
+        "x": 0.6,
+        "y": -43.95,
+        "width": 39.55,
+        "height": 43.45
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/242.svg",
+      "sourceSha256": "3ccb2189ff319ffe822380b4c59e8eebacc5ee8254437f9b9d1aeaa8bde6dde7"
+    },
+    "243": {
+      "kind": "sprite",
+      "className": "assets_fla.eyes_21",
+      "frameCount": 48,
+      "blankFrames": []
+    },
+    "244": {
+      "kind": "shape",
+      "bounds": {
+        "x": 0.55,
+        "y": -85.8,
+        "width": 36.6,
+        "height": 88.2
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/244.svg",
+      "sourceSha256": "afdd79bafe3f1ff067f8e13f687046d9a8f125a81a881fe7d02a27c03a14666b"
+    },
+    "245": {
+      "kind": "shape",
+      "bounds": {
+        "x": -0.7,
+        "y": -86.4,
+        "width": 40.8,
+        "height": 81.95
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/245.svg",
+      "sourceSha256": "18ca5925b0de8260a9e8b305e92a579385aae515665f9d8b838e3c21789b5bf3"
+    },
+    "246": {
+      "kind": "shape",
+      "bounds": {
+        "x": -6.6,
+        "y": -87.75,
+        "width": 40.75,
+        "height": 81.6
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/246.svg",
+      "sourceSha256": "e9b55f1b06f04b41ddd3e09ba1433ea058609bc471d919ed19e81795c7f1d9a2"
+    },
+    "247": {
+      "kind": "shape",
+      "bounds": {
+        "x": -0.4,
+        "y": -84.3,
+        "width": 37.3,
+        "height": 84.05
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/247.svg",
+      "sourceSha256": "eb1d4aef1168cbfcd77bbc4c36b7804b585d21feb8df88f009b233f39d38f6bf"
+    },
+    "248": {
+      "kind": "shape",
+      "bounds": {
+        "x": 0.3,
+        "y": -82.7,
+        "width": 48.65,
+        "height": 80.3
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/248.svg",
+      "sourceSha256": "62a99a1c05bfb76825a6e83c71a00de869a2bbe77eebce727a3ade02083ae987"
+    },
+    "249": {
+      "kind": "shape",
+      "bounds": {
+        "x": 0.35,
+        "y": -84.9,
+        "width": 42.05,
+        "height": 80.95
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/249.svg",
+      "sourceSha256": "ff276821c5dc9d7201211b445dcf24ab3a12a033c1c93420830ae2e9e3d6ced2"
+    },
+    "250": {
+      "kind": "shape",
+      "bounds": {
+        "x": 1,
+        "y": -47.05,
+        "width": 44.05,
+        "height": 43.15
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/250.svg",
+      "sourceSha256": "f026069c0a03260b7c79f7caa405ce5886e2cf192895cb1dc7a1fbf5fc71745f"
+    },
+    "251": {
+      "kind": "shape",
+      "bounds": {
+        "x": -3.75,
+        "y": -80.05,
+        "width": 45.4,
+        "height": 79.25
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/251.svg",
+      "sourceSha256": "342317ad97904b71d37983c2250ba909a355eb431fb79fecebf6da24f8e82692"
+    },
+    "252": {
+      "kind": "shape",
+      "bounds": {
+        "x": -0.7,
+        "y": -78.85,
+        "width": 41.15,
+        "height": 74.5
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/252.svg",
+      "sourceSha256": "b77c6fca77432ea251fe15bff291ee2fb6606a9d9fedae681772080abc54b6ce"
+    },
+    "253": {
+      "kind": "shape",
+      "bounds": {
+        "x": -1.85,
+        "y": -59.55,
+        "width": 58.35,
+        "height": 60
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/253.svg",
+      "sourceSha256": "aa985903318198c951265ef3e7cc52555c92c3990886ade2a3139b5cb2e2f2f2"
+    },
+    "254": {
+      "kind": "shape",
+      "bounds": {
+        "x": -4.5,
+        "y": -74.9,
+        "width": 67.65,
+        "height": 69.85
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/254.svg",
+      "sourceSha256": "bad04cc3186ef63ecdf13841812668fb5aa7234f84516da6fdd48591c3714c25"
+    },
+    "255": {
+      "kind": "shape",
+      "bounds": {
+        "x": -1,
+        "y": -81.4,
+        "width": 39.4,
+        "height": 87.2
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/255.svg",
+      "sourceSha256": "2f857f9d8542d4e8584d3dcb12647c6946f294bda9d334ee8e97d5df4d334dcb"
+    },
+    "256": {
+      "kind": "shape",
+      "bounds": {
+        "x": 1.1,
+        "y": -65,
+        "width": 58.3,
+        "height": 67.6
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/256.svg",
+      "sourceSha256": "27972f12b1b14a45c17a36106e60e2b6511a46bef3088065690e8a0bb6675bf6"
+    },
+    "257": {
+      "kind": "shape",
+      "bounds": {
+        "x": -0.6,
+        "y": -90.9,
+        "width": 21.55,
+        "height": 87.3
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/257.svg",
+      "sourceSha256": "7f00ca308bd7fb0bd9e4d63a0453a8403cb25058113ca0e9c3dc63bb8692b841"
+    },
+    "258": {
+      "kind": "shape",
+      "bounds": {
+        "x": -7.55,
+        "y": -79.4,
+        "width": 47.3,
+        "height": 79
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/258.svg",
+      "sourceSha256": "7739fa2d188fee843205b311aca31ef636dfd3e51315858ac7b389bc2c309f01"
+    },
+    "259": {
+      "kind": "shape",
+      "bounds": {
+        "x": 4.75,
+        "y": -82.1,
+        "width": 43.95,
+        "height": 83.65
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/259.svg",
+      "sourceSha256": "5673f39ee7a4ac0d09963e49addc19fcd93d384de7cfd49fa31c549e1a10148d"
+    },
+    "260": {
+      "kind": "shape",
+      "bounds": {
+        "x": -4.8,
+        "y": -77.2,
+        "width": 36.15,
+        "height": 74.75
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/260.svg",
+      "sourceSha256": "b429c5ad340c0fbd1fa422e5773646314e664fc1678fea1f55dfba87cb0d228c"
+    },
+    "261": {
+      "kind": "shape",
+      "bounds": {
+        "x": -7.7,
+        "y": -78.95,
+        "width": 51.5,
+        "height": 77.55
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/261.svg",
+      "sourceSha256": "d010c5f49607300467ae1bb11b2c98368738b4be706c66f07e33fd88898f3869"
+    },
+    "262": {
+      "kind": "shape",
+      "bounds": {
+        "x": 4.55,
+        "y": -81.5,
+        "width": 41.5,
+        "height": 80.45
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/262.svg",
+      "sourceSha256": "65c592630a842132325f97cb560ed8eec0d3a65c8599e9cd72680ef27f027392"
+    },
+    "263": {
+      "kind": "shape",
+      "bounds": {
+        "x": -12.65,
+        "y": -59.2,
+        "width": 37.55,
+        "height": 49.55
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/263.svg",
+      "sourceSha256": "d02101dc389c910c20d5c19ae143622b4a06c455fbf81683c751c172b9055ceb"
+    },
+    "264": {
+      "kind": "shape",
+      "bounds": {
+        "x": 1.4,
+        "y": -69.2,
+        "width": 50.25,
+        "height": 70.8
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/264.svg",
+      "sourceSha256": "fc5097a2eeb2932393e203363a11b08fc3998c3d21902094a07ea1c17f991566"
+    },
+    "265": {
+      "kind": "shape",
+      "bounds": {
+        "x": -3.4,
+        "y": -80.75,
+        "width": 67.45,
+        "height": 76.8
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/265.svg",
+      "sourceSha256": "cc825f41c3f4d11bffd764ffaaf6f2f606625e65eb59806aa6fcd903c29ebe71"
+    },
+    "266": {
+      "kind": "shape",
+      "bounds": {
+        "x": 7.25,
+        "y": -72.8,
+        "width": 55.8,
+        "height": 74.6
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/266.svg",
+      "sourceSha256": "99ee6ee725a7ec5b82ae09afdfbd8afaf8243670401cf2fcceb36401b417c4f9"
+    },
+    "267": {
+      "kind": "sprite",
+      "className": "assets_fla.eyebrows_23",
+      "frameCount": 24,
+      "blankFrames": [
+        24
+      ]
+    },
+    "268": {
+      "kind": "shape",
+      "bounds": {
+        "x": -86.9,
+        "y": -114.6,
+        "width": 173.95,
+        "height": 130.85
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/268.svg",
+      "sourceSha256": "bf51cebb1d3bd8e33bba07d993976d41ca2a8ba5f86c4f7427c3ed3b21cd02b3"
+    },
+    "269": {
+      "kind": "shape",
+      "bounds": {
+        "x": -85.15,
+        "y": -114.5,
+        "width": 172.3,
+        "height": 138.05
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/269.svg",
+      "sourceSha256": "b0a42a34c65a6c0ff41cba54be3c59b57baf7546815bab50cc66cb8912845c7f"
+    },
+    "270": {
+      "kind": "shape",
+      "bounds": {
+        "x": -82.2,
+        "y": -116,
+        "width": 164,
+        "height": 112.55
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/270.svg",
+      "sourceSha256": "c3388076b24d3d3c244fd333cc6bd2b9322e4c096e970085975a58514c6f135d"
+    },
+    "271": {
+      "kind": "shape",
+      "bounds": {
+        "x": -88.55,
+        "y": -114.55,
+        "width": 178.05,
+        "height": 122.15
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/271.svg",
+      "sourceSha256": "d0408db4560ffdaf80b5805952b226ef397e664b30007fdcf02d6243093dd576"
+    },
+    "272": {
+      "kind": "shape",
+      "bounds": {
+        "x": -81.5,
+        "y": -115.35,
+        "width": 164,
+        "height": 118.85
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/272.svg",
+      "sourceSha256": "933e08ccfb08ba82989d7518dc716eb5889d0c74ce12fcc06c97f43c659656d1"
+    },
+    "273": {
+      "kind": "shape",
+      "bounds": {
+        "x": -96.05,
+        "y": -120.15,
+        "width": 194.1,
+        "height": 135.75
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/273.svg",
+      "sourceSha256": "2980e4c8e5c8da22004e6101cd52e8a2f6ff538eae53c33c906f3edfcd0a31c2"
+    },
+    "274": {
+      "kind": "shape",
+      "bounds": {
+        "x": -82.1,
+        "y": -109.55,
+        "width": 164.9,
+        "height": 105.5
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/274.svg",
+      "sourceSha256": "e086210b5ee5105e2a9daa033a0e7a5dfa5459c81bf607b26ca06b809cc9c3ec"
+    },
+    "275": {
+      "kind": "shape",
+      "bounds": {
+        "x": -83,
+        "y": -142.85,
+        "width": 166,
+        "height": 150
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/275.svg",
+      "sourceSha256": "5c10e9d14037686b4071074b886911f275083a2cedd66f72a8eb48b18a0f15d0"
+    },
+    "276": {
+      "kind": "shape",
+      "bounds": {
+        "x": -82.3,
+        "y": -135.85,
+        "width": 165.3,
+        "height": 159
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/276.svg",
+      "sourceSha256": "7eee0e1dcb8a598b4c64e3bf2c20464f8fb24a66663b3ebb81affe7fa35ed546"
+    },
+    "277": {
+      "kind": "shape",
+      "bounds": {
+        "x": -83.8,
+        "y": -123.95,
+        "width": 168.25,
+        "height": 131
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/277.svg",
+      "sourceSha256": "7da49300f17d71fe4fc3d9fcc1e70a70b6af1e5358d16b38e29e3b88e66906b1"
+    },
+    "278": {
+      "kind": "shape",
+      "bounds": {
+        "x": -89.5,
+        "y": -118.5,
+        "width": 179,
+        "height": 137.45
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/278.svg",
+      "sourceSha256": "31a4e8a75813a7cdbe54c76be29b67feaeed7597c4b29c3678eaf49d70694009"
+    },
+    "279": {
+      "kind": "shape",
+      "bounds": {
+        "x": -105.1,
+        "y": -141.5,
+        "width": 210.4,
+        "height": 155
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/279.svg",
+      "sourceSha256": "6f35651903c9993929ab9cf355f1b5a0ca5aec7d80dc15794b640a37c7038ee3"
+    },
+    "280": {
+      "kind": "shape",
+      "bounds": {
+        "x": -85.5,
+        "y": -114,
+        "width": 170.5,
+        "height": 137.55
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/280.svg",
+      "sourceSha256": "ecb65af0a6d896deef149bc1480bf15db3f7f54efc1890dcc5e64f75c9070eae"
+    },
+    "281": {
+      "kind": "shape",
+      "bounds": {
+        "x": -82.5,
+        "y": -115.9,
+        "width": 165.1,
+        "height": 135.1
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/281.svg",
+      "sourceSha256": "512ea10dbe90efcecdc46ffbae32c4d7c6638afc7dbc8c91909daea48a4673b0"
+    },
+    "282": {
+      "kind": "shape",
+      "bounds": {
+        "x": -88.4,
+        "y": -113.35,
+        "width": 177.95,
+        "height": 128.85
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/282.svg",
+      "sourceSha256": "066ed783fb8f0b1d4d207fe292862da84a365472a36d90357db86cdcfe3e7f17"
+    },
+    "283": {
+      "kind": "shape",
+      "bounds": {
+        "x": -85.5,
+        "y": -113.25,
+        "width": 172.05,
+        "height": 109
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/283.svg",
+      "sourceSha256": "0449bf32c1dddc4f0c360d381e59b5b260a1ece8013055ff58de05238752c677"
+    },
+    "284": {
+      "kind": "shape",
+      "bounds": {
+        "x": -86,
+        "y": -113.8,
+        "width": 171.45,
+        "height": 131.2
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/284.svg",
+      "sourceSha256": "b2e9238072209bd831ab6a12b290f6a3fc5253309d206c2bd8da6c9bf9f1bc92"
+    },
+    "285": {
+      "kind": "shape",
+      "bounds": {
+        "x": -86.35,
+        "y": -115.15,
+        "width": 172.3,
+        "height": 122
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/285.svg",
+      "sourceSha256": "3b419eb4c9c2298d44f1a5a481f667f65918cd6224a2976fb3792bafececa67d"
+    },
+    "286": {
+      "kind": "shape",
+      "bounds": {
+        "x": -103.6,
+        "y": -114.4,
+        "width": 208.65,
+        "height": 162.15
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/286.svg",
+      "sourceSha256": "6583fcc4e4b9b1c621f4ae61e157db30ae8c7938eefbdd2b210aa3e26bd65716"
+    },
+    "287": {
+      "kind": "shape",
+      "bounds": {
+        "x": -99.5,
+        "y": -117.35,
+        "width": 199.1,
+        "height": 143.45
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/287.svg",
+      "sourceSha256": "a9b4ca914efc47df4c12b8d6551d964e41a1d0250b55cd40d95adfb31044f5bb"
+    },
+    "288": {
+      "kind": "shape",
+      "bounds": {
+        "x": -87.85,
+        "y": -117.15,
+        "width": 175.75,
+        "height": 113
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/288.svg",
+      "sourceSha256": "dbd0cfba7d9d130a3cafdc9d9180ecd62a42125b6c5fea840147b560c66823ff"
+    },
+    "289": {
+      "kind": "shape",
+      "bounds": {
+        "x": -99,
+        "y": -124.7,
+        "width": 198,
+        "height": 167.5
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/289.svg",
+      "sourceSha256": "b746f776a5963e73f8e7374b3d8472b98a80be48943c9f9e7b414187527b86e1"
+    },
+    "290": {
+      "kind": "shape",
+      "bounds": {
+        "x": -94.1,
+        "y": -118.05,
+        "width": 187.2,
+        "height": 171.9
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/290.svg",
+      "sourceSha256": "0a5ab50b0bbe95327c51eaa3f01207aa402eb6281a234d932e2e78a8715df879"
+    },
+    "291": {
+      "kind": "shape",
+      "bounds": {
+        "x": -93,
+        "y": -114.35,
+        "width": 186,
+        "height": 140.55
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/291.svg",
+      "sourceSha256": "b3d5c297e9d526eba4a0d881844babee3e305fa9cd07fa732309ee79d0adee35"
+    },
+    "292": {
+      "kind": "shape",
+      "bounds": {
+        "x": -88.5,
+        "y": -122.55,
+        "width": 176,
+        "height": 129.05
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/292.svg",
+      "sourceSha256": "c65f6935f77668865ce0b03808478f876cf5d4626e04011bcf8405b609244ff4"
+    },
+    "293": {
+      "kind": "shape",
+      "bounds": {
+        "x": -82.4,
+        "y": -133.8,
+        "width": 164.55,
+        "height": 157.7
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/293.svg",
+      "sourceSha256": "44edc6ff58d2e08157452c1c6f616db3332c00a22c78e1710e9a7ff23fc90704"
+    },
+    "294": {
+      "kind": "shape",
+      "bounds": {
+        "x": -106.55,
+        "y": -120.65,
+        "width": 213.1,
+        "height": 216
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/294.svg",
+      "sourceSha256": "f7b62d610c7a01b36976ae3f94dcfdb75f73cd867d2f8e910f6d894d4128bfde"
+    },
+    "295": {
+      "kind": "shape",
+      "bounds": {
+        "x": -81.9,
+        "y": -112.8,
+        "width": 164,
+        "height": 109.75
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/295.svg",
+      "sourceSha256": "b128d003508f593f00749f65574965dc05ad42f3a6b6976928b4c647667ddad1"
+    },
+    "296": {
+      "kind": "shape",
+      "bounds": {
+        "x": -83.1,
+        "y": -125.75,
+        "width": 166,
+        "height": 149.9
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/296.svg",
+      "sourceSha256": "0ca611ab8e505cacbb66081cf43e33e886c3275de1ce89c7ee711fefebc44b58"
+    },
+    "297": {
+      "kind": "shape",
+      "bounds": {
+        "x": -112,
+        "y": -145.4,
+        "width": 224,
+        "height": 181.45
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/297.svg",
+      "sourceSha256": "386dd984a1c83e3a740f9f7b75d98c8248b459025ebc59375584631bdea42fc5"
+    },
+    "298": {
+      "kind": "shape",
+      "bounds": {
+        "x": -82.1,
+        "y": -114.95,
+        "width": 164,
+        "height": 129
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/298.svg",
+      "sourceSha256": "fabb4002c3919d2857d321189e975918083f39a8fb1f7531bb3615b3ed58ace2"
+    },
+    "299": {
+      "kind": "shape",
+      "bounds": {
+        "x": -91.25,
+        "y": -67.95,
+        "width": 182.25,
+        "height": 86
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/299.svg",
+      "sourceSha256": "c4f63ffe2b752f59d08d2bbb00046fe0078ffd16a860969de85c41cd3b29832d"
+    },
+    "300": {
+      "kind": "shape",
+      "bounds": {
+        "x": -85.3,
+        "y": -114,
+        "width": 170.6,
+        "height": 142.05
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/300.svg",
+      "sourceSha256": "304e6943318438801d96f9f5f87cdce84abce288eb3f809034568fed44514578"
+    },
+    "301": {
+      "kind": "shape",
+      "bounds": {
+        "x": -83.7,
+        "y": -38.05,
+        "width": 167.4,
+        "height": 34.6
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/301.svg",
+      "sourceSha256": "eade7a0bc092d86e553d1b56c32b748b56555b5f298d750e4c275b562a4cfeee"
+    },
+    "302": {
+      "kind": "shape",
+      "bounds": {
+        "x": -82,
+        "y": -29.95,
+        "width": 164,
+        "height": 33.3
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/302.svg",
+      "sourceSha256": "aea9f6331c49b5043a206320f68b21eccf9840bee3a91aae6818ad2a3eaeb7ab"
+    },
+    "303": {
+      "kind": "shape",
+      "bounds": {
+        "x": -92,
+        "y": -114.35,
+        "width": 184,
+        "height": 185.1
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/303.svg",
+      "sourceSha256": "ff92ac9d4b5389db7e95ac7a30d12faef4027a27a8df61476c58b0206a15cb99"
+    },
+    "304": {
+      "kind": "shape",
+      "bounds": {
+        "x": -88.95,
+        "y": -111.85,
+        "width": 178.45,
+        "height": 143.45
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/304.svg",
+      "sourceSha256": "fa5c694c0df8a5a55500f1ec319e8ad69a5d7a75fe59785b15e334cd46370ab5"
+    },
+    "305": {
+      "kind": "shape",
+      "bounds": {
+        "x": -99.55,
+        "y": -117.35,
+        "width": 199.1,
+        "height": 152.8
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/305.svg",
+      "sourceSha256": "61ed6add7b02bb97574119ee9ba96f0c856862696d1985f76678bac70208585a"
+    },
+    "306": {
+      "kind": "shape",
+      "bounds": {
+        "x": -85.1,
+        "y": -120.2,
+        "width": 170,
+        "height": 133.3
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/306.svg",
+      "sourceSha256": "b3d2113c702f45c38189cf8b557066736faf01d9fbce0f5acb40fab7245fba31"
+    },
+    "307": {
+      "kind": "shape",
+      "bounds": {
+        "x": -89.45,
+        "y": -114.05,
+        "width": 178.85,
+        "height": 81.25
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/307.svg",
+      "sourceSha256": "c8ad3560b6161b22416dd22471e7c29e2ec5b02e5b8d07344f8d855727f868fb"
+    },
+    "308": {
+      "kind": "shape",
+      "bounds": {
+        "x": -88.95,
+        "y": -113.7,
+        "width": 177.85,
+        "height": 75
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/308.svg",
+      "sourceSha256": "72dce48feccf9b2af22d73e989f4e4897a2ed01f2197ec8d15986950b569ce73"
+    },
+    "309": {
+      "kind": "shape",
+      "bounds": {
+        "x": -87,
+        "y": -124.9,
+        "width": 174,
+        "height": 151
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/309.svg",
+      "sourceSha256": "b4be533643e2d47280654128ab3d24d0357b24d2da06b93408b98d7dc4e39cf6"
+    },
+    "310": {
+      "kind": "shape",
+      "bounds": {
+        "x": -88.95,
+        "y": -112.75,
+        "width": 178.05,
+        "height": 121.2
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/310.svg",
+      "sourceSha256": "eda5f13666b71e58acc7e127bb8892ce4ed4e82cd2a838668a77e105276c42b3"
+    },
+    "311": {
+      "kind": "shape",
+      "bounds": {
+        "x": -98.15,
+        "y": -118.6,
+        "width": 196.35,
+        "height": 168
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/311.svg",
+      "sourceSha256": "f2d7e6eea8854efd5e154125ec615fca29757ae164937765c9eca73aade5bff3"
+    },
+    "312": {
+      "kind": "shape",
+      "bounds": {
+        "x": -98.15,
+        "y": -113.7,
+        "width": 196.3,
+        "height": 134.5
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/312.svg",
+      "sourceSha256": "b3e7ad087f220f32d434fc00946394a10fc49a0aba419d24fdedee84c1fbef22"
+    },
+    "313": {
+      "kind": "shape",
+      "bounds": {
+        "x": -100.45,
+        "y": -121,
+        "width": 201.65,
+        "height": 131.8
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/313.svg",
+      "sourceSha256": "18d692117d15abf208bbb468480080ef34b6af79011d7fbaf172169e79a75672"
+    },
+    "314": {
+      "kind": "shape",
+      "bounds": {
+        "x": -98.2,
+        "y": -115.15,
+        "width": 196.4,
+        "height": 111.75
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/314.svg",
+      "sourceSha256": "bb1c23a3e5965707843cd509c2b161d2828f2593329d34f9a4cfafe5d1066e01"
+    },
+    "315": {
+      "kind": "shape",
+      "bounds": {
+        "x": -91.75,
+        "y": -115.15,
+        "width": 183.45,
+        "height": 159.25
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/315.svg",
+      "sourceSha256": "97e8bc7cb7d7455d21594acae4a6719f33236a988e4c9f38a475f4d964dccf98"
+    },
+    "316": {
+      "kind": "shape",
+      "bounds": {
+        "x": -93.2,
+        "y": -113.2,
+        "width": 186.4,
+        "height": 115.55
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/316.svg",
+      "sourceSha256": "a7930780e4f8faa341062f3186a9ea8a8c2cc2d55acd2919e994c8b16d35d19b"
+    },
+    "317": {
+      "kind": "shape",
+      "bounds": {
+        "x": -88.3,
+        "y": -113.8,
+        "width": 176.6,
+        "height": 146.2
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/317.svg",
+      "sourceSha256": "6cabf2f821e6ed793d5b3b752b8ea4872d657a8e8dfd6f72db54d75eb9b96b23"
+    },
+    "318": {
+      "kind": "shape",
+      "bounds": {
+        "x": -89.85,
+        "y": -112.65,
+        "width": 179.7,
+        "height": 147.75
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/318.svg",
+      "sourceSha256": "8bf60c10be46417a212bf09d840462093126ad5d8a26192baebff3b43219ffc2"
+    },
+    "319": {
+      "kind": "shape",
+      "bounds": {
+        "x": -98.45,
+        "y": -123.5,
+        "width": 196.85,
+        "height": 222
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/319.svg",
+      "sourceSha256": "360ec3e28c144e70a9423d400f29e1a1244358bde10a197ba44e5d378ce88ed1"
+    },
+    "320": {
+      "kind": "shape",
+      "bounds": {
+        "x": -96.6,
+        "y": -118,
+        "width": 193.2,
+        "height": 162
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/320.svg",
+      "sourceSha256": "44faf9f15411d43c5eed828d8b1eb92490c1256a121cdbcac697aa24954b1a0f"
+    },
+    "321": {
+      "kind": "shape",
+      "bounds": {
+        "x": -90.75,
+        "y": -112.7,
+        "width": 181.5,
+        "height": 140
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/321.svg",
+      "sourceSha256": "000e9a938d06e3523d1d0800aff78ef4f7fc50d7a33fa0a6decdfe5bbeef30c6"
+    },
+    "322": {
+      "kind": "shape",
+      "bounds": {
+        "x": -92.3,
+        "y": -115.95,
+        "width": 184.6,
+        "height": 161.7
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/322.svg",
+      "sourceSha256": "3ab091e66ca1cdabd127851c2e85e2f0a27695f81fc9b2391d3a6776d888da6f"
+    },
+    "323": {
+      "kind": "shape",
+      "bounds": {
+        "x": -97.75,
+        "y": -112.25,
+        "width": 195.5,
+        "height": 163.3
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/323.svg",
+      "sourceSha256": "ef8350cf08b75345da89b6cbe4ca6c780aa8cb5e2e2c5dc44596e99c83f06cc6"
+    },
+    "324": {
+      "kind": "shape",
+      "bounds": {
+        "x": -88.7,
+        "y": -113.1,
+        "width": 177.4,
+        "height": 151.55
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/324.svg",
+      "sourceSha256": "9055da45a769fd7fdcfacb8176e119b2954ff870eae23a7fa1c72678fe42237b"
+    },
+    "325": {
+      "kind": "shape",
+      "bounds": {
+        "x": -95.3,
+        "y": -112.8,
+        "width": 190.6,
+        "height": 182.65
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/325.svg",
+      "sourceSha256": "c04bcd15c91769e80d7d1431cce1a4a77bb0428a379bd42ae60041f27b4e3d65"
+    },
+    "326": {
+      "kind": "shape",
+      "bounds": {
+        "x": -88.4,
+        "y": -115.75,
+        "width": 176.8,
+        "height": 128.8
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/326.svg",
+      "sourceSha256": "444e6c5841aa296c5e91a6559c9db590b9a4d344c05f14e03d53302194b07253"
+    },
+    "327": {
+      "kind": "shape",
+      "bounds": {
+        "x": -88.05,
+        "y": -112.7,
+        "width": 176.05,
+        "height": 160.05
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/327.svg",
+      "sourceSha256": "6ff16ea6b94d914133cefbc9befa0f0f626ddc4744fcbf11544d6bfa759b200b"
+    },
+    "328": {
+      "kind": "shape",
+      "bounds": {
+        "x": -90.4,
+        "y": -113.1,
+        "width": 180.75,
+        "height": 134.7
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/328.svg",
+      "sourceSha256": "f7c9497c945b65c9fb6d5cabbfd284227db11f9eb2fe6b2814f51ee6dba75fd1"
+    },
+    "329": {
+      "kind": "shape",
+      "bounds": {
+        "x": -78.8,
+        "y": -111.35,
+        "width": 157.6,
+        "height": 121.1
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/329.svg",
+      "sourceSha256": "da16bbb37b3cd4cc98aac34c7ab58269d07f6ed5beccf8e5bbd56445f96c3de6"
+    },
+    "330": {
+      "kind": "shape",
+      "bounds": {
+        "x": -92.6,
+        "y": -116.3,
+        "width": 185.2,
+        "height": 158.35
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/330.svg",
+      "sourceSha256": "4fc915133ed754025214eb12775089cef2489603bc4b6a8cce3f262b0c962e26"
+    },
+    "331": {
+      "kind": "shape",
+      "bounds": {
+        "x": -86.05,
+        "y": -113.5,
+        "width": 172.05,
+        "height": 110
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/331.svg",
+      "sourceSha256": "cd1858f08cf061b0ac09087c0b96a15ad89dea6e62ae49dfc3d5d95025a9aa31"
+    },
+    "332": {
+      "kind": "shape",
+      "bounds": {
+        "x": -95.55,
+        "y": -114.95,
+        "width": 191.05,
+        "height": 131.95
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/332.svg",
+      "sourceSha256": "8f52282ce19b4d7fbadae231e3b897052e25f8087184c1bc8974345c4396e0b4"
+    },
+    "333": {
+      "kind": "shape",
+      "bounds": {
+        "x": -95.1,
+        "y": -115.5,
+        "width": 190.2,
+        "height": 127.5
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/333.svg",
+      "sourceSha256": "cd524b2b7cfbd730c8db05bb3089dfbd0a5b33b78ddd834578810a62dc4106f6"
+    },
+    "334": {
+      "kind": "shape",
+      "bounds": {
+        "x": -94.65,
+        "y": -117,
+        "width": 189.25,
+        "height": 118
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/334.svg",
+      "sourceSha256": "ec57ad061425780bab04bb54b8008f8126e8ed084d68e363add945a487aaee7d"
+    },
+    "335": {
+      "kind": "shape",
+      "bounds": {
+        "x": -94.05,
+        "y": -114,
+        "width": 188.05,
+        "height": 123
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/335.svg",
+      "sourceSha256": "0f6c4dbbf294232854b61e3ccb21d1e2b4451f1549a878b375784c2f89698587"
+    },
+    "336": {
+      "kind": "shape",
+      "bounds": {
+        "x": -88.15,
+        "y": -120,
+        "width": 176.3,
+        "height": 128.5
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/336.svg",
+      "sourceSha256": "3d15e5ab80531b03bdb65fc0f2f0367dc8430fa9164eef6adc330fb954c9044c"
+    },
+    "337": {
+      "kind": "shape",
+      "bounds": {
+        "x": -97.95,
+        "y": -115.85,
+        "width": 195.9,
+        "height": 171.6
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/337.svg",
+      "sourceSha256": "713a8a70cd0277725168fbb1fd4cc824a1fc1fafad1cc8462210bd0ca4a939b9"
+    },
+    "338": {
+      "kind": "shape",
+      "bounds": {
+        "x": -91.9,
+        "y": -126.4,
+        "width": 183.8,
+        "height": 137.2
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/338.svg",
+      "sourceSha256": "4eb442aa648e2a4ca9db8bbb599a432ce415b262961da55efc4610546088f7d4"
+    },
+    "339": {
+      "kind": "sprite",
+      "className": "assets_fla.hairfront_24",
+      "frameCount": 72,
+      "blankFrames": [
+        34
+      ]
+    },
+    "340": {
+      "kind": "shape",
+      "bounds": {
+        "x": -89.25,
+        "y": -128.7,
+        "width": 179.4,
+        "height": 112
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/340.svg",
+      "sourceSha256": "8cf4a223c9ea852a65e3def57fcf07046ec535abc05d8ab3f2e2a6bedcd486f0"
+    },
+    "341": {
+      "kind": "shape",
+      "bounds": {
+        "x": -92.45,
+        "y": -128.45,
+        "width": 185,
+        "height": 130
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/341.svg",
+      "sourceSha256": "7270b9400ca24bac91346da9bea3bead56cfd658f332efdd5d194be724429d1d"
+    },
+    "342": {
+      "kind": "shape",
+      "bounds": {
+        "x": 65,
+        "y": -92.25,
+        "width": 18,
+        "height": 21.15
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/342.svg",
+      "sourceSha256": "3ac6794454eba2d62a453318e1e3dc971d42c09b3408ac59962771c19bee0fec"
+    },
+    "343": {
+      "kind": "shape",
+      "bounds": {
+        "x": -80.35,
+        "y": -79.45,
+        "width": 158.25,
+        "height": 33.7
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/343.svg",
+      "sourceSha256": "6eb1906f28d8141dbff22446f5631da26b3bc175168c124704a2b3186172d2bc"
+    },
+    "344": {
+      "kind": "sprite",
+      "className": "assets_fla.hats_25",
+      "frameCount": 72,
+      "blankFrames": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        62,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72
+      ]
+    },
+    "345": {
+      "kind": "shape",
+      "bounds": {
+        "x": -39,
+        "y": -15.8,
+        "width": 78,
+        "height": 46.5
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/345.svg",
+      "sourceSha256": "f59843cf501dc9b2852ac1c14090198efa3f8dd824864322e88cc6f3b184f979"
+    },
+    "346": {
+      "kind": "shape",
+      "bounds": {
+        "x": -47.45,
+        "y": -9.5,
+        "width": 94.9,
+        "height": 24.1
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/346.svg",
+      "sourceSha256": "1cf08fc5eae4525aa7648ad4431829f45c4d026e703ae11120d1c8c9bfaee006"
+    },
+    "347": {
+      "kind": "shape",
+      "bounds": {
+        "x": -52.45,
+        "y": -15.15,
+        "width": 104.85,
+        "height": 82.05
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/347.svg",
+      "sourceSha256": "faee30394c3450b8fb1992afb7ca2ed0ccc1045d8d1aa24496491054b63c48e4"
+    },
+    "348": {
+      "kind": "sprite",
+      "className": "assets_fla.mustaches_26",
+      "frameCount": 4,
+      "blankFrames": [
+        1
+      ]
+    },
+    "349": {
+      "kind": "shape",
+      "bounds": {
+        "x": -16.05,
+        "y": -27.05,
+        "width": 31.35,
+        "height": 48.3
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/349.svg",
+      "sourceSha256": "46f121a2b81de5002a46cf995f58ae1b019ea17a93f432f85a64c3bf74a7e6c6"
+    },
+    "350": {
+      "kind": "shape",
+      "bounds": {
+        "x": -29.1,
+        "y": -14.3,
+        "width": 58.1,
+        "height": 33.3
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/350.svg",
+      "sourceSha256": "05b20d0ff4896cba2821777df218d66dfd779c2a668132ddce2aef70d9bfb841"
+    },
+    "351": {
+      "kind": "shape",
+      "bounds": {
+        "x": -24.75,
+        "y": -24.85,
+        "width": 49.85,
+        "height": 52.15
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/351.svg",
+      "sourceSha256": "af58803d638d293272f08945a2d62f511b0a8497aa93847449b8bd95c7236a2b"
+    },
+    "352": {
+      "kind": "shape",
+      "bounds": {
+        "x": -19.55,
+        "y": -40.6,
+        "width": 39.8,
+        "height": 73.75
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/352.svg",
+      "sourceSha256": "494d0c69936c27ac317b9c1a9e27dc069fa36421511f8c5beb24418e8235acbf"
+    },
+    "353": {
+      "kind": "shape",
+      "bounds": {
+        "x": -38,
+        "y": -15.15,
+        "width": 76.95,
+        "height": 44.5
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/353.svg",
+      "sourceSha256": "019486841d0c9ea2fea5db0c1658ea3596bf4c845b46738e69539746256569b1"
+    },
+    "354": {
+      "kind": "shape",
+      "bounds": {
+        "x": -25,
+        "y": -4.55,
+        "width": 50.85,
+        "height": 24.25
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/354.svg",
+      "sourceSha256": "3b0ef09524c5b1f9070ebba84fc0f21d0b22c35a0feaab21a30acba22b0d4070"
+    },
+    "355": {
+      "kind": "shape",
+      "bounds": {
+        "x": -19.05,
+        "y": -37.35,
+        "width": 39.2,
+        "height": 69.8
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/355.svg",
+      "sourceSha256": "6af28c8889abf345999bf5eced640a327b14b30b9c511cf904576d02e8f5b115"
+    },
+    "356": {
+      "kind": "shape",
+      "bounds": {
+        "x": -32.75,
+        "y": -43.75,
+        "width": 66.2,
+        "height": 76.9
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/356.svg",
+      "sourceSha256": "aa07f2c4d0cd8c3b9229f8914b0fd02dc3d1f446fd278800f71e4ef484618be0"
+    },
+    "357": {
+      "kind": "shape",
+      "bounds": {
+        "x": -33.25,
+        "y": -15.35,
+        "width": 66.75,
+        "height": 38.6
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/357.svg",
+      "sourceSha256": "5dce6b5d1c32740e8795c2c1f381a173adcb23361c7088fc16817b24a61c9afc"
+    },
+    "358": {
+      "kind": "shape",
+      "bounds": {
+        "x": -19.1,
+        "y": -50.7,
+        "width": 38.5,
+        "height": 80.3
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/358.svg",
+      "sourceSha256": "77d900f0b7e4ff3c2a5086d8aaa94893592ccb220ca6bab25f137df05b976c69"
+    },
+    "359": {
+      "kind": "sprite",
+      "className": "assets_fla.noseskin_28",
+      "frameCount": 12,
+      "blankFrames": [
+        3,
+        6
+      ]
+    },
+    "360": {
+      "kind": "shape",
+      "bounds": {
+        "x": -21.95,
+        "y": -27,
+        "width": 25,
+        "height": 54.2
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/360.svg",
+      "sourceSha256": "f40d6c663ae28df93e2f7a19760e360d06455943ac1376e0d7ef8c4fae839db2"
+    },
+    "361": {
+      "kind": "shape",
+      "bounds": {
+        "x": -35.5,
+        "y": 0.1,
+        "width": 71.2,
+        "height": 25.4
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/361.svg",
+      "sourceSha256": "b55d9cc4b73a05cc868cd19bef264f4423cea101e15bfb67c0ad7694eb09356f"
+    },
+    "362": {
+      "kind": "shape",
+      "bounds": {
+        "x": -16.05,
+        "y": 4.2,
+        "width": 32.1,
+        "height": 13.4
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/362.svg",
+      "sourceSha256": "94b613f2f0d3a436e952f7f2d4ab0894ddb16517564dce07b4b2c59d6293c3d7"
+    },
+    "363": {
+      "kind": "shape",
+      "bounds": {
+        "x": -31.85,
+        "y": 0.05,
+        "width": 64.05,
+        "height": 33.4
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/363.svg",
+      "sourceSha256": "d30f48c2274e66969f94f10067d013da87eca886a4b7b057c6dcd7e3ef32f268"
+    },
+    "364": {
+      "kind": "shape",
+      "bounds": {
+        "x": -25.8,
+        "y": -37.95,
+        "width": 52.3,
+        "height": 77.05
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/364.svg",
+      "sourceSha256": "dd2ff4fce9831eedc2447fd9d42e409342b828c77174ed9dd4cd0819ee048736"
+    },
+    "365": {
+      "kind": "shape",
+      "bounds": {
+        "x": -15.05,
+        "y": 2.35,
+        "width": 30.6,
+        "height": 14.2
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/365.svg",
+      "sourceSha256": "5534158977fa24ddb495ae91553bc0bf2f32203880c2b360ff84229d09ee542d"
+    },
+    "366": {
+      "kind": "shape",
+      "bounds": {
+        "x": -41.2,
+        "y": -12.55,
+        "width": 83.7,
+        "height": 44.6
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/366.svg",
+      "sourceSha256": "d2a1cb7af583a923efb26d6b98d542f60cc7f0d64122ed087cb5793ed8c610d2"
+    },
+    "367": {
+      "kind": "shape",
+      "bounds": {
+        "x": -32,
+        "y": -11.15,
+        "width": 64.9,
+        "height": 27.9
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/367.svg",
+      "sourceSha256": "06a3d6ab066145c4e4eefacc52347b5fcb62db554702cfaa30c71845791a28ee"
+    },
+    "368": {
+      "kind": "shape",
+      "bounds": {
+        "x": -25,
+        "y": -34.35,
+        "width": 51.1,
+        "height": 72.55
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/368.svg",
+      "sourceSha256": "20ef174813cc77c17fb05f0e2e6981656e24a5e5a9f4c10c39abf2be7b834111"
+    },
+    "369": {
+      "kind": "shape",
+      "bounds": {
+        "x": -38,
+        "y": -40.2,
+        "width": 76.7,
+        "height": 80
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/369.svg",
+      "sourceSha256": "0710c0403492c0a37f628d3c5b52e9dd857fabc945f5d2c562588f158e41ebbf"
+    },
+    "370": {
+      "kind": "shape",
+      "bounds": {
+        "x": -39.75,
+        "y": -7,
+        "width": 79.8,
+        "height": 35.65
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/370.svg",
+      "sourceSha256": "5ba03f9b12707e2bf75da584dc934b6b760abb939bb9ba00988c58c7be1feb98"
+    },
+    "371": {
+      "kind": "shape",
+      "bounds": {
+        "x": -25.6,
+        "y": -42.9,
+        "width": 51.5,
+        "height": 72.45
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/371.svg",
+      "sourceSha256": "3495c6aebdd1970b32b3e473bc0f70c9b39b1a6e4463f0c1ddee62eec2344e4a"
+    },
+    "372": {
+      "kind": "sprite",
+      "className": "assets_fla.noses_27",
+      "frameCount": 12,
+      "blankFrames": []
+    },
+    "373": {
+      "kind": "shape",
+      "bounds": {
+        "x": -74.45,
+        "y": -21.1,
+        "width": 148.9,
+        "height": 51.05
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/373.svg",
+      "sourceSha256": "5dc7bddb26a078d6f9dc6560b5458bde5fcbfb2886d26ac81765f12b5e142c94"
+    },
+    "374": {
+      "kind": "shape",
+      "bounds": {
+        "x": -69.75,
+        "y": -19.4,
+        "width": 139.25,
+        "height": 38.65
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/374.svg",
+      "sourceSha256": "421b2c0ca35772f766d1614b07edbfd163bdcef56eda03c07e5163e32b7d641a"
+    },
+    "375": {
+      "kind": "shape",
+      "bounds": {
+        "x": -74.1,
+        "y": -21.95,
+        "width": 148.2,
+        "height": 48.7
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/375.svg",
+      "sourceSha256": "e9115555c3e97e2b7bca37e973433e2f97d43889a80e4a66113ab5b2c37e61ab"
+    },
+    "376": {
+      "kind": "sprite",
+      "className": "assets_fla.lenses_30",
+      "frameCount": 9,
+      "blankFrames": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "377": {
+      "kind": "shape",
+      "bounds": {
+        "x": -75.5,
+        "y": -25.3,
+        "width": 151,
+        "height": 50.6
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/377.svg",
+      "sourceSha256": "bc2a4c8c1394e6e6dda820d810387393952d73a52da6afd193cac330f75e397c"
+    },
+    "378": {
+      "kind": "shape",
+      "bounds": {
+        "x": -77,
+        "y": -19.75,
+        "width": 154.05,
+        "height": 39.55
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/378.svg",
+      "sourceSha256": "c748355de97bd97f85ad84b956a0c3f0760109b4543376cf2eeb25851dba63d8"
+    },
+    "379": {
+      "kind": "shape",
+      "bounds": {
+        "x": -76.35,
+        "y": -26.2,
+        "width": 152.7,
+        "height": 52.4
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/379.svg",
+      "sourceSha256": "9d18c4ab470f1971c5c0a4927ae124615efd604774bddde1430eee47a500d68c"
+    },
+    "380": {
+      "kind": "shape",
+      "bounds": {
+        "x": -76.85,
+        "y": -26.5,
+        "width": 154.45,
+        "height": 54.9
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/380.svg",
+      "sourceSha256": "1bc22bb25dedc53f0ea813ffe5324cd77a48f8018d933ed5112b40a4c386d6f6"
+    },
+    "381": {
+      "kind": "shape",
+      "bounds": {
+        "x": -83.75,
+        "y": -29.95,
+        "width": 167.5,
+        "height": 46.1
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/381.svg",
+      "sourceSha256": "5bea6f243b627f92d82319fee892c93515c0f92ac250062bcb358f3424a96cb9"
+    },
+    "382": {
+      "kind": "shape",
+      "bounds": {
+        "x": -85.5,
+        "y": -25.3,
+        "width": 171.05,
+        "height": 50.6
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/382.svg",
+      "sourceSha256": "ace9bd3f77c2292f00514c8863b3619dd8c8076f36846a79ad39dd60128f046b"
+    },
+    "383": {
+      "kind": "shape",
+      "bounds": {
+        "x": -77.9,
+        "y": -26.7,
+        "width": 155.8,
+        "height": 26.5
+      },
+      "sourcePath": "EXTRACTED-SWF/assets.swf/shapes/383.svg",
+      "sourceSha256": "cc16ca6462ce3534ddda790884a02695f69b1979d69103bfb18b9b1f90e83e5d"
+    },
+    "384": {
+      "kind": "sprite",
+      "className": "assets_fla.glasses_29",
+      "frameCount": 9,
+      "blankFrames": []
+    },
+    "385": {
+      "kind": "sprite",
+      "className": "assets_fla.face_14",
+      "frameCount": 1,
+      "blankFrames": []
+    }
+  },
+  "rules": {
+    "ranges": {
+      "eyeX": [
+        0,
+        54
+      ],
+      "eyeY": [
+        -69,
+        35
+      ],
+      "eyeSize": [
+        0.26,
+        1
+      ],
+      "eyeRotation": [
+        -81.5,
+        0
+      ],
+      "eyebrowX": [
+        0,
+        52.5
+      ],
+      "eyebrowY": [
+        -59,
+        25
+      ],
+      "eyebrowSize": [
+        0.25,
+        1
+      ],
+      "eyebrowRotation": [
+        -125,
+        0
+      ],
+      "noseY": [
+        -10,
+        70
+      ],
+      "noseSize": [
+        0.2,
+        1
+      ],
+      "mouthY": [
+        -11,
+        89
+      ],
+      "mouthSize": [
+        0.218,
+        1
+      ],
+      "glassesY": [
+        -47,
+        49
+      ],
+      "glassesSize": [
+        0.4,
+        1.46
+      ],
+      "mustacheY": [
+        0,
+        86
+      ],
+      "mustacheSize": [
+        0.25,
+        1
+      ],
+      "moleX": [
+        -71,
+        71
+      ],
+      "moleY": [
+        -60,
+        100
+      ],
+      "moleSize": [
+        0.4,
+        1.25
+      ]
+    },
+    "palettes": {
+      "skinColors": [
+        {
+          "multipliers": [
+            0.88,
+            0.85,
+            0.8,
+            1
+          ],
+          "offsets": [
+            235,
+            205,
+            187,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            -0.02,
+            0.23,
+            0.39,
+            1
+          ],
+          "offsets": [
+            248,
+            187,
+            124,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.13,
+            0.42,
+            0.44,
+            1
+          ],
+          "offsets": [
+            214,
+            134,
+            71,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            -0.02,
+            0.28,
+            0.38,
+            1
+          ],
+          "offsets": [
+            246,
+            174,
+            136,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.42,
+            0.44,
+            0.45,
+            1
+          ],
+          "offsets": [
+            142,
+            73,
+            31,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.44,
+            0.44,
+            0.43,
+            1
+          ],
+          "offsets": [
+            72,
+            38,
+            13,
+            0
+          ]
+        }
+      ],
+      "hairColors": [
+        {
+          "multipliers": [
+            0.43,
+            0.43,
+            0.42,
+            1
+          ],
+          "offsets": [
+            15,
+            14,
+            12,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.44,
+            0.44,
+            0.45,
+            1
+          ],
+          "offsets": [
+            46,
+            25,
+            6,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.4,
+            0.4,
+            0.39,
+            1
+          ],
+          "offsets": [
+            82,
+            37,
+            14,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.43,
+            0.43,
+            0.43,
+            1
+          ],
+          "offsets": [
+            102,
+            56,
+            22,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.43,
+            0.43,
+            0.43,
+            1
+          ],
+          "offsets": [
+            105,
+            106,
+            108,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.43,
+            0.42,
+            0.42,
+            1
+          ],
+          "offsets": [
+            61,
+            44,
+            14,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.44,
+            0.44,
+            0.44,
+            1
+          ],
+          "offsets": [
+            113,
+            82,
+            25,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.24,
+            0.37,
+            0.42,
+            1
+          ],
+          "offsets": [
+            185,
+            149,
+            87,
+            0
+          ]
+        }
+      ],
+      "eyeColors": [
+        {
+          "multipliers": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "offsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.09,
+            0.11,
+            0.1,
+            1
+          ],
+          "offsets": [
+            109,
+            123,
+            124,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.22,
+            0.24,
+            0.25,
+            1
+          ],
+          "offsets": [
+            108,
+            80,
+            65,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.13,
+            0.14,
+            0.22,
+            1
+          ],
+          "offsets": [
+            122,
+            122,
+            40,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.17,
+            0.17,
+            0.25,
+            1
+          ],
+          "offsets": [
+            24,
+            60,
+            184,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.16,
+            0.15,
+            0.11,
+            1
+          ],
+          "offsets": [
+            48,
+            140,
+            79,
+            0
+          ]
+        }
+      ],
+      "mouthColors": [
+        {
+          "multipliers": [
+            0.7,
+            0.6,
+            0.55,
+            1
+          ],
+          "offsets": [
+            180,
+            69,
+            35,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            1,
+            0.45,
+            0.3,
+            1
+          ],
+          "offsets": [
+            220,
+            51,
+            40,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            1,
+            0.6,
+            0.6,
+            1
+          ],
+          "offsets": [
+            197,
+            84,
+            86,
+            0
+          ]
+        }
+      ],
+      "glassesColors": [
+        {
+          "multipliers": [
+            0.17,
+            0.18,
+            0.18,
+            1
+          ],
+          "offsets": [
+            76,
+            85,
+            84,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.28,
+            0.31,
+            0.37,
+            1
+          ],
+          "offsets": [
+            105,
+            81,
+            21,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.09,
+            0.37,
+            0.41,
+            1
+          ],
+          "offsets": [
+            163,
+            43,
+            16,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.37,
+            0.31,
+            0.19,
+            1
+          ],
+          "offsets": [
+            23,
+            69,
+            128,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.15,
+            0.19,
+            0.29,
+            1
+          ],
+          "offsets": [
+            169,
+            107,
+            8,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.21,
+            0.22,
+            0.24,
+            1
+          ],
+          "offsets": [
+            171,
+            172,
+            164,
+            0
+          ]
+        }
+      ],
+      "favoriteColors": [
+        {
+          "multipliers": [
+            0.9911,
+            0.47,
+            0.51,
+            1
+          ],
+          "offsets": [
+            191,
+            38,
+            2,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.05,
+            0.37,
+            0.44,
+            1
+          ],
+          "offsets": [
+            240,
+            128,
+            42,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.32,
+            0.47,
+            0.55,
+            1
+          ],
+          "offsets": [
+            235,
+            190,
+            27,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.53,
+            0.52,
+            0.53,
+            1
+          ],
+          "offsets": [
+            131,
+            167,
+            19,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.58,
+            0.47,
+            0.47,
+            1
+          ],
+          "offsets": [
+            1,
+            82,
+            28,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.42,
+            0.43,
+            0.22,
+            1
+          ],
+          "offsets": [
+            5,
+            41,
+            151,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.51,
+            0.42,
+            0.36,
+            1
+          ],
+          "offsets": [
+            78,
+            142,
+            199,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.35,
+            0.5,
+            0.5,
+            1
+          ],
+          "offsets": [
+            241,
+            96,
+            96,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.38,
+            0.48,
+            0.32,
+            1
+          ],
+          "offsets": [
+            93,
+            30,
+            153,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.4,
+            0.42,
+            0.42,
+            1
+          ],
+          "offsets": [
+            82,
+            53,
+            22,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.45,
+            0.45,
+            0.45,
+            1
+          ],
+          "offsets": [
+            190,
+            190,
+            190,
+            0
+          ]
+        },
+        {
+          "multipliers": [
+            0.8,
+            0.8,
+            0.8,
+            1
+          ],
+          "offsets": [
+            5,
+            5,
+            5,
+            0
+          ]
+        }
+      ]
+    },
+    "faceShapeOffsets": [
+      0,
+      -3,
+      14,
+      6,
+      3,
+      -3,
+      13,
+      16
+    ],
+    "baseHeadY": 140,
+    "nativeWidth": 300,
+    "nativeHeight": 600,
+    "body": {
+      "ranges": {
+        "heightToWeightRange": [
+          0.6,
+          1
+        ],
+        "heightRange": [
+          0.4,
+          1
+        ],
+        "weightRange": [
+          0.45,
+          1
+        ]
+      },
+      "points": {
+        "lowerArmToUpperArmPt": [
+          50,
+          0
+        ],
+        "bodyToNeckPt": [
+          0,
+          -75
+        ],
+        "upperArmToTorsoPt": [
+          20,
+          -64
+        ],
+        "footToLegPt": [
+          -2,
+          95
+        ],
+        "legToTorsoPt": [
+          20,
+          3
+        ],
+        "handToLowerArmPt": [
+          48,
+          -1
+        ]
+      },
+      "colors": {
+        "favoriteColor": {
+          "multipliers": [
+            0.28,
+            0.22,
+            0.22,
+            1
+          ],
+          "offsets": [
+            110,
+            10,
+            10,
+            0
+          ]
+        },
+        "specialColor": {
+          "multipliers": [
+            0.5,
+            0.5,
+            0.4,
+            1
+          ],
+          "offsets": [
+            190,
+            155,
+            30,
+            0
+          ]
+        },
+        "foreignColor": {
+          "multipliers": [
+            0.4,
+            0.42,
+            0.48,
+            1
+          ],
+          "offsets": [
+            50,
+            60,
+            120,
+            0
+          ]
+        },
+        "normalColor": {
+          "multipliers": [
+            0.4,
+            0.41,
+            0.44,
+            1
+          ],
+          "offsets": [
+            40,
+            42,
+            50,
+            0
+          ]
+        }
+      },
+      "baseNeckY": 220
+    }
+  },
+  "counts": {
+    "symbols": 385,
+    "shapes": 355,
+    "timelines": 30
+  }
+}

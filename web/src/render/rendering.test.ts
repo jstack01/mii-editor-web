@@ -26,19 +26,19 @@ it('extracts every geometric range, palette entry and head offset exactly from A
   expect([rules.nativeWidth,rules.nativeHeight,rules.baseHeadY]).toEqual([300,600,140]);
 });
 
-it('copies original source placements and shape origins, and keeps unsupported frames distinct from blanks',()=>{
+it('copies original source placements and shape origins, and retains every frame including intentional blanks',()=>{
   const manifest=JSON.parse(originalManifest);
-  expect(Object.keys(assets.symbols)).toHaveLength(28);
-  expect(Object.values(assets.symbols).filter((s)=>s.kind==='shape')).toHaveLength(9);
+  expect(Object.keys(assets.symbols)).toHaveLength(385);
+  expect(Object.values(assets.symbols).filter((s)=>s.kind==='shape')).toHaveLength(355);
   for(const asset of Object.values(assets.symbols)){
     const source=manifest.symbols[asset.id];
     if(asset.kind==='sprite'){
       expect(asset.frames.length).toBe(source.timeline.frames.length);
       asset.frames.forEach((frame,index)=>{
         const original=source.timeline.frames[index].displayList;
-        if(frame===null){expect(original.length).toBeGreaterThan(0);expect(index).toBeGreaterThan(0);return;}
-        expect(frame).toEqual(original.map((p:Record<string,unknown>)=>({depth:p.depth,matrix:p.matrixPx,color:p.colorTransform,name:p.name,symbolId:p.characterId,clipDepth:p.clipDepth,blendMode:p.blendMode,visible:p.visible})));
-        frame.forEach((p)=>expect(assets.symbols[p.symbolId]).toBeDefined());
+        expect(frame).not.toBeNull();
+        expect(frame).toEqual(original.map((p:Record<string,unknown>)=>({depth:p.depth,matrix:p.matrixPx,color:p.colorTransform,name:p.name,symbolId:p.characterId,clipDepth:p.clipDepth,blendMode:p.blendMode,visible:p.visible,...((p.filters as {attributes:Record<string,string>}[]).length?{filters:(p.filters as {attributes:Record<string,string>}[]).map((f)=>({kind:'blur',blurX:Number(f.attributes.blurX),blurY:Number(f.attributes.blurY),passes:Number(f.attributes.passes)}))}:{})})));
+        frame!.forEach((p)=>expect(assets.symbols[p.symbolId]).toBeDefined());
       });
     }else{
       const {x,y,width,height}=source.bounds.shapeBounds;
@@ -111,7 +111,7 @@ it('preserves intentional blank frames and reports missing, out-of-proof or cycl
   expect(()=>getFrame(9999,1)).toThrow(/Missing original symbol/);
   expect(()=>getFrame(243,0)).toThrow(/Missing frame/);
   expect(()=>getFrame(243,49)).toThrow(/Missing frame/);
-  expect(()=>getFrame(243,2)).toThrow(/outside the Phase 3A proof/);
+  expect(getFrame(243,2).length).toBeGreaterThan(0);
   const nodes=flattenScene(scene());for(const path of ['head.features','head.beard','head.mole','head.hats','head.mustache','head.mouth.lips','head.glasses'])expect(named(nodes,path).bounds).toBeNull();
   const symbols={...assets.symbols};delete symbols['349'];expect(()=>buildHeadScene(model(),{...assets,symbols})).toThrow(/Missing original symbol 349/);
   const cyclic:AssetCatalog={...assets,symbols:{...assets.symbols,'37':{kind:'sprite',id:37,className:null,frames:[[assets.roots[0]!]]}}};
