@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { spawn } from 'node:child_process';
+import { spawn, spawnSync } from 'node:child_process';
 import { once } from 'node:events';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -12,7 +12,8 @@ const cwd = fileURLToPath(new URL('..', import.meta.url));
 const preview = process.argv.includes('--preview');
 const port = preview ? 5175 : 5174;
 const origin = `http://127.0.0.1:${port}`;
-const server = spawn(process.execPath, ['node_modules/vite/bin/vite.js', ...(preview ? ['preview'] : []), '--host', '127.0.0.1', '--port', String(port), '--strictPort'], { cwd, stdio: ['ignore', 'pipe', 'pipe'] });
+if(preview){const fixture=spawnSync(process.execPath,['node_modules/vite/bin/vite.js','build','--config','scripts/diagnostics-vite.config.mjs'],{cwd,encoding:'utf8'});if(fixture.status!==0)throw Error(fixture.stdout+fixture.stderr);}
+const server = spawn(process.execPath, ['node_modules/vite/bin/vite.js', ...(preview ? ['preview','--outDir','test-results/diagnostics-dist'] : []), '--host', '127.0.0.1', '--port', String(port), '--strictPort'], { cwd, stdio: ['ignore', 'pipe', 'pipe'] });
 let serverOutput = '';
 server.stdout.on('data', (chunk) => { serverOutput += chunk; });
 server.stderr.on('data', (chunk) => { serverOutput += chunk; });
@@ -23,7 +24,7 @@ try {
   let ready = false;
   for (let attempt = 0; attempt < 100; attempt += 1) {
     if (server.exitCode !== null) throw new Error(`Vite failed: ${serverOutput}`);
-    try { ready = (await fetch(origin)).ok; } catch { /* wait for server startup */ }
+    try { ready = (await fetch(origin+'/diagnostics.html')).ok; } catch { /* wait for server startup */ }
     if (ready) break;
     await new Promise((resolve) => setTimeout(resolve, 100));
   }
@@ -35,7 +36,7 @@ try {
   page.on('pageerror', (error) => errors.push(error.message));
   page.on('request', (request) => { if (!request.url().startsWith(origin) && !request.url().startsWith('data:') && !request.url().startsWith(`blob:${origin}/`)) externalRequests.push(request.url()); });
   page.on('console', (message) => { if (message.type() === 'error') errors.push(message.text()); });
-  await page.goto(origin);
+  await page.goto(origin+'/diagnostics.html');
   const input = page.getByLabel('Name', { exact: true });
   const hex = page.getByLabel('Hexadecimal data');
   assert.equal(await input.inputValue(), 'defaultBoy');

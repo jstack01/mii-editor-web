@@ -16,9 +16,10 @@ const casesArg=argument('--cases');const cases=casesArg?JSON.parse(await readFil
 const runtime=resolve(runtimeArg);const output=resolve(argument('--output',join(project,'evidence/phase3a/reference')));
 if(['SOURCE','EXTRACTED-SWF'].some((name)=>output===join(project,name)||output.startsWith(join(project,name)+'/')))throw new Error('Output must not be inside protected input folders.');
 const require=createRequire(join(project,'web/package.json'));const {chromium}=require('playwright');
+const renderer=argument('--renderer','canvas');
 const metadata=JSON.parse(await readFile(join(runtime,'package.json'),'utf8'));
 const html=`<!doctype html><html><head><meta charset="utf-8"><link rel="icon" href="data:,"></head><body style="margin:0;background:white"><div id="player" style="width:640px;height:500px"></div><script src="/ruffle/ruffle.js"></script><script>
-window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={autoplay:'on',unmuteOverlay:'hidden',splashScreen:false,warnOnUnsupportedContent:false,logLevel:'warn',allowNetworking:'internal',preferredRenderer:'canvas'};
+window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={autoplay:'on',unmuteOverlay:'hidden',splashScreen:false,warnOnUnsupportedContent:false,logLevel:'warn',allowNetworking:'internal',preferredRenderer:${JSON.stringify(renderer)}};
 window.addEventListener('load',async()=>{try{const p=window.RufflePlayer.newest().createPlayer();p.style.width='640px';p.style.height='500px';document.getElementById('player').appendChild(p);await p.ruffle().load({url:'/original/classicGUI.swf',autoplay:'on',unmuteOverlay:'hidden',parameters:new URLSearchParams(location.search).has('mii')?{mii:new URLSearchParams(location.search).get('mii')}: {}});window.referenceLoaded=true;}catch(e){window.referenceError=String(e);}});
 </script></body></html>`;
 const sourceFiles=new Set(['assets.swf','classicGUI.swf','MiiEditor_defaults.xml']);const logs=[];
@@ -45,13 +46,19 @@ try{
   await page.goto(origin+(fixture.hex?'/?mii='+fixture.hex:''));await page.waitForFunction(()=>window.referenceLoaded||window.referenceError,{},{timeout:30000});await page.waitForTimeout(2500);
   const error=await page.evaluate(()=>window.referenceError??null);if(error)throw new Error(error);
   if(logs.some((x)=>x.type==='pageerror'||/Error dispatching event/.test(x.text??'')))throw new Error('Original runtime execution reported an error; inspect the log.');
+  if(renderer!=='canvas'){await page.mouse.click(600,22);await page.waitForTimeout(300);}
+  if(process.argv.includes('--gui')){
+    const screens=[['basic',[[67,43]]],['size',[[130,43]]],['face',[[193,43]]],['face2',[[193,43],[405,124]]],['hair',[[256,43]]],['eyebrows',[[319,43]]],['eyes',[[382,43]]],['nose',[[445,43]]],['lips',[[508,43]]],['accessories',[[571,43]]],['accessories2',[[571,43],[405,124]]],['accessories3',[[571,43],[292,172]]],['accessories4',[[571,43],[405,172]]]];
+    for(const [name,clicks]of screens){for(const[x,y]of clicks){await page.mouse.click(x,y);await page.waitForTimeout(100);}await page.mouse.move(5,490);await page.waitForTimeout(150);await page.screenshot({path:join(output,`${name}-gui.png`)});}
+  }else{
   await page.screenshot({path:join(output,`${fixture.id}-ruffle.png`)});
   // Original head tab, observed in the first screenshot and original GUI timeline.
   if(!process.argv.includes('--skip-head')){await page.mouse.click(192,43);await page.waitForTimeout(700);
   await page.screenshot({path:join(output,`${fixture.id}-ruffle-head.png`)});}
   }
+  }
   const hashes={};for(const file of sourceFiles)hashes[`SOURCE/${file}`]=createHash('sha256').update(await readFile(join(project,'SOURCE',file))).digest('hex');
-  const report={runtime:{name:metadata.name,version:metadata.version,renderer:'canvas',deviceScaleFactor:Number(argument('--device-scale','1'))},originalInputsUnmodified:true,sourceHashes:hashes,adobeFlashParityCertified:false,loaded:true,cases,logs};
+  const report={runtime:{name:metadata.name,version:metadata.version,renderer,deviceScaleFactor:Number(argument('--device-scale','1'))},originalInputsUnmodified:true,sourceHashes:hashes,adobeFlashParityCertified:false,loaded:true,cases,logs};
   await writeFile(join(output,'reference-log.json'),JSON.stringify(report,null,2)+'\n');
   console.log(JSON.stringify({runtime:report.runtime,loaded:true,output,adobeFlashParityCertified:false}));
 }catch(error){await mkdir(output,{recursive:true});await writeFile(join(output,'reference-error.json'),JSON.stringify({error:String(error),logs},null,2));throw error;}

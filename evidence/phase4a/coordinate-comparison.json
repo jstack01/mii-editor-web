@@ -1,0 +1,428 @@
+{
+  "bestFitAlignmentUsed": false,
+  "thresholdForParity": null,
+  "cases": [
+    {
+      "screen": "basic",
+      "deviceScaleFactor": 1,
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ],
+      "meanAbsoluteRGBDifference": [
+        2.9175191815856776,
+        2.8894075021312875,
+        2.9488633134413185
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "size",
+      "deviceScaleFactor": 1,
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ],
+      "meanAbsoluteRGBDifference": [
+        1.3387290423415743,
+        1.3003161409491333,
+        1.2567242114236998
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "face",
+      "deviceScaleFactor": 1,
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ],
+      "meanAbsoluteRGBDifference": [
+        0.7164641943734016,
+        0.6954035237283319,
+        0.6785521454958795
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "face2",
+      "deviceScaleFactor": 1,
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ],
+      "meanAbsoluteRGBDifference": [
+        0.5101555839727195,
+        0.5054987212276215,
+        0.5020495879511225
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "hair",
+      "deviceScaleFactor": 1,
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ],
+      "meanAbsoluteRGBDifference": [
+        0.5002770673486786,
+        0.49641588519465757,
+        0.5046391020176186
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "eyebrows",
+      "deviceScaleFactor": 1,
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ],
+      "meanAbsoluteRGBDifference": [
+        0.6334185848252344,
+        0.6269430235862461,
+        0.6373259448707019
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "eyes",
+      "deviceScaleFactor": 1,
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ],
+      "meanAbsoluteRGBDifference": [
+        0.6293797953964194,
+        0.6215721795964763,
+        0.6303566354077863
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "nose",
+      "deviceScaleFactor": 1,
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ],
+      "meanAbsoluteRGBDifference": [
+        0.38324097755044045,
+        0.3983660130718954,
+        0.40830846831486217
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "lips",
+      "deviceScaleFactor": 1,
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ],
+      "meanAbsoluteRGBDifference": [
+        0.5616403807899971,
+        0.559228473998295,
+        0.5698458368854789
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "accessories",
+      "deviceScaleFactor": 1,
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ],
+      "meanAbsoluteRGBDifference": [
+        0.8077010514350668,
+        0.8015203182722365,
+        0.8083901676612674
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "accessories2",
+      "deviceScaleFactor": 1,
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ],
+      "meanAbsoluteRGBDifference": [
+        0.8584505541346974,
+        0.8464585109406081,
+        0.846906081273089
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "accessories3",
+      "deviceScaleFactor": 1,
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ],
+      "meanAbsoluteRGBDifference": [
+        0.8309782608695652,
+        0.8224708724069338,
+        0.8227763569195794
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "accessories4",
+      "deviceScaleFactor": 1,
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ],
+      "meanAbsoluteRGBDifference": [
+        0.7849531116794544,
+        0.7738739698778062,
+        0.771288007956806
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "basic",
+      "deviceScaleFactor": 2,
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ],
+      "meanAbsoluteRGBDifference": [
+        2.6857443520886615,
+        2.663619813867576,
+        2.7188672208013642
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "size",
+      "deviceScaleFactor": 2,
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ],
+      "meanAbsoluteRGBDifference": [
+        1.228151641091219,
+        1.1894563441318557,
+        1.1433006535947712
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "face",
+      "deviceScaleFactor": 2,
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ],
+      "meanAbsoluteRGBDifference": [
+        0.4602035379369139,
+        0.440212063086104,
+        0.4273168868996874
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "face2",
+      "deviceScaleFactor": 2,
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ],
+      "meanAbsoluteRGBDifference": [
+        0.5822401605569764,
+        0.5476768968456948,
+        0.5347257743677181
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "hair",
+      "deviceScaleFactor": 2,
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ],
+      "meanAbsoluteRGBDifference": [
+        0.5784589016766126,
+        0.548407750781472,
+        0.5500399616368287
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "eyebrows",
+      "deviceScaleFactor": 2,
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ],
+      "meanAbsoluteRGBDifference": [
+        0.6077747584541063,
+        0.5724380150610969,
+        0.5740409207161126
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "eyes",
+      "deviceScaleFactor": 2,
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ],
+      "meanAbsoluteRGBDifference": [
+        0.597936203466894,
+        0.562499111963626,
+        0.5625870275646491
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "nose",
+      "deviceScaleFactor": 2,
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ],
+      "meanAbsoluteRGBDifference": [
+        0.4142183503836317,
+        0.39963856919579427,
+        0.4024314435919295
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "lips",
+      "deviceScaleFactor": 2,
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ],
+      "meanAbsoluteRGBDifference": [
+        0.5887876527422563,
+        0.5524278914464337,
+        0.5539650824097755
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "accessories",
+      "deviceScaleFactor": 2,
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ],
+      "meanAbsoluteRGBDifference": [
+        0.7674019607843138,
+        0.7383729397556124,
+        0.7369467533390167
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "accessories2",
+      "deviceScaleFactor": 2,
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ],
+      "meanAbsoluteRGBDifference": [
+        0.6462116368286445,
+        0.6305546675191815,
+        0.6307109619210003
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "accessories3",
+      "deviceScaleFactor": 2,
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ],
+      "meanAbsoluteRGBDifference": [
+        0.6358589087809037,
+        0.6202356848536517,
+        0.619162048877522
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    },
+    {
+      "screen": "accessories4",
+      "deviceScaleFactor": 2,
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ],
+      "meanAbsoluteRGBDifference": [
+        0.6312180306905371,
+        0.617126669508383,
+        0.6161400610969026
+      ],
+      "note": "Includes panel/font/rasterization differences; footer excluded because URL sharing is intentionally deferred."
+    }
+  ],
+  "knownDifferences": [
+    "Nine-slice panel/border geometry differs from both tested Ruffle renderers; original Flash execution unavailable.",
+    "Editable device fonts use browser Arial/sans-serif. Static labels use original glyph paths.",
+    "Footer shows actual serialized character data; sharing deferred.",
+    "Browser/emulator antialiasing, gradients, hairline strokes and rounding."
+  ]
+}

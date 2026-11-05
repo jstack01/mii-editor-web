@@ -2,7 +2,7 @@
 
 The browser renders every original head, hair, eyebrow, eye, nose, mouth, facial feature, mustache, beard, glasses, mole, hat, body part and clothing variation. The established Phase 2 data model and Phase 3A head API are retained. The original editor interface is a later milestone.
 
-Run `./dev.sh` from `web/`, then open http://127.0.0.1:5173/. Full body is the default. **Character view** selects the unchanged source-coordinate head camera. **Reference character** offers eight independently packed comparison cases; **Original attribute / Value / Apply attribute** exercises all 45 fields using the existing clamping and serialization rules. Name editing affects only the current character's name bytes. Reset restores the original default.
+The main page now hosts the Phase 4A original interface. Run `./dev.sh` from `web/`, then open the retained development renderer test bench at http://127.0.0.1:5173/diagnostics.html. Full body is the default. **Character view** selects the unchanged source-coordinate head camera. **Reference character** offers eight independently packed comparison cases; **Original attribute / Value / Apply attribute** exercises all 45 fields using the existing clamping and serialization rules. Name editing affects only the current character's name bytes. Reset restores the original default.
 
 Development diagnostics retain source origins, bounds and registration crosses for head and body. Use the checkbox or `?diagnostics=1`; production builds omit the checkbox and overlay. `?case=hat&view=head` opens a selected case directly.
 
@@ -55,4 +55,4 @@ python3 tools/compare-character-reference.py evidence/phase3b
 python3 -m unittest discover -s tools -p 'test_*.py' -v
 ```
 
-Phase 3B stops at the renderer and its test bench. The next recommended milestone is the original editor screens and browser persistence; file dialogs/export and the deferred tutorial remain separate work.
+Phase 3B is the historical renderer milestone. Phase 4A now reconstructs the original interface; see GUI_RECONSTRUCTION.md. The renderer test bench is retained separately in development. Browser persistence and the remaining category interactions are Phase 4B; file dialogs/export and tutorial remain deferred.

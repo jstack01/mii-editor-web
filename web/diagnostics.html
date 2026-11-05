@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Original-vector complete Mii character renderer with a feature test bench and binary data preview." />
+    <link rel="icon" href="data:," />
+    <title>Mii Editor · Phase 3B</title>
+  </head>
+  <body>
+    <div class="viewport" id="viewport">
+      <main class="stage" id="stage" aria-labelledby="title">
+        <header>
+          <p class="eyebrow">COMPLETE CHARACTER RENDERER · PHASE 3B</p>
+          <h1 id="title">Mii Editor</h1>
+
+        </header>
+        <div class="proof-layout">
+        <section class="render-panel" aria-labelledby="render-heading">
+          <div class="render-heading"><h2 id="render-heading">Character</h2><select id="render-view" aria-label="Character view"><option value="full">Full body</option><option value="head">Head</option></select></div>
+          <div id="character-preview" aria-live="off"></div>
+          <div id="render-diagnostics"></div>
+          <p class="render-note">Original vectors, clothing and shadow.</p>
+          <p id="render-error" role="alert" hidden></p>
+        </section>
+        <div class="data-panel">
+        <section aria-labelledby="name-heading">
+          <h2 id="name-heading">Character name</h2>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" maxlength="10" autocomplete="off" spellcheck="false" aria-describedby="name-help" />
+          <p id="name-help" class="help">Up to 10 UTF-16 code units, matching the original format.</p>
+          <p class="decoded">Decoded name: <output id="decoded" for="name"></output></p>
+        </section>
+        <section aria-labelledby="data-heading">
+          <div class="data-heading"><h2 id="data-heading">Serialized character</h2><span>74 bytes · 37 words</span></div>
+          <label for="hex">Hexadecimal data</label>
+          <textarea id="hex" readonly spellcheck="false" rows="4" aria-describedby="hex-help"></textarea>
+          <p id="hex-help" class="help">148 hex characters. Name edits affect only bytes 2–21.</p>
+        </section>
+        <footer>
+          <p id="status" role="status" aria-live="polite"></p>
+          <button id="reset" type="button">Reset to original default</button>
+        </footer>
+        </div></div>
+        <p class="scope">Phase 3B character renderer with original vectors and data. The original editor interface, file dialogs and persistence are later milestones.</p>
+      </main>
+    </div>
+    <section class="renderer-tools" aria-labelledby="tools-heading">
+      <h2 id="tools-heading">Renderer test controls</h2>
+      <p>Inspect original features and body behavior. These controls are a test bench for the renderer.</p>
+      <div class="tools-grid">
+        <label>Reference character<select id="character-preset"></select></label>
+        <label>Original attribute<select id="render-field"></select></label>
+        <label>Value<input id="render-value" type="number" step="1" /></label>
+        <button id="apply-attribute" type="button">Apply attribute</button>
+      </div>
+      <p id="field-help"></p>
+    </section>
+    <script type="module" src="/src/diagnostics.ts"></script>
+  </body>
+</html>

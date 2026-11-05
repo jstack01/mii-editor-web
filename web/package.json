@@ -7,14 +7,14 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "node scripts/generate-character-assets.mjs && vite --host 127.0.0.1",
-    "build": "node scripts/generate-character-assets.mjs && tsc --noEmit && vite build",
+    "dev": "node scripts/generate-character-assets.mjs && node scripts/generate-gui-assets.mjs && vite --host 127.0.0.1",
+    "build": "node scripts/generate-character-assets.mjs && node scripts/generate-gui-assets.mjs && tsc --noEmit && vite build",
     "preview": "vite preview --host 127.0.0.1",
-    "test": "node scripts/generate-character-assets.mjs --check && vitest run",
+    "test": "node scripts/generate-character-assets.mjs --check && node scripts/generate-gui-assets.mjs --check && vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
-    "test:browser": "node scripts/browser-smoke.mjs",
-    "test:browser:production": "node scripts/browser-smoke.mjs --preview"
+    "test:browser": "node scripts/browser-smoke.mjs && node scripts/gui-browser-smoke.mjs",
+    "test:browser:production": "node scripts/browser-smoke.mjs --preview && node scripts/gui-browser-smoke.mjs --preview"
   },
   "devDependencies": {
     "playwright": "1.62.1",

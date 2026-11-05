@@ -1,6 +1,6 @@
 # Mii Editor migration assessment and plan
 
-Status: Phase 0 recovery, Phases 1–2 data compatibility, Phase 3A head proof, local Git baseline, and Phase 3B complete character renderer are complete. Stop after Phase 3B. Phase 4 original editor screens and browser persistence are next; the full editor remains unfinished.
+Status: Phases 0–3B and Phase 4A original interface reconstruction are complete. General and Head editing work; all 13 original screens can be navigated. Other category editing and browser persistence remain Phase 4B. Stop after Phase 4A.
 Reviewed: November 4, 2026. Updated after inspecting the reorganized project and original source package.
 
 ## 1. Scope and evidence
@@ -277,7 +277,7 @@ Smallest purely internal unit: `Range.clamp`. The name-field slice is the smalle
 - Visual acceptance: compare on a stable browser/OS/font baseline at native dimensions and 2× scale. Review overlays/diffs; agree pixel tolerances after measuring Flash-versus-browser antialiasing. No invented universal pixel threshold.
 - Exit requirement: representative reference characters match geometry/layering/color, with remaining rasterization differences recorded and accepted.
 
-### Phase 4 — editor screens and persistence
+### Phase 4 — editor screens and persistence (4A complete; 4B pending)
 
 - Implement the 13 editing screens with source order, pagination, palette choices, selections and adjustments. Reuse extracted icons/button art with correct bounds.
 - Add General fields, randomize, height/weight drags, page-dependent close-up/full-body view and share-link display.
@@ -456,7 +456,7 @@ Phase 3A is complete; stop here. The actual default head is visible using origin
 Next, expand and verify nonblank head variants, then add the original body/limbs/shadow and height/weight/footing logic. Implement original blur/filter/accessory cases as their assets require, maintain source layer order and mirrored transformations, and validate each newly supported frame/palette against original geometry and runtime references. Keep diagnostics and broaden browser/runtime comparison coverage before exposing the full editor controls. Full editor UI, local file dialogs, share links/persistence and tutorial remain outside this proof; tutorial stays deferred.
 
 
-## 10. Local Git baseline and Phase 3B completed — November 5, 2026
+## 10. Local Git baseline and Phase 3B completed — November 5, 2026 (historical handoff)
 
 ### Git setup
 
@@ -494,3 +494,51 @@ Remaining precision limits are browser/emulator antialiasing, twip/float and pix
 See `evidence/phase3b/README.md`, `source-map.json`, screenshot/report snapshots, `character-comparison-ruffle.png` / `character-comparison-ruffle@2x.png`, corresponding coordinate-comparison JSON, and `reference/` / `reference2x/` original screenshots/logs. `web/RENDERING_PROOF.md` documents rendering behavior, source/export issues, limitations and reproduction. `tools/generate-render-cases.py` generates fixtures from independent recovered schema arithmetic; reference/comparison tools accept explicit local input/output paths.
 
 Launch from `web/` with `./dev.sh`, open `http://127.0.0.1:5173/`, and use Reference character, Character view and the renderer test controls. Try `?case=hat`, `?case=accessories`, `?case=maximum`, or `?case=compact&diagnostics=1` in development. Phase 3B is complete and work stops here. The next recommended milestone is Phase 4: faithfully reconstruct the original editor screens and browser persistence using this renderer. Local file dialogs/export remain later work and tutorial stays deferred. No full editor-interface or persistence implementation is claimed by this renderer milestone.
+
+
+## 11. Phase 4A completed — original editor interface reconstruction
+
+### Baseline and scope
+
+Confirmed the existing local Git history and clean working tree before implementation. Phase 3B was already committed as **`46ce78a`**; no duplicate baseline commit, remote or upload was created. Continued the established TypeScript/Vite/SVG architecture and unchanged data/character-rendering layers. No dependency was added.
+
+The main application now shows the original-style **640 × 500** interface, replacing the temporary test layout. All **nine top-level tabs and 13 original editing screens** are reconstructed from source frame labels and display lists: General, Size, Head, Facial Features, Hair, Eyebrows, Eyes, Nose, Mouth, Glasses, Mustache, Mole and Beard. Head/Facial Features and accessory sub-tabs preserve the original navigation structure. Navigation changes the screen without changing character bytes.
+
+### Evidence recovery and graphics
+
+- Examined `ClassicGUI.as`, `AbstractGUIPage.as`, General/Head and all category declarations, Tab/NavigationButton/AbstractHoverHilite/SliderHandle classes, the executable `classicGUI.swf`, and recovered root/nested manifests.
+- New read-only `generate-gui-assets.mjs` verifies GUI SWF/SVG hashes and records source-class hashes. It generates **348 symbols: 305 shapes (288 extracted vector shapes plus 17 original static-text definitions) and 43 timelines**, 13 screen display lists and six original scale grids. All layout graphics, category icons, panels, fields, selection indicators and foreground elements use original source geometry. No warning-obscured frame PNG or invented background/button artwork is used.
+- Static labels use **original DefineFont3 glyph curves**, explicit glyph indices/advances, baselines and text matrices, rather than approximate HTML text. Editable fields and page counters use browser Arial/Helvetica/sans-serif at original bounds/heights/colors. Their original device face lacks embedded glyphs; exact face/weight/metrics remain unverified and are documented substitutions. Ruffle logs contain unknown Arial/Noto Sans bold font warnings.
+- `guiScene.ts` constructs pure screen graphs, original icon pages and selection symbols in controller child order. The existing model supplies frame permutations, values, palette transforms and serialized data. Character placement retains source graphics-container depth, loader X=−150, head-page `(116,130)` / scale=1 and General/Size scale=.53 with dynamic footing at GUI Y=405.
+- Original nine-slice grids preserve fixed corner/edge behavior; an internal half-pixel clip overlap avoids browser stitching seams without replacing paths or outer silhouettes. Narrow fields use center collapse/cap reduction when opposing caps exceed the destination size. This edge case and general grid fidelity remain subject to an Adobe Flash reference.
+- Source LargeButton/ControlButton/NavigationButton hover/press use exact **+20/−20 RGB offsets**, alpha retained, including release outside a button. No invented hover artwork is added to source classes that did not define it. Selected tabs/items/colors use original vectors.
+
+### Working interactions and explicit deferrals
+
+- **General:** name and creator (10 UTF-16 units), gender, mingle, birthday day/month, Mii ID, Wii ID, all 12 favorite colors and the original randomizer are functional. Existing permissive ID handling, field clamping, source codec behavior and randomization are reused. Supported controls update the character immediately where they affect appearance; unrelated binary data is preserved.
+- **Head:** all eight original shapes and six skin colors are functional, using the existing field/frame mapping and original tile/well highlights. Changes update actual source head frames and SVG skin transforms immediately.
+- Other category screens reproduce current original icons, palettes, selections, option graphics, paging text and Size handle positions. Their selectors, sliders, paging and option adjustments are **disabled**, with visible scope/status text below the stage, unavailable cursors/tooltips and `aria-disabled`. They are appearance previews, not falsely completed editing controls. File remains an explicitly unavailable original button.
+- No file import/export dialog or browser persistence was added. Changes are in memory. The original footer legend is retained, but its read-only field displays actual character hex rather than a fake working share URL; URL sharing is deferred and this difference is stated in the UI/docs.
+- The previous renderer application is retained at **`/diagnostics.html` in development**, with its full feature test bench, name/hex preview and alignment overlays. It is excluded from the shipped production `dist/`. Production regression tests compile a separate ignored test-only fixture; this does not expose the test bench in the production application.
+
+### Verification results
+
+- **223 unit tests pass:** all previous 216 plus seven GUI tests covering source frame/placement equality, reachable symbols/origins/static glyph paths, icon/selection order, palettes/status frames, camera/footing, nine-slice grids and controller-derived item/page declarations.
+- Existing browser regressions remain: **992 source scenes / all 355 character shapes**, original color/mask/box-blur pixel tests, head/full-body name pixel invariance, preset/attribute interactions and **62 XML compatibility cases**. Existing development and separate production-mode renderer checks pass.
+- New native Chrome GUI checks pass in development and production: navigation among all 13 screens at **native and 2× density**, exact byte/bit isolation for supported fields and selections, current head/torso frame and tint updates, state retained across screens, keyboard activation, hover/press/release, disabled controls, uniform scaling and production diagnostic exclusion. No page errors or external requests were observed.
+- TypeScript and production build pass. The full GUI/character/glyph JavaScript is approximately **1.13 MB / 236 kB gzip**; Vite's standard 500 kB chunk-size warning is documented rather than hidden. No dependency/lockfile versions were changed.
+- All six SWF evidence checks pass. All **1,725 protected files in SOURCE/ and EXTRACTED-SWF/** match milestone-start hashes, including ignored OS metadata. No protected file was added, changed or removed.
+
+### Visual comparison and unresolved differences
+
+Captured all **13 unmodified original GUI screens in Ruffle 0.7.1 canvas at native and 2× pixel density**. Actual browser stage screenshots use the same source coordinates without fitted image registration. Comparison galleries and descriptive RGB measurements include panel/device-font/rasterization differences; only the legacy footer is excluded from the numerical ROI because its behavior is intentionally deferred. These measurements are not a parity threshold.
+
+The reconstructed nine-slice panels differ in curvature/border treatment from Ruffle, particularly tall selection panels and narrow fields. A second capture with Ruffle's **wgpu-webgl** backend confirms this difference is not confined to canvas. The implementation retains recovered grid metadata and its documented interpretation; it does not reshape artwork to hide the discrepancy. Exact Flash grid/cap behavior and source non-scaling strokes need an Adobe Flash reference before either result can be certified. Editable device-font/page-counter metrics, gradient precision, hairline strokes, fractional placement, color quantization and browser/emulator antialiasing also remain visual precision limits. **Pixel-perfect Adobe Flash parity is not claimed**, and other browser engines remain unverified.
+
+See `web/GUI_RECONSTRUCTION.md` and `evidence/phase4a/README.md` for implementation boundaries and reproduction. Selected review artifacts include `screenshots/basic.png`, `screenshots/face.png`, all 13 `@2x` counterparts, `gui-comparison.png`, `gui-comparison@2x.png`, coordinate-comparison JSON, source map, original runtime logs and protected-input verification.
+
+### Stop point and Phase 4B tasks
+
+Phase 4A is complete and work stops here. Open `web/dev.sh` then `http://127.0.0.1:5173/` for the original-style editor; use top tabs and sub-tabs, with General and Head editing enabled. The development-only renderer test bench is `http://127.0.0.1:5173/diagnostics.html`.
+
+Phase 4B should implement the remaining category selectors and page navigation, original feature option adjustments and limits, hair parting, Size sliders/dragging, and browser-based persistence with a separately characterized storage contract. Resolve the documented scale-grid/non-scaling-stroke/device-font questions, extend edited-state reference comparisons, and verify Firefox/WebKit. Keep existing binary behavior and source graphics. File dialogs/import/export remain later work; tutorial remains deferred. Do not treat disabled Phase 4A category controls, saving or sharing as completed features.

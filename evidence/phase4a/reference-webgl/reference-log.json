@@ -1,0 +1,103 @@
+{
+  "runtime": {
+    "name": "@ruffle-rs/ruffle",
+    "version": "0.7.1",
+    "renderer": "wgpu-webgl",
+    "deviceScaleFactor": 1
+  },
+  "originalInputsUnmodified": true,
+  "sourceHashes": {
+    "SOURCE/assets.swf": "ab8b3dd8f588b79001b6a8ed6cf12cc4cea0e9d1ac9460a37f607ec3f2461d92",
+    "SOURCE/classicGUI.swf": "d53f6c65b351f2b22d5a89a3937ffbbc4e1f54a75784746d690e1e1d02acca4b",
+    "SOURCE/MiiEditor_defaults.xml": "6ac111965879924b46970becff99e25d87ad4af175baf099e68ee1c8f775122f"
+  },
+  "adobeFlashParityCertified": false,
+  "loaded": true,
+  "cases": [
+    {
+      "id": "original",
+      "hex": null
+    }
+  ],
+  "logs": [
+    {
+      "type": "response",
+      "url": "http://127.0.0.1:52990/",
+      "status": 200
+    },
+    {
+      "type": "response",
+      "url": "http://127.0.0.1:52990/ruffle/ruffle.js",
+      "status": 200
+    },
+    {
+      "type": "response",
+      "url": "http://127.0.0.1:52990/ruffle/core.ruffle.16d61072ac7fdc4d5013.js",
+      "status": 200
+    },
+    {
+      "type": "response",
+      "url": "http://127.0.0.1:52990/ruffle/172de42e6619eac8f371.wasm",
+      "status": 200
+    },
+    {
+      "type": "log",
+      "text": "%cINFO%c web/src/lib.rs:1416%c Ruffle WASM module has been initialized color: whitesmoke; background: #444 color: gray; font-style: italic color: inherit"
+    },
+    {
+      "type": "log",
+      "text": "%cNew Ruffle instance created (Version: 0.7.1 | WebAssembly extensions: ON | Used renderer: wgpu-webgl) background: #37528C; color: #FFAD33"
+    },
+    {
+      "type": "log",
+      "text": "Loading SWF file /original/classicGUI.swf"
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x134000d1400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x134000d1400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x134000d1400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x134000d1400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+    },
+    {
+      "type": "response",
+      "url": "http://127.0.0.1:52990/original/classicGUI.swf",
+      "status": 200
+    },
+    {
+      "type": "log",
+      "text": "%cWARN%c core/src/library.rs:567%c Unknown device font \"Noto Sans\" (bold: true, italic: false) color: orange; background: #444 color: gray; font-style: italic color: inherit"
+    },
+    {
+      "type": "log",
+      "text": "%cWARN%c core/src/library.rs:567%c Unknown device font \"Arial\" (bold: true, italic: false) color: orange; background: #444 color: gray; font-style: italic color: inherit"
+    },
+    {
+      "type": "response",
+      "url": "http://127.0.0.1:52990/MiiEditor_defaults.xml",
+      "status": 200
+    },
+    {
+      "type": "response",
+      "url": "http://127.0.0.1:52990/assets.swf?1.0.0.57b",
+      "status": 200
+    },
+    {
+      "type": "log",
+      "text": "%cWARN%c core/src/stub.rs:144%c Encountered stub: AVM2 flash.system.Security.allowDomain() color: orange; background: #444 color: gray; font-style: italic color: inherit"
+    },
+    {
+      "type": "log",
+      "text": "%cWARN%c core/src/stub.rs:144%c Encountered stub: AVM2 flash.display.Loader.load() addChild at the correct time color: orange; background: #444 color: gray; font-style: italic color: inherit"
+    }
+  ]
+}
