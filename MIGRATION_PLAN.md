@@ -1,6 +1,6 @@
 # Mii Editor migration assessment and plan
 
-Status: Phases 0–4B and Phase 5A are complete. Editing, persistence, sharing and local .mii/XML operations work. Stop after Phase 5A; PNG/JPEG export remains Phase 5B.
+Status: Phases 0–4B and Phase 5A are complete. Editing, persistence, sharing and local .mii/XML operations work. Phase 5B is approved and next: finish PNG/JPEG export and commit the tested reproduction baseline before starting default Wii-compatibility corrections.
 Reviewed: November 4, 2026. Updated after inspecting the reorganized project and original source package.
 
 ## 1. Scope and evidence
@@ -286,21 +286,37 @@ Smallest purely internal unit: `Range.clamp`. The name-field slice is the smalle
 - Tests: every screen reachable; last/first page limits; selections track codec values; repeated navigation does not duplicate listeners; drag release outside control; clamping; gender/mingle; birthday blanks; name truncation; URL precedence; storage failures and corrupt saved data; reload after each mutation pathway; keyboard and touch interactions.
 - Exit requirement: complete editing flows behave as agreed at native size; no stale preview or unintended state loss.
 
-### Phase 5 — files, XML and image export
+### Phase 5 — finish original application reproduction (5A complete, 5B approved)
 
-- Implement local `.mii`/XML import and Blob downloads only after approval of server replacement; show explicit parse errors without discarding a valid current character unless that behavior is agreed.
-- Implement XML view/edit/save and image dialog with original bounds, defaults, background/body options, PNG alpha, JPEG quality target, zoom, drag and centering formula.
-- Validate rendering-to-canvas filters, masks and fonts; use another approved export approach if browser SVG rasterization fails fidelity tests.
-- Tests: valid/invalid/cancelled imports; byte-identical binary export; XML semantic round trips; 10/50/800 px square output; default zoom/background; body off/on; panning offsets; transparency enabled only for PNG; image dimensions/MIME/alpha and centering; filenames/Unicode; repeated exports release resources; import/export works offline if approved.
-- Exit requirement: exported files reopen correctly and visual exports match reviewed references. Compare decoded image pixels/geometry, not JPEG file bytes.
+- Phase 5A local binary/XML files and original Files/XML interface are complete. Preserve the current legacy fidelity regression suite and permanent seven-file corpus.
+- Phase 5B reconstructs the original PNG/JPEG image-export page, source bounds/defaults, background/body options, PNG alpha, JPEG quality target, zoom, drag and BitmapUtils centering formula. Use recovered artwork and existing renderer; no new artwork or backend.
+- Validate SVG-to-canvas filters/masks; document font, antialiasing and native JPEG encoder differences. Test valid/invalid/cancelled file flows plus 10/50/800 px images, default zoom/background, body off/on, panning, PNG transparency/JPEG opacity, MIME/dimensions/geometry, Unicode names, repeated exports/resource cleanup and offline operation.
+- Establish a thoroughly tested functional reproduction baseline: all prior data/XML/rendering/editor/file/persistence suites, image-export checks, TypeScript/build and source-integrity checks pass; diagnostics remain available. Record the parity matrix and unresolved/deferred features, including incomplete tutorial and unverified browser engines.
+- **Gate: complete and locally commit this reproduction milestone before implementing Wii-compatibility corrections.** The original Flash application is the reference for UI, graphics, functionality and record reconstruction, not a permanent requirement to preserve its bugs. Phase 5B must not change generation, editing ranges, import correction or binary-export validation policies.
 
-### Phase 6 — remaining behavior and release
+### Phase 6 — Wii-compatible creation and editing as standard behavior (after committed reproduction baseline)
 
-- Port the tutorial only if functional sequencing is recovered or separately specified and approved. Do not substitute an invented tutorial under a parity claim.
-- Replace obsolete Flash/Wii compatibility messaging with approved modern load/error handling; document behavior changes.
-- Run the agreed Chromium/Firefox/WebKit matrix, native/2× rendering, keyboard/pointer flows and offline tests. Verify there are no unintended calls to historical services.
-- Produce final parity matrix, known limitations, asset provenance record and build/run instructions.
-- Release gate: type check, unit and browser suites pass; asset manifest is complete for in-scope features; visual differences and behavior deviations are reviewed; no unknown functionality is presented as preserved.
+- New/default and randomized characters must conform to the intended Wii format by default. **No permanent legacy/Wii compatibility toggle.** Do not replace the faithful reproduction baseline until its commit exists.
+- Review every editable attribute against independent Wii RCD/RFL evidence; constrain controls and generation to supported ranges, including mole size. Keep preview, controls and serialized character data consistent after corrections.
+- Generate valid month/day combinations and supported feature combinations. Investigate normal, special and temporary CreateID semantics, ID uniqueness/collisions, console ownership/system identity and destination-specific requirements before choosing a generation policy. Do not fabricate real-console ownership or certify a random ID as safe.
+- Validate full .mii data before export, including cross-field constraints and relevant flags/reserved bits; scalar MiiJS acceptance alone is insufficient. Distinguish raw lossless preservation from an export claimed to be Wii-compatible.
+- Imported legacy data must remain intact until explicit user action. Retain its original bytes, identify incompatible values/relationships, explain proposed corrections and obtain explicit acceptance before replacing data. Do not export unresolved data as Wii-compatible. Any future byte-preserving archival download must be clearly identified as unresolved original data, separate from compatible-export claims; its UX must not become a permanent generation-mode toggle.
+- Implement correction transactions so failed/cancelled repairs leave the original character intact. Show corrected preview/control values and identify every deliberate difference from the Flash source.
+- Keep **original-fidelity tests** and **Wii-compatibility tests** separate. Retain the legacy arithmetic oracle and failing corpus as historical evidence; do not silently rewrite legacy expectations to make corrected behavior appear identical. Test corrected generation at scale, edit boundaries, dates, feature relationships, ID flags, collisions, imports/repair/cancel, reserved bits and pre-export validation using independent decoders.
+- Exit: default generation/editing and corrected imports satisfy documented software profiles; all intentional deviations are recorded. This is software validation, not real-hardware certification.
+
+### Phase 7 — physical Wii and game/destination verification
+
+- Define a physical test matrix covering real Wii hardware, supported transfer/import routes, Mii Channel, relevant games, normal/special/temporary IDs, duplicate IDs, console ownership and local-only/mingling behavior. Confirm required RCD/RSD/database/remote wrappers and checksums in each route.
+- Document hardware, firmware, game versions, destination tools, test fixtures and outcomes. Identify any requirements that cannot be checked without physical equipment; do not mark these verified based on MiiJS, Ruffle or a decompilation.
+- **Certification gate: no claim of real-Wii or individual-game compatibility until the relevant physical tests pass.** Keep scope-specific limitations visible even after other targets pass.
+
+### Phase 8 — release and remaining approved behavior
+
+- Port the tutorial only if its sequencing is recovered or separately specified/approved; otherwise disclose its deferral.
+- Run the available Chromium/Firefox/WebKit, native/2×, keyboard/pointer and offline matrix. Verify no unintended historical service calls.
+- Publish a final fidelity/deviation matrix, compatibility and hardware-verification matrix, known limitations, asset provenance and build/run instructions. “Faithful original reproduction” and “Wii-compatible product behavior” must have separate supporting evidence.
+- Release only after required checks pass, intended features/assets are complete, differences are reviewed and unresolved behavior is not represented as certified.
 
 ## 6. Information to request next
 
@@ -625,3 +641,7 @@ The least intrusive remedy is a **nonblocking read-only export warning** in the 
 Hardware checks remain distinct. Inspected RFL VERSION_RSPE01_01 rejects temporary IDs on NAND, requires special IDs to be local-only, checks nonzero eight-byte CreateID and calendar consistency. Deterministic results include 5,014 temporary IDs, 1,222 special/mingling conflicts and 1,196 calendar failures (overlapping). FAIL-3 has November 31 even though its month value is valid. The audit reports these cautions plus padding/wider-field concerns without changing bits. MiiJS scalar acceptance does not validate ownership, destination console/database, names/glyphs, uniqueness or container CRCs; no hardware certification is claimed. Open-source decoder/decompilation references are pinned, not described as an official published Nintendo specification.
 
 Verification: **265 unit tests**, all prior development/production XML/rendering/GUI/interaction/file suites, new seven-sample/24-random-download browser checks per mode, TypeScript, build and six Python evidence tests pass. SOURCE/ and EXTRACTED-SWF/ and all supplied binary samples retain hashes. Firefox/WebKit runtimes remain unavailable. Permanent corpus, every-field tables, source hashes, exact independent diagnostics, Ruffle captures and reproduction tools are in random-mii-testing/, web/WII_COMPATIBILITY.md and evidence/randomization-compatibility/. Work stops after this investigation; **Phase 5B has not begun**. A future optional compatible randomizer requires an explicit ID/calendar/reserved-bit policy rather than silently replacing the original behavior.
+
+## 15. Approved final product direction (supersedes earlier optional-mode recommendation)
+
+The user clarified that the ultimate product must create Wii-compatible Miis by default, without a permanent compatibility-mode toggle. Finish Phase 5B and commit the thoroughly tested original-application reproduction baseline first. Preserve legacy fidelity tests and source evidence so subsequent corrections remain auditable. Only then implement Phase 6 standard Wii-compatible creation/editing/randomization, explicit non-destructive handling of incompatible imports and pre-export validation. Phase 7 requires physical hardware/game/destination evidence before certification. The earlier investigation's optional-mode suggestion is historical and is not the approved product direction. No compatibility corrections are authorized within Phase 5B itself.
