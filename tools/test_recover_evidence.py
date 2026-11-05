@@ -13,6 +13,11 @@ from recover_evidence import matrix, timeline, digest
 ROOT = Path(os.environ.get('MII_PROJECT_ROOT', Path(__file__).resolve().parents[1]))
 EVIDENCE = Path(os.environ.get('MII_EVIDENCE_ROOT', ROOT / 'evidence'))
 
+def without_finder_metadata(records):
+    """Ignore only exact .DS_Store basenames, never arbitrary hidden/assets files."""
+    return {path: value for path, value in records.items() if Path(path).name != '.DS_Store'}
+
+
 class Bits:
     def __init__(self, data, byte=0):
         self.data, self.bit = data, byte * 8
@@ -140,16 +145,25 @@ class OriginalEvidenceTests(unittest.TestCase):
         self.assertEqual(a['symbols']['36']['timeline']['frames'][2]['displayList'], [])
         self.assertTrue(all((ROOT / path).exists() for mod in (a, m) for s in mod['symbols'].values() for path in s['extractedExports']))
 
+    def test_integrity_excludes_only_finder_metadata(self):
+        records = {'SOURCE/.DS_Store': 'metadata', 'SOURCE/a/.DS_Store': 'metadata',
+                   'SOURCE/classicGUI.swf': 'swf', 'SOURCE/.hidden': 'content',
+                   'EXTRACTED-SWF/.DS_Store.svg': 'asset'}
+        self.assertEqual(without_finder_metadata(records),
+                         {k: v for k, v in records.items() if v != 'metadata'})
+
     def test_protected_inputs_unchanged(self):
         expected = json.loads((EVIDENCE / 'protected-inputs.sha256.json').read_text())
         current = {str(p.relative_to(ROOT)): digest(p) for d in ('SOURCE', 'EXTRACTED-SWF') for p in (ROOT / d).rglob('*') if p.is_file()}
-        # Finder added EXTRACTED-SWF/.DS_Store between milestones, before Phase 2.
-        # Keep every Phase 1 tracked hash immutable; a separate Phase 2 baseline
-        # additionally protects the full current tree without rewriting history.
+        # Finder metadata is mutable outside this app and already Git-ignored.
+        # Keep historical manifests intact; compare every application-content
+        # hash and the exact content file set. Record metadata separately.
+        expected = without_finder_metadata(expected)
+        current = without_finder_metadata(current)
         self.assertEqual({path: current.get(path) for path in expected}, expected)
         phase2 = EVIDENCE / 'phase2/protected-inputs.sha256.json'
         if phase2.exists():
-            self.assertEqual(current, json.loads(phase2.read_text()))
+            self.assertEqual(current, without_finder_metadata(json.loads(phase2.read_text())))
         else:
             self.assertEqual(current, expected)
 

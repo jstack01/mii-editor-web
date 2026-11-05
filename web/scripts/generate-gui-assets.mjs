@@ -8,7 +8,8 @@ if(hash(read(m.source.path))!==m.source.sha256)throw Error('GUI SWF provenance m
 const hashes={[path]:hash(manifestBytes),[m.source.path]:m.source.sha256};
 for(const name of ['ClassicGUI','AbstractGUIPage','CharacteristicsGeneral','CharacteristicsHead']){const path=`EXTRACTED-SWF/classicGUI.swf/scripts/mii/authoring/${name}.as`;hashes[path]=hash(read(path));}
 for(const name of ['Tab','NavigationButton','AbstractHoverHilite','SliderHandle']){const path=`EXTRACTED-SWF/classicGUI.swf/scripts/mii/authoring/controls/${name}.as`;hashes[path]=hash(read(path));}
-const placement=(p)=>{if(p.filters.length)throw Error('Unexpected GUI placement filter');return {depth:p.depth,matrix:p.matrixPx,color:p.colorTransform,name:p.name,symbolId:p.characterId,clipDepth:p.clipDepth,blendMode:p.blendMode,visible:p.visible};};
+const textFilters={};
+const placement=(p)=>{if(p.filters.length){if(p.name!=='oversizeTimes'||p.filters.some(f=>f.attributes.type!=='DROPSHADOWFILTER'))throw Error('Unexpected GUI placement filter');textFilters[p.characterId]=p.filters;}return {depth:p.depth,matrix:p.matrixPx,color:p.colorTransform,name:p.name,symbolId:p.characterId,clipDepth:p.clipDepth,blendMode:p.blendMode,visible:p.visible};};
 const children=(node,name)=>node.children.find((c)=>c.element===name)?.children??[];
 const child=(node,name)=>node.children.find((c)=>c.element===name);
 const matrix=(a)=>[a.hasScale==='true'?Number(a.scaleX)/65536:1,a.hasRotate==='true'?Number(a.rotateSkew0)/65536:0,a.hasRotate==='true'?Number(a.rotateSkew1)/65536:0,a.hasScale==='true'?Number(a.scaleY)/65536:1,Number(a.translateX??0)/20,Number(a.translateY??0)/20];
@@ -55,12 +56,12 @@ const excluded=new Set(['screens','updateFPMessage','versionText','homepage']);
 const frames=m.rootTimeline.frames.slice(1).map((f)=>({frame:f.frame,label:f.labels[0],placements:f.displayList.filter((p)=>!excluded.has(p.name)).map(placement)}));
 frames.flatMap((f)=>f.placements).forEach((p)=>visit(p.symbolId));
 for(const s of Object.values(m.symbols))if(s.className?.startsWith('Icons_')||['ItemSelected','ItemFaceSelected','ColorSelected'].includes(s.className))visit(s.id);
-const fileFrames=m.symbols['352'].timeline.frames.filter((f)=>[2,3].includes(f.frame)).map((f)=>({frame:f.frame,label:f.labels[0],placements:f.displayList.map(placement)}));
+const fileFrames=m.symbols['352'].timeline.frames.filter((f)=>[2,3,4].includes(f.frame)).map((f)=>({frame:f.frame,label:f.labels[0],placements:f.displayList.map(placement)}));
 fileFrames.flatMap((f)=>f.placements).forEach((p)=>visit(p.symbolId));
-for(const name of ['dialogs/FileOptions','controls/ScrollBar']){const p=`EXTRACTED-SWF/classicGUI.swf/scripts/mii/authoring/${name}.as`;hashes[p]=hash(read(p));}
+for(const name of ['dialogs/FileOptions','controls/ScrollBar','controls/SizeSlider','controls/ColorSlider']){const p=`EXTRACTED-SWF/classicGUI.swf/scripts/mii/authoring/${name}.as`;hashes[p]=hash(read(p));}
 const grids=Object.fromEntries(m.scalingGrids.map((g)=>{const a=child(g,'splitter').attributes;return [g.attributes.characterId,{x:Number(a.Xmin)/20,y:Number(a.Ymin)/20,width:(Number(a.Xmax)-Number(a.Xmin))/20,height:(Number(a.Ymax)-Number(a.Ymin))/20}];}));
 const classes=Object.fromEntries(Object.values(m.symbols).filter((s)=>s.className).map((s)=>[s.className,s.id]));
-const output=`// Generated from original GUI SWF placements, vectors and embedded glyph outlines.\nimport type {AssetCatalog} from '../render/types';\nexport const GUI_ASSETS:AssetCatalog=${JSON.stringify({sourceHashes:hashes,roots:[],symbols})};\nexport const GUI_FRAMES=${JSON.stringify(frames)} as const;\nexport const FILE_FRAMES=${JSON.stringify(fileFrames)} as const;\nexport const GUI_TEXTS=${JSON.stringify(texts)} as const;\nexport const GUI_GRIDS=${JSON.stringify(grids)} as const;\nexport const GUI_CLASSES=${JSON.stringify(classes)} as const;\n`;
+const output=`// Generated from original GUI SWF placements, vectors and embedded glyph outlines.\nimport type {AssetCatalog} from '../render/types';\nexport const GUI_ASSETS:AssetCatalog=${JSON.stringify({sourceHashes:hashes,roots:[],symbols})};\nexport const GUI_FRAMES=${JSON.stringify(frames)} as const;\nexport const FILE_FRAMES=${JSON.stringify(fileFrames)} as const;\nexport const GUI_TEXTS=${JSON.stringify(texts)} as const;\nexport const GUI_GRIDS=${JSON.stringify(grids)} as const;\nexport const GUI_CLASSES=${JSON.stringify(classes)} as const;\nexport const GUI_TEXT_FILTERS=${JSON.stringify(textFilters)} as const;\n`;
 const target=new URL('../src/generated/gui-assets.ts',import.meta.url);
 if(process.argv.includes('--check')){if(readFileSync(target,'utf8')!==output)throw Error('Stale GUI catalog');}else writeFileSync(target,output);
 console.log(`Original GUI catalog: ${Object.keys(symbols).length} symbols, ${frames.length} screens; static text uses recovered glyph paths.`);

@@ -1,6 +1,6 @@
 # Local Mii and XML files — Phase 5A
 
-Run `./dev.sh` from web/ and open http://127.0.0.1:5173/. File opens the recovered Files page. Load selects a local .mii/.xml; Save Mii requests a download. Done returns to the editor. Image export stays disabled until Phase 5B. No PHP, backend, historical service or upload is used.
+Run `./dev.sh` from web/ and open http://127.0.0.1:5173/. File opens the recovered Files page. Load selects a local .mii/.xml; Save Mii requests a download. Done returns to the editor. Export opens the completed Phase 5B image page; see IMAGE_EXPORT.md. No PHP, backend, historical service or upload is used.
 
 XML opens the original editable page. Back validates and applies changed XML. Failed validation leaves the character and draft intact. Escape discards edits. **Save XML exports the current character, not unapplied text**, matching FileOptions.as: use Back, reopen XML, then Save to export edits. Viewing unchanged XML and returning preserves the binary; avoiding the original lossy reapplication is intentional. Source scroll arrows/dragging and native caret, wheel and horizontal scrolling work, with keyboard support.
 
@@ -22,7 +22,7 @@ Source _typewriter font 335 embeds no glyphs. XML uses Courier New/monospace 10p
 
 Unmodified SWFs were captured in Ruffle 0.7.1 wgpu-webgl at native/2× density. Canvas fails BitmapData.draw for this preview; its failed capture is separately recorded. The original offline PHP alert was dismissed through its own UI without source changes or service stubs. Comparisons use source coordinates without fitted alignment. No Adobe Flash runtime or pixel-perfect parity is claimed. Firefox/WebKit executables remain unavailable; file checks ran in installed Chrome.
 
-251 unit tests, existing XML/rendering/GUI/interaction suites, new development/production file suites, TypeScript/build and six Python recovery checks pass. Cases cover exact binary/reserved bits, invalid files, cancellation/stale reads, repeated operations, Unicode downloads, XML edit/apply/cancel/errors, unsafe declarations, current-character preservation, save-current behavior, persistence/share/refresh and offline operation without external requests. Evidence is in evidence/phase5a/. Diagnostics remain /diagnostics.html. Stop after Phase 5A; PNG/JPEG export is Phase 5B and tutorial remains deferred.
+251 unit tests, existing XML/rendering/GUI/interaction suites, new development/production file suites, TypeScript/build and six Python recovery checks pass. Cases cover exact binary/reserved bits, invalid files, cancellation/stale reads, repeated operations, Unicode downloads, XML edit/apply/cancel/errors, unsafe declarations, current-character preservation, save-current behavior, persistence/share/refresh and offline operation without external requests. Evidence is in evidence/phase5a/. Diagnostics remain /diagnostics.html. Phase 5A remains complete; image export is now documented in IMAGE_EXPORT.md. Tutorial remains deferred.
 
 ## Wii range warnings
 

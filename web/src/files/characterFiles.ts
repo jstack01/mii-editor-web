@@ -49,7 +49,7 @@ export function exportXML(model:MiiCharacterData,legacyView=false):string {
  // metadata so opening a saved XML elsewhere cannot call historical services.
  const text=legacyView?model.toXMLString():'<?xml version="1.0" encoding="UTF-8"?>\n'+serializeMiiXML(model,false);parseXMLDocument(localXML(text));return text;
 }
-export function downloadFilename(name:string,extension:'mii'|'xml'):string {
+export function downloadFilename(name:string,extension:'mii'|'xml'|'png'|'jpg'):string {
  let base=Array.from(name,(c)=>c.length===1&&c.charCodeAt(0)>=0xd800&&c.charCodeAt(0)<=0xdfff?'_':c).join('').replace(/[\u0000-\u001f\u007f<>:"/\\|?*]/g,'_').replace(/[. ]+$/g,'').trim();
  if(base.toLowerCase().endsWith('.'+extension))base=base.slice(0,-extension.length-1);
  if(!base||/^\.+$/.test(base))base='Mii';if(/^(con|prn|aux|nul|com[1-9]|lpt[1-9])(?:\.|$)/i.test(base))base='_'+base;
@@ -58,6 +58,9 @@ export function downloadFilename(name:string,extension:'mii'|'xml'):string {
 export function downloadCharacter(model:MiiCharacterData,extension:'mii'|'xml'):void {
  const content=extension==='mii'?Uint8Array.from(model.toBytes()).buffer:exportXML(model);
  const blob=new Blob([content],{type:extension==='mii'?'application/octet-stream':'application/xml;charset=utf-8'});
- const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=downloadFilename(model.name,extension);link.hidden=true;document.body.append(link);
+ downloadBlob(blob,downloadFilename(model.name,extension));
+}
+export function downloadBlob(blob:Blob,filename:string):void {
+ const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=filename;link.hidden=true;document.body.append(link);
  try{link.click();}finally{link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 }

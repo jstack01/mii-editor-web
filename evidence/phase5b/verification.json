@@ -1,0 +1,27 @@
+{
+  "baseline": "652705a",
+  "sourceGuiSymbols": 391,
+  "addedOriginalGuiSymbols": 25,
+  "unitTests": 272,
+  "pythonRecoveryTests": 7,
+  "typecheck": "passed",
+  "productionBuild": "passed; existing large-chunk warning",
+  "developmentBrowserSuite": "passed",
+  "productionBrowserSuite": "passed",
+  "browser": "Chrome 156.0.8078.80",
+  "imageDimensionsVerified": [
+    10,
+    50,
+    800
+  ],
+  "nativeAnd2xRuffleImagePages": 6,
+  "blobUrlsAndCanvasStorageReleased": true,
+  "applicationContentFilesUnchanged": 1718,
+  "finderMetadataChangesObserved": 4,
+  "legacyRandomizerAndModelUnchanged": true,
+  "wiiCompatibilityCorrectionsStarted": false,
+  "permanentCompatibilityToggleAdded": false,
+  "hardwareCertified": false,
+  "adobeFlashPixelParityCertified": false,
+  "firefoxWebkit": "Required runtime executables unavailable; not certified"
+}

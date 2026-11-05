@@ -1,0 +1,11 @@
+$ node scripts/generate-character-assets.mjs --check && node scripts/generate-gui-assets.mjs --check && vitest run
+Complete character vector catalog: 385 symbols; 355 original shapes.
+Original GUI catalog: 391 symbols, 13 screens; static text uses recovered glyph paths.
+
+ RUN  v5.1.0 /Users/jstack01/Downloads/Mii-editor/web
+
+
+ Test Files  10 passed (10)
+      Tests  272 passed (272)
+   Start at  16:36:14
+   Duration  1.08s (tests 56%, import 22%, transform 21%, worker 1%)

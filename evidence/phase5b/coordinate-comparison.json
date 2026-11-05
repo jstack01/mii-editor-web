@@ -1,0 +1,103 @@
+{
+  "bestFitRegistrationUsed": false,
+  "thresholdForParity": null,
+  "note": "Native and 2x matching-default comparisons. Footer URL origins excluded from numeric measurements. Device-font metrics, CSS text-shadow and original bitmap vs SVG preview/shadow rasterization differ. No Adobe Flash pixel-parity claim.",
+  "measurements": [
+    {
+      "page": "image-default",
+      "deviceScaleFactor": 1,
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ],
+      "versionLabelExcluded": false,
+      "meanAbsoluteRGBDifference": [
+        2.718050340949705,
+        2.860881196632613,
+        2.861033358929627
+      ]
+    },
+    {
+      "page": "image-head",
+      "deviceScaleFactor": 1,
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ],
+      "versionLabelExcluded": false,
+      "meanAbsoluteRGBDifference": [
+        2.4209233774368086,
+        2.482074927545976,
+        2.476653703382603
+      ]
+    },
+    {
+      "page": "image-transparent",
+      "deviceScaleFactor": 1,
+      "roi": [
+        14,
+        10,
+        626,
+        470
+      ],
+      "versionLabelExcluded": false,
+      "meanAbsoluteRGBDifference": [
+        2.6743797617067657,
+        2.7313698499255112,
+        2.7277462640617425
+      ]
+    },
+    {
+      "page": "image-default",
+      "deviceScaleFactor": 2,
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ],
+      "versionLabelExcluded": false,
+      "meanAbsoluteRGBDifference": [
+        2.322096213078065,
+        2.4008712801081344,
+        2.4014961554654435
+      ]
+    },
+    {
+      "page": "image-head",
+      "deviceScaleFactor": 2,
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ],
+      "versionLabelExcluded": false,
+      "meanAbsoluteRGBDifference": [
+        2.1786983979259458,
+        2.217188947240134,
+        2.213986571827428
+      ]
+    },
+    {
+      "page": "image-transparent",
+      "deviceScaleFactor": 2,
+      "roi": [
+        28,
+        20,
+        1252,
+        940
+      ],
+      "versionLabelExcluded": false,
+      "meanAbsoluteRGBDifference": [
+        2.4150235990161537,
+        2.45415054621197,
+        2.4511334175363957
+      ]
+    }
+  ]
+}

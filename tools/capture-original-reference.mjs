@@ -47,7 +47,11 @@ try{
   const error=await page.evaluate(()=>window.referenceError??null);if(error)throw new Error(error);
   if(logs.some((x)=>x.type==='pageerror'||/Error dispatching event/.test(x.text??'')))throw new Error('Original runtime execution reported an error; inspect the log.');
   if(renderer!=='canvas'){await page.mouse.click(600,22);await page.waitForTimeout(300);}
-  if(process.argv.includes('--random-probe')){
+  if(process.argv.includes('--image-page')){
+ await page.mouse.click(114,417);await page.waitForTimeout(1200);await page.mouse.click(318,315);await page.waitForTimeout(400);await page.mouse.click(114,298);await page.waitForTimeout(800);await page.mouse.move(5,490);await page.screenshot({path:join(output,'image-default.png')});
+ await page.mouse.click(324.4,326.5);await page.waitForTimeout(500);await page.mouse.move(5,490);await page.screenshot({path:join(output,'image-head.png')});
+ await page.mouse.click(461.4,350.5);await page.mouse.click(324.4,350.5);await page.waitForTimeout(400);await page.mouse.move(5,490);await page.screenshot({path:join(output,'image-transparent.png')});
+ }else if(process.argv.includes('--random-probe')){
  await page.context().grantPermissions(['clipboard-read','clipboard-write']);const collected=[];
  for(let i=0;i<Number(argument('--random-count','24'));i++){
  await page.mouse.click(190.95,119);await page.waitForTimeout(150);

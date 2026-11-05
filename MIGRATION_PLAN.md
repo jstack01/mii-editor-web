@@ -1,7 +1,7 @@
 # Mii Editor migration assessment and plan
 
-Status: Phases 0–4B and Phase 5A are complete. Editing, persistence, sharing and local .mii/XML operations work. Phase 5B is approved and next: finish PNG/JPEG export and commit the tested reproduction baseline before starting default Wii-compatibility corrections.
-Reviewed: November 4, 2026. Updated after inspecting the reorganized project and original source package.
+Status: Phases 0–4B and Phase 5A are complete. Editing, persistence, sharing and local .mii/XML operations work. Phase 5B is complete. Commit the tested functional reproduction baseline before Phase 6 default Wii-compatibility corrections; none has begun in this milestone.
+Reviewed: November 4, 2026. Updated November 5, 2026 after Phase 5B and the approved final product direction.
 
 ## 1. Scope and evidence
 
@@ -286,7 +286,7 @@ Smallest purely internal unit: `Range.clamp`. The name-field slice is the smalle
 - Tests: every screen reachable; last/first page limits; selections track codec values; repeated navigation does not duplicate listeners; drag release outside control; clamping; gender/mingle; birthday blanks; name truncation; URL precedence; storage failures and corrupt saved data; reload after each mutation pathway; keyboard and touch interactions.
 - Exit requirement: complete editing flows behave as agreed at native size; no stale preview or unintended state loss.
 
-### Phase 5 — finish original application reproduction (5A complete, 5B approved)
+### Phase 5 — finish original application reproduction (5A and 5B complete)
 
 - Phase 5A local binary/XML files and original Files/XML interface are complete. Preserve the current legacy fidelity regression suite and permanent seven-file corpus.
 - Phase 5B reconstructs the original PNG/JPEG image-export page, source bounds/defaults, background/body options, PNG alpha, JPEG quality target, zoom, drag and BitmapUtils centering formula. Use recovered artwork and existing renderer; no new artwork or backend.
@@ -318,10 +318,9 @@ Smallest purely internal unit: `Range.clamp`. The name-field slice is the smalle
 - Publish a final fidelity/deviation matrix, compatibility and hardware-verification matrix, known limitations, asset provenance and build/run instructions. “Faithful original reproduction” and “Wii-compatible product behavior” must have separate supporting evidence.
 - Release only after required checks pass, intended features/assets are complete, differences are reviewed and unresolved behavior is not represented as certified.
 
-## 6. Information to request next
+## 6. Information needed for later verification
 
-The original executable SWFs, defaults XML, AIR descriptor and package icons are supplied and have been inspected. Architecture and Phase 1 scope are approved. For later visual/interchange parity validation, request any available browser HTML wrapper, clean runtime screenshots/video, and representative `.mii`/XML exports. Static original placements have now been recovered. Original AS3 runtime execution and clean reference capture remain outstanding; do not imply these were completed by metadata extraction.
-
+Source SWFs, defaults and vector/placement evidence are recovered; unmodified Ruffle captures now cover the editor and export pages. Adobe Flash pixel parity and physical Wii/game/destination compatibility remain uncertified. Before implementing ID/ownership policies, establish intended transfer routes, destination consoles/games, available physical hardware and representative owned Mii records. These are future compatibility/certification inputs, not blockers to the completed browser reproduction scope. Tutorial remains deferred unless its missing sequencing is separately recovered/approved.
 
 ## 7. Phase 1 implementation record — November 4, 2026 (historical)
 
@@ -645,3 +644,19 @@ Verification: **265 unit tests**, all prior development/production XML/rendering
 ## 15. Approved final product direction (supersedes earlier optional-mode recommendation)
 
 The user clarified that the ultimate product must create Wii-compatible Miis by default, without a permanent compatibility-mode toggle. Finish Phase 5B and commit the thoroughly tested original-application reproduction baseline first. Preserve legacy fidelity tests and source evidence so subsequent corrections remain auditable. Only then implement Phase 6 standard Wii-compatible creation/editing/randomization, explicit non-destructive handling of incompatible imports and pre-export validation. Phase 7 requires physical hardware/game/destination evidence before certification. The earlier investigation's optional-mode suggestion is historical and is not the approved product direction. No compatibility corrections are authorized within Phase 5B itself.
+
+## 16. Phase 5B completed — PNG/JPEG export and functional reproduction baseline
+
+Verified local baseline 12ef560, then committed the user's revised roadmap as **652705a** before image work. Recovered original FileOptions frame 4, SizeSlider/ColorSlider logic, BitmapUtils centering and encoder quality 90. Added 25 original GUI symbols (391 total), all image placements and source text-shadow metadata. The original Export page now supports size/zoom text/sliders, RGB background text/sliders, body/background checkboxes, JPEG/PNG selection, preview panning and browser Blob downloads. Original artwork, registration, transforms and one-based frames remain; no whole-screen PNG or new artwork was introduced.
+
+Defaults remain JPEG, 50 pixels, zoom 25, E3F3EF and body/background enabled. Size 10–800, zoom 0–100, vertical Y -171..0, RGB X -115.5..115.5 and original integer coercions/rounding are preserved. A 250-pixel local preview has parent width 250.01907348632812; output scale/pan use that actual source width. Hidden body bounds still contribute to centering, confirmed against Ruffle: Body off does not center the head anew. Fractional size values still scale with the fraction while BitmapData dimensions truncate and displayed text rounds. Background empty/partial text and PNG/JPEG background-enable semantics are characterized in web/IMAGE_EXPORT.md. These behaviors are deliberately retained in the reproduction baseline.
+
+The complete existing SVG character scene rasterizes into local Canvas with source masks, color transforms, multiply and body blur. Native PNG/JPEG encoding uses the original quality-90 target (0.9), without claiming Adobe JPGEncoder byte equivalence. Save snapshots image options/model, rejects unsupported/failed encoding, cancels late exports after leaving the page, and releases Blob URLs/canvas storage. Filenames reuse Unicode sanitization. Character bytes, source-compatible validation, randomization, storage and sharing are unchanged. No Wii generation corrections, backend, dependencies, remote or upload were added.
+
+**Verification:** 272 unit tests, all previous XML/rendering/GUI/interaction/persistence/file/legacy-vs-RCD compatibility checks, new image-export suites in development and production, TypeScript/build and seven Python recovery/integrity tests pass. Real downloaded files are decoded to verify 10/50/800 sizes, MIME signatures, alpha/background pixels, body visibility and geometry; text bounds/coercion, all slider families, keyboard, source/native/scaled Pointer Events, release/cancel, panning, page state, snapshot/cancellation, Unicode/repeated offline downloads and resource cleanup are covered. Existing phase tests now recognize the implemented image page instead of asserting it is deferred; their data/fidelity expectations remain intact. Firefox/WebKit runtimes are unavailable and not certified; the existing bundle warning remains.
+
+**Integrity exception recorded, not repaired:** all 1,718 actual application source/asset files match their initial hashes and exact file set. Four of seven ignored .DS_Store files changed during the session; implementation did not write or restore them. Before/after metadata is recorded in evidence/phase5b/integrity.json. The original integrity guard incorrectly treated mutable Finder metadata as immutable application content. It now excludes only exact .DS_Store basenames, with a specific regression test; no original manifest or protected content was changed.
+
+Native/2× default, head-only and transparent-page captures compare exact source coordinates against unmodified SWFs in Ruffle 0.7.1 wgpu-webgl. The original connectivity alert was dismissed; no service was stubbed and no original encoded-image download was obtained. Source body blur is preserved despite Ruffle's different shadow rasterization. Device-font metrics, CSS approximation of the source text drop shadow, SVG versus bitmap antialiasing and browser versus Adobe JPEG encoding remain limits. No Adobe Flash pixel-perfect or physical Wii/game certification is claimed.
+
+See web/IMAGE_EXPORT.md and evidence/phase5b/ for source maps, reference captures, decoded browser images, comparisons, integrity records and reports. Launch web/dev.sh, open http://127.0.0.1:5173/, then File → Export. This completes the approved functional reproduction scope, with incomplete tutorial and documented visual/engine limits still disclosed. Commit this baseline and stop. **Next is Phase 6: Wii-compatible generation/editing as the standard, no permanent mode toggle, explicit non-destructive correction of imported legacy data and pre-export validation.** Keep original fidelity and corrected compatibility tests separate; physical certification remains Phase 7. No Phase 6 changes were started here.
