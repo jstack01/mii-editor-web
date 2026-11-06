@@ -175,3 +175,8 @@ Retained checks: 199 public tests / 446 full historical+public tests, TypeScript
 Manual workflow YAML parses; Dockerfile lint passes. Read-only GitHub checks confirm Actions enabled/official actions permitted, default token read-only, and current gh CLI repo/workflow scope available. Explicit packages:write is limited to the conditional publish job; actual repository GITHUB_TOKEN package-write execution remains unverified until the approved workflow is pushed/run. OCI source labels associate the image with the existing repo. Package visibility must be explicitly checked/set Public after the first approved upload through supported settings; no undocumented visibility REST call is invented. Anonymous manifest/pull/source-label verification uses an empty Docker credential config, and the GitHub release helper refuses the Docker release until its matching report passes.
 
 Prepared preview.4 local/static packages plus a versioned Docker starter ZIP containing Compose, .env.example, guide/build metadata and notices, with combined checksums. Extracted packages and a clean public checkout are verified locally; private evidence/recovery folders remain ignored and protected originals unchanged. No source push, GHCR image, GitHub tag, release or Docker Hub upload is performed. Stop here pending explicit owner approval; do not begin Phase 7.
+
+
+## D3 publication approval
+
+The owner explicitly approved pushing and publishing D3 / preview.4. The manual GHCR workflow and public-visibility/anonymous-pull gates remain mandatory before the GitHub prerelease is created. This approval does not close browser/device gaps or begin Phase 7. Previous releases remain unchanged.

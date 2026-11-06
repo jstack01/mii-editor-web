@@ -1,6 +1,6 @@
-## Mii Editor Web v0.1.0-preview.4 — proposed prerelease
+## Mii Editor Web v0.1.0-preview.4 — prerelease
 
-D3 adds a small, non-root Nginx Docker image and ready-to-use Compose distribution for the same static editor. Intended image: **ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.4**, with linux/amd64 and linux/arm64 under one multi-platform tag. **The first image and this release are not published yet; package-public status and anonymous pulling must be verified after approval.** No Docker Hub publication occurs.
+D3 adds a small, non-root Nginx Docker image and ready-to-use Compose distribution for the same static editor. Container image: **ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.4**, with linux/amd64 and linux/arm64 under one multi-platform tag. Public package status and anonymous pulling must pass verification before this prerelease is published. No Docker Hub publication occurs.
 
 The image needs no Node.js, Python, Vite, PHP or database at runtime. Compose publishes only 127.0.0.1:8080 by default and includes read-only root storage, ephemeral /tmp, dropped capabilities and no-new-privileges. Change MII_EDITOR_PORT in .env for a different host port; launcher config.json is not used by Docker. Miis remain in browser storage/downloads. Export important .mii files before changing hostname or port. Public hosting should use a deliberately configured HTTPS reverse proxy.
 

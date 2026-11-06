@@ -1,10 +1,10 @@
 # Mii Editor with Docker or Compose
 
-**Preview.4 Docker distribution is prepared locally, not published yet.** The image name below is reserved for the approved first upload. Anonymous GHCR pulling and package-public status cannot be verified until that upload exists. Earlier ZIP releases remain available.
+The preview.4 Docker distribution uses **ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.4**. Public package status and anonymous pulls are publication requirements. Earlier ZIP releases remain available.
 
 Docker serves the same static editor as the launcher/static ZIP editions. It adds no application backend, database or server-side Mii storage, and does not improve or certify Wii compatibility. Install Docker Engine + Compose on Linux or Docker Desktop with Linux containers on macOS/Windows if not already installed. This does not promise installation-free startup.
 
-## Direct Docker use (after image publication)
+## Direct Docker use 
 
 ```sh
 docker pull ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.4
@@ -28,7 +28,7 @@ docker restart mii-editor
 
 After stopping, remove it with `docker rm mii-editor`. Updating: export important .mii files, pull the new explicitly published version, stop/remove the old container and repeat the run command with that new tag. Keep the same hostname/host port to retain the browser origin. No volume backup or database migration is needed. Nginx logs errors; normal access/query logging is disabled, so quiet logs are expected.
 
-## Compose (after image publication)
+## Compose 
 
 Download/extract the release's **Docker starter ZIP**, containing compose.yaml, .env.example, this START-HERE guide and notices. Alternatively download compose.yaml and .env.example from the repository root. Put them together in a normal folder; the Compose file uses the published image and does not build locally.
 

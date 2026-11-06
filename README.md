@@ -31,7 +31,7 @@ This project is not affiliated with or endorsed by Nintendo or the original Mii 
 
 ## Download and start
 
-**v0.1.0-preview.4 / Docker D3 is prepared locally and not published yet.** Download the currently published [**v0.1.0-preview.3**](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.3). [Preview.2 remains available](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.2). The existing [preview.1 release](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.1) remains unchanged.
+Download [**v0.1.0-preview.4**](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.4). [Preview.3 remains available](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.3). [Preview.2 remains available](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.2). The existing [preview.1 release](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.1) remains unchanged.
 
 Choose the ZIP for your platform:
 
@@ -48,11 +48,11 @@ D1 preview.1 used port **8765**. Export its important Miis before switching to D
 
 Use the named prebuilt ZIP assets, not GitHub's automatic Source code archives (which require a developer build). Each artifact has a checksum; preview.1 remains available unchanged.
 
-## Docker and Docker Compose (prepared for preview.4)
+## Docker and Docker Compose
 
-The same editor is packaged for `ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.4`, targeting linux/amd64 and linux/arm64. **The first image is not uploaded yet; public package visibility and anonymous pulls remain approval gates.** The local launcher ZIPs and static hosting ZIP remain separate supported options. Docker contains no Python/Node/Vite/PHP runtime or database.
+The same editor is packaged for `ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.4`, targeting linux/amd64 and linux/arm64. Public package visibility and anonymous pulls are required publication gates. The local launcher ZIPs and static hosting ZIP remain separate supported options. Docker contains no Python/Node/Vite/PHP runtime or database.
 
-After publication:
+Docker commands:
 
 ```sh
 docker pull ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.4
