@@ -29,19 +29,26 @@ This project is not affiliated with or endorsed by Nintendo or the original Mii 
 
 ## Download and start
 
-Open [GitHub Releases](https://github.com/jstack01/mii-editor-web/releases) and download **`mii-editor-web-v0.1.0-preview.1.zip`** from the preview release's Assets section. This is the prebuilt, ready-to-run package. GitHub's automatic **Source code (zip)** and **Source code (tar.gz)** downloads are developer sources and require a build.
+Preview **v0.1.0-preview.2 is prepared locally and not published yet**. The existing [preview.1 release](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.1) remains unchanged.
 
-1. Extract the entire ZIP; do not run it from inside the archive.
-2. Read `START-HERE.md`.
-3. Install Python 3 (3.9 or newer) if it is not already installed. The release does not bundle Python. Use a supported release from https://www.python.org/downloads/.
-4. Windows: double-click `start-windows.bat`. macOS: open `start-macos.command`, or run it in Terminal. Linux: run `bash start-linux.sh` in the extracted folder.
-5. The launcher serves only the `website/` folder on your own computer and opens http://127.0.0.1:8765/. Keep its terminal window open; press Ctrl+C to stop.
+When preview.2 is approved, choose the ZIP for your platform:
 
-Do not open `website/index.html` directly with `file://`; browsers can block JavaScript modules that way. A different port or hostname is a different browser-storage origin. Export important Miis before changing origins. The ZIP includes a SHA-256 checksum file alongside it on the release page.
+| Edition | Startup | Requirement / coverage |
+| --- | --- | --- |
+| macOS | `Start Mii Editor.command` | Existing Python 3.9+; skips Apple's installation stub. |
+| Linux | `start-mii-editor.sh` | Existing Python 3.9+; real Linux desktop verification pending. |
+| Windows | `Start Mii Editor.cmd` | Real Python 3.9+ on PATH; actual Windows verification pending. |
+| Static hosting | Upload index/assets/notices | No launcher or interpreter on the hosting server. |
+
+Extract the complete ZIP and read START-HERE.md. The local script starts **http://127.0.0.1:8080/**, waits for the website to answer and opens your default browser. The same URL is printed for clicking/copying. Keep the terminal open; Ctrl+C or closing the terminal stops the server. Nothing is downloaded or installed by the launcher. If Python is missing, it explains optional installation from python.org. Zero additional installations are not guaranteed.
+
+D1 preview.1 used port **8765**. Export its important Miis before switching to D2's **8080**, then import them; browser storage is tied to the origin. Localhost share links refer to the computer opening them and are not public website links. See [LOCAL_LAUNCHERS.md](docs/LOCAL_LAUNCHERS.md) for the Windows PowerShell investigation and testing limits.
+
+Use the named prebuilt ZIP assets, not GitHub's automatic Source code archives (which require a developer build). Each artifact has a checksum; preview.1 remains available unchanged.
 
 ## Host it on a website
 
-Upload **the contents of `website/`**, including notices, to your static web directory. The same build uses relative asset URLs and works at the domain root or a folder such as `/mii-editor/`. Keep the trailing slash when sharing a directory URL.
+Upload **the contents of the static hosting ZIP**, including notices, to your static web directory. The same build uses relative asset URLs and works at the domain root or a folder such as `/mii-editor/`. Keep the trailing slash when sharing a directory URL.
 
 Apache needs only normal static-file serving and JavaScript/CSS MIME types. No Node.js/Vite process, Python, PHP or database is needed on the production server. See [the hosting guide](docs/HOSTING.md) for root/subdirectory examples and HTTPS/browser limitations.
 

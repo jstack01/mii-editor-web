@@ -41,14 +41,29 @@ def main():
     for name in files:
         if name.startswith(('SOURCE/','EXTRACTED-SWF/','EXTRACTED/','evidence/','node_modules/','web/node_modules/','web/dist/','release/','.local-reference/')) or name.lower().endswith(('.swf','.as','.fla','.air')):
             raise SystemExit('Private/original/generated artifact still tracked: '+name)
-    package=ROOT/'release'/('mii-editor-web-'+a.version+'.zip')
-    manifest=json.loads((ROOT/'release'/('mii-editor-web-'+a.version+'.manifest.json')).read_text())
-    digest=hashlib.sha256(package.read_bytes()).hexdigest()
-    if manifest['build']['commit']!=head or manifest['build']['uncommittedSource'] or manifest['sha256']!=digest:
-        raise SystemExit('Release package does not match the reviewed clean commit.')
-    verification=json.loads((ROOT/'release'/'verification.json').read_text())
-    if verification.get('archiveSHA256')!=digest or verification.get('passed') is not True:
-        raise SystemExit('Run extracted-ZIP deployment verification for this exact archive first.')
+    release_set=ROOT/'release'/('release-set-'+a.version+'.json')
+    if release_set.exists():
+        release=json.loads(release_set.read_text())
+        if {x['edition'] for x in release['artifacts']}!={'macos','linux','windows','static'}:
+            raise SystemExit('Expected four reviewed distribution editions.')
+        packages=[]
+        for artifact in release['artifacts']:
+            name=artifact['filename']
+            if Path(name).name!=name:raise SystemExit('Invalid artifact name.')
+            package=ROOT/'release'/name;digest=hashlib.sha256(package.read_bytes()).hexdigest()
+            manifest=json.loads(package.with_suffix('.manifest.json').read_text())
+            verification=json.loads(package.with_suffix('.verification.json').read_text())
+            if manifest['build']['commit']!=head or manifest['build']['uncommittedSource'] or manifest['sha256']!=digest or artifact['sha256']!=digest:
+                raise SystemExit('Package differs from reviewed clean commit.')
+            if verification.get('archiveSHA256')!=digest or verification.get('passed') is not True:
+                raise SystemExit('Verify every exact extracted archive before publication.')
+            packages.append(str(package))
+        checksum=ROOT/'release'/release['checksumFile']
+        expected=''.join(x['sha256']+'  '+x['filename']+'\n' for x in release['artifacts'])
+        if checksum.read_text()!=expected:raise SystemExit('Checksum inventory mismatch.')
+        packages.append(str(checksum))
+    else:
+        raise SystemExit('Prepare and verify the new release-set packages first. Existing releases are never overwritten.')
     owner,name=a.repo.split('/')
     account=run('gh','api','user','--jq','.login',capture=True)
     if account.lower()!=owner.lower():
@@ -76,10 +91,10 @@ def main():
     # No force, history rewrite or automatic publication on ordinary commits.
     run('git','tag','-a',a.version,'-m','Preview '+a.version,head)
     run('git','push','origin','refs/tags/'+a.version)
-    run('gh','release','create',a.version,str(package),str(package.with_suffix('.zip.sha256')),'--repo',a.repo,'--verify-tag','--prerelease','--title','Mii Editor Web '+a.version,'--notes-file','docs/RELEASE_NOTES.md')
+    run('gh','release','create',a.version,*packages,'--repo',a.repo,'--verify-tag','--prerelease','--title','Mii Editor Web '+a.version,'--notes-file','docs/RELEASE_NOTES.md')
     print('Repository: https://github.com/'+a.repo)
     print('Releases: https://github.com/'+a.repo+'/releases')
-    print('ZIP: https://github.com/'+a.repo+'/releases/download/'+a.version+'/'+package.name)
+    print('Choose the platform or static-hosting ZIP on the Releases page.')
 
 if __name__=='__main__':
     main()

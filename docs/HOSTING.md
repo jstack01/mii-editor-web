@@ -1,16 +1,18 @@
 # Local and Apache hosting
 
-## Prebuilt download
+## Local editions and static hosting
 
-Download the named prebuilt ZIP from Releases, not GitHub's automatic source archive. Extract it completely. The package contains `website/`, START-HERE, this guide, notices and Python-based startup scripts. Only local startup needs Python 3.9+; an Apache production server needs none of the development tools or Python.
+D2 local ZIPs contain platform-specific scripts and the same compiled `website/`. Extract the complete package, then run `Start Mii Editor.command` (macOS), `start-mii-editor.sh` (Linux), or `Start Mii Editor.cmd` (Windows). An existing real Python 3.9+ is required. Nothing is installed automatically. macOS avoids the Apple developer-tools stub; Windows skips Store aliases and install managers. See LOCAL_LAUNCHERS.md in the source repository for the documented PowerShell/HTTP.sys limitations. Windows and real Linux desktop testing remain pending.
 
-Windows: install Python 3 if needed, then double-click `start-windows.bat`. macOS: open `start-macos.command`; if opening a downloaded script is restricted, open Terminal in the extracted folder and run `bash start-macos.command`. Linux: run `bash start-linux.sh`. A browser opens http://127.0.0.1:8765/. Keep the terminal open; Ctrl+C stops it. If the default port is occupied, stop the other local instance or run `python3 serve.py --port 8766`; on Windows use `py -3 serve.py --port 8766`. The chosen port affects browser storage. The local server binds only to 127.0.0.1 and serves static files from website/, not the rest of your checkout.
+The server serves only website/ at **http://127.0.0.1:8080/**, waits for readiness, opens the default browser and prints a copyable/clickable URL. Stop with Ctrl+C or close its terminal. If 8080 is busy it reports the conflict and never silently changes port. An explicit terminal override (`python3 serve.py --port 8081`) changes the browser-storage origin; use it only deliberately. A failed browser-opening request leaves the site available for manual opening. No administrator or security-policy change is required.
 
-Python is not bundled. Obtain it from https://www.python.org/downloads/ if necessary. Windows/macOS/Linux launchers are supplied; actual Windows/Linux operating-system execution remains unverified where unavailable. Desktop browser emulation is not real-device testing. Direct file:// opening can fail because ES modules require an HTTP origin.
+D1 used 8765: export old characters there before switching to 8080, then reimport. Localhost links point to the recipient's own computer; use a public deployment for public share links. Downloaded scripts can be restricted by the OS/file manager. Do not disable security settings; follow the guide or use an already trusted interpreter explicitly. Linux file managers may open .sh files as text; a terminal invocation is available. Direct file:// opening can fail because JavaScript modules need an HTTP origin.
+
+For an existing server, use the **separate static ZIP** and upload its contents, including legal notices. No launcher, Python, Node.js, Vite, PHP, Go or database is needed on Apache/Nginx/conventional static hosting. The local and static editions use identical compiled website files.
 
 ## Apache at the domain root
 
-Upload the contents of website/ (including LICENSE.md, NOTICES.md and LICENSES/) into a dedicated static DocumentRoot, for example `/var/www/mii-editor`. With Apache 2.4's normal static modules enabled:
+Upload the contents of the static ZIP (including LICENSE.md, NOTICES.md and LICENSES/) into a dedicated static DocumentRoot, for example `/var/www/mii-editor`. With Apache 2.4's normal static modules enabled:
 
 ```apache
 DocumentRoot "/var/www/mii-editor"
@@ -28,7 +30,7 @@ Open `https://example.com/`. Configure your domain and TLS through your normal h
 
 ## Apache in a subdirectory
 
-If the existing DocumentRoot is `/var/www/html`, copy website/'s contents into `/var/www/html/mii-editor/`, and apply the same Directory settings to that path. Alternatively, add a static Alias:
+If the existing DocumentRoot is `/var/www/html`, copy the static ZIP's contents into `/var/www/html/mii-editor/`, and apply the same Directory settings to that path. Alternatively, add a static Alias:
 
 ```apache
 Alias "/mii-editor/" "/var/www/mii-editor/"

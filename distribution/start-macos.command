@@ -1,8 +1,4 @@
 #!/bin/sh
-set -eu
-cd "$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
-if ! command -v python3 >/dev/null 2>&1; then
-  echo 'Python 3 is required. Install it from https://www.python.org/downloads/ and try again.'
-  exit 1
-fi
-exec python3 serve.py "$@"
+# Old source-checkout entry point; release ZIPs use the documented D2 filename.
+mii_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd) || exit 1
+exec /bin/sh "$mii_dir/Start Mii Editor.command" "$@"
