@@ -13,6 +13,10 @@ def run(*args, capture=False):
     result=subprocess.run(args,cwd=ROOT,text=True,stdout=subprocess.PIPE if capture else None,check=True)
     return result.stdout.strip() if capture else None
 
+def repository_patch(settings):
+    # Public repositories are inherently forkable; GitHub rejects PATCHing this field.
+    return {key:value for key,value in settings.items() if key != "allow_forking"}
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--repo',required=True,help='owner/mii-editor-web')
@@ -58,11 +62,11 @@ def main():
     if exists.returncode:
         if '404' not in exists.stderr:
             raise SystemExit('Cannot establish repository availability; no repository created.')
-        body={**settings,'name':name,'private':False,'auto_init':False,'description':'Unofficial AI-generated, unmaintained browser Mii Editor. Forks encouraged subject to code/asset rights.'}
+        body={**repository_patch(settings),'name':name,'private':False,'auto_init':False,'description':'Unofficial AI-generated, unmaintained browser Mii Editor. Forks encouraged subject to code/asset rights.'}
         subprocess.run(['gh','api','--method','POST','user/repos','--input','-'],cwd=ROOT,input=json.dumps(body),text=True,stdout=subprocess.DEVNULL,check=True)
     elif origin.returncode:
         raise SystemExit('Repository exists but is not this checkout origin; review before using it.')
-    subprocess.run(['gh','api','--method','PATCH','repos/'+a.repo,'--input','scripts/repository-settings.json'],cwd=ROOT,stdout=subprocess.DEVNULL,check=True)
+    subprocess.run(['gh','api','--method','PATCH','repos/'+a.repo,'--input','-'],cwd=ROOT,input=json.dumps(repository_patch(settings)),text=True,stdout=subprocess.DEVNULL,check=True)
     actual=json.loads(run('gh','api','repos/'+a.repo,capture=True))
     if actual.get('private') is not False or any(actual.get(k)!=v for k,v in settings.items()):
         raise SystemExit('Repository feature verification failed. No source push or release was performed.')

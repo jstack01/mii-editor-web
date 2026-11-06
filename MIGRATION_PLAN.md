@@ -84,3 +84,11 @@ Windows launcher execution, a real Linux host, browser/device breadth, HTTPS/hos
 - web/WII_PROFILE.md and web/PHASE7_VERIFICATION.md: software rules and unverified ownership/ID/hardware/destination requirements. Older references to recovery evidence describe local historical inputs, not public build requirements.
 
 The detailed original fidelity and compatibility evidence is preserved locally and in existing Git history. No original Flash files are deleted and no existing commit is rewritten. Remaining milestones keep their own acceptance gates even after a preview repository/release is approved.
+
+## D1 publication record — November 5, 2026
+
+The owner explicitly approved public publication after reviewing the clean source, ZIP, exclusions and unresolved licensing concerns. Public repository: https://github.com/jstack01/mii-editor-web . Prerelease: https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.1 . The release tag pins reviewed commit `84eda761e8681d8e04d10c5ba78f616d6c3109b5`; the approved ZIP SHA-256 is `bab08dc69b96b8b95bc6d59f27ab4cc94d8eea3a9307f18a4a91fbf2aca12f6d`.
+
+GitHub API read-back confirms public visibility, forking enabled, and Issues, pull requests, Discussions, Wiki and Projects disabled. GitHub rejected mutating the inherent public-forking field; it was omitted from the supported PATCH while still verified true. A targeted publishing-helper regression fix is recorded on main; the reviewed release tag and application ZIP were not rewritten. Eight packaging/publication utility tests now cover this behavior. All originals remain locally ignored/untracked, and existing history was preserved.
+
+Public availability does not complete Milestone 6.2, remaining 6.3 platform/hosting verification, Phase 7 destination/hardware tests or Phase 8 final release. New code remains unlicensed and historical graphic rights unresolved as disclosed; publishing approval is not third-party license permission. Future updates stay explicit/manual through docs/PUBLISHING.md.

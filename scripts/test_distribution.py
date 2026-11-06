@@ -47,6 +47,10 @@ class DistributionTests(unittest.TestCase):
         with zipfile.ZipFile(a) as z:self.assertEqual(z.infolist()[0].date_time[:5],time.gmtime(1804453200)[:5])
     def test_bad_version_rejected(self):
         with self.assertRaisesRegex(SystemExit,'Use a version'):self.invoke('--version','../../bad')
+    def test_public_forking_is_verified_not_sent_as_a_mutable_setting(self):
+        spec=importlib.util.spec_from_file_location('publisher',HERE/'publish-release.py');publisher=importlib.util.module_from_spec(spec);spec.loader.exec_module(publisher)
+        desired={'has_issues':False,'has_pull_requests':False,'allow_forking':True}
+        self.assertEqual(publisher.repository_patch(desired),{'has_issues':False,'has_pull_requests':False});self.assertTrue(desired['allow_forking'])
     def test_publication_requires_approval_before_any_git_or_gh_work(self):
         r=subprocess.run([sys.executable,str(HERE/'publish-release.py'),'--repo','example/mii-editor-web','--version','v0.1.0-preview.1','--expected-commit','0'*40],capture_output=True,text=True)
         self.assertNotEqual(r.returncode,0);self.assertIn('No upload',r.stderr)
