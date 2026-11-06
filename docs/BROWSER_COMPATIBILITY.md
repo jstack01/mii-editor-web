@@ -6,7 +6,7 @@ Test date: 2026-11-06. Host macOS 27.0.1 (26A434), ARM64; isolated Linux environ
 | --- | --- |
 | Google Chrome 156.0.8078.80 / macOS | Full 21-script candidate QA matrix passed: development/production suites, presets, mobile, lost-button drags and offline primitives. |
 | Playwright Firefox 153.0 / Ubuntu ARM64 | Full 21-script candidate QA matrix passed as non-root `pwuser`, with external networking disabled. Native to the ARM64 Linux VM, not Windows/macOS Firefox certification. |
-| Playwright Chromium 151.0.7922.34 / Ubuntu ARM64 | Available in the pinned official Playwright image; exercised through the same matrix. Exact final execution report is retained under `release/phase8a/`. |
+| Playwright Chromium 151.0.7922.34 / Ubuntu ARM64 | Full 21-script candidate QA matrix passed in the pinned official Playwright image with external networking disabled. |
 | Playwright WebKit 26.5 / macOS and Ubuntu ARM64 | Normal rendering/GUI/XML/interactions/repair/profile/mobile flows pass. Existing forced-offline file and image suites fail in development and production, plus the independent primitive probe; these remain failures, not skipped tests. |
 | Firefox 153.0 / macOS | Still cannot launch: sandbox-extension/helper and SWGL framebuffer errors, followed by launch timeout. Linux provides actual application coverage without weakening host security. |
 | Installed Safari | Remote Automation is disabled; not enabled by this work. WebKit is not a branded Safari test. |
@@ -25,7 +25,7 @@ The Firefox diagnostic test bench also exceeded its fixed surface's bottom paddi
 
 Firefox drops the constructor-supplied clipboard payload on a synthetic ClipboardEvent ([Mozilla issue](https://bugzilla.mozilla.org/show_bug.cgi?id=2027025)). The paste-handler test now explicitly supplies **and verifies** its controlled payload before dispatch, retaining the original filtering/output assertions. This is not a claim of native OS clipboard automation. No application paste workaround was introduced.
 
-Modern HTML status/repair buttons have at least 44px targets. Birth-date inputs request numeric keyboards, image numeric fields request decimal keyboards, and technical fields disable automatic capitalization. The original uniformly scaled SVG interface is preserved; some historical palette controls remain small on narrow phones and browser zoom may help. There is no new Mii editing feature or codec change.
+Modern HTML status buttons and primary repair actions have at least 44px targets. Birth-date inputs request numeric keyboards, image numeric fields request decimal keyboards, and technical fields disable automatic capitalization. The original uniformly scaled SVG interface is preserved; some historical palette controls remain small on narrow phones and browser zoom may help. There is no new Mii editing feature or codec change.
 
 ## WebKit forced-offline investigation
 

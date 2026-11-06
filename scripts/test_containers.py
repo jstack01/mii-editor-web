@@ -32,6 +32,16 @@ class OlderDockerInspectionTests(unittest.TestCase):
    selected={'Image':'sha256:index','ImageManifestDescriptor':{'digest':'sha256:amd64-leaf','platform':{'os':'linux','architecture':'amd64'}}}
    self.assertEqual(verifier.inspect_selected_image(selected,'linux/amd64'),data)
    call.assert_called_once_with('image','inspect','sha256:amd64-leaf')
+ def test_local_buildx_leaf_uses_verified_platform_fallback(self):
+  data={'Os':'linux','Architecture':'amd64'}
+  selected={'Image':'sha256:index','ImageManifestDescriptor':{'digest':'sha256:leaf','platform':{'os':'linux','architecture':'amd64'}}}
+  with patch.object(verifier,'docker',side_effect=[subprocess.CalledProcessError(1,['docker','image','inspect']),json.dumps([data])]) as call:
+   self.assertEqual(verifier.inspect_selected_image(selected,'linux/amd64'),data)
+   self.assertEqual(call.call_args_list[-1].args,('image','inspect','--platform','linux/amd64','sha256:index'))
+ def test_unsupported_platform_fallback_fails_instead_of_guessing(self):
+  selected={'Image':'sha256:index','ImageManifestDescriptor':{'digest':'sha256:leaf','platform':{'os':'linux','architecture':'amd64'}}}
+  with patch.object(verifier,'docker',side_effect=subprocess.CalledProcessError(1,['docker','image','inspect'])):
+   with self.assertRaises(subprocess.CalledProcessError):verifier.inspect_selected_image(selected,'linux/amd64')
  def test_wrong_manifest_platform_fails_closed(self):
   with patch.object(verifier,'docker') as call:
    with self.assertRaises(AssertionError):verifier.inspect_selected_image({'Image':'sha256:index','ImageManifestDescriptor':{'digest':'sha256:arm64','platform':{'os':'linux','architecture':'arm64'}}},'linux/amd64')

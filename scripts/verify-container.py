@@ -11,7 +11,13 @@ def inspect_selected_image(container_data,expected_platform):
  platform=descriptor.get('platform') or {}
  if platform and platform.get('os','')+'/'+platform.get('architecture','')!=expected_platform:raise AssertionError('Selected container manifest differs from requested platform')
  selected=descriptor.get('digest') or container_data['Image']
- image=json.loads(docker('image','inspect',selected))[0]
+ try:
+  image=json.loads(docker('image','inspect',selected))[0]
+ except subprocess.CalledProcessError:
+  # Buildx-loaded OCI indexes may not expose their leaf as a standalone local
+  # image name. A platform-aware inspect still must match the actual descriptor.
+  if not descriptor.get('digest'):raise
+  image=json.loads(docker('image','inspect','--platform',expected_platform,container_data['Image']))[0]
  if image['Os']+'/'+image['Architecture']!=expected_platform:raise AssertionError('Container image architecture differs from requested platform')
  return image
 
