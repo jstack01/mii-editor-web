@@ -1,3 +1,5 @@
+**Milestone 6.1 presentation update:** original-download buttons are removed from the normal interface. Exact pending input and pre-repair bytes remain retained internally; cancellation, explicit repair approval and export blocking are unchanged. Optional read-only loading and diagnostics live under Advanced details. See [REPAIR_UX.md](REPAIR_UX.md); the older button descriptions below are historical Phase 6 behavior.
+
 # Browser storage and shared URLs — version 1
 
 **Phase 6 update:** the original 148-hex current-character contract remains. Source-render-safe transport validation is not Wii certification; see [WII_PROFILE.md](WII_PROFILE.md). Unresolved records from saved data/URLs remain byte-exact and read-only, with explicit repair. Complete source-unsafe 74-byte records are quarantined for review while a safe fallback renders; they are not silently clamped or automatically written over. Highest-priority valid URL input still wins.

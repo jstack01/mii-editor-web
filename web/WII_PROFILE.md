@@ -1,3 +1,5 @@
+**Milestone 6.1 presentation update:** original-download buttons are removed from the normal interface. Exact pending input and pre-repair bytes remain retained internally; cancellation, explicit repair approval and export blocking are unchanged. Optional read-only loading and diagnostics live under Advanced details. See [REPAIR_UX.md](REPAIR_UX.md); the older button descriptions below are historical Phase 6 behavior.
+
 # Wii software compatibility profile — Phase 6
 
 `Wii-RCD-persistent-v1` is the default application policy. There is no legacy generation mode or compatibility toggle. It validates standalone **74-byte, big-endian RCD records**, not a console database, transfer package, game save or hardware certificate. The completed, independently tested reproduction baseline is local Git commit `ebc0373`.

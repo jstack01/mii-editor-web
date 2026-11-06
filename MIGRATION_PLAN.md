@@ -1,6 +1,6 @@
 # Mii Editor migration assessment and plan
 
-Status: Phases 0–5B and Phase 6 are complete against the documented Wii software profile. The tested original reproduction baseline is committed as `ebc0373`. New/default/randomized characters and normal editing now enforce the default Wii software constraints; incompatible imports require explicit review/repair and unresolved Save Mii is blocked. There is no permanent compatibility toggle. Physical Wii, emulator transfer and individual-game certification remain Phase 7 and are unverified. Historical milestone records below retain their original policies/results; section 17 and web/WII_PROFILE.md supersede earlier warn-only/optional-mode behavior.
+Status: Phases 0–5B and Phase 6 are complete against the documented Wii software profile. The tested original reproduction baseline is committed as `ebc0373`. New/default/randomized characters and normal editing now enforce the default Wii software constraints; incompatible imports require explicit review/repair and unresolved Save Mii is blocked. There is no permanent compatibility toggle. Milestone 6.1 is complete: polished repair UX and historical branding removal; Milestones 6.2 browser/device coverage and 6.3 distribution come next. Physical Wii, emulator transfer and individual-game certification remain Phase 7 and are unverified. Historical milestone records below retain their original policies/results; section 17 and web/WII_PROFILE.md supersede earlier warn-only/optional-mode behavior.
 Reviewed: November 4, 2026. Updated November 5, 2026 after Phase 5B and the approved final product direction.
 
 ## 1. Scope and evidence
@@ -305,18 +305,45 @@ Smallest purely internal unit: `Range.clamp`. The name-field slice is the smalle
 - Keep **original-fidelity tests** and **Wii-compatibility tests** separate. Retain the legacy arithmetic oracle and failing corpus as historical evidence; do not silently rewrite legacy expectations to make corrected behavior appear identical. Test corrected generation at scale, edit boundaries, dates, feature relationships, ID flags, collisions, imports/repair/cancel, reserved bits and pre-export validation using independent decoders.
 - Exit: default generation/editing and corrected imports satisfy documented software profiles; all intentional deviations are recorded. This is software validation, not real-hardware certification.
 
-### Phase 7 — physical Wii and game/destination verification
+### Milestone 6.1 — repair dialog UX polish and branding removal (complete)
+
+- Replace the oversized technical repair UI with a compact modern HTML/CSS dialog: responsive maximum dimensions, readable comparison, larger aligned original/proposed source-vector previews, scrollable content and always-visible actions.
+- Use friendly field names, one concise compatibility disclaimer, a clear **Apply fixes & load** primary action and **Cancel**. Optional **Load without fixing** lives under Advanced details and remains read-only with export blocked. Remove original-download buttons from the normal interface; preserve pending input and original-byte backups internally.
+- Keep explicit review, cancellation, stale-state checks, revalidation, shared Wii rules and every unrelated bit intact. No legacy generation toggle or new framework/dependency.
+- Remove the original homepage icon, lettering and hit target from modern output at their source-symbol/path boundaries, never by covering them. Preserve neighboring border/URL artwork, original protected assets and provenance documentation.
+- Test desktop/narrow/short viewport layout, long filenames, many repairs, preview geometry, apply/cancel/read-only behavior, focus/keyboard/scrolling, removed controls and branding on all 13 screens. Capture desktop/mobile-size screenshots and run prior suites/type/build/integrity checks. Commit locally and stop before 6.2.
+
+### Milestone 6.2 — desktop browser and mobile compatibility (planned; not started)
+
+- Verify current Chrome, Firefox, Safari/WebKit and Edge. Install and run Playwright Chromium, Firefox and WebKit runtimes where available and permitted; distinguish branded Safari/Edge testing from engine testing.
+- Verify mobile Safari and Android Chrome on physical devices or suitable environments where available. Add mobile emulation and touch-input tests. Do not claim real-device coverage from desktop emulation alone; record device/OS/browser versions and unavailable targets.
+- Cover navigation, every editing category, sliders, scrolling, file import, .mii/XML downloads, PNG/JPEG exports, compatibility repairs, persistence and shared URL restoration, including unavailable storage/cancel/error paths.
+- Check original SVG gradients, masks, filters, nested transforms and color transforms across engines. Compare representative characters and UI states and document engine/font/antialiasing differences.
+- Fix mobile layout, touch targets, virtual keyboards, orientation/viewport changes, focus, modal overflow and browser download/file-picker limitations. Preserve the original 640×500 editor layout and uniform scaling where practical, allowing modern responsive behavior where necessary for usability.
+- Retain the Phase 6 software profile and 6.1 non-destructive repair UX. Run all historical-fidelity, independent decoder, data/graphics/editor/file/image/storage suites. Record actual coverage, capture references and commit the completed milestone before distribution work.
+
+### Milestone 6.3 — local server and static website distribution (planned; not started)
+
+- Deliver a clean production build containing only runtime application files. It must run on a conventional HTTP/static server, including Apache, with **no Node.js/Vite process on the production server**, PHP, database, runtime backend or cloud service.
+- Offer an easy prebuilt-release local startup method for nontechnical Windows/macOS/Linux users. Prefer a simple static-file server without development dependencies; explain any installed runtime requirements honestly. Keep developer source-build instructions separate.
+- Document downloading, extracting, starting, opening the browser, stopping, updating, preserving browser data/origin, and self-hosting. Explain browser/file-protocol limits and HTTPS requirements where applicable; do not promise unsupported download/storage capabilities.
+- Provide Apache root-directory and subdirectory deployment examples. Test assets, URLs and sharing at `/` and `/mii-editor/`; verify Vite base-path configuration and all asset references. Test actual production files with a simple static server and Apache where available, recording unavailable environments.
+- Exclude original SWF packages, protected extraction folders, development diagnostics, test artifacts, source evidence and unnecessary development/source files from public distribution. Retain required licenses/provenance notices. Verify no calls to obsolete MiiEditor.com services.
+- Provide a ready-to-upload static distribution ZIP if appropriate, with a file manifest/version and clear launch/hosting instructions. Test the ZIP's extracted contents, offline/local behavior and updating rather than only the developer checkout. Do not publish or upload without explicit authorization.
+- Re-run desktop/mobile and independent Wii software compatibility checks against the actual release package. Commit locally; retain destination certification for Phase 7.
+
+### Phase 7 — Wii hardware, emulator and game verification
 
 - The approved targets are real Wii consoles, emulators (including Dolphin), and Wii games. Define an evidence-based matrix for transfer/import routes, Mii Channel, relevant games, normal/special/temporary IDs, duplicate IDs, console ownership and local-only/mingling behavior. Confirm required RCD/RSD/database/remote wrappers and checksums in each route. See web/PHASE7_VERIFICATION.md. Unknown-owner browser records do not prove destination uniqueness; separate origins/concurrent tabs can collide. Establish a verified importer/owner/identity policy before extending compatibility claims.
 - Document hardware, firmware, game versions, destination tools, test fixtures and outcomes. Identify any requirements that cannot be checked without physical equipment; do not mark these verified based on MiiJS, Ruffle or a decompilation.
 - **Certification gate: no claim of real-Wii or individual-game compatibility until the relevant physical tests pass.** Keep scope-specific limitations visible even after other targets pass.
 
-### Phase 8 — release and remaining approved behavior
+### Phase 8 — final release and remaining approved behavior
 
 - Port the tutorial only if its sequencing is recovered or separately specified/approved; otherwise disclose its deferral.
 - Run the available Chromium/Firefox/WebKit, native/2×, keyboard/pointer and offline matrix. Verify no unintended historical service calls.
 - Publish a final fidelity/deviation matrix, compatibility and hardware-verification matrix, known limitations, asset provenance and build/run instructions. “Faithful original reproduction” and “Wii-compatible product behavior” must have separate supporting evidence.
-- Release only after required checks pass, intended features/assets are complete, differences are reviewed and unresolved behavior is not represented as certified.
+- Release only after required checks pass, intended features/assets are complete, differences are reviewed and unresolved behavior is not represented as certified. Include Milestone 6.2 actual browser/device coverage, Milestone 6.3 verified static ZIP/Apache root and nested-path instructions, release checksums/file inventory, licensing/provenance, accessibility/offline verification, update/rollback instructions and destination-scoped Phase 7 results. Keep developer evidence separate from the public package. Any unavailable target stays explicitly unverified; publishing still requires explicit authorization.
 
 ## 6. Information needed for later verification
 
@@ -700,3 +727,38 @@ Selected reports, independent decoder results, repaired corpus hex, baseline/cur
 Launch `web/dev.sh`, open the reported local URL (normally http://127.0.0.1:5173/), and use Random/edit/File as before. Load FAIL-1/2/3 through File → Load: review listed changes and previews, cancel to verify no replacement, then reload and Apply reviewed repairs → Save Mii. The bytes stay 74 long. Inspect `evidence/phase6/repair-review.png`. Try impossible birthday drafts, mole increase at 8, share/reload and the explicit archival backup. Do not describe acceptance in a software dashboard as physical certification.
 
 Phase 6 stops here. **Next is Phase 7 destination verification**, targeting real Wii consoles, emulators and Wii games, with a verified transfer/container/checksum/owner/duplicate-ID policy and actual hardware evidence. `web/PHASE7_VERIFICATION.md` records the matrix and known limits. No physical test, game certification, database insertion or speculative console-identity modification was performed. Unknown ownership and cross-browser/concurrent ID collision risk remain explicit; no unsafe guessed identity solution is represented as complete.
+
+
+## 18. Milestone 6.1 completed — repair UX polish and branding removal (November 5, 2026)
+
+### Baseline, presentation and preserved behavior
+
+Phase 6 was already committed as `d24e320`; Git was clean before this milestone. No new baseline/history rewrite was necessary. The project stays local with no remote or upload. Core Phase 6 model, XML/binary codecs, validator, randomizer, repair calculations, permutation tables, character renderer and dependency lockfile are unchanged; hashes against that commit are recorded in `evidence/milestone-6.1/integrity.json`.
+
+`repairReview.ts` now presents a modern native HTML dialog with a 640px maximum width, viewport-limited height, rounded panels, restrained colors, readable table and fixed action footer. The middle scrolls independently. Equal Original / After fixes cards render the actual source-vector scenes through a shared bounds-derived camera in `repairPresentation.ts`; registration and nested character geometry stay intact. Unsupported originals explicitly have no preview. Long filenames wrap/clamp without horizontal overflow; many repairs and advanced details remain scrollable on narrow/short screens.
+
+The main content is **Fix this Mii?**, a short introduction, issue count and friendly Setting / Original / After fixes comparison. **Apply fixes & load** is the primary action; **Cancel** and Escape discard the pending change. There is one short compatibility disclaimer. Raw reasons, ownership/ID limits, original/proposed hex and ordered details are optional under Advanced details. Optional **Load without fixing** is less prominent there, disabled for unsupported originals; it still loads only read-only inspection data and cannot bypass Save Mii validation. Main status/download feedback is concise rather than repeating certification warnings.
+
+Original-download buttons have been removed from both the dialog and normal footer as requested. Actual pending File/edited-XML input remains retained internally during review; decoded original bytes stay in the existing bounded pre-repair backup. Active character bytes/storage do not change on cancellation. Original source files are untouched. The old archival-button tests are deliberately updated to assert button absence and exact internal preservation, not weakened data guarantees. Historical Phase 6 evidence remains in Git. The new UX also tests stale-review rejection so a pending repair cannot overwrite newer edits.
+
+Keyboard focus starts on Cancel, stays within the native modal with a Tab loop and visible focus styles, and returns to the originating element or recreated File dialog. Title/description associations, preview names, table headers, live errors and a focusable scroll region support screen readers. Native asynchronous close feedback is explicitly awaited in browser tests.
+
+### Exact branding exclusions
+
+The icon is root depth 229 / sprite 360 / shape 359. The homepage hit target is root depth 231 / named homepage / button 362; it was already excluded and remains absent. The lettering is the third #666666 path in border shape 358 (approximately x529.4, y478.9, width92.35, height10.4). The browser asset generator excludes the icon and just that lettering path, with source/provenance checks. Both other border/URL-well paths and URL symbols 363/364 are preserved. No covering rectangle is used. Generated modern GUI dependencies drop from 391 to 389 symbols; protected original assets/manifests and provenance documentation remain intact. See `web/REPAIR_UX.md` and `evidence/milestone-6.1/branding-provenance.json`.
+
+### Verified results
+
+- **343 unit tests / 12 files** pass, including five new presentation/branding checks and all historical fidelity, XML, Wii compatibility, graphics, GUI, storage, file and image tests. TypeScript and production build pass. The known large original-vector bundle advisory remains; no dependency/framework was added.
+- Full development and production **Chrome 156** browser pipelines pass, including all prior suites and the new repair UX suite. Existing coverage includes 62 native XML cases, 992 renderer sweeps, all 13 screens at native/2×, 219 selections, 59 palette selections, 570 adjustments, pointer/keyboard/touch emulation, file/XML/image exports, persistence and sharing.
+- New UX checks cover **1100×900, 390×844 and 320×480** viewports; branding absence on all 13 screens in each; long Unicode filenames, many repairs, fixed actions while scrolling, actual original/proposed mole transforms, unsupported preview handling, friendly dialog labels, removed download buttons, keyboard focus/Tab/Escape, cancellation, exact approved bit changes, unresolved read-only/export blocking and stale-review protection. These are desktop Chrome viewport checks, **not physical mobile/browser coverage**.
+- Independent pinned MiiJS accepts **10,000/10,000** newly generated deterministic records and **7/7** reviewed corpus records. The software profile and legacy fidelity tests stay separate and unchanged. No physical Wii/game certification is claimed.
+- All seven Python source-recovery/integrity tests pass. The exact set and hashes of **1,718 protected content files**, original samples and all core compatibility files remain unchanged. Existing Finder-metadata exclusions apply; no SOURCE/ or EXTRACTED-SWF/ content was modified. No external app requests were observed.
+
+Reports and inspected screenshots are in `evidence/milestone-6.1/`: repair-desktop.png, repair-mobile.png, editor-desktop.png, editor-mobile.png and many-fixes-short-mobile.png. Existing Phase 6 evidence is preserved separately.
+
+### Inspect and stop
+
+Launch `web/dev.sh` (or use the existing http://127.0.0.1:5173/ preview). Open File → Load with FAIL-1/2/3; compare Original / After fixes and the table, try Cancel/Escape, then apply and Save Mii. Expand Advanced details to inspect the raw information or explicitly load an unresolved original read-only. Confirm that the bottom-right website text/icon are gone while the Mii URL field remains usable. Resize the window to inspect the responsive dialog and fixed actions.
+
+**Stop after Milestone 6.1.** Next is **6.2 desktop/mobile compatibility**, then **6.3 local/static/Apache distribution**, then the retained **Phase 7 Wii hardware/emulator/game verification** and expanded **Phase 8 final release**. No browser runtime installation, real-device testing, distribution ZIP, Apache deployment or Phase 7 work was performed in 6.1. Existing font/nine-slice/engine differences and hardware ownership/ID/destination questions remain documented; no broad-browser or physical compatibility is inferred from the viewport tests.

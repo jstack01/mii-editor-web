@@ -1,0 +1,17 @@
+{
+  "baselineCommit": "d24e320",
+  "protectedContentFiles": 1718,
+  "exactProtectedContentSetAndHashesUnchanged": true,
+  "originalCorpusUnchanged": true,
+  "corePhase6FilesUnchanged": {
+    "web/src/compatibility/wiiProfile.ts": "1a1ce1cd3bee351061058aa6b0303c15b67afca08b14ec956889364c3f99f554",
+    "web/src/compatibility/wiiCompatibility.ts": "35f11d46fbe326c40d03a56828b78956e04f25f5a5318acaa47a58b1611be20d",
+    "web/src/model/MiiCharacterData.ts": "2823eea051b03ae16a714fc21b54f4ddb23c127da4f83649749fa755ff25bc94",
+    "web/src/model/miiXml.ts": "e4a3a4de1e802d45d9132380400490dbc4f834907a50825993d8a1e3d2363b91",
+    "web/src/render/headScene.ts": "6f32d02b3eaee5b9d7cad90d65fa386dc1559cd8cc0e6a0b2e238c4bbf3a4c34",
+    "web/src/files/characterFiles.ts": "da873397628153765afee80ea66fd7403d0c4dcd6cb4795ba06e46ecc0d635da",
+    "web/pnpm-lock.yaml": "8163640e7f3ac9f8fae6964c7838df65f5147668838a4c601d8d514f04db7bc9"
+  },
+  "finderMetadataExcluded": true,
+  "reason": "Existing policy excludes mutable DS_Store, not any source content."
+}

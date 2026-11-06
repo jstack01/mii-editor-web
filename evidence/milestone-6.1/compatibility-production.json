@@ -1,0 +1,60 @@
+{
+  "mode": "production",
+  "browser": "156.0.8078.80",
+  "checks": [
+    {
+      "file": "Fail/FAIL-1.mii",
+      "exactOriginalPreserved": true,
+      "normalExportAllowed": false,
+      "moleSize": 9,
+      "rcdRangeCompatible": false
+    },
+    {
+      "file": "Fail/FAIL-2.mii",
+      "exactOriginalPreserved": true,
+      "normalExportAllowed": false,
+      "moleSize": 11,
+      "rcdRangeCompatible": false
+    },
+    {
+      "file": "Fail/FAIL-3.mii",
+      "exactOriginalPreserved": true,
+      "normalExportAllowed": false,
+      "moleSize": 14,
+      "rcdRangeCompatible": false
+    },
+    {
+      "file": "Success/Random (2).mii",
+      "exactOriginalPreserved": true,
+      "normalExportAllowed": false,
+      "moleSize": 8,
+      "rcdRangeCompatible": true
+    },
+    {
+      "file": "Success/Random (4).mii",
+      "exactOriginalPreserved": true,
+      "normalExportAllowed": true,
+      "moleSize": 0,
+      "rcdRangeCompatible": true
+    },
+    {
+      "file": "Success/Random (5).mii",
+      "exactOriginalPreserved": true,
+      "normalExportAllowed": false,
+      "moleSize": 7,
+      "rcdRangeCompatible": true
+    },
+    {
+      "file": "Success/Random.mii",
+      "exactOriginalPreserved": true,
+      "normalExportAllowed": true,
+      "moleSize": 2,
+      "rcdRangeCompatible": true
+    }
+  ],
+  "randomizedActualDownloads": 24,
+  "warned": 0,
+  "modelBytesUnchanged": true,
+  "errors": [],
+  "externalRequests": []
+}

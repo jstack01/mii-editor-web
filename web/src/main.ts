@@ -76,7 +76,7 @@ function applyText(input:HTMLInputElement,name:string):void {
  document.getElementById('edit-status')!.textContent='';
 }
 function compatibilityStatus():void {
- const result=validateWii(model.toBytes()),status=document.getElementById('compatibility-status')!;status.textContent=result.valid?'Software profile validated. Ownership and destination ID uniqueness need verification; hardware and games are not certified.':'Read-only unresolved original. Review and approve repairs to edit or export a validated Mii. '+result.errors.map(e=>e.message).join(' ');stage.dataset.wiiValid=String(result.valid);status.dataset.error=String(!result.valid);document.getElementById('review-compatibility')!.textContent=result.valid?'Review compatibility details':'Review and repair Mii';
+ const result=validateWii(model.toBytes()),status=document.getElementById('compatibility-status')!;status.textContent=result.valid?'Ready to save.':'This Mii needs fixes before it can be edited or saved.';stage.dataset.wiiValid=String(result.valid);status.dataset.error=String(!result.valid);document.getElementById('review-compatibility')!.textContent=result.valid?'Mii details':'Review fixes';
 }
 
 function bindControl(svg:SVGSVGElement,group:SVGGElement,node:SceneNode):void {

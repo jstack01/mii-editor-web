@@ -1,3 +1,5 @@
+**Milestone 6.1 presentation update:** original-download buttons are removed from the normal interface. Exact pending input and pre-repair bytes remain retained internally; cancellation, explicit repair approval and export blocking are unchanged. Optional read-only loading and diagnostics live under Advanced details. See [REPAIR_UX.md](REPAIR_UX.md); the older button descriptions below are historical Phase 6 behavior.
+
 # Local Mii and XML files — Phase 5A
 
 Run `./dev.sh` from web/ and open http://127.0.0.1:5173/. File opens the recovered Files page. Load selects a local .mii/.xml; Save Mii requests a download. Done returns to the editor. Export opens the completed Phase 5B image page; see IMAGE_EXPORT.md. No PHP, backend, historical service or upload is used.

@@ -43,6 +43,7 @@ function visit(id){if(symbols[id])return;const s=m.symbols[id];if(!s)throw Error
  else if(s.svgExport){const bytes=read(s.svgExport.path);if(hash(bytes)!==s.svgExport.sha256)throw Error('SVG hash mismatch');hashes[s.svgExport.path]=hash(bytes);const svg=bytes.toString();let inner=svg.match(/<svg\b[^>]*>([\s\S]*)<\/svg>\s*$/)[1];const b=s.bounds.shapeBounds;
   inner=inner.replace(/<path\b[^>]*\bffdec:has-small-stroke="true"[^>]*>/g,(tag)=>{const width=Number(tag.match(/ffdec:original-stroke-width="([^"]+)"/)[1]);return tag.replace(/\sstroke-width="[^"]+"/,` stroke-width="${width}"`).replace(/\sffdec:[\w-]+="[^"]*"/g,'');});
   if(/<image|<script|\bhref=|\bon\w+=|ffdec:/i.test(inner))throw Error(`Unsupported SVG ${id}`);
+  if(id===358){const branding=inner.match(/<path\b[^>]*fill="#666666"[^>]*\/>/g);if(branding?.length!==1)throw Error('Footer branding path evidence changed');inner=inner.replace(branding[0],'');}
   inner=inner.replace(/\bid="([^"]+)"/g,(_,name)=>`id="__MII__g${id}-${name}"`).replace(/url\(#([^\)]+)\)/g,(_,name)=>`url(#__MII__g${id}-${name})`);
   const [a,c,d,e,x,y]=s.svgExport.topLevelGroupTransforms[0].match(/[-+]?\d+(?:\.\d+)?(?:e[-+]?\d+)?/gi).map(Number);if(a!==1||c!==0||d!==0||e!==1||Math.abs(x+b.x)>1e-6||Math.abs(y+b.y)>1e-6)throw Error(`Unknown export origin ${id}`);
   symbols[id]={kind:'shape',id,bounds:{x:b.x,y:b.y,width:b.width,height:b.height},markup:`<g transform="translate(${-x} ${-y})">${inner}</g>`,sourcePath:s.svgExport.path,sourceSha256:hash(bytes)};
@@ -53,7 +54,7 @@ function visit(id){if(symbols[id])return;const s=m.symbols[id];if(!s)throw Error
 // Startup warning, loader/version and invisible homepage hit target
 // are intentionally excluded. No whole-screen PNG is used.
 const excluded=new Set(['screens','updateFPMessage','versionText','homepage']);
-const frames=m.rootTimeline.frames.slice(1).map((f)=>({frame:f.frame,label:f.labels[0],placements:f.displayList.filter((p)=>!excluded.has(p.name)).map(placement)}));
+const frames=m.rootTimeline.frames.slice(1).map((f)=>({frame:f.frame,label:f.labels[0],placements:f.displayList.filter((p)=>!excluded.has(p.name)&&p.characterId!==360).map(placement)}));
 frames.flatMap((f)=>f.placements).forEach((p)=>visit(p.symbolId));
 for(const s of Object.values(m.symbols))if(s.className?.startsWith('Icons_')||['ItemSelected','ItemFaceSelected','ColorSelected'].includes(s.className))visit(s.id);
 const fileFrames=m.symbols['352'].timeline.frames.filter((f)=>[2,3,4].includes(f.frame)).map((f)=>({frame:f.frame,label:f.labels[0],placements:f.displayList.map(placement)}));

@@ -1,0 +1,17 @@
+{
+  "mode": "production",
+  "browser": "156.0.8078.80",
+  "checks": [
+    "Original defaults, JPEG quality target, opaque background and real decoded 50\u00d750 download",
+    "PNG transparency, checkbox frames/disabled JPEG background and hidden-body bounds remain source-correct",
+    "10/50/800 pixel exports and source numeric text commit/clamp/NaN behavior",
+    "Fractional slider state remains continuous while rounded text and integer BitmapData dimensions differ",
+    "Size/RGB keyboard, true dragging, scaled coordinates, capture, outside release and cancellation",
+    "Panning and RGB text affect image output immediately without touching character bytes",
+    "Image preferences persist across Back, Escape, closing and reopening File; all character state stays intact",
+    "Save captures settings at click; closing the image page cancels late downloads safely",
+    "Repeated Unicode PNG/JPEG downloads work offline, release object URLs and leave data/storage unchanged"
+  ],
+  "errors": [],
+  "externalRequests": []
+}

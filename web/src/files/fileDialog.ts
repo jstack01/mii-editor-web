@@ -1,5 +1,5 @@
 import {ImagePage} from './imagePage';
-import {requireWii,validateWii} from '../compatibility/wiiProfile';
+import {validateWii} from '../compatibility/wiiProfile';
 import {GUI_ASSETS,GUI_TEXTS,GUI_GRIDS} from '../generated/gui-assets';
 import type {MiiCharacterData} from '../model/MiiCharacterData';
 import {flattenScene} from '../render/headScene';
@@ -27,9 +27,9 @@ export class FileDialog {
  private error(error:unknown):void {this.message(error instanceof Error?error.message:String(error),true);}
  private async load(file:File):Promise<void> {
   if(this.busy)return;this.busy=true;const generation=this.generation;
-  try{const candidate=await importCharacterFile(file);if(generation!==this.generation)return;if(!validateWii(candidate.toBytes()).valid||xmlChangesFor(candidate).length){this.message('Import staged unchanged. Review compatibility issues and proposed repairs.',true);this.options.review(candidate,'Imported '+file.name,file,()=>this.message('Reviewed import accepted: '+file.name+'. Check the compatibility status for any unresolved issues.'));return;}this.options.commit(candidate);this.message(`Loaded ${file.name}.`);}catch(e){if(generation===this.generation)this.error(e);}finally{this.busy=false;}
+  try{const candidate=await importCharacterFile(file);if(generation!==this.generation)return;if(!validateWii(candidate.toBytes()).valid||xmlChangesFor(candidate).length){this.message('Review the suggested fixes before loading.',true);this.options.review(candidate,'Imported '+file.name,file,()=>this.message('Loaded '+file.name+'.'));return;}this.options.commit(candidate);this.message(`Loaded ${file.name}.`);}catch(e){if(generation===this.generation)this.error(e);}finally{this.busy=false;}
  }
- private save(type:'mii'|'xml'):void {try{if(type==='mii'){const result=validateWii(this.options.getModel().toBytes());if(!result.valid){this.options.reviewCurrent();requireWii(this.options.getModel().toBytes());}}downloadCharacter(this.options.getModel(),type);this.message(`Download requested (${type==='mii'?'74-byte .mii':'XML'}).${type==='mii'?' '+'Software profile validated; ownership, hardware and games are not certified.':''}`);}catch(e){this.error(e);}}
+ private save(type:'mii'|'xml'):void {try{if(type==='mii'){const result=validateWii(this.options.getModel().toBytes());if(!result.valid){this.options.reviewCurrent();this.message('Fix this Mii before saving.',true);return;}}downloadCharacter(this.options.getModel(),type);this.message(type==='mii'?'Mii download started.':'XML download started.');}catch(e){this.error(e);}}
  mount(editor:SVGSVGElement):void {
   this.abort.abort();this.abort=new AbortController();if(!this.page)return;
   const signal=this.abort.signal,scene=buildFileScene(this.page,this.page==='image'?this.image.frames:{}),svg=renderHeadSvg(scene,{catalog:GUI_ASSETS});svg.dataset.filePage=this.page;svg.setAttribute('role','dialog');svg.setAttribute('aria-modal','true');svg.setAttribute('tabindex','-1');svg.setAttribute('aria-label',this.page==='files'?'Mii Files':this.page==='xml'?'Mii XML':'Export Mii image');svg.setAttribute('width','640');svg.setAttribute('height','500');svg.querySelector('title')!.textContent=this.page==='files'?'Mii Files':this.page==='xml'?'Mii XML':'Export Mii image';

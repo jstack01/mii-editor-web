@@ -1,0 +1,39 @@
+{
+  "manifest": "evidence/manifests/classicGUI.json",
+  "icon": {
+    "rootDepth": 229,
+    "sprite": 360,
+    "childShape": 359,
+    "excludedFromAll13EditorFrames": true
+  },
+  "link": {
+    "rootDepth": 231,
+    "instance": "homepage",
+    "button": 362,
+    "hitShape": 361,
+    "alreadyExcludedBeforeMilestone": true
+  },
+  "lettering": {
+    "rootDepth": 228,
+    "shape": 358,
+    "pathIndex": 2,
+    "fill": "#666666",
+    "measuredSourceBounds": [
+      529.4,
+      478.9,
+      92.35,
+      10.4
+    ],
+    "removedPathSHA256": "e5bc56e0985ced5c6e4729dfc574f2982a2072f3b282b7e65d66b7b6717a4086",
+    "preservedPathSHA256": [
+      "9871ac4111959c450365ff7516619e1054d7f8412728b4331d71108d4b115624",
+      "f4719de7111a6bd0dec6f6fdcd152382c5387330c9a580ce764386391e9d2b0c"
+    ]
+  },
+  "unchangedURLSymbols": [
+    363,
+    364
+  ],
+  "overlayUsed": false,
+  "protectedOriginalsModified": false
+}

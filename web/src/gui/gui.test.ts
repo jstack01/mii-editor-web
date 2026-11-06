@@ -14,7 +14,7 @@ const manifest=JSON.parse(manifestText),model=()=>MiiCharacterData.fromHex(DEFAU
 it('reconstructs all 13 original editing frame labels and placements with no warning/dialog overlay',()=>{
  expect(SCREENS).toHaveLength(13);
  for(const screen of SCREENS){const frame=GUI_FRAMES.find((f)=>f.frame===screen.frame)!;expect(frame.label).toBe('frame_'+screen.id);const original=manifest.rootTimeline.frames[screen.frame-1];
-  expect(frame.placements.map((p)=>[p.depth,p.symbolId,p.matrix])).toEqual(original.displayList.filter((p:{name:string})=>!['screens','updateFPMessage','versionText','homepage'].includes(p.name)).map((p:{depth:number;characterId:number;matrixPx:number[]})=>[p.depth,p.characterId,p.matrixPx]));
+  expect(frame.placements.map((p)=>[p.depth,p.symbolId,p.matrix])).toEqual(original.displayList.filter((p:{name:string;characterId:number})=>!['screens','updateFPMessage','versionText','homepage'].includes(p.name)&&p.characterId!==360).map((p:{depth:number;characterId:number;matrixPx:number[]})=>[p.depth,p.characterId,p.matrixPx]));
   const scene=buildGuiScene(model(),screen);expect(scene.roots.map((n)=>n.depth)).toEqual(frame.placements.map((p)=>p.depth));expect(scene.viewBox).toEqual({x:0,y:0,width:640,height:500});
   expect(flattenScene(scene).every((n)=>GUI_ASSETS.symbols[n.symbolId]&&n.matrix.every(Number.isFinite))).toBe(true);
  }
