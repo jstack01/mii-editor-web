@@ -23,7 +23,6 @@ class SourceContainerTests(unittest.TestCase):
  def test_actual_compose_defaults_custom_port_and_security(self):
   for port in ['8080','18900']:
    env={**os.environ,'MII_EDITOR_PORT':port};data=json.loads(subprocess.check_output(['docker','compose','-f',str(ROOT/'compose.yaml'),'config','--format','json'],env=env,text=True));self.assertEqual(set(data['services']),{'mii-editor'});service=data['services']['mii-editor'];self.assertEqual(service['image'],'ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.4');self.assertEqual(service['restart'],'unless-stopped');self.assertTrue(service['read_only']);self.assertFalse(service.get('volumes'));self.assertFalse(service.get('privileged'));self.assertEqual(service['cap_drop'],['ALL']);self.assertEqual(service['ports'][0]['host_ip'],'127.0.0.1');self.assertEqual(str(service['ports'][0]['published']),port);self.assertEqual(service['ports'][0]['target'],8080)
-if __name__=='__main__':unittest.main()
 
 class OlderDockerInspectionTests(unittest.TestCase):
  def test_inspects_selected_immutable_image_without_new_cli_flag(self):
@@ -33,3 +32,16 @@ class OlderDockerInspectionTests(unittest.TestCase):
    self.assertEqual(verifier.inspect_selected_image({'Image':'sha256:selected'},'linux/arm64'),data);call.assert_called_once_with('image','inspect','sha256:selected')
   with patch.object(verifier,'docker',return_value=json.dumps([data])):
    with self.assertRaises(AssertionError):verifier.inspect_selected_image({'Image':'sha256:selected'},'linux/amd64')
+
+class PublicPackagePageTests(unittest.TestCase):
+ def page(self,visibility='Public',repo='jstack01/mii-editor-web',version='v0.1.0-preview.4'):
+  return '<h1>mii-editor-web '+version+'<span title="Label: Visibility">'+visibility+'</span></h1><h4>Details</h4><a href="https://github.com/'+repo+'">Source</a>'
+ def test_public_badge_version_and_connected_repository(self):
+  self.assertTrue(anonymous.validate_public_page(self.page(),'jstack01/mii-editor-web','v0.1.0-preview.4'))
+ def test_private_or_different_source_is_rejected(self):
+  for html in [self.page('Private'),self.page(repo='someone/else'),self.page(version='v0.0.0')]:
+   with self.assertRaises(ValueError):anonymous.validate_public_page(html,'jstack01/mii-editor-web','v0.1.0-preview.4')
+ def test_unrelated_public_text_and_navigation_link_are_insufficient(self):
+  for html in [self.page().replace('title="Label: Visibility"','title="Other"'),self.page().replace('<h4>Details</h4>','')]:
+   with self.assertRaises(ValueError):anonymous.validate_public_page(html,'jstack01/mii-editor-web','v0.1.0-preview.4')
+if __name__=='__main__':unittest.main()

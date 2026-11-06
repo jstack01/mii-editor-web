@@ -3,11 +3,39 @@
 import argparse,json,os,re,subprocess,tempfile
 from urllib.parse import urlencode
 from urllib.request import Request,urlopen
+from urllib.error import HTTPError
+from html.parser import HTMLParser
 
 def validate_index(index):
  platforms=[(m.get('platform',{}).get('os'),m.get('platform',{}).get('architecture')) for m in index.get('manifests',[]) if m.get('platform',{}).get('os')!='unknown']
  if len(platforms)!=2 or set(platforms)!={('linux','amd64'),('linux','arm64')}:raise ValueError('Expected exactly linux/amd64 and linux/arm64 in the image index.')
  return sorted('/'.join(p) for p in platforms)
+
+class PublicPackagePage(HTMLParser):
+ def __init__(self):
+  super().__init__();self.in_h1=False;self.heading=[];self.h4=None;self.details=False;self.visibility=None;self.visibility_text=[];self.detail_links=[]
+ def handle_starttag(self,tag,attrs):
+  attrs=dict(attrs)
+  if tag=='h1':self.in_h1=True
+  if tag=='h4':self.h4=[]
+  if attrs.get('title')=='Label: Visibility':self.visibility=tag
+  if tag=='a' and self.details:self.detail_links.append(attrs.get('href'))
+ def handle_endtag(self,tag):
+  if tag=='h1':self.in_h1=False
+  if tag=='h4' and self.h4 is not None:
+   if ''.join(self.h4).strip()=='Details':self.details=True
+   self.h4=None
+  if tag==self.visibility:self.visibility=None
+ def handle_data(self,text):
+  if self.in_h1:self.heading.append(text)
+  if self.h4 is not None:self.h4.append(text)
+  if self.visibility:self.visibility_text.append(text)
+
+def validate_public_page(html,repository,version):
+ page=PublicPackagePage();page.feed(html)
+ if ''.join(page.visibility_text).strip()!='Public' or version not in ''.join(page.heading) or 'https://github.com/'+repository not in page.detail_links:
+  raise ValueError('Package page does not confirm Public visibility, version and linked repository.')
+ return True
 
 def main():
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--version',required=True);p.add_argument('--digest');p.add_argument('--expected-commit');p.add_argument('--pull',action='store_true');p.add_argument('--output');a=p.parse_args()
@@ -18,9 +46,12 @@ def main():
  headers={'Authorization':'Bearer '+token,'Accept':'application/vnd.oci.image.index.v1+json, application/vnd.docker.distribution.manifest.list.v2+json'}
  with urlopen(Request('https://ghcr.io/v2/'+repository+'/manifests/'+a.version,headers=headers),timeout=30) as r:index=json.load(r);digest=r.headers['Docker-Content-Digest']
  if a.digest and digest!=a.digest:raise SystemExit('Anonymous manifest digest differs from published build.')
- with urlopen(Request('https://api.github.com/users/jstack01/packages/container/mii-editor-web',headers={'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'}),timeout=30) as response:package=json.load(response)
- if package.get('visibility')!='public' or package.get('repository',{}).get('full_name')!=repository:raise SystemExit('GHCR package is not Public and linked to the expected source repository.')
- platforms=validate_index(index);result={'anonymousManifest':True,'packagePublic':True,'repository':repository,'image':image+':'+a.version,'digest':digest,'platforms':platforms,'anonymousPull':False}
+ # GitHub's package REST endpoint requires read:packages even for public
+ # metadata. Verify its public UI without requesting extra account scopes.
+ package_url='https://github.com/'+repository+'/pkgs/container/mii-editor-web'
+ with urlopen(Request(package_url,headers={'User-Agent':'Mii-Editor-release-verifier'}),timeout=30) as response:html=response.read().decode('utf-8')
+ validate_public_page(html,repository,a.version)
+ platforms=validate_index(index);result={'anonymousManifest':True,'packagePublic':True,'packageURL':package_url,'metadataVerification':'anonymous public package page','repository':repository,'image':image+':'+a.version,'digest':digest,'platforms':platforms,'anonymousPull':False}
  if a.pull:
   endpoint=subprocess.check_output(['docker','context','inspect','--format','{{(index .Endpoints "docker").Host}}'],text=True).strip()
   with tempfile.TemporaryDirectory(prefix='mii-anonymous-docker-') as tmp:

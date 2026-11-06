@@ -183,3 +183,8 @@ The owner explicitly approved pushing and publishing D3 / preview.4. The manual 
 
 
 D3 publication runner correction: the GitHub runner built/started the image but its older Docker CLI rejected image inspect --platform. The verification helper now inspects the immutable image ID selected by docker run --platform and still requires exact OS/architecture equality. Anonymous verification pulls the public tag and selected leaf digest before inspecting the leaf without that newer flag. A regression test covers the older-CLI path; no editor/runtime behavior or validation is weakened. The first failed run skipped publishing and created no container tag.
+
+
+## D3 publication completed
+
+Published preview.4 with all five ZIPs/checksums and public ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.4. Immutable image index sha256:8dfc8c4b82fb7dd8c96923908ab1b6c1f744976a96cb19bdf426bb37d8c2af6c and release tag both identify source 141e525a7a11521bf18043179260ccd191871db8. Public package visibility, linked repository, both architecture anonymous tag/leaf pulls and source labels were verified without adding account permissions. The initial anonymous REST-metadata check failed because that API requires read:packages; the public registry itself worked. Main now uses GitHub’s anonymous Public package badge/details as the metadata proof, retaining fail-closed validation and fresh Docker credential isolation. This targeted helper follow-up does not overwrite the immutable image, Git tag or ZIPs. Remaining browser/device/static-hosting/hardware/final-release requirements remain open; Phase 7 is not begun.

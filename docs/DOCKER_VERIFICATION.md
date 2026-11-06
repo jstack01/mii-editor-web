@@ -41,3 +41,10 @@ Dockerfile lint and workflow YAML parsing passed. Read-only GitHub API checks co
 GHCR visibility is independent from repository visibility; no package-public/anonymous-access claim is made yet. The documented settings UI may require a one-time owner Public selection. After approval/upload, scripts/verify-ghcr-anonymous.py must verify both manifest architectures, empty-credential pulls and approved source labels. The GitHub release helper refuses the Docker release without its matching report. See CONTAINER_PUBLISHING.md for the exact safe sequence.
 
 All final local reports/checksums are retained under ignored release/; selected working logs are under /private/tmp/mii-d3/. No original protected files or previous public release assets/tags are modified. Public image/tag/release publication is a separate owner approval step.
+
+
+## D3 publication result
+
+Preview.4 is published at https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.4 and ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.4. Registry index digest: sha256:8dfc8c4b82fb7dd8c96923908ab1b6c1f744976a96cb19bdf426bb37d8c2af6c. Released source/image revision: 141e525a7a11521bf18043179260ccd191871db8. GitHub’s package page confirms Public visibility and the connected repository; both architecture tag/leaf pulls passed with empty credentials. No owner sign-in is needed for public pulls, and no manual visibility change was necessary.
+
+The GitHub runner additionally executed AMD64 natively and ARM64 under emulation after fixing the older CLI inspection path. Its publish step succeeded; the final metadata check failed solely because the package REST API requires read:packages authentication even when registry access is public. Independent clean anonymous pulls and public-page metadata checks passed. The follow-up verifier correction preserves those checks without adding account scopes or changing the published image/source tag. Published release ZIPs/checksums were redownloaded and verified. Earlier releases remain unchanged.
