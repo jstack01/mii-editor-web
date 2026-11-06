@@ -24,3 +24,8 @@ Vite produces the build's module-loading helper; its upstream license and bundle
 Independent compatibility research used MiiJS 3.1.1 (https://github.com/Stewared/MiiJS, commit de10c3c5237fbf18da88ac860f5c0ac7ad1a3b4b) and RFL reference/decompilation evidence (https://github.com/doldecomp/ogws, commit e5a4d369011062fe243aa63f6c2e2853854c395d). Neither library nor its original source is included in the production website. Software acceptance is not physical Wii or game certification.
 
 Older Git commits may include original materials. The current source tree and new release archives intentionally exclude the private original folders and recovery evidence. No Git history was rewritten.
+
+
+## Docker runtime components
+
+Only the Docker edition adds the upstream Nginx Unprivileged/Alpine runtime. Nginx retains its upstream COPYRIGHT in /usr/share/licenses/nginx/COPYRIGHT. The upstream unprivileged image project is Apache-2.0; its license, taken from the pinned base image source revision 679834d1aa245a42e680d380c6b57785cfaa2115, is preserved in LICENSES/Nginx-Unprivileged-LICENSE.txt in this source tree and /usr/share/licenses/nginx-unprivileged/LICENSE in the image. Other base OS components keep their upstream licensing. These component licenses do not license the new application code or historical graphics; the disclosures above remain unchanged. See docs/DOCKER.md for the selected base/version and source links.

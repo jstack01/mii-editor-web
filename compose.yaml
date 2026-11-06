@@ -1,0 +1,15 @@
+services:
+  mii-editor:
+    image: ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.4
+    ports:
+      - "127.0.0.1:${MII_EDITOR_PORT:-8080}:8080"
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,nodev,size=16m,uid=101,gid=101,mode=1770
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 64
+    stop_grace_period: 10s

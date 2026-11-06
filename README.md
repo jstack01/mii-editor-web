@@ -31,7 +31,7 @@ This project is not affiliated with or endorsed by Nintendo or the original Mii 
 
 ## Download and start
 
-Download [**v0.1.0-preview.3**](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.3). [Preview.2 remains available](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.2). The existing [preview.1 release](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.1) remains unchanged.
+**v0.1.0-preview.4 / Docker D3 is prepared locally and not published yet.** Download the currently published [**v0.1.0-preview.3**](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.3). [Preview.2 remains available](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.2). The existing [preview.1 release](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.1) remains unchanged.
 
 Choose the ZIP for your platform:
 
@@ -47,6 +47,21 @@ Extract the complete ZIP and read START-HERE.md. The local script starts **http:
 D1 preview.1 used port **8765**. Export its important Miis before switching to D2's **8080**, then import them; browser storage is tied to the origin. Localhost share links refer to the computer opening them and are not public website links. See [LOCAL_LAUNCHERS.md](docs/LOCAL_LAUNCHERS.md) for the Windows PowerShell investigation and testing limits.
 
 Use the named prebuilt ZIP assets, not GitHub's automatic Source code archives (which require a developer build). Each artifact has a checksum; preview.1 remains available unchanged.
+
+## Docker and Docker Compose (prepared for preview.4)
+
+The same editor is packaged for `ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.4`, targeting linux/amd64 and linux/arm64. **The first image is not uploaded yet; public package visibility and anonymous pulls remain approval gates.** The local launcher ZIPs and static hosting ZIP remain separate supported options. Docker contains no Python/Node/Vite/PHP runtime or database.
+
+After publication:
+
+```sh
+docker pull ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.4
+docker run -d --name mii-editor -p 127.0.0.1:8080:8080 --restart unless-stopped ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.4
+```
+
+Open http://127.0.0.1:8080/. Prefer the hardened command in [the Docker guide](docs/DOCKER.md), or download/extract the Docker starter ZIP and run `docker compose up -d`. The [ready-to-use compose.yaml](compose.yaml) has read-only storage and other hardening enabled. Use [.env.example](.env.example) / MII_EDITOR_PORT to change the Compose host port; Docker does not read launcher config.json. Miis remain in the browser/downloads, not the container.
+
+See [DOCKER.md](docs/DOCKER.md) for stop/restart/remove/update/logs, host-port changes, reverse proxies and HTTPS. [DOCKER_VERIFICATION.md](docs/DOCKER_VERIFICATION.md) records native ARM64 versus emulated AMD64 coverage. Docker does not fix browser limitations or certify Wii hardware. All existing code/graphics licensing and unmaintained-project disclosures apply.
 
 ## Change the local port
 

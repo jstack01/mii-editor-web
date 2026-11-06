@@ -61,6 +61,16 @@ Windows launcher execution, a real Linux host, browser/device breadth, HTTPS/hos
 - Provide a ready-to-upload static distribution ZIP if appropriate, with a file manifest/version and clear launch/hosting instructions. Test the ZIP's extracted contents, offline/local behavior and updating rather than only the developer checkout. Do not publish or upload without explicit authorization.
 - Re-run desktop/mobile and independent Wii software compatibility checks against the actual release package. Commit locally; retain destination certification for Phase 7.
 
+### Milestone D3 — Docker distribution and GitHub Container Registry (implemented locally; publication approval pending)
+
+Add before Phase 7: digest-pinned multi-stage static build, small unprivileged Nginx runtime, non-root UID 101/internal 8080, bounded static serving and no application backend. Provide .dockerignore, hardened single-service Compose, environment-example host-port selection, OCI source/version/revision/provenance and preserved legal notices. Retain all standalone/static ZIPs and launcher config.json independently.
+
+Build linux/amd64 and linux/arm64 under one OCI index, and execute where possible with native versus emulated results recorded. Test the actual image/Compose and clean public checkout, not just Vite. Retain source/codec/graphics/Wii/browser regressions and protected-original integrity. D3 adds no Mii compatibility claims.
+
+Prepare a manual-only GITHUB_TOKEN workflow with contents:read and publishing-job packages:write. No ordinary commit publishes. First source/image/tag/release uploads require explicit approval. Verify repository association, Public package visibility and empty-credential anonymous pulls before advertising availability or publishing the GitHub prerelease. Source-repo public visibility is not proof of package visibility. Existing releases/settings and history remain unchanged.
+
+Prepare preview.4 as four existing ZIPs plus a small Docker starter ZIP and checksums. Keep remaining browser/device coverage, static-hosting verification, Phase 7 destinations/hardware and Phase 8 final checks open. See docs/DOCKER.md, docs/DOCKER_VERIFICATION.md and docs/CONTAINER_PUBLISHING.md.
+
 ### Phase 7 — Wii hardware, emulator and game verification
 
 - The approved targets are real Wii consoles, emulators (including Dolphin), and Wii games. Define an evidence-based matrix for transfer/import routes, Mii Channel, relevant games, normal/special/temporary IDs, duplicate IDs, console ownership and local-only/mingling behavior. Confirm required RCD/RSD/database/remote wrappers and checksums in each route. See web/PHASE7_VERIFICATION.md. Unknown-owner browser records do not prove destination uniqueness; separate origins/concurrent tabs can collide. Establish a verified importer/owner/identity policy before extending compatibility claims.
@@ -148,3 +158,20 @@ Commit locally and stop here. **Do not push, tag or publish preview.3 until the 
 ## Preview.3 publication approval
 
 The owner reviewed the live preview and explicitly approved pushing and publishing v0.1.0-preview.3. The release includes the four platform/static ZIPs and checksums. Previously documented Firefox/Safari/Edge/device coverage gaps and WebKit forced-offline failures remain open; publication does not certify them or begin Phase 7. Earlier prereleases remain unchanged.
+
+
+## D3 implementation and local verification record
+
+Selected upstream Nginx Unprivileged 1.30.6 Alpine, pinned by multi-platform digest, with Node 24/pnpm 11.25.0 only in a native builder stage. Dockerfile frontend/base inputs and the frozen lockfile are pinned; generated graphics are verified and require no private originals. Final runtime contains only the compiled site/notices plus the standard runtime OS/Nginx files, with no Node/Python/Vite, tests, original SWFs/ActionScript, recovery evidence, credentials or Git metadata. The base project Apache-2.0 license and Nginx COPYRIGHT are preserved separately; this does not license application code or graphics.
+
+UID/GID 101 serves internal 8080 with GET/HEAD only, no listing/hidden/development/backend routes, correct MIME types, root-based health checking and graceful SIGQUIT. Compose is one pinned-image service with localhost-only host mapping, restart:unless-stopped, read-only root, ephemeral noexec /tmp, dropped capabilities, no-new-privileges and PID limit. No database, data volume, host path or privileged app container is used. Browser storage, shares and export formats are unchanged. config.json remains exclusive to standalone launchers; Docker uses normal mapping/MII_EDITOR_PORT.
+
+Local Docker Desktop 4.89.0 / Engine 29.7.2 / Buildx 0.36.1 / Compose 5.5.0 on macOS 27.0.1 ARM64 built and ran both target architectures. ARM64 executed natively relative to the Linux Docker VM; AMD64 executed under emulation. Local OCI index validation confirms both architecture descriptors. Runtime size is approximately 23.5 MB ARM64 / 23.4 MB AMD64 as reported by Docker; final exact image sizes/digests are retained with reports. A successful multi-platform build is not claimed as native AMD64 execution.
+
+Actual-image and actual-Compose Chrome checks pass for all 13 categories, vector rendering, presets, randomization, exact 74-byte import/export, XML, PNG/JPEG, repair/cancel, sharing, no external app requests, and byte-exact browser persistence across docker restart at unchanged origin. Read-only/non-root/no-capability runs, MIME/HTTP/traversal/hidden-file boundaries, health, rootfs exclusions, custom host ports and graceful exit 0 pass. Compose up/down/recreate was exercised using a local-only image tag and --pull never: this is not a GHCR upload or anonymous pull.
+
+Retained checks: 199 public tests / 446 full historical+public tests, TypeScript/production build, 49 Python launcher/config/packaging/container guards, seven protected-source checks and independent 10,000/10,000 generated-record MiiJS acceptance. Existing Chrome development/production and preset/mobile-emulation suites pass. Known WebKit forced-offline failures and unavailable native browser/device targets remain unchanged; this milestone does not certify them.
+
+Manual workflow YAML parses; Dockerfile lint passes. Read-only GitHub checks confirm Actions enabled/official actions permitted, default token read-only, and current gh CLI repo/workflow scope available. Explicit packages:write is limited to the conditional publish job; actual repository GITHUB_TOKEN package-write execution remains unverified until the approved workflow is pushed/run. OCI source labels associate the image with the existing repo. Package visibility must be explicitly checked/set Public after the first approved upload through supported settings; no undocumented visibility REST call is invented. Anonymous manifest/pull/source-label verification uses an empty Docker credential config, and the GitHub release helper refuses the Docker release until its matching report passes.
+
+Prepared preview.4 local/static packages plus a versioned Docker starter ZIP containing Compose, .env.example, guide/build metadata and notices, with combined checksums. Extracted packages and a clean public checkout are verified locally; private evidence/recovery folders remain ignored and protected originals unchanged. No source push, GHCR image, GitHub tag, release or Docker Hub upload is performed. Stop here pending explicit owner approval; do not begin Phase 7.

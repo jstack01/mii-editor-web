@@ -1,0 +1,36 @@
+# Allowlist: original/private files never even enter the build context.
+**
+!Dockerfile
+!.dockerignore
+!docker/
+!docker/nginx.conf
+!docker/finalize-build.mjs
+!LICENSE.md
+!NOTICES.md
+!LICENSES/
+!LICENSES/Vite-LICENSE.md
+!LICENSES/Nginx-Unprivileged-LICENSE.txt
+!web/
+!web/package.json
+!web/pnpm-lock.yaml
+!web/index.html
+!web/vite.config.mjs
+!web/tsconfig.json
+!web/generated-resources.json
+!web/src/
+!web/src/**
+web/src/**/*.test.*
+web/src/diagnostics.ts
+web/src/style.css
+!web/scripts/
+!web/scripts/verify-generated.mjs
+!web/scripts/copy-notices.mjs
+
+# Defense in depth within any included source directory.
+**/.*
+**/node_modules/**
+**/__pycache__/**
+**/*.key
+**/*.pem
+**/*.p12
+**/*.pfx

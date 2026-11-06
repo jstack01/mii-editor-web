@@ -53,3 +53,8 @@ To change the local server port, open config.json in a text editor, change the n
 This opens **http://127.0.0.1:8090/**. The normal default is 8080. Keep config.json beside the startup script and serve.py, outside website/. All three platform launchers use the same Python JSON parser. No parser installation is needed. If the file or port key is missing, the default is 8080. The file must be a JSON object; port must be a JSON integer from 1024 to 65535. Quoted numbers, true/false, decimals, invalid JSON and invalid ports produce a helpful error. Unknown keys are ignored; they cannot change the loopback binding or server security. Only port is currently supported. Never select another port silently when one is occupied.
 
 Changing the port changes the browser storage origin. Characters previously saved at port 8080 may not appear at port 8090. **Export important .mii files before changing ports.** Keep the same browser/profile and chosen port between launches. Keep a backup of your config.json when updating to a new release and copy your chosen port into the new package. No automatic migration between ports is performed. The static-hosting ZIP does not contain or need config.json; Apache/Nginx supplies its own HTTP configuration.
+
+
+## Docker is a separate distribution
+
+D3 prepares a GHCR Nginx image and Compose file, without changing these launchers. Docker does not read config.json; its published host port is selected through -p or Compose MII_EDITOR_PORT. Conventional Apache hosting needs neither helper. All choices use the same editor; browser storage is shared only when the exact scheme/host/port matches. Export important .mii files before changing origins. See DOCKER.md.

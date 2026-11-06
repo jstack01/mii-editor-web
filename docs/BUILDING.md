@@ -17,3 +17,8 @@ The original source-comparison tests have **not been deleted locally or rewritte
 Optional original recovery uses `pnpm assets:recover` only when private SOURCE/, EXTRACTED-SWF/ and recovery manifests are available. It intentionally regenerates and updates the hash inventory; review the diff and rerun tests before committing. Private recovery tools stay local/ignored. Do not add ActionScript, SWF packages or large recovery manifests back to the current public tree. Preserve them locally for reference.
 
 No public build step fetches historical assets or embeds decompiled ActionScript. Browser diagnostics are development-only and are excluded from production distributions. The large vector bundle currently triggers Vite's advisory chunk-size warning; it is not a failed build.
+
+
+## Container build
+
+Dockerfile uses digest-pinned frontend/Node/Nginx inputs, pnpm 11.25.0 and the frozen lockfile. Docker builds from this clean public source; private recovery folders are denied by .dockerignore. The Node build stage is native to the builder and produces architecture-independent website files. Only the final Nginx runtime is selected per target. See DOCKER.md and CONTAINER_PUBLISHING.md for local builds, version/revision/timestamp arguments and manual multi-platform publishing. Do not infer native execution from a successful cross-platform build; the verification report distinguishes emulation. Base input pins must be updated deliberately and retested.

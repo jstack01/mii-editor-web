@@ -1,5 +1,14 @@
 # Local and Apache hosting
 
+## Deployment choices
+
+1. Windows/macOS/Linux local launcher ZIPs: existing Python, config.json port.
+2. Static hosting ZIP: Apache/Nginx serves prebuilt files without application runtime tools.
+3. GHCR Docker image: non-root Nginx serves those same static files.
+4. Docker Compose: the same pinned GHCR image, with localhost-only mapping and hardening.
+
+Docker/Compose is prepared for preview.4 but not published until explicitly approved. See DOCKER.md for exact commands and CONTAINER_PUBLISHING.md for public/anonymous verification gates. Docker uses host port mapping/MII_EDITOR_PORT, never launcher config.json; there is no second application configuration system. These choices share the same Mii codec, renderer and software profile, not additional hardware certification.
+
 ## Local editions and static hosting
 
 D2 local ZIPs contain platform-specific scripts and the same compiled `website/`. Extract the complete package, then run `Start Mii Editor.command` (macOS), `start-mii-editor.sh` (Linux), or `Start Mii Editor.cmd` (Windows). An existing real Python 3.9+ is required. Nothing is installed automatically. macOS avoids the Apple developer-tools stub; Windows skips Store aliases and install managers. See LOCAL_LAUNCHERS.md in the source repository for the documented PowerShell/HTTP.sys limitations. The owner reported successful Windows and macOS startup tests; real Linux desktop testing remains pending.

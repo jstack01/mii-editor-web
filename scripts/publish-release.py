@@ -58,8 +58,23 @@ def main():
             if verification.get('archiveSHA256')!=digest or verification.get('passed') is not True:
                 raise SystemExit('Verify every exact extracted archive before publication.')
             packages.append(str(package))
+        supplements=release.get('supplements',[])
+        if supplements:
+            if len(supplements)!=1 or supplements[0].get('edition')!='docker':raise SystemExit('Unexpected supplementary archive.')
+            artifact=supplements[0]
+            if artifact['filename']!='mii-editor-web-docker-'+a.version+'.zip':raise SystemExit('Invalid Docker starter filename.')
+            package=ROOT/'release'/artifact['filename'];digest=hashlib.sha256(package.read_bytes()).hexdigest()
+            manifest=json.loads(package.with_suffix('.manifest.json').read_text());verified=json.loads(package.with_suffix('.verification.json').read_text())
+            if digest!=artifact['sha256'] or digest!=manifest['sha256'] or manifest['build']['commit']!=head or manifest['build']['uncommittedSource'] or verified.get('archiveSHA256')!=digest or verified.get('passed') is not True:
+                raise SystemExit('Docker starter does not match the reviewed commit/verification.')
+            public_path=ROOT/'release'/('container-publication-'+a.version+'.json')
+            if not public_path.exists():raise SystemExit('Verify public GHCR publication and anonymous pulls before publishing this GitHub release.')
+            public=json.loads(public_path.read_text())
+            if public.get('packagePublic') is not True or public.get('repository')!=a.repo or public.get('anonymousPull') is not True or public.get('anonymousManifest') is not True or public.get('revision')!=head or public.get('image')!='ghcr.io/'+a.repo+':'+a.version or set(public.get('platforms',[]))!={'linux/amd64','linux/arm64'}:
+                raise SystemExit('Public container verification does not match the reviewed release.')
+            packages.append(str(package))
         checksum=ROOT/'release'/release['checksumFile']
-        expected=''.join(x['sha256']+'  '+x['filename']+'\n' for x in release['artifacts'])
+        expected=''.join(x['sha256']+'  '+x['filename']+'\n' for x in [*release['artifacts'],*supplements])
         if checksum.read_text()!=expected:raise SystemExit('Checksum inventory mismatch.')
         packages.append(str(checksum))
     else:

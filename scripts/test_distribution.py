@@ -23,7 +23,7 @@ class DistributionTests(unittest.TestCase):
         for n in ['web/dist/assets/app.js','web/dist/assets/app.css','web/dist/index.html','web/dist/LICENSE.md','web/dist/NOTICES.md','web/dist/LICENSES/Vite-LICENSE.md','web/package.json','distribution/START-HERE.md','docs/HOSTING.md','LICENSE.md','NOTICES.md','LICENSES/Vite-LICENSE.md','distribution/serve.py','distribution/config.json','distribution/Start Mii Editor.cmd','distribution/Start Mii Editor.command','distribution/start-mii-editor.sh','distribution/launcher.sh','distribution/STATIC-START-HERE.md','SOURCE/private.swf','EXTRACTED-SWF/private.as','evidence/private.xml']:
             p=self.root/n;p.parent.mkdir(parents=True,exist_ok=True);p.write_text('fixture\n')
         (self.root/'distribution/config.json').write_text('{"port":8080}')
-        (self.root/'web/package.json').write_text('{"version":"0.1.0-preview.3"}')
+        (self.root/'web/package.json').write_text('{"version":"0.1.0-preview.4"}')
     def invoke(self,*args,dirty=False):
         def git(*parts):return 'dirty' if parts[0]=='status' and dirty else '' if parts[0]=='status' else '1804453200' if parts[0]=='show' else 'a'*40
         with patch.object(packager,'ROOT',self.root),patch.object(packager,'git',git),patch.object(sys,'argv',['package-release.py',*args]),contextlib.redirect_stdout(io.StringIO()):packager.main()
@@ -47,9 +47,27 @@ class DistributionTests(unittest.TestCase):
                     launcher='Start Mii Editor.command' if '-macos-' in a.name else 'start-mii-editor.sh'
                     self.assertTrue((z.getinfo(prefix+launcher).external_attr>>16)&0o111)
         self.assertTrue(all(x==sites[0] for x in sites))
-        self.assertEqual(len(json.loads((self.root/'release/release-set-v0.1.0-preview.3.json').read_text())['artifacts']),4)
+        self.assertEqual(len(json.loads((self.root/'release/release-set-v0.1.0-preview.4.json').read_text())['artifacts']),4)
+    def test_docker_starter_is_separate_and_has_no_application_or_originals(self):
+        (self.root/'compose.yaml').write_text('services: {}\n');(self.root/'.env.example').write_text('MII_EDITOR_PORT=8080\n');(self.root/'docs/DOCKER.md').write_text('Docker guide\n')
+        self.invoke();archives=list((self.root/'release').glob('*.zip'));self.assertEqual(len(archives),5)
+        archive=next(a for a in archives if '-docker-' in a.name)
+        with zipfile.ZipFile(archive) as z:
+            names=[n.split('/',1)[1] for n in z.namelist()];self.assertIn('compose.yaml',names);self.assertIn('.env.example',names);self.assertNotIn('serve.py',names);self.assertFalse(any(n.startswith('website/') or n.endswith(('.swf','.as')) for n in names))
+        release=json.loads((self.root/'release/release-set-v0.1.0-preview.4.json').read_text());self.assertEqual(len(release['supplements']),1)
+    def test_docker_release_requires_anonymous_publication_report_before_github_writes(self):
+        (self.root/'compose.yaml').write_text('services: {}\n');(self.root/'.env.example').write_text('MII_EDITOR_PORT=8080\n');(self.root/'docs/DOCKER.md').write_text('Docker guide\n');self.invoke()
+        release=json.loads((self.root/'release/release-set-v0.1.0-preview.4.json').read_text())
+        for artifact in release['artifacts']+release['supplements']:
+            (self.root/'release'/artifact['filename']).with_suffix('.verification.json').write_text(json.dumps({'passed':True,'archiveSHA256':artifact['sha256']}))
+        spec=importlib.util.spec_from_file_location('publisher_gate',HERE/'publish-release.py');publisher=importlib.util.module_from_spec(spec);spec.loader.exec_module(publisher)
+        def run(*args,**kwargs):
+            if args[0]!='git':raise AssertionError('No GitHub operation should be reached')
+            return 'a'*40 if args[1:]==('rev-parse','HEAD') else ''
+        with patch.object(publisher,'ROOT',self.root),patch.object(publisher,'run',run),patch.object(publisher.subprocess,'run',return_value=subprocess.CompletedProcess([],1,'','')),patch.object(sys,'argv',['publish-release.py','--repo','jstack01/mii-editor-web','--version','v0.1.0-preview.4','--expected-commit','a'*40,'--approve-public-upload']):
+            with self.assertRaisesRegex(SystemExit,'Verify public GHCR'):publisher.main()
     def test_old_release_cannot_be_overwritten(self):
-        for version in ['v0.1.0-preview.1','v0.1.0-preview.2']:
+        for version in ['v0.1.0-preview.1','v0.1.0-preview.2','v0.1.0-preview.3']:
             with self.assertRaisesRegex(SystemExit,'Version differs'):self.invoke('--version',version)
     def test_unexpected_website_source_rejected(self):
         (self.root/'web/dist/leak.as').write_text('fixture')
@@ -69,7 +87,7 @@ class DistributionTests(unittest.TestCase):
         desired={'has_issues':False,'has_pull_requests':False,'allow_forking':True}
         self.assertEqual(publisher.repository_patch(desired),{'has_issues':False,'has_pull_requests':False});self.assertTrue(desired['allow_forking'])
     def test_publication_requires_approval_before_any_git_or_gh_work(self):
-        r=subprocess.run([sys.executable,str(HERE/'publish-release.py'),'--repo','example/mii-editor-web','--version','v0.1.0-preview.3','--expected-commit','0'*40],capture_output=True,text=True)
+        r=subprocess.run([sys.executable,str(HERE/'publish-release.py'),'--repo','example/mii-editor-web','--version','v0.1.0-preview.4','--expected-commit','0'*40],capture_output=True,text=True)
         self.assertNotEqual(r.returncode,0);self.assertIn('No upload',r.stderr)
 
 if __name__=='__main__':unittest.main()
