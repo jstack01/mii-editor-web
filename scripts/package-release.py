@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import re
 import subprocess
+import time
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -25,6 +26,7 @@ def main():
     if dirty and not args.allow_dirty:
         raise SystemExit('Commit/review current source changes first, or use --allow-dirty only for local testing.')
     commit = git('rev-parse', 'HEAD')
+    timestamp = time.gmtime(max(315532800, int(git('show', '-s', '--format=%ct', 'HEAD'))))[:6]
     site = ROOT/'web/dist'
     allowed = {'index.html','LICENSE.md','NOTICES.md','LICENSES/Vite-LICENSE.md'}
     entries = {}
@@ -52,7 +54,7 @@ def main():
     # Stable timestamps and explicit modes make the package reproducible for a commit.
     with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
         for name,data in sorted(entries.items()):
-            info=zipfile.ZipInfo(folder+'/'+name,date_time=(2026,1,1,0,0,0));info.compress_type=zipfile.ZIP_DEFLATED;info.create_system=3
+            info=zipfile.ZipInfo(folder+'/'+name,date_time=timestamp);info.compress_type=zipfile.ZIP_DEFLATED;info.create_system=3
             info.external_attr=(0o100755 if name.endswith(('.sh','.command')) or name=='serve.py' else 0o100644)<<16
             z.writestr(info,data)
     digest=hashlib.sha256(archive.read_bytes()).hexdigest()

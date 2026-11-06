@@ -24,7 +24,7 @@ class DistributionTests(unittest.TestCase):
             p=self.root/n;p.parent.mkdir(parents=True,exist_ok=True);p.write_text('fixture\n')
         (self.root/'web/package.json').write_text('{"version":"0.1.0-preview.1"}')
     def invoke(self,*args,dirty=False):
-        def git(*parts):return 'dirty' if parts[0]=='status' and dirty else '' if parts[0]=='status' else 'a'*40
+        def git(*parts):return 'dirty' if parts[0]=='status' and dirty else '' if parts[0]=='status' else '1804453200' if parts[0]=='show' else 'a'*40
         with patch.object(packager,'ROOT',self.root),patch.object(packager,'git',git),patch.object(sys,'argv',['package-release.py',*args]),contextlib.redirect_stdout(io.StringIO()):packager.main()
     def test_whitelist_and_checksums(self):
         self.invoke();a=next((self.root/'release').glob('*.zip'));digest=hashlib.sha256(a.read_bytes()).hexdigest();self.assertTrue(a.with_suffix('.zip.sha256').read_text().startswith(digest))
@@ -41,6 +41,10 @@ class DistributionTests(unittest.TestCase):
         with self.assertRaisesRegex(SystemExit,'Commit/review'):self.invoke(dirty=True)
     def test_dirty_review_package_marked(self):
         self.invoke('--allow-dirty',dirty=True);a=next((self.root/'release').glob('*.manifest.json'));self.assertTrue(json.loads(a.read_text())['build']['uncommittedSource'])
+    def test_commit_time_used_for_update_cache_freshness(self):
+        self.invoke();a=next((self.root/'release').glob('*.zip'))
+        import time
+        with zipfile.ZipFile(a) as z:self.assertEqual(z.infolist()[0].date_time[:5],time.gmtime(1804453200)[:5])
     def test_bad_version_rejected(self):
         with self.assertRaisesRegex(SystemExit,'Use a version'):self.invoke('--version','../../bad')
     def test_publication_requires_approval_before_any_git_or_gh_work(self):
