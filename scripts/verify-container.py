@@ -5,9 +5,13 @@ from pathlib import Path
 
 def docker(*args):return subprocess.check_output(['docker',*args],text=True).strip()
 def inspect_selected_image(container_data,expected_platform):
- # Inspect the immutable image selected by docker run --platform. Older Docker
- # CLIs do not implement image inspect --platform; container.Image is unambiguous.
- image=json.loads(docker('image','inspect',container_data['Image']))[0]
+ # New containerd stores can report the multi-platform index in Image. Prefer
+ # the actual selected manifest descriptor; retain classic-engine/old-CLI support.
+ descriptor=container_data.get('ImageManifestDescriptor') or {}
+ platform=descriptor.get('platform') or {}
+ if platform and platform.get('os','')+'/'+platform.get('architecture','')!=expected_platform:raise AssertionError('Selected container manifest differs from requested platform')
+ selected=descriptor.get('digest') or container_data['Image']
+ image=json.loads(docker('image','inspect',selected))[0]
  if image['Os']+'/'+image['Architecture']!=expected_platform:raise AssertionError('Container image architecture differs from requested platform')
  return image
 

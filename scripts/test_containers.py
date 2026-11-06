@@ -24,7 +24,18 @@ class SourceContainerTests(unittest.TestCase):
   for port in ['8080','18900']:
    env={**os.environ,'MII_EDITOR_PORT':port};data=json.loads(subprocess.check_output(['docker','compose','-f',str(ROOT/'compose.yaml'),'config','--format','json'],env=env,text=True));self.assertEqual(set(data['services']),{'mii-editor'});service=data['services']['mii-editor'];self.assertEqual(service['image'],'ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.4');self.assertEqual(service['restart'],'unless-stopped');self.assertTrue(service['read_only']);self.assertFalse(service.get('volumes'));self.assertFalse(service.get('privileged'));self.assertEqual(service['cap_drop'],['ALL']);self.assertEqual(service['ports'][0]['host_ip'],'127.0.0.1');self.assertEqual(str(service['ports'][0]['published']),port);self.assertEqual(service['ports'][0]['target'],8080)
 
+spec=importlib.util.spec_from_file_location('container_verifier',ROOT/'scripts/verify-container.py');verifier=importlib.util.module_from_spec(spec);spec.loader.exec_module(verifier)
 class OlderDockerInspectionTests(unittest.TestCase):
+ def test_containerd_index_uses_selected_manifest(self):
+  data={'Os':'linux','Architecture':'amd64'}
+  with patch.object(verifier,'docker',return_value=json.dumps([data])) as call:
+   selected={'Image':'sha256:index','ImageManifestDescriptor':{'digest':'sha256:amd64-leaf','platform':{'os':'linux','architecture':'amd64'}}}
+   self.assertEqual(verifier.inspect_selected_image(selected,'linux/amd64'),data)
+   call.assert_called_once_with('image','inspect','sha256:amd64-leaf')
+ def test_wrong_manifest_platform_fails_closed(self):
+  with patch.object(verifier,'docker') as call:
+   with self.assertRaises(AssertionError):verifier.inspect_selected_image({'Image':'sha256:index','ImageManifestDescriptor':{'digest':'sha256:arm64','platform':{'os':'linux','architecture':'arm64'}}},'linux/amd64')
+   call.assert_not_called()
  def test_inspects_selected_immutable_image_without_new_cli_flag(self):
   spec=importlib.util.spec_from_file_location('container_verifier',ROOT/'scripts/verify-container.py');verifier=importlib.util.module_from_spec(spec);spec.loader.exec_module(verifier)
   data={'Os':'linux','Architecture':'arm64','Id':'sha256:selected'}

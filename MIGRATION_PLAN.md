@@ -61,7 +61,7 @@ Windows launcher execution, a real Linux host, browser/device breadth, HTTPS/hos
 - Provide a ready-to-upload static distribution ZIP if appropriate, with a file manifest/version and clear launch/hosting instructions. Test the ZIP's extracted contents, offline/local behavior and updating rather than only the developer checkout. Do not publish or upload without explicit authorization.
 - Re-run desktop/mobile and independent Wii software compatibility checks against the actual release package. Commit locally; retain destination certification for Phase 7.
 
-### Milestone D3 — Docker distribution and GitHub Container Registry (implemented locally; publication approval pending)
+### Milestone D3 — Docker distribution and GitHub Container Registry (complete; preview.4 published)
 
 Add before Phase 7: digest-pinned multi-stage static build, small unprivileged Nginx runtime, non-root UID 101/internal 8080, bounded static serving and no application backend. Provide .dockerignore, hardened single-service Compose, environment-example host-port selection, OCI source/version/revision/provenance and preserved legal notices. Retain all standalone/static ZIPs and launcher config.json independently.
 
@@ -71,11 +71,18 @@ Prepare a manual-only GITHUB_TOKEN workflow with contents:read and publishing-jo
 
 Prepare preview.4 as four existing ZIPs plus a small Docker starter ZIP and checksums. Keep remaining browser/device coverage, static-hosting verification, Phase 7 destinations/hardware and Phase 8 final checks open. See docs/DOCKER.md, docs/DOCKER_VERIFICATION.md and docs/CONTAINER_PUBLISHING.md.
 
-### Phase 7 — Wii hardware, emulator and game verification
+### Phase 7A — Wii/Dolphin integration and transfer compatibility investigation (delivered; bounded emulator evidence)
 
-- The approved targets are real Wii consoles, emulators (including Dolphin), and Wii games. Define an evidence-based matrix for transfer/import routes, Mii Channel, relevant games, normal/special/temporary IDs, duplicate IDs, console ownership and local-only/mingling behavior. Confirm required RCD/RSD/database/remote wrappers and checksums in each route. See web/PHASE7_VERIFICATION.md. Unknown-owner browser records do not prove destination uniqueness; separate origins/concurrent tabs can collide. Establish a verified importer/owner/identity policy before extending compatibility claims.
-- Document hardware, firmware, game versions, destination tools, test fixtures and outcomes. Identify any requirements that cannot be checked without physical equipment; do not mark these verified based on MiiJS, Ruffle or a decompilation.
-- **Certification gate: no claim of real-Wii or individual-game compatibility until the relevant physical tests pass.** Keep scope-specific limitations visible even after other targets pass.
+- Review primary transfer/container source and distinguish raw 74-byte RCD, 76-byte RSD, RFL_DB.dat and game-save archives. Keep full identity/owner/flag checks separate from scalar decoder acceptance.
+- Execute only isolated copied Dolphin environments with user-supplied legal channel resources, backups, exact before/after bytes and captures. No live database writes, guessed identity conversion or new production export format.
+- Delivered: Dolphin 2609a Mii Channel displayed 13 positive editor records across two launches unchanged; separate special, temporary, zero-ID, duplicate-ID and historical-invalid cases characterized. Independent reference container CRC and 10,000-record decoder checks retained. See web/PHASE7_VERIFICATION.md, optional-tools/phase7a/ and docs/WII_DOLPHIN_TESTING.md.
+- Record the tested zero-owner default boy’s explicit channel edit refusal; keep ownership conversion, actual per-Mii importer execution, remote transfer and game association unverified. Further production transfer/identity features require a separately reviewed milestone.
+
+### Phase 7B — physical Wii console and representative game verification (not started)
+
+- Record physical Wii region/firmware, authorized transfer tool/version, legal game versions and working backup/rollback procedures before writes. Test per-Mii import without replacing the entire live database.
+- Verify display/edit/reboot persistence, unrelated entries intact, destination identity/collision/ownership policy, normal/special/local-only flags and Unicode/date edges. Test Wii Sports, Wii Sports Resort and Mario Kart Wii separately with backed-up saves and existing player references.
+- **Certification gate: no real-Wii or individual-game compatibility claim until the named physical destination tests pass.** Emulator display, reverse-engineered source and MiiJS acceptance cannot substitute for hardware/game evidence. Do not begin Phase 7B automatically.
 
 ### Phase 8 — final release and remaining approved behavior
 
@@ -188,3 +195,15 @@ D3 publication runner correction: the GitHub runner built/started the image but 
 ## D3 publication completed
 
 Published preview.4 with all five ZIPs/checksums and public ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.4. Immutable image index sha256:8dfc8c4b82fb7dd8c96923908ab1b6c1f744976a96cb19bdf426bb37d8c2af6c and release tag both identify source 141e525a7a11521bf18043179260ccd191871db8. Public package visibility, linked repository, both architecture anonymous tag/leaf pulls and source labels were verified without adding account permissions. The initial anonymous REST-metadata check failed because that API requires read:packages; the public registry itself worked. Main now uses GitHub’s anonymous Public package badge/details as the metadata proof, retaining fail-closed validation and fresh Docker credential isolation. This targeted helper follow-up does not overwrite the immutable image, Git tag or ZIPs. Remaining browser/device/static-hosting/hardware/final-release requirements remain open; Phase 7 is not begun.
+
+## README cleanup and Phase 7A delivery (2026-11-06)
+
+README cleanup was committed separately before integration work: concise current preview.4 download/start/Docker/Compose homepage, same responsive 540 px screenshot (324 px measured on a 390 px viewport), brief credits/disclaimer and links to existing detailed documents. GitHub Markdown API rendering, relative links, actual release filenames, public image metadata and clean public-checkout install/typecheck/test/build verified. Historical release notes/settings/tags/images were not edited. Detailed build, browser gaps, launcher/hosting, licensing and Wii limits remain in their dedicated documents; safe testing guidance is now docs/WII_DOLPHIN_TESTING.md.
+
+Phase 7A adds separate labelled integration fixtures and optional analysis helpers, not browser functionality. A hash-pinned independent Java implementation generated fresh lab databases; Python independently checked header CRCs, exact records and duplicate full IDs. Only copied user-supplied Dolphin/Mii Channel resources were executed. The positive case preserved 13 records and the entire database across two launches. Temporary and original FAIL-1 entries were removed by the channel, zero-ID bytes were retained but not displayed, special/local-only displayed gold pants, and duplicate IDs displayed without deduplication. The channel explicitly refused editing the zero-owner default boy; no owner workaround was applied. See the detailed verification report and machine-readable results for the evidence boundaries.
+
+No Mii codec, default creation, randomization, repair, controls, owner/ID policy or renderer correction was justified. A regression exposed a containerd-specific architecture inspection bug in the Docker test helper; it now uses the selected platform manifest descriptor when available and preserves the old-engine fallback, with fail-closed tests. Published image/release bytes are unchanged.
+
+Final regression results: 200 public unit/integration tests; 447 public plus historical-fidelity tests; 66 Python launcher/config/distribution/integration guards; seven protected-source checks; TypeScript and production build; full Chrome development/production and mobile-viewport/preset browser suites. Independent pinned MiiJS accepted 10,000/10,000 new random records with zero external requests. Both published container architectures, real Compose/browser restart/persistence and the extracted static ZIP at root/nested Python and Apache paths passed. The exact staged public snapshot independently installed/tested/built without private originals. All 342 primary Dolphin Wii files remained unchanged. No disposable Dolphin process or test container remains running. Full results are in optional-tools/phase7a/fixtures/results.json; local screenshots/logs are under ignored release/phase7a/.
+
+Remaining browser/device/forced-offline coverage in 6.2, broader deployment/TLS/platform verification in 6.3, physical Wii/game/importer/ownership verification in 7B and Phase 8 final checks remain open. All work is committed locally only; no automatic publishing or new release/container/tag is introduced.

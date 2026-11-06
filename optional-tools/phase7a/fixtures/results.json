@@ -1,0 +1,135 @@
+{
+  "date": "2026-11-06",
+  "environment": {
+    "os": "macOS 27.0.1",
+    "hostArchitecture": "arm64",
+    "dolphin": "2609a",
+    "backend": "Metal",
+    "titleId": "0001000248414341",
+    "resources": "Existing local user installation, copied; no copyrighted resource downloads"
+  },
+  "primaryWiiFilesUnchanged": true,
+  "primaryFileCount": 342,
+  "positiveCase": {
+    "records": 13,
+    "channelLaunches": 2,
+    "recordBytesUnchanged": true,
+    "entireDatabaseUnchanged": true,
+    "crc": "c6c4",
+    "databaseSHA256": "49981bb0996e0612e811a1371b11ec17392b37e72a3727e601f684e8370bc15b",
+    "capture": "dolphin-positive.png"
+  },
+  "zeroOwnerEditability": {
+    "record": "default-boy",
+    "ownerHex": "00000000",
+    "result": "Channel explicitly refused editing: You cannot edit Miis you did not create.",
+    "bytesUnchanged": true,
+    "capture": "dolphin-edit-refused.png"
+  },
+  "negativeAndSpecialCases": [
+    {
+      "case": "special",
+      "exit": 0,
+      "beforeSlots": 1,
+      "afterSlots": 1,
+      "crcValid": true,
+      "databaseUnchanged": true,
+      "recordBytesUnchanged": true,
+      "duplicateIds": [],
+      "capture": "dolphin-special.png"
+    },
+    {
+      "case": "temporary",
+      "exit": 0,
+      "beforeSlots": 1,
+      "afterSlots": 0,
+      "crcValid": true,
+      "databaseUnchanged": false,
+      "recordBytesUnchanged": false,
+      "duplicateIds": [],
+      "capture": "dolphin-temporary.png"
+    },
+    {
+      "case": "zero",
+      "exit": 0,
+      "beforeSlots": 1,
+      "afterSlots": 1,
+      "crcValid": true,
+      "databaseUnchanged": true,
+      "recordBytesUnchanged": true,
+      "duplicateIds": [],
+      "capture": "dolphin-zero.png"
+    },
+    {
+      "case": "duplicate",
+      "exit": 0,
+      "beforeSlots": 2,
+      "afterSlots": 2,
+      "crcValid": true,
+      "databaseUnchanged": true,
+      "recordBytesUnchanged": true,
+      "duplicateIds": [
+        [
+          0,
+          1
+        ]
+      ],
+      "capture": "dolphin-duplicate.png"
+    },
+    {
+      "case": "legacy-invalid",
+      "exit": 0,
+      "beforeSlots": 1,
+      "afterSlots": 0,
+      "crcValid": true,
+      "databaseUnchanged": false,
+      "recordBytesUnchanged": false,
+      "duplicateIds": [],
+      "capture": "dolphin-legacy-invalid.png"
+    }
+  ],
+  "independentDecoder": {
+    "version": "MiiJS 3.1.1",
+    "revision": "de10c3c5237fbf18da88ac860f5c0ac7ad1a3b4b",
+    "randomized": {
+      "seed": "0x6a74",
+      "iterations": 10000,
+      "accepted": 10000,
+      "rejected": 0,
+      "firstFailureCounts": {}
+    },
+    "fixtureCount": 28,
+    "fixtureAccepted": 25,
+    "note": "Only the three historical mole failures rejected; zero/temporary ID negatives accepted by MiiJS, not by persistent profile.",
+    "externalRequests": []
+  },
+  "reference": {
+    "repository": "Alex9303/Mii-Database-Editor",
+    "revision": "ae6a5372b302f5036f82c21db6a050cff1c486b4",
+    "UtilJavaSHA256": "3b9f7f00a43d9c94ad4d66e8853aeec210bc798cf4c948d7ad41f16a509470af"
+  },
+  "regressionResults": {
+    "publicTests": 200,
+    "publicAndHistoricalTests": 447,
+    "pythonLauncherDistributionIntegrationTests": 66,
+    "protectedSourceTests": 7,
+    "typecheck": "pass",
+    "productionBuild": "pass",
+    "browserDevelopment": "pass",
+    "browserProduction": "pass",
+    "browserPresetsMobileViewports": "pass",
+    "cleanPublicCheckoutBuild": "pass",
+    "dockerARM64": "pass, native relative to ARM64 Linux Docker VM",
+    "dockerAMD64": "pass, emulated",
+    "composeBrowserRestart": "pass",
+    "extractedStaticRootNestedApache": "pass"
+  },
+  "limitations": [
+    "No physical Wii or game execution",
+    "No SaveGame Manager GX runtime test",
+    "No verified console-owner conversion",
+    "Duplicate display does not prove game-safe identity",
+    "Native Safari/Firefox/Edge and physical-device gaps retained; no new certification"
+  ],
+  "publication": "Local commits only; existing preview.4 release and GHCR image unchanged"
+}
