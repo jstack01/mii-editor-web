@@ -1,6 +1,6 @@
 {
   "name": "mii-editor-web",
-  "version": "0.1.0-preview.4",
+  "version": "0.1.0-preview.5",
   "private": true,
   "type": "module",
   "engines": {
@@ -23,7 +23,10 @@
     "assets:recover": "node scripts/generate-character-assets.mjs && node scripts/generate-gui-assets.mjs && node scripts/verify-generated.mjs --update",
     "release:package": "python3 ../scripts/package-release.py",
     "test:presets:browser": "node scripts/presets-mobile-browser.mjs",
-    "test:browser:engine": "pnpm test:browser && pnpm test:browser:production && pnpm test:presets:browser"
+    "test:browser:engine": "pnpm test:browser && pnpm test:browser:production && pnpm test:presets:browser",
+    "test:qa:browser": "node scripts/qa-browser-suite.mjs",
+    "test:mobile:browser": "node scripts/mobile-qa-browser.mjs",
+    "test:drag:browser": "node scripts/drag-release-browser.mjs"
   },
   "devDependencies": {
     "playwright": "1.62.1",

@@ -30,7 +30,7 @@ Changing the port changes the browser storage origin. Characters previously save
 
 ## Your saved Miis
 
-Saved browser data belongs to the exact origin (protocol, host and port). The default is **127.0.0.1:8080**; keep your chosen config.json port stable. D1 preview.1 used **127.0.0.1:8765**: export important Miis with the old launcher first, then import them into D2. Data is not automatically moved between origins. Use the same browser/profile between launches. Private browsing or cleared site data can remove local saves; also save .mii files.
+Saved browser data belongs to the exact origin (protocol, host and port). The default is **127.0.0.1:8080**; keep your chosen config.json port stable. Data is not automatically moved between origins. Use the same browser/profile between launches. Private browsing or cleared site data can remove local saves; also save .mii files.
 
 A localhost share link refers to the computer opening it, not your computer. It is not a publicly hosted link. Send a .mii file or use a public static deployment when sharing with others. The link itself contains the complete character data.
 

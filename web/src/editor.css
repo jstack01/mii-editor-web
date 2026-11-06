@@ -21,3 +21,10 @@
 
 /* Remove the unscaled stage from flow; its container owns the scaled bounds. */
 #viewport{position:relative;overflow:hidden}#stage{position:absolute;top:0;left:0}.preset-links a{touch-action:manipulation}
+
+/* Readable modern controls beneath the preserved original SVG surface. */
+.information button{min-height:44px;padding:8px 12px;font:inherit;color:#34494e;background:#f6f9f8;border:1px solid #b9ccca;border-radius:6px;cursor:pointer}.information button:focus-visible{outline:3px solid #2a8077;outline-offset:3px}
+#wii-repair-dialog button{min-height:44px}
+/* Horizontal feature drags must not trigger browser back/forward overscroll.
+   Vertical page scrolling and browser pinch zoom remain available. */
+html{overscroll-behavior-x:contain}

@@ -1,6 +1,6 @@
 services:
   mii-editor:
-    image: ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.4
+    image: ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.5
     ports:
       - "127.0.0.1:${MII_EDITOR_PORT:-8080}:8080"
     restart: unless-stopped

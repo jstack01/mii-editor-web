@@ -9,7 +9,8 @@ def main():
   for n in z.namelist():
    path=Path(n);assert not path.is_absolute() and '..' not in path.parts
   z.extractall(tmp);folder=next(Path(tmp).iterdir())
-  names={p.relative_to(folder).as_posix() for p in folder.rglob('*') if p.is_file()};assert names=={'compose.yaml','.env.example','START-HERE.md','LICENSE.md','NOTICES.md','LICENSES/Vite-LICENSE.md','BUILD-INFO.json','FILES.sha256'}
+  names={p.relative_to(folder).as_posix() for p in folder.rglob('*') if p.is_file()};required={'compose.yaml','.env.example','START-HERE.md','LICENSE.md','NOTICES.md','LICENSES/Vite-LICENSE.md','BUILD-INFO.json','FILES.sha256'};guides={'HOSTING.md','BROWSER_COMPATIBILITY.md','SECURITY_PRIVACY.md'};assert required<=names and names<=required|guides
+  if json.loads((folder/'BUILD-INFO.json').read_text())['version']=='v0.1.0-preview.5':assert guides<=names
   for line in (folder/'FILES.sha256').read_text().splitlines():
    h,n=line.split('  ',1);assert hashlib.sha256((folder/n).read_bytes()).hexdigest()==h
   data=json.loads(subprocess.check_output(['docker','compose','-f',str(folder/'compose.yaml'),'config','--format','json'],text=True))

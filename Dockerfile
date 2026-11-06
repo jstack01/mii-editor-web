@@ -9,7 +9,7 @@ COPY LICENSE.md NOTICES.md ./
 COPY LICENSES/Vite-LICENSE.md ./LICENSES/Vite-LICENSE.md
 COPY web/ ./web/
 COPY docker/finalize-build.mjs ./docker/finalize-build.mjs
-ARG VERSION=v0.1.0-preview.4
+ARG VERSION=v0.1.0-preview.5
 ARG REVISION=unknown
 ARG SOURCE_DATE_EPOCH=0
 RUN cd web && pnpm build && node ../docker/finalize-build.mjs
@@ -20,7 +20,7 @@ RUN rm -rf /usr/share/nginx/html/* /etc/nginx/conf.d/* /docker-entrypoint.d /doc
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 COPY LICENSES/Nginx-Unprivileged-LICENSE.txt /usr/share/licenses/nginx-unprivileged/LICENSE
 COPY --from=build --chown=0:0 /app/web/dist/ /usr/share/nginx/html/
-ARG VERSION=v0.1.0-preview.4
+ARG VERSION=v0.1.0-preview.5
 ARG REVISION=unknown
 ARG SOURCE_DATE_EPOCH=0
 ARG BUILD_DATE=1970-01-01T00:00:00Z

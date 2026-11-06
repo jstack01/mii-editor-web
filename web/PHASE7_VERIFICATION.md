@@ -1,6 +1,6 @@
 # Phase 7A — Wii/Dolphin transfer investigation
 
-**Software transfer investigation delivered; physical Wii and game certification remains Phase 7B.** The editor still exports the same 74-byte records. No new export format, owner conversion, database-writing UI or compatibility toggle has been added. Start with the [safe manual guide](../docs/WII_DOLPHIN_TESTING.md); see [the software profile](WII_PROFILE.md) for the separate scalar/calendar/ID rules.
+**Phase 7A completed. Phase 7B physical Wii/game testing is deferred indefinitely by owner decision.** The editor still exports the same 74-byte records. No new export format, owner conversion, database-writing UI or compatibility toggle has been added. Start with the [safe manual guide](../docs/WII_DOLPHIN_TESTING.md); see [the software profile](WII_PROFILE.md) for the separate scalar/calendar/ID rules.
 
 ## What was actually executed
 
@@ -54,8 +54,8 @@ The completed local test counts and environment are recorded in the results summ
 
 An actual regression run exposed a **Docker verification helper** bug: containerd may report a multi-platform index in `container.Image`. The helper now inspects the platform-specific `ImageManifestDescriptor` when present, retains the classic-engine fallback, and still rejects architecture mismatches. New tests cover both; both published architecture images were then executed successfully (ARM64 native to the Docker VM, AMD64 emulated). This does not change the website, image, release tag or its bytes.
 
-## Phase 7B and remaining acceptance gates
+## Phase 7B deferred; software release gates
 
-Physical Wii writes, firmware/region differences, authorized importer execution, safe ownership conversion and editing after such conversion, Wii Remote transfer and game play/save/reload remain **unverified**. Suggested first game targets are Wii Sports, Wii Sports Resort and Mario Kart Wii using the owner's legal resources and backed-up saves. Verify existing player references, unrelated entries, normal/special flags, names/glyphs, birthdays, duplicate handling and restart persistence individually. Do not boot unreviewed negatives on physical hardware merely because the emulator experiment was isolated.
+Physical Wii writes, firmware/region differences, authorized importer execution, safe ownership conversion, Wii Remote transfer and individual-game play/save/reload remain **unverified**. The owner does not own a Wii and does not intend to obtain hardware or perform physical testing. Phase 7B is deferred indefinitely; no Wii, discs, NAND images or additional equipment is requested. These unverified targets do not block software QA or a release with accurate disclosures.
 
-No physical console/game certification is claimed. Remaining Firefox/native Safari/Edge/physical iOS/Android and WebKit forced-offline gaps remain in [browser coverage](../docs/BROWSER_COMPATIBILITY.md); broader deployment/TLS checks remain in [hosting](../docs/HOSTING.md). Phase 8, licenses/provenance and explicit publishing approval remain separate gates. Previous releases and GHCR image are unchanged.
+The Phase 7A results above remain the evidence boundary. No physical console/game certification is claimed and no owner conversion is invented. Remaining browser/device coverage is in [browser compatibility](../docs/BROWSER_COMPATIBILITY.md), hosting limits in [hosting](../docs/HOSTING.md), and Phase 8A/8B release readiness/approval in [the roadmap](../MIGRATION_PLAN.md). Publishing still requires explicit authorization. No routine QA reruns of database modifications are needed.

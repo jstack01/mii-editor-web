@@ -1,42 +1,44 @@
-# Milestone 6.2 — verified coverage and remaining limits
+# Browser compatibility — Phase 8A
 
-Host: macOS 27.0.1 (26A434), ARM64. Tests exercise the actual production build and original vector assets. Engine tests are not native-device certification.
+Test date: 2026-11-06. Host macOS 27.0.1 (26A434), ARM64; isolated Linux environment Ubuntu 24.04.4 ARM64 in Docker's Linux VM. Browser engine coverage is not branded-browser or physical-device certification. No operating-system security settings or Firefox sandbox preferences were disabled.
 
-| Environment | Result / scope |
+| Environment | Actual coverage |
 | --- | --- |
-| Google Chrome 156.0.8078.80 | All eight existing development and production pipelines pass; desktop/phone portrait/phone landscape/tablet matrix passes. |
-| Playwright Chromium 151.0.7922.34 | Installed runtime; new desktop/emulated-touch preset/navigation/edit/file/image/repair/persistence/share matrix passes. |
-| Playwright WebKit 26.5 | Rendering/62 XML cases, GUI, full interactions, corpus compatibility, Wii profile and repair UX pass in development and production. New desktop/emulated-touch matrix passes, including HTTP-blocked file/image flows. Two existing forced-offline suites fail as detailed below. |
-| Playwright Firefox 153.0 | Runtime installed, but both headless and headed startup fail on this host with sandbox-extension/helper/GPU errors. No application coverage claimed; no sandbox/security settings disabled. |
-| Installed Safari | Official safaridriver session creation refused because Allow Remote Automation is disabled. Setting left unchanged. WebKit tests do not constitute Safari testing. |
-| Microsoft Edge | Not installed / unavailable; no branded Edge coverage claimed. |
-| Physical iOS Safari / Android Chrome | Devices unavailable. Viewport/touch emulation does not verify native keyboards, browser UI, OS file pickers or device-specific downloads. |
-| Windows / Linux launchers | Shared config parser and packaged server tested on macOS, plus POSIX wrapper checks. Owner tested preview.2 startup on Windows/macOS, not preview.3 config changes. Native Windows/Linux preview.3 verification remains open. |
+| Google Chrome 156.0.8078.80 / macOS | Full 21-script candidate QA matrix passed: development/production suites, presets, mobile, lost-button drags and offline primitives. |
+| Playwright Firefox 153.0 / Ubuntu ARM64 | Full 21-script candidate QA matrix passed as non-root `pwuser`, with external networking disabled. Native to the ARM64 Linux VM, not Windows/macOS Firefox certification. |
+| Playwright Chromium 151.0.7922.34 / Ubuntu ARM64 | Available in the pinned official Playwright image; exercised through the same matrix. Exact final execution report is retained under `release/phase8a/`. |
+| Playwright WebKit 26.5 / macOS and Ubuntu ARM64 | Normal rendering/GUI/XML/interactions/repair/profile/mobile flows pass. Existing forced-offline file and image suites fail in development and production, plus the independent primitive probe; these remain failures, not skipped tests. |
+| Firefox 153.0 / macOS | Still cannot launch: sandbox-extension/helper and SWGL framebuffer errors, followed by launch timeout. Linux provides actual application coverage without weakening host security. |
+| Installed Safari | Remote Automation is disabled; not enabled by this work. WebKit is not a branded Safari test. |
+| Microsoft Edge | Not installed/available. Chromium coverage is not branded Edge coverage. |
+| Physical iOS Safari / Android Chrome | Not available/tested. No device purchase or owner-supplied device is required. Desktop emulation does not verify OS file pickers, native keyboards or device downloads. |
 
-## Changes supported by evidence
+## Confirmed fixes and test evidence
 
-The original 640×500 stage was scaled visually but retained unscaled layout overflow/minimum content height. Making the viewport a clipped positioned container and the stage absolute removes mobile horizontal overflow, excess blank space and interference with preset-link taps without changing any SVG geometry. Default links have readable text, 44px-high touch areas, visible keyboard focus and native Enter activation.
+Firefox exposed a lost-button drag issue. When automation leaves the browser viewport, Firefox may omit pointer-up or deliver an unpressed mouse move. Body/XML/image-slider/pan drags now release capture before applying such coordinates; hover state clears on lost capture. Native capture plus a controlled missing-release event proves no value/camera/record mutation and no lingering capture. The ordinary outside-control/window and exact fractional source-coordinate assertions remain. Outside-browser coordinates alone cannot be assumed to be delivered identically by every automation protocol; a no-editor primitive probe records that boundary.
 
-macOS WebKit skipped HTML repair buttons during native Tab navigation. The existing modal focus loop now explicitly visits all visible controls in the same order, retaining Cancel autofocus, Shift+Tab, Escape, focus restoration and transaction checks. No validation or repair logic is weakened.
+An intermittent Linux Chromium import check exposed a cancellation-notification race: a delayed "No changes applied" message could overwrite the next invalid-file error. Cancellation now reports synchronously; delayed callbacks restore focus only. A controlled regression fails on the old behavior and passes without changing current bytes.
 
-WebKit floors native clientX/clientY to whole CSS pixels. A 100-unit source-space mouse request at scale .5375 delivered x=171 to x=225 rather than 171.7875 to 225.5375; the correct source slider result is 56 rather than 55. The browser tests now assert exact Mii bytes from delivered input and bound the request/delivery error. Image tests additionally retain the original fractional 50.8/405 contracts through a constructed fractional move during genuine pointer capture, after checking native input. Original ActionScript math and historical unit oracles are unchanged; no tolerance replaces binary equality.
+Linux Chromium touch dragging also triggered browser history-back overscroll. Horizontal containment prevents leaving the app during a feature drag; the same seven-viewport native-emulated drag matrix then passed. Vertical scrolling and pinch zoom remain enabled (physical pinch feel is unverified).
 
-## Known failing forced-offline WebKit checks
+The Firefox diagnostic test bench also exceeded its fixed surface's bottom padding with Linux font metrics. Slightly smaller vertical padding and accurate, shorter explanatory text fix the layout without clipping content or changing the character renderer/original editor geometry. Existing fit/scroll assertions remain unchanged.
 
-The original files-browser suite fails while importing repeat.mii after context.setOffline(true). A focused probe found NotReadableError from both File.arrayBuffer and FileReader, including native disk-path inputs and synthetic buffer inputs. The original images-browser suite reaches its final forced-offline PNG/JPEG block but cannot obtain a download. These failures are retained, not skipped or reclassified as passes. They occur in both development and production forced-offline runs.
+Firefox drops the constructor-supplied clipboard payload on a synthetic ClipboardEvent ([Mozilla issue](https://bugzilla.mozilla.org/show_bug.cgi?id=2027025)). The paste-handler test now explicitly supplies **and verifies** its controlled payload before dispatch, retaining the original filtering/output assertions. This is not a claim of native OS clipboard automation. No application paste workaround was introduced.
 
-The new matrix blocks every HTTP/HTTPS request during import/export instead of toggling browser offline state; those binary/XML/PNG/JPEG flows pass on WebKit, Chrome and Chromium. This separately proves those tested operations require no HTTP service, but does not erase the forced-offline failures or establish physical Safari offline behavior. Failed imports keep current bytes unchanged. No speculative alternate reader or online-forcing workaround is introduced. Test actual Safari offline file/image behavior manually before promising full offline support across engines.
+Modern HTML status/repair buttons have at least 44px targets. Birth-date inputs request numeric keyboards, image numeric fields request decimal keyboards, and technical fields disable automatic capitalization. The original uniformly scaled SVG interface is preserved; some historical palette controls remain small on narrow phones and browser zoom may help. There is no new Mii editing feature or codec change.
 
-## Tests and evidence
+## WebKit forced-offline investigation
 
-- 199 public tests / five files; 446 full public+historical tests / 14 files; TypeScript/build; 40 Python config/launcher/packaging checks; seven protected-source integrity tests.
-- Independent pinned MiiJS accepts 10,000/10,000 final generated records and both preset appearance records with normal test IDs. Profile calendar/ID rules remain separate from scalar decoder acceptance and physical hardware certification.
-- Chrome: all eight development and eight production browser pipelines pass. WebKit: six pipelines per mode pass after fixes; files/images retain the forced-offline failures. Normal image pixel/alpha/size/slider/pan/snapshot checks pass before that failure.
-- Four viewport profiles (1024×900 desktop, 390×844 phone, 844×390 landscape, 768×1024 tablet) per new-matrix engine cover all 13 categories, feature/palette taps, keyboard preset loads, real original-vector previews, binary/XML/PNG/JPEG operations, repair cancellation, storage/reload, sharing, viewport changes, layout overflow and HTTP-blocked operations. Chrome’s existing CDP test covers native emulated touch dragging/cancel/capture; WebKit taps are emulated and existing pointer dragging uses mouse input. Do not call these physical touch or virtual-keyboard tests.
-- Screenshots: docs/images/presets-desktop.png and presets-mobile.png; the full local captures and reports live under web/test-results/milestone62/. Selected logs/probes are retained locally under release/milestone62/ (ignored and not shipped); temporary working logs are under /private/tmp/mii62/; generated test artifacts are not shipped. Extracted distribution tests cover four editions at root/nested local and isolated Apache deployments, with preset loads, config-selected ports and server-restart persistence. The user's preview.2 server occupies 8080 and is left untouched; macOS package verification explicitly selects 8090 in its copied config.json.
+The independent `offline-browser-probe.mjs` loads **no editor code**. On macOS and Linux, native/synthetic File reads, FileReader, Blob reads/fetches and minimal SVG-Blob image decoding work before forced-offline mode, fail after `context.setOffline(true)`, and recover after restoring it. Minimal image decoding reports EncodingError; a direct canvas Blob download can still succeed. This isolates a broader browser/emulation primitive failure, rather than demonstrating malformed editor graphics or a broken Mii decoder.
 
-## Remaining acceptance work
+Linux WebKit was run with **no external network interface**. Its primitive `navigator.onLine` was already false before Playwright's offline toggle, yet local File/Blob operations worked; toggling the protocol state broke them. HTTP-blocked application flows and no-external-network execution are valuable separate evidence. They do **not** turn forced-offline failures into passes or certify physical Safari's offline behavior. The app is not forced online and no alternate reader hides the failure. Playwright documents [offline emulation](https://playwright.dev/docs/api/class-browsercontext#browser-context-set-offline); related upstream WebKit reports are context, not proof of this project's exact cause/fix.
 
-Milestone 6.2 has implemented its features and available-environment fixes; full browser/device coverage remains open. Run Firefox on a working supported runtime, native Safari/Edge, Windows/Linux preview.3 config startup and physical iOS/Android tests (including keyboards, orientation, scroll, file pickers/downloads and offline use). Resolve/classify the WebKit forced-offline failures with native evidence. For phone testing, deploy the static ZIP to a trusted HTTPS site; local launchers intentionally cannot be reached from other devices over Wi-Fi.
+## Mobile scope
 
-Remaining 6.3 hosting/TLS verification, Phase 7 destination/hardware acceptance and Phase 8 final checks remain open. No hardware/game certification or broad browser certification is claimed. Preview.3 stays local until explicit publication approval.
+Emulated 320×568, 360×640, 390×844, 568×320, 844×390, 768×1024 and 1024×768 viewports cover all 13 category paths with representative feature/palette/adjustment taps, keyboard slider limits, presets, viewport/orientation changes, long filenames, bounded/scrolling repair UI and cancellation without byte changes. Chromium's native emulated touch path verifies drag capture/release; other engines test taps and keyboard/mouse separately. Existing image/file/XML/storage/sharing suites retain their exact binary, signature, dimension and rollback checks.
+
+Viewport shrinking checks layout/data stability only; it does not simulate a physical virtual keyboard. Actual touch feel, pinch-zoom, browser chrome, OS download/share sheets, regional fonts and device-specific behavior remain unverified. See [Phase 8A results](PHASE8A_QA.md), [screenshots](images/phase8a-phone.png), [security/privacy](SECURITY_PRIVACY.md) and the [optional Linux QA recipe](../optional-tools/qa/README.md).
+
+## Other limits
+
+Native Windows launcher execution and desktop Linux double-click/browser associations are not implied by Linux container tests. Existing rendering/font/nine-slice/antialiasing differences and deferred tutorial work remain. Phase 7A's bounded Dolphin results are retained; physical Wii and individual-game certification are deferred indefinitely and do not block an honestly scoped browser release. See [the roadmap](../MIGRATION_PLAN.md) and [Wii profile](../web/WII_PROFILE.md).

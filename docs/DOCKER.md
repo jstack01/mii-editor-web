@@ -1,19 +1,21 @@
 # Mii Editor with Docker or Compose
 
-The preview.4 Docker distribution uses **ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.4**. Public package status and anonymous pulls are publication requirements. Earlier ZIP releases remain available.
+**Release candidate: preview.5 is prepared locally and is not yet published.** Commands below apply after owner-approved publication; the currently published image remains preview.4.
+
+The preview.5 Docker distribution uses **ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.5**. Public package status and anonymous pulls are publication requirements. Earlier ZIP releases remain available.
 
 Docker serves the same static editor as the launcher/static ZIP editions. It adds no application backend, database or server-side Mii storage, and does not improve or certify Wii compatibility. Install Docker Engine + Compose on Linux or Docker Desktop with Linux containers on macOS/Windows if not already installed. This does not promise installation-free startup.
 
 ## Direct Docker use 
 
 ```sh
-docker pull ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.4
+docker pull ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.5
 ```
 
 Run this single-line command (also suitable for PowerShell):
 
 ```sh
-docker run -d --name mii-editor -p 127.0.0.1:8080:8080 --restart unless-stopped --read-only --tmpfs "/tmp:rw,noexec,nosuid,nodev,size=16m,uid=101,gid=101,mode=1770" --cap-drop ALL --security-opt no-new-privileges:true --pids-limit 64 ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.4
+docker run -d --name mii-editor -p 127.0.0.1:8080:8080 --restart unless-stopped --read-only --tmpfs "/tmp:rw,noexec,nosuid,nodev,size=16m,uid=101,gid=101,mode=1770" --cap-drop ALL --security-opt no-new-privileges:true --pids-limit 64 ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.5
 ```
 
 Open **http://127.0.0.1:8080/**. The container does not open a browser or terminal window automatically. These examples expose only your own computer. If 8080 is occupied, stop the other local launcher/server or choose another host port; Docker will report the conflict rather than select another port. For port 8091, replace `127.0.0.1:8080:8080` with `127.0.0.1:8091:8080` and open http://127.0.0.1:8091/. The container port remains 8080.
@@ -60,7 +62,7 @@ docker compose pull
 docker compose up -d
 ```
 
-The file deliberately pins v0.1.0-preview.4; pulling that unchanged tag does not automatically select future releases. `docker compose down` removes this service/network, not browser saves. No extra services or persistent volumes are required. Keep .env when replacing the Compose file during an update.
+The file deliberately pins v0.1.0-preview.5; pulling that unchanged tag does not automatically select future releases. `docker compose down` removes this service/network, not browser saves. No extra services or persistent volumes are required. Keep .env when replacing the Compose file during an update.
 
 ## Three separate hosting options
 
@@ -96,4 +98,4 @@ Digest pins and the lockfile make build inputs explicit; generated site mtimes/b
 
 **AI-generated / vibe-coded project — unmaintained.** Unofficial, provided as-is, without planned support or accepted pull requests. New code is unlicensed; historical vector/glyph rights remain unresolved. See LICENSE.md and NOTICES.md. Original materials were found at https://mii-editor.nekoweb.org/ and https://archive.org/details/mii-editor; their FAQ/metadata credit senocular. Not affiliated with Nintendo or the original developers.
 
-Software validation does not guarantee every Wii console or game. Native Safari/Firefox/Edge/device gaps and WebKit forced-offline test failures remain as disclosed in BROWSER_COMPATIBILITY.md; Docker does not fix or certify those browser behaviors. Real Wii/emulator/game verification stays Phase 7. Earlier releases are not overwritten.
+Software validation does not guarantee every Wii console or game. Native Safari/Edge/device gaps and the exact Firefox/WebKit results remain as disclosed in BROWSER_COMPATIBILITY.md; Docker does not fix or certify those browser behaviors. Phase 7A Dolphin findings are documented; physical Wii/game testing is deferred indefinitely by owner decision and does not block software release. Earlier releases are not overwritten.

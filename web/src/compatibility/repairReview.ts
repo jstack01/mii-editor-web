@@ -14,7 +14,8 @@ export class RepairReview {
  constructor(private readonly model:()=>MiiCharacterData,private readonly commit:(model:MiiCharacterData)=>void){
   this.dialog.id='wii-repair-dialog';this.dialog.setAttribute('aria-modal','true');this.dialog.setAttribute('aria-labelledby','repair-title');this.dialog.setAttribute('aria-describedby','repair-intro');document.body.append(this.dialog);
   try{const b=JSON.parse(localStorage.getItem('mii-editor.original.v1')??'null');if(b&&typeof b.hex==='string'&&/^[0-9a-f]{148}$/.test(b.hex)&&typeof b.label==='string'){this.backup=b;this.backupSaved=true;}}catch{/* Exact pending input stays in memory. */}
-  this.dialog.addEventListener('close',()=>requestAnimationFrame(()=>{if(this.dialog.open)return;if(!['applied','unchanged'].includes(this.dialog.returnValue)&&document.querySelector('[data-file-page]')){const status=document.getElementById('file-status')!;status.textContent='No changes applied.';status.dataset.error='false';status.setAttribute('role','status');}const target=this.opener?.isConnected?this.opener:document.querySelector<SVGElement>('[data-file-page]')??document.getElementById('review-compatibility');target?.focus({preventScroll:true});}));
+  this.dialog.addEventListener('close',()=>requestAnimationFrame(()=>{if(this.dialog.open)return;const target=this.opener?.isConnected?this.opener:document.querySelector<SVGElement>('[data-file-page]')??document.getElementById('review-compatibility');target?.focus({preventScroll:true});}));
+  this.dialog.addEventListener('cancel',()=>this.cancelNotice());
   this.dialog.addEventListener('keydown',event=>{
    if(event.key!=='Tab')return;
    const items=Array.from(this.dialog.querySelectorAll<HTMLElement>('button:not(:disabled),summary,[tabindex="0"]')).filter(e=>e.getClientRects().length>0);
@@ -24,6 +25,7 @@ export class RepairReview {
    const next=current<0?(event.shiftKey?items.length-1:0):(current+(event.shiftKey?-1:1)+items.length)%items.length;items[next]?.focus();
   });
  }
+ private cancelNotice():void {if(!document.querySelector('[data-file-page]'))return;const status=document.getElementById('file-status')!;status.textContent='No changes applied.';status.dataset.error='false';status.setAttribute('role','status');}
  captureOriginal(candidate:MiiCharacterData,label:string):void {this.backup={hex:candidate.toHex(),label:label.slice(0,255)};try{localStorage.setItem('mii-editor.original.v1',JSON.stringify(this.backup));this.backupSaved=true;}catch{this.backupSaved=false;}}
  current():void{this.open(this.model(),'Current character');}
  open(candidate:MiiCharacterData,label:string,originalFile?:File,accepted?:()=>void):void {
@@ -65,7 +67,7 @@ export class RepairReview {
   const unchanged=()=>{if(this.model().toHex()!==base){status.textContent='Your Mii changed while this dialog was open. Cancel and try again.';return;}wiiIds.reserve(original);this.dialog.close('unchanged');accepted?.();this.commit(MiiCharacterData.fromBytes(original));};
   if(label!=='Current character'&&!xmlChanges.length&&needsFixes){advanced.append(element('p','Load without fixing is for read-only viewing. Editing and Mii saving remain blocked.'));const keep=action('Load without fixing',unchanged,'repair-optional');keep.disabled=!canPreview(candidate);advanced.append(keep);if(keep.disabled)advanced.append(element('p','This original cannot be displayed safely. Apply the fixes to load it.'));}
   const footer=element('footer','','repair-footer'),actions=element('div','','repair-actions');
-  const cancel=action('Cancel',()=>this.dialog.close('cancel'),'repair-secondary');cancel.autofocus=true;
+  const cancel=action('Cancel',()=>{this.cancelNotice();this.dialog.close('cancel');},'repair-secondary');cancel.autofocus=true;
   const apply=action('Apply fixes & load',()=>{try{if(this.model().toHex()!==base)throw Error('Your Mii changed while this dialog was open. Cancel and try again.');if(!proposal)throw Error('Fixes are unavailable. Your current Mii has not changed.');const repaired=MiiCharacterData.fromHex(proposal.proposedHex);requireWii(repaired.toBytes());wiiIds.reserve(repaired.toBytes());this.dialog.close('applied');accepted?.();this.commit(repaired);}catch(e){status.textContent=e instanceof Error?e.message:String(e);}},'repair-primary');apply.disabled=!proposal?.validation.valid||!changes.length;
   actions.append(cancel);if(needsFixes)actions.append(apply);footer.append(element('p','This does not guarantee compatibility with every Wii console or game.','repair-disclaimer'),actions);this.dialog.append(footer);
   this.dialog.showModal();cancel.focus({preventScroll:true});

@@ -29,10 +29,11 @@ p=pathlib.Path(sys.argv[1]);shutil.copytree(p,p/'mii-editor',ignore=shutil.ignor
  const apache='/usr/sbin/httpd',moduleDir='/usr/libexec/apache2';let apacheStatus='unavailable';
  if(existsSync(apache)&&existsSync(moduleDir+'/mod_mpm_event.so')){
   const ap=await port(),u=userInfo(),conf=join(tmp,'apache.conf');
-  writeFileSync(conf,`ServerRoot "${tmp}"\nListen 127.0.0.1:${ap}\nServerName 127.0.0.1\nPidFile "${tmp}/httpd.pid"\nErrorLog "${tmp}/apache-error.log"\n`+['mpm_event','unixd','authz_core','mime','dir','alias'].map(m=>`LoadModule ${m}_module ${moduleDir}/mod_${m}.so\n`).join('')+`User #${u.uid}\nGroup #${u.gid}\nTypesConfig /dev/null\nDocumentRoot "${folder}/website"\nAlias /mii-editor/ "${folder}/website/"\n<Directory "${folder}/website">\nRequire all granted\nOptions -Indexes\nAllowOverride None\nDirectoryIndex index.html\nAddType text/html .html\nAddType application/javascript .js\nAddType text/css .css\n</Directory>\n`);
+  writeFileSync(conf,`ServerRoot "${tmp}"\nListen 127.0.0.1:${ap}\nServerName 127.0.0.1\nPidFile "${tmp}/httpd.pid"\nErrorLog "${tmp}/apache-error.log"\n`+['mpm_event','unixd','authz_core','mime','dir','alias','headers'].map(m=>`LoadModule ${m}_module ${moduleDir}/mod_${m}.so\n`).join('')+`User #${u.uid}\nGroup #${u.gid}\nTypesConfig /dev/null\nDocumentRoot "${folder}/website"\nAlias /mii-editor/ "${folder}/website/"\n<Directory "${folder}/website">\nRequire all granted\nOptions -Indexes\nAllowOverride None\nDirectoryIndex index.html\nAddType text/html .html\nAddType application/javascript .js\nAddType text/css .css\nHeader always set X-Content-Type-Options nosniff\nHeader always set Referrer-Policy no-referrer\n</Directory>\n`);
   const ao=`http://127.0.0.1:${ap}`;await start(apache,['-f',conf,'-DFOREGROUND'],ao+'/');targets.push(['apache-root',ao+'/'],['apache-nested',ao+'/mii-editor/']);apacheStatus=spawnSync(apache,['-v'],{encoding:'utf8'}).stdout.trim();
  }
  for(const [name,url]of targets){console.log('Verifying',name,url);
+  if(archive.includes('v0.1.0-preview.5')){const response=await fetch(url);assert.equal(response.headers.get('x-content-type-options'),'nosniff');assert.equal(response.headers.get('referrer-policy'),'no-referrer');}
   checks.push(await deploymentChecks({browser,url,name,output,errors,external,hasConfig,restart:name==='python-root'?async()=>{localServer.kill('SIGTERM');await once(localServer,'exit');localServer=await start('python3',localArgs,origin+'/');}:undefined}));
  }
  // Execute supplied POSIX launchers with the actual extracted paths, not Vite.

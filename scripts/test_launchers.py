@@ -34,6 +34,7 @@ class LauncherTests(unittest.TestCase):
         for path,mime in [('/','text/html'),('/app.js','application/javascript'),('/x.svg','image/svg+xml'),('/style.css','text/css')]:
             status,content,_=self.request(path);self.assertEqual(status,200);self.assertTrue(content.startswith(mime))
         self.assertEqual(self.request('/',method='HEAD')[2],b'')
+        c=http.client.HTTPConnection('127.0.0.1',self.port,timeout=2);c.request('GET','/');r=c.getresponse();self.assertEqual(r.getheader('Referrer-Policy'),'no-referrer');self.assertEqual(r.getheader('X-Content-Type-Options'),'nosniff');r.read();c.close()
         for path in ['/../outside.txt','/%2e%2e/outside.txt','/%5coutside.txt','/%00','/%ff','/%zz','/C:foo','/.hidden','/escape.txt']:
             self.assertIn(self.request(path)[0],[403,404],path)
         for path in ['/serve.py','/config.json','/secret.py','/empty/']:self.assertEqual(self.request(path)[0],404)

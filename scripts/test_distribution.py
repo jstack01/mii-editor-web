@@ -20,7 +20,7 @@ class DistributionTests(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory();self.root=Path(self.temp.name)
         self.addCleanup(self.temp.cleanup)
-        for n in ['web/dist/assets/app.js','web/dist/assets/app.css','web/dist/index.html','web/dist/LICENSE.md','web/dist/NOTICES.md','web/dist/LICENSES/Vite-LICENSE.md','web/package.json','distribution/START-HERE.md','docs/HOSTING.md','LICENSE.md','NOTICES.md','LICENSES/Vite-LICENSE.md','distribution/serve.py','distribution/config.json','distribution/Start Mii Editor.cmd','distribution/Start Mii Editor.command','distribution/start-mii-editor.sh','distribution/launcher.sh','distribution/STATIC-START-HERE.md','SOURCE/private.swf','EXTRACTED-SWF/private.as','evidence/private.xml']:
+        for n in ['web/dist/assets/app.js','web/dist/assets/app.css','web/dist/index.html','web/dist/LICENSE.md','web/dist/NOTICES.md','web/dist/LICENSES/Vite-LICENSE.md','web/package.json','distribution/START-HERE.md','docs/HOSTING.md','docs/LOCAL_LAUNCHERS.md','docs/BROWSER_COMPATIBILITY.md','docs/SECURITY_PRIVACY.md','LICENSE.md','NOTICES.md','LICENSES/Vite-LICENSE.md','distribution/serve.py','distribution/config.json','distribution/Start Mii Editor.cmd','distribution/Start Mii Editor.command','distribution/start-mii-editor.sh','distribution/launcher.sh','distribution/STATIC-START-HERE.md','SOURCE/private.swf','EXTRACTED-SWF/private.as','evidence/private.xml']:
             p=self.root/n;p.parent.mkdir(parents=True,exist_ok=True);p.write_text('fixture\n')
         (self.root/'distribution/config.json').write_text('{"port":8080}')
         (self.root/'web/package.json').write_text('{"version":"0.1.0-preview.4"}')
@@ -66,6 +66,18 @@ class DistributionTests(unittest.TestCase):
             return 'a'*40 if args[1:]==('rev-parse','HEAD') else ''
         with patch.object(publisher,'ROOT',self.root),patch.object(publisher,'run',run),patch.object(publisher.subprocess,'run',return_value=subprocess.CompletedProcess([],1,'','')),patch.object(sys,'argv',['publish-release.py','--repo','jstack01/mii-editor-web','--version','v0.1.0-preview.4','--expected-commit','a'*40,'--approve-public-upload']):
             with self.assertRaisesRegex(SystemExit,'Verify public GHCR'):publisher.main()
+    def test_packaged_guides_resolve_local_and_technical_links(self):
+        (self.root/'docs/HOSTING.md').write_text('[privacy](SECURITY_PRIVACY.md) [notice](../NOTICES.md) [profile](../web/WII_PROFILE.md)')
+        with patch.object(packager,'ROOT',self.root):text=packager.guide_contents('HOSTING.md','v0.1.0-preview.5').decode()
+        self.assertIn('](SECURITY_PRIVACY.md)',text);self.assertIn('](NOTICES.md)',text)
+        self.assertIn('https://github.com/jstack01/mii-editor-web/blob/v0.1.0-preview.5/web/WII_PROFILE.md',text)
+
+    def test_preview5_preparation_cannot_overwrite_preview4(self):
+        (self.root/'web/package.json').write_text('{"version":"0.1.0-preview.5"}')
+        release=self.root/'release';release.mkdir();old=release/'mii-editor-web-static-v0.1.0-preview.4.zip';old.write_bytes(b'previous published archive')
+        with self.assertRaisesRegex(SystemExit,'Version differs'):self.invoke('--version','v0.1.0-preview.4')
+        self.assertEqual(old.read_bytes(),b'previous published archive')
+
     def test_old_release_cannot_be_overwritten(self):
         for version in ['v0.1.0-preview.1','v0.1.0-preview.2','v0.1.0-preview.3']:
             with self.assertRaisesRegex(SystemExit,'Version differs'):self.invoke('--version',version)

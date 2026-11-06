@@ -5,12 +5,28 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import posixpath
 import subprocess
 import time
 import zipfile
 ROOT=Path(__file__).resolve().parents[1]
 EDITIONS=('macos','linux','windows','static')
 LAUNCHERS={'macos':'Start Mii Editor.command','linux':'start-mii-editor.sh','windows':'Start Mii Editor.cmd'}
+
+USER_GUIDES={'HOSTING.md','LOCAL_LAUNCHERS.md','BROWSER_COMPATIBILITY.md','SECURITY_PRIVACY.md'}
+def guide_contents(name,version):
+    """Keep bundled guide links local; link non-bundled technical docs online."""
+    text=(ROOT/'docs'/name).read_text()
+    def link(match):
+        target=match.group(1)
+        if re.match(r'^[a-zA-Z][a-zA-Z0-9+.-]*:',target) or target.startswith('#'):return match.group(0)
+        path,separator,fragment=target.partition('#')
+        resolved=posixpath.normpath('docs/'+path)
+        if resolved.startswith('docs/') and resolved[5:] in USER_GUIDES:output=resolved[5:]
+        elif resolved in {'LICENSE.md','NOTICES.md'}:output=resolved
+        else:output='https://github.com/jstack01/mii-editor-web/blob/'+version+'/'+resolved
+        return ']('+output+(separator+fragment if separator else '')+')'
+    return re.sub(r'\]\(([^)]+)\)',link,text).encode()
 
 def git(*args):
     return subprocess.check_output(['git',*args],cwd=ROOT,text=True).strip()
@@ -30,7 +46,9 @@ def create_archive(edition,version,build,timestamp,site):
     entries={('' if edition=='static' else 'website/')+name:data for name,data in site.items()}
     for name in ['LICENSE.md','NOTICES.md','LICENSES/Vite-LICENSE.md']:
         entries[name]=(ROOT/name).read_bytes()
-    entries['HOSTING.md']=(ROOT/'docs/HOSTING.md').read_bytes()
+    entries['HOSTING.md']=guide_contents('HOSTING.md',version)
+    for guide in ['LOCAL_LAUNCHERS.md','BROWSER_COMPATIBILITY.md','SECURITY_PRIVACY.md']:
+        if (ROOT/'docs'/guide).exists():entries[guide]=guide_contents(guide,version)
     if edition=='static':
         entries['START-HERE.md']=(ROOT/'distribution/STATIC-START-HERE.md').read_bytes()
     else:
@@ -61,9 +79,11 @@ def write_archive(folder,entries,build,timestamp,edition):
 
 def create_docker_starter(version,build,timestamp):
     entries={'compose.yaml':(ROOT/'compose.yaml').read_bytes(),'.env.example':(ROOT/'.env.example').read_bytes(),
-             'START-HERE.md':(ROOT/'docs/DOCKER.md').read_bytes(),'BUILD-INFO.json':(json.dumps(build,indent=2)+'\n').encode()}
+             'START-HERE.md':guide_contents('DOCKER.md',version),'BUILD-INFO.json':(json.dumps(build,indent=2)+'\n').encode()}
     for name in ['LICENSE.md','NOTICES.md','LICENSES/Vite-LICENSE.md']:
         entries[name]=(ROOT/name).read_bytes()
+    for guide in ['HOSTING.md','BROWSER_COMPATIBILITY.md','SECURITY_PRIVACY.md']:
+        if (ROOT/'docs'/guide).exists():entries[guide]=guide_contents(guide,version)
     return write_archive('mii-editor-web-docker-'+version,entries,build,timestamp,'docker')
 
 def main():

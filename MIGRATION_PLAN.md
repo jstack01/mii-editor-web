@@ -71,26 +71,32 @@ Prepare a manual-only GITHUB_TOKEN workflow with contents:read and publishing-jo
 
 Prepare preview.4 as four existing ZIPs plus a small Docker starter ZIP and checksums. Keep remaining browser/device coverage, static-hosting verification, Phase 7 destinations/hardware and Phase 8 final checks open. See docs/DOCKER.md, docs/DOCKER_VERIFICATION.md and docs/CONTAINER_PUBLISHING.md.
 
-### Phase 7A — Wii/Dolphin integration and transfer compatibility investigation (delivered; bounded emulator evidence)
+### Phase 7A — Completed: Wii/Dolphin integration and transfer compatibility investigation
 
 - Review primary transfer/container source and distinguish raw 74-byte RCD, 76-byte RSD, RFL_DB.dat and game-save archives. Keep full identity/owner/flag checks separate from scalar decoder acceptance.
 - Execute only isolated copied Dolphin environments with user-supplied legal channel resources, backups, exact before/after bytes and captures. No live database writes, guessed identity conversion or new production export format.
 - Delivered: Dolphin 2609a Mii Channel displayed 13 positive editor records across two launches unchanged; separate special, temporary, zero-ID, duplicate-ID and historical-invalid cases characterized. Independent reference container CRC and 10,000-record decoder checks retained. See web/PHASE7_VERIFICATION.md, optional-tools/phase7a/ and docs/WII_DOLPHIN_TESTING.md.
 - Record the tested zero-owner default boy’s explicit channel edit refusal; keep ownership conversion, actual per-Mii importer execution, remote transfer and game association unverified. Further production transfer/identity features require a separately reviewed milestone.
 
-### Phase 7B — physical Wii console and representative game verification (not started)
+### Phase 7B — Deferred indefinitely by owner decision
 
-- Record physical Wii region/firmware, authorized transfer tool/version, legal game versions and working backup/rollback procedures before writes. Test per-Mii import without replacing the entire live database.
-- Verify display/edit/reboot persistence, unrelated entries intact, destination identity/collision/ownership policy, normal/special/local-only flags and Unicode/date edges. Test Wii Sports, Wii Sports Resort and Mario Kart Wii separately with backed-up saves and existing player references.
-- **Certification gate: no real-Wii or individual-game compatibility claim until the named physical destination tests pass.** Emulator display, reverse-engineered source and MiiJS acceptance cannot substitute for hardware/game evidence. Do not begin Phase 7B automatically.
+- No physical Wii hardware is available. The owner does not own a Wii and does not intend to obtain hardware or perform physical Wii/game testing.
+- Real-Wii and individual-game certification remain **unverified**, not passed. No requests for a Wii, game discs, NAND images or other console equipment are required.
+- This deferral **does not block browser-editor QA or release** when the scope and unverified compatibility claims are clearly documented. Do not invent owner conversions or broaden the Phase 7A findings.
 
-### Phase 8 — final release and remaining approved behavior
+### Phase 8A — Final QA and Release Readiness (in progress)
 
-- Port the tutorial only if its sequencing is recovered or separately specified/approved; otherwise disclose its deferral.
-- Run the available Chromium/Firefox/WebKit, native/2×, keyboard/pointer and offline matrix. Verify no unintended historical service calls.
-- Publish a final fidelity/deviation matrix, compatibility and hardware-verification matrix, known limitations, asset provenance and build/run instructions. “Faithful original reproduction” and “Wii-compatible product behavior” must have separate supporting evidence.
-- Release only after required checks pass, intended features/assets are complete, differences are reviewed and unresolved behavior is not represented as certified. Include Milestone 6.2 actual browser/device coverage, Milestone 6.3 verified static ZIP/Apache root and nested-path instructions, release checksums/file inventory, licensing/provenance, accessibility/offline verification, update/rollback instructions and destination-scoped Phase 7 results. Keep developer evidence separate from the public package. Any unavailable target stays explicitly unverified; publishing still requires explicit authorization.
+- Run available Chrome/Chromium, Firefox and WebKit/Safari/Edge checks, using an isolated supported Linux environment where useful; document unavailable branded browsers/devices and retain failing tests.
+- Investigate WebKit forced-offline File/Blob failures independently from HTTP-blocked checks. Verify emulated phone/tablet portrait/landscape, touch/keyboard/scroll/modal behavior and fix measured usability defects without redesigning the editor.
+- Run full data/graphics/editor/repair/file/image/storage/URL/10,000-record independent-decoder regression checks, retained Phase 7A evidence safeguards and protected-original integrity. Do not repeat database writes for routine QA.
+- Verify actual local launcher/static ZIPs, config.json, startup/shutdown/browser links, root/nested hosting and Docker/Compose/architecture/security behavior. Review privacy, XML safety, package exclusions, documentation, credits and unresolved rights.
+- Prepare preview.5 platform/static ZIPs, Docker starter assets, manifests/checksums and a matching local Docker image when source changes. Commit locally. Physical certification is not a release gate; honest compatibility disclosures remain mandatory.
 
+### Phase 8B — Final Publication (owner approval required; not started)
+
+- Publish an owner-approved release based on Phase 8A evidence and remaining limitations. No automatic push, tag, GitHub release or GHCR publication.
+- Preserve prior releases, source history, legal/provenance notices, AI-generated/unmaintained disclaimer and origin-specific browser storage.
+- Keep deferred tutorial sequencing, outstanding browser/device/hosting coverage and unverified physical Wii/game compatibility disclosed. Deferral is not certification; neither software validation nor Dolphin display guarantees hardware/game behavior.
 
 ## Publishing and inspection references
 
@@ -207,3 +213,17 @@ No Mii codec, default creation, randomization, repair, controls, owner/ID policy
 Final regression results: 200 public unit/integration tests; 447 public plus historical-fidelity tests; 66 Python launcher/config/distribution/integration guards; seven protected-source checks; TypeScript and production build; full Chrome development/production and mobile-viewport/preset browser suites. Independent pinned MiiJS accepted 10,000/10,000 new random records with zero external requests. Both published container architectures, real Compose/browser restart/persistence and the extracted static ZIP at root/nested Python and Apache paths passed. The exact staged public snapshot independently installed/tested/built without private originals. All 342 primary Dolphin Wii files remained unchanged. No disposable Dolphin process or test container remains running. Full results are in optional-tools/phase7a/fixtures/results.json; local screenshots/logs are under ignored release/phase7a/.
 
 Remaining browser/device/forced-offline coverage in 6.2, broader deployment/TLS/platform verification in 6.3, physical Wii/game/importer/ownership verification in 7B and Phase 8 final checks remain open. All work is committed locally only; no automatic publishing or new release/container/tag is introduced.
+
+## Phase 8A owner direction (2026-11-06)
+
+Phase 7B is deferred indefinitely by explicit owner decision. The owner will not obtain physical Wii hardware or perform physical tests; the browser project can be released with accurate limitations. Phase 8A is authorized for software QA and preview.5 preparation only. Phase 8B publication requires a separate explicit approval. Historical milestone records below/above describe their original scope; this decision supersedes any earlier statement making physical tests a release gate.
+
+## Phase 8A implementation and software QA (2026-11-06)
+
+Phase 7B is deferred indefinitely by owner decision and is not a software-release blocker. Phase 8A fixes lost-button drag cleanup, delayed cancellation messages overwriting new import errors, horizontal touch/history overscroll, and Firefox diagnostic padding. Modern HTML targets and keyboard hints improve usability without changing SVG artwork, Mii attributes, IDs/owners, codecs or randomization. Packaged guide links and local referrer protection are corrected.
+
+Chrome 156/macOS, Firefox 153/isolated Ubuntu ARM64 and Chromium 151/isolated Ubuntu ARM64 each pass the final 21-script matrix. Linux browsers run non-root with no external network or host security changes. Seven emulated phone/tablet portrait/landscape sizes cover all category paths, representative controls, native Chromium touch capture, viewport shrink, presets and repair cancellation; physical keyboards/devices remain unverified. WebKit 26.5 retains forced-offline File/Blob/image failures, independently reproduced with no editor code on macOS and Linux; they are not suppressed or treated as ordinary HTTP-blocked passes.
+
+200 public tests, 447 including historical tests, 68 Python guards, seven protected-source tests, TypeScript/build and independent 10,000/10,000 MiiJS checks pass. Source-independent Phase 7A fixtures/checksum/ID safeguards are retained; no Dolphin/database write experiment is repeated. The lockfile audit reports zero advisories at this date, not formal security certification. Native Safari/Edge, macOS Firefox startup, Windows desktop and physical-device gaps remain documented. Headless Linux launcher tests ran 31 cases: 28 pass, three macOS-specific cases skip explicitly.
+
+Preview.5 source/version/Compose/manual workflow/release notes are prepared locally. Final clean-commit package/image checks and their exact metadata remain the completion gate before Phase 8A handoff. No push, Git tag, GitHub release, GHCR upload or Phase 8B action is authorized yet. README continues to point at the actually published preview.4 until approved publication.

@@ -7,4 +7,5 @@ export function addHover(svg:SVGSVGElement,group:SVGGElement,signal:AbortSignal)
  let down=false;group.addEventListener('pointerenter',()=>{if(!down)group.style.filter=filters[0]!;});group.addEventListener('pointerleave',()=>{if(!down)group.style.filter='';});group.addEventListener('pointerdown',()=>{down=true;group.style.filter=filters[1]!;window.addEventListener('pointerup',()=>{down=false;group.style.filter='';},{once:true,signal});});
  group.addEventListener('pointerup',()=>{down=false;group.style.filter=filters[0]!;});
  group.addEventListener('pointercancel',()=>{down=false;group.style.filter='';},{signal});
+ group.addEventListener('lostpointercapture',()=>{down=false;group.style.filter='';},{signal});
 }

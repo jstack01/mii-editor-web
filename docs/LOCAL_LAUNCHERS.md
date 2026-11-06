@@ -58,3 +58,7 @@ Changing the port changes the browser storage origin. Characters previously save
 ## Docker is a separate distribution
 
 D3 prepares a GHCR Nginx image and Compose file, without changing these launchers. Docker does not read config.json; its published host port is selected through -p or Compose MII_EDITOR_PORT. Conventional Apache hosting needs neither helper. All choices use the same editor; browser storage is shared only when the exact scheme/host/port matches. Export important .mii files before changing origins. See DOCKER.md.
+
+## Phase 8A verification scope
+
+The preview.5 candidate retains the shared Python parser/server and all three scripts. macOS lifecycle/configuration tests and native Linux container tests cover safe binding, missing/invalid config, stable/custom ports, conflicts, readiness-before-browser, terminal links, missing tools and shutdown/restart. Linux container tests are not Linux desktop double-click/browser-association tests; Windows CMD/console execution remains unavailable in automated QA. Earlier owner-reported Windows/macOS startup evidence remains valid for its stated preview.2 scope, not a claim of complete current-version OS coverage. See [the QA report](PHASE8A_QA.md) and [privacy scope](SECURITY_PRIVACY.md). Referrer protection is included; no query logging or public binding was added.

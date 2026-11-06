@@ -39,11 +39,8 @@ Before any console writes, have a recovery-capable NAND backup, a separate Mii d
 
 A real Wii Remote can transfer Miis through a supported Mii Channel workflow, but that does not make a raw PC `.mii` directly readable by an unmodified console. Remote-memory conversion and physical transfer have not been tested here.
 
-## What Phase 7B needs from you
+## Phase 7B is deferred indefinitely
 
-- A Wii with its region/firmware recorded, a tested backup/restore method, and the exact authorized per-Mii importer/version you intend to use.
-- Your legally owned test games and their exact region/version. Suggested first checks: Wii Sports, Wii Sports Resort and Mario Kart Wii, each separately.
-- Confirmation of display, editing permission, restart persistence and unchanged unrelated entries/saves; then game selection, play/save/reload and existing player identity.
-- Test default, random and repaired characters first. Special Miis, duplicate IDs and temporary-ID negatives belong in a disposable emulator experiment before considering hardware.
+The owner does not own a physical Wii and does not intend to obtain hardware or perform physical Wii/game testing. No hardware, discs, NAND images or other equipment is requested. Real-console and individual-game certification remain unverified, not failed or passed. This does not block the browser editor's software QA or release with honest limitations.
 
-Do not send private NAND dumps, keys or commercial game images to this repository. Physical testing is a separate milestone, not enabled automatically by these instructions.
+The prior sections document the bounded emulator experiment and safety considerations for independent investigators; they are not a required owner checklist. No physical test, owner conversion or game identity migration is scheduled. Do not send private NAND dumps, keys or commercial game images to this repository.

@@ -29,4 +29,4 @@ Original application materials were found at [mii-editor.nekoweb.org](https://mi
 
 **AI-generated / vibe-coded project — unmaintained.** Unofficial and provided as-is, without planned support or contribution review. Forks are encouraged subject to applicable rights. Not affiliated with or endorsed by Nintendo or the original developers. New code is unlicensed; historical asset rights remain unresolved. Read the [license](LICENSE.md) and [notices](NOTICES.md).
 
-[Build from source](docs/BUILDING.md) · [Browser compatibility](docs/BROWSER_COMPATIBILITY.md) · [Wii compatibility notice](web/WII_PROFILE.md) · [Wii/Dolphin verification](web/PHASE7_VERIFICATION.md) · [Roadmap](MIGRATION_PLAN.md)
+[Build from source](docs/BUILDING.md) · [Browser compatibility](docs/BROWSER_COMPATIBILITY.md) · [Wii compatibility notice](web/WII_PROFILE.md) · [Wii/Dolphin verification](web/PHASE7_VERIFICATION.md) · [Roadmap](MIGRATION_PLAN.md) · [QA results](docs/PHASE8A_QA.md) · [Privacy](docs/SECURITY_PRIVACY.md)

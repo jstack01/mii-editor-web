@@ -26,3 +26,7 @@ Dockerfile uses digest-pinned frontend/Node/Nginx inputs, pnpm 11.25.0 and the f
 ## Destination integration tests
 
 `test-support/phase7a.integration.test.ts` adds deterministic, labelled software transfer fixtures separately from Flash-fidelity tests. The optional `../optional-tools/phase7a/` reference-container experiment needs an existing JDK only when explicitly invoked; it is not part of building/running the editor. See [the Phase 7A report](../web/PHASE7_VERIFICATION.md) for evidence, commands and limits. Public builds/tests still require no private Flash originals.
+
+## Phase 8A cross-browser QA
+
+From web/, `pnpm test:qa:browser` records every existing development/production suite plus mobile, drag-release and independent offline primitives; it returns nonzero if any check fails. Select MII_BROWSER_ENGINE=firefox or webkit, or PLAYWRIGHT_CHANNEL=chromium for the bundled Chromium. macOS Firefox startup remains unavailable; [the isolated Linux recipe](../optional-tools/qa/README.md) provides actual Firefox coverage without changing OS security. WebKit forced-offline failures remain visible. No optional test environment is included in production packages. See [QA results](PHASE8A_QA.md).

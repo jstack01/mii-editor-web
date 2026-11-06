@@ -75,4 +75,24 @@ Use HTTPS on a public website to protect content and shared URLs in transit. The
 
 Browser storage is scoped by scheme/host/port, not folder: root and subdirectory installations on the same origin share the current-character storage key. Export important characters before changing origin, clearing site data or replacing a deployment. To update: stop the local launcher or stage an upload, back up the old website folder and personal Mii files, replace website files with the new complete build (including hashed assets and notices), restart/reload, and keep the origin unchanged. Remove obsolete hashed assets after a successful complete upload. Roll back by restoring the prior complete folder. Application updates do not promise a browser-data migration.
 
-Basic extracted-ZIP root/nested-path and isolated local Apache checks are recorded with this distribution milestone. Broader Windows/macOS coverage, real Linux startup, additional production hosting/TLS configurations and broader browser/device coverage remain unfinished; see MIGRATION_PLAN.md. No calls to historical MiiEditor.com services are needed.
+Basic extracted-ZIP root/nested-path and isolated local Apache checks are recorded with this distribution milestone. Native Windows/desktop Linux launcher interaction, additional production hosting/TLS configurations and physical-device coverage remain unfinished; see MIGRATION_PLAN.md. No calls to historical MiiEditor.com services are needed.
+
+## Privacy headers and URL logging
+
+Editing/import/export happens in the browser, but opening a `?mii=` share URL necessarily sends that query to the chosen HTTP host. Configure your server/proxy logs accordingly. The bundled local server and Docker disable normal request/query logging and send `Referrer-Policy: no-referrer` plus `X-Content-Type-Options: nosniff`.
+
+For an existing Apache configuration with mod_headers enabled, apply these in the application's Directory/VirtualHost (or .htaccess only if your host permits it):
+
+```apache
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "no-referrer"
+```
+
+If managing your own VirtualHost logs, a format using `%U` rather than `%r`/`%q` omits the query, for example:
+
+```apache
+LogFormat "%h %l %u %t \"%m %U %H\" %>s %b" mii_no_query
+CustomLog logs/mii-access.log mii_no_query
+```
+
+Check upstream proxy logs too. These are configuration examples, not changes automatically applied to your server. Full hosted TLS/logging variations remain unverified. See [security/privacy scope](SECURITY_PRIVACY.md) and [Phase 8A QA](PHASE8A_QA.md).
