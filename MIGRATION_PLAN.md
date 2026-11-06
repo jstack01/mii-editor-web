@@ -121,3 +121,8 @@ The owner requested script-based launchers only: no Go/PyInstaller executable, b
 D2 changes are committed locally and final clean packages/checksums prepared for owner inspection. **Do not push or publish v0.1.0-preview.2 until explicitly approved.** Retain the AI-generated/unmaintained disclaimer, unlicensed new code and unresolved historical graphic rights; D2 does not clear redistribution rights.
 
 Milestone 6.2 (real cross-browser/mobile), remaining 6.3 (real Windows/Linux launch, broader hosting/TLS/deployment verification), Phase 7 (Wii hardware/emulator/game destinations) and Phase 8 (final release) stay open. Preparing scripts/static ZIPs does not certify those milestones. See docs/LOCAL_LAUNCHERS.md, docs/HOSTING.md and docs/PUBLISHING.md for operation, limitations and future manual releases.
+
+
+## D2 publication approval and owner testing
+
+The owner reported successful manual Windows and macOS testing and approved pushing/publishing D2. These are owner-reported results; OS versions and detailed test coverage were not supplied. Earlier unavailable-Windows statements describe the automated development environment, not this later manual result. Real Linux desktop behavior, broader platform/device coverage and hardware compatibility remain unverified. The approved preview.2 is published through the guarded manual process; preview.1 remains unchanged.

@@ -10,7 +10,7 @@ Open: **http://127.0.0.1:8080/**
 
 Nothing is installed or downloaded by the launcher. If no suitable Python is found, it explains optional installation from https://www.python.org/downloads/. Do not run as administrator. No execution policy, URL reservation or security setting is changed. macOS deliberately skips Apple's /usr/bin/python3 developer-tools stub. Windows skips Microsoft Store Python aliases and does not invoke Python install managers.
 
-If a system blocks a downloaded script, respect that restriction; do not disable system security. For a terminal launch, on macOS use `bash "Start Mii Editor.command"`; on Linux use `bash ./start-mii-editor.sh`. Linux file managers may open .sh files in an editor instead of running them. On Windows run `"Start Mii Editor.cmd"` in Command Prompt; a real Python 3.9+ must be on PATH. Actual Windows and Linux desktop behavior is not yet certified.
+If a system blocks a downloaded script, respect that restriction; do not disable system security. For a terminal launch, on macOS use `bash "Start Mii Editor.command"`; on Linux use `bash ./start-mii-editor.sh`. Linux file managers may open .sh files in an editor instead of running them. On Windows run `"Start Mii Editor.cmd"` in Command Prompt; a real Python 3.9+ must be on PATH. The owner reported successful Windows and macOS startup tests. Actual Linux desktop behavior remains unverified; broader OS/version coverage is not certified.
 
 If port 8080 is occupied, close the other launcher/app and try again. The script never quietly switches ports. The printed URL is clickable where the terminal supports links; otherwise copy it into the browser. If the browser does not open, the server stays available at that address.
 

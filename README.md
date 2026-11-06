@@ -29,15 +29,15 @@ This project is not affiliated with or endorsed by Nintendo or the original Mii 
 
 ## Download and start
 
-Preview **v0.1.0-preview.2 is prepared locally and not published yet**. The existing [preview.1 release](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.1) remains unchanged.
+Download [**v0.1.0-preview.2**](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.2). The existing [preview.1 release](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.1) remains unchanged.
 
-When preview.2 is approved, choose the ZIP for your platform:
+Choose the ZIP for your platform:
 
 | Edition | Startup | Requirement / coverage |
 | --- | --- | --- |
-| macOS | `Start Mii Editor.command` | Existing Python 3.9+; skips Apple's installation stub. |
+| macOS | `Start Mii Editor.command` | Existing Python 3.9+; owner tested on macOS; skips Apple's installation stub. |
 | Linux | `start-mii-editor.sh` | Existing Python 3.9+; real Linux desktop verification pending. |
-| Windows | `Start Mii Editor.cmd` | Real Python 3.9+ on PATH; actual Windows verification pending. |
+| Windows | `Start Mii Editor.cmd` | Real Python 3.9+ on PATH; owner tested on Windows. |
 | Static hosting | Upload index/assets/notices | No launcher or interpreter on the hosting server. |
 
 Extract the complete ZIP and read START-HERE.md. The local script starts **http://127.0.0.1:8080/**, waits for the website to answer and opens your default browser. The same URL is printed for clicking/copying. Keep the terminal open; Ctrl+C or closing the terminal stops the server. Nothing is downloaded or installed by the launcher. If Python is missing, it explains optional installation from python.org. Zero additional installations are not guaranteed.

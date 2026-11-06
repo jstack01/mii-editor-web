@@ -33,3 +33,8 @@ The ordinary hosting edition needs none of this server code: its static assets a
 ## Testing boundaries
 
 Automated tests must distinguish actual macOS terminal/process tests, LaunchServices opening, simulated terminal hangup, browser-open requests, headless browser workflows and genuine desktop interactions. Windows is not verified just by inspecting .cmd syntax; Linux shell execution on macOS is not a Linux OS test. Missing VM access or automation permission is recorded, not bypassed. Detailed D2 results are recorded in MIGRATION_PLAN.md before release approval.
+
+
+## D2 publication approval and owner testing
+
+The owner reported successful manual Windows and macOS testing and approved pushing/publishing D2. These are owner-reported results; OS versions and detailed test coverage were not supplied. Earlier unavailable-Windows statements describe the automated development environment, not this later manual result. Real Linux desktop behavior, broader platform/device coverage and hardware compatibility remain unverified. The approved preview.2 is published through the guarded manual process; preview.1 remains unchanged.
