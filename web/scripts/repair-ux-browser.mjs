@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import {spawn} from 'node:child_process';import {once} from 'node:events';
 import {readFileSync,mkdirSync,writeFileSync} from 'node:fs';import {fileURLToPath} from 'node:url';import {chromium} from 'playwright';
 const cwd=fileURLToPath(new URL('..',import.meta.url)),preview=process.argv.includes('--preview'),port=preview?5206:5205,origin=`http://127.0.0.1:${port}`,out=`${cwd}/test-results/repair-ux-${preview?'production':'dev'}`;mkdirSync(out,{recursive:true});
-const sample=readFileSync(`${cwd}/../random-mii-testing/Fail/FAIL-1.mii`),errors=[],external=[],checks=[];
+const sample=Buffer.from(JSON.parse(readFileSync(`${cwd}/test-support/fixtures/mii-corpus.json`)).find(s=>s.file==='Fail/FAIL-1.mii').hex,'hex'),errors=[],external=[],checks=[];
 const navigation=[['tab_basic'],['tab_size'],['tab_face'],['tab_face','nav_face2'],['tab_hair'],['tab_eyebrows'],['tab_eyes'],['tab_nose'],['tab_lips'],['tab_accessories'],['tab_accessories','nav_accessories2'],['tab_accessories','nav_accessories3'],['tab_accessories','nav_accessories4']];
 const server=spawn(process.execPath,['node_modules/vite/bin/vite.js',...(preview?['preview']:[]),'--host','127.0.0.1','--port',String(port),'--strictPort'],{cwd,stdio:'pipe'});let output='',browser;server.stdout.on('data',x=>output+=x);server.stderr.on('data',x=>output+=x);
 try{

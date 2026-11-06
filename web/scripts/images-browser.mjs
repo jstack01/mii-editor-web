@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {spawn} from 'node:child_process';import {once} from 'node:events';
 import {readFileSync,mkdirSync,writeFileSync} from 'node:fs';import {fileURLToPath} from 'node:url';import {chromium} from 'playwright';
 const cwd=fileURLToPath(new URL('..',import.meta.url)),preview=process.argv.includes('--preview'),port=preview?5199:5198,origin=`http://127.0.0.1:${port}`,out=`${cwd}/test-results/images-${preview?'production':'dev'}`;mkdirSync(out,{recursive:true});
-const originalHex=JSON.parse(readFileSync(`${cwd}/../evidence/default-character.json`)).hex,checks=[],errors=[],external=[];
+const originalHex=JSON.parse(readFileSync(`${cwd}/test-support/fixtures/default-character.json`)).hex,checks=[],errors=[],external=[];
 const server=spawn(process.execPath,['node_modules/vite/bin/vite.js',...(preview?['preview']:[]),'--host','127.0.0.1','--port',String(port),'--strictPort'],{cwd,stdio:'pipe'});let output='',browser;server.stdout.on('data',x=>output+=x);server.stderr.on('data',x=>output+=x);
 try{
  let ready=false;for(let i=0;i<100;i++){try{ready=(await fetch(origin)).ok;}catch{}if(ready)break;await new Promise(r=>setTimeout(r,100));}assert.ok(ready,output);

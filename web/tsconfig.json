@@ -20,5 +20,16 @@
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "src/compatibility/wiiCompatibility.test.mjs",
+    "src/compatibility/repairPresentation.test.ts",
+    "src/render/rendering.test.ts",
+    "src/render/fullCharacter.test.ts",
+    "src/gui/interactions.test.ts",
+    "src/gui/gui.test.ts",
+    "src/model/compatibility.test.ts",
+    "src/files/imageExport.test.ts",
+    "src/files/characterFiles.test.ts"
   ]
 }

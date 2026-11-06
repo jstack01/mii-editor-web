@@ -6,7 +6,7 @@ import {readFileSync,mkdirSync,writeFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {chromium} from 'playwright';
 const cwd=fileURLToPath(new URL('..',import.meta.url)),preview=process.argv.includes('--preview'),port=preview?5187:5186,origin=`http://127.0.0.1:${port}`,out=`${cwd}/test-results/files-${preview?'production':'dev'}`;mkdirSync(out,{recursive:true});
-const defaultHex=JSON.parse(readFileSync(`${cwd}/../evidence/default-character.json`)).hex;
+const defaultHex=JSON.parse(readFileSync(`${cwd}/test-support/fixtures/default-character.json`)).hex;
 const bytes=Buffer.from(defaultHex,'hex');bytes[0]|=128;bytes.fill(0,2,22);const unicode='水😀';for(let i=0;i<unicode.length;i++)bytes.writeUInt16BE(unicode.charCodeAt(i),2+2*i);bytes[22]=100;bytes[23]=30;bytes.writeUInt16BE((bytes.readUInt16BE(32)&~((7<<13)|(7<<10)))|(5<<13)|(3<<10),32);const fixture=bytes.toString('hex');
 const server=spawn(process.execPath,['node_modules/vite/bin/vite.js',...(preview?['preview']:[]),'--host','127.0.0.1','--port',String(port),'--strictPort'],{cwd,stdio:'pipe'});let output='';server.stdout.on('data',(c)=>output+=c);server.stderr.on('data',(c)=>output+=c);let browser;const errors=[],external=[],checks=[];
 try{

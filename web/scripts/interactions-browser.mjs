@@ -6,8 +6,8 @@ import {readFileSync,mkdirSync,writeFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {chromium,firefox,webkit} from 'playwright';
 const cwd=fileURLToPath(new URL('..',import.meta.url)),preview=process.argv.includes('--preview'),engine=process.env.MII_BROWSER_ENGINE||'chromium',port=preview?5184:5183,origin=`http://127.0.0.1:${port}`;
-const schema=JSON.parse(readFileSync(`${cwd}/../evidence/phase2/schema.json`));schema.fields.moleSize.max=8; // Intentional Wii default; Flash 0–15 oracle remains test-only.
-const defaultHex=JSON.parse(readFileSync(`${cwd}/../evidence/default-character.json`)).hex;
+const schema=JSON.parse(readFileSync(`${cwd}/test-support/fixtures/legacy-schema.json`));schema.fields.moleSize.max=8; // Intentional Wii default; Flash 0–15 oracle remains test-only.
+const defaultHex=JSON.parse(readFileSync(`${cwd}/test-support/fixtures/default-character.json`)).hex;
 const out=`${cwd}/test-results/interactions-${engine}${preview?'-production':''}`;mkdirSync(out,{recursive:true});
 const server=spawn(process.execPath,['node_modules/vite/bin/vite.js',...(preview?['preview']:[]),'--host','127.0.0.1','--port',String(port),'--strictPort'],{cwd,stdio:'pipe'});let serverOutput='';server.stdout.on('data',(c)=>serverOutput+=c);server.stderr.on('data',(c)=>serverOutput+=c);
 const storageKey='mii-editor.character.v1',errors=[],external=[];let browser;const checks=[];

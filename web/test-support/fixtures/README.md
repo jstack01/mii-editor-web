@@ -1,0 +1,3 @@
+# Small public regression fixtures
+
+These are factual Mii field/range/default and test-record snapshots, not decompiled ActionScript or SWF packages. They keep public tests independent of private recovery materials. `mii-corpus.json` retains the seven supplied working/failing record bytes and expected decoder observations. `legacy-schema.json` preserves the Flash ranges/order separately from `rcd-fields.json` and RFL-derived `rfl-rules.json`. Legacy source-comparison tests remain local/optional and in older Git history. Historical artwork lives only in the generated runtime catalogs and has separate, unresolved rights; see ../../../NOTICES.md.

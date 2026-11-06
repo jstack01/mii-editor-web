@@ -1,9 +1,0 @@
-{
-  "protectedContentFiles": 1718,
-  "exactProtectedContentSetUnchanged": true,
-  "allProtectedContentHashesUnchanged": true,
-  "originalCorpusHashesUnchanged": true,
-  "corpusFilesChecked": 12,
-  "finderMetadataExcluded": true,
-  "metadataReason": "DS_Store is mutable Finder metadata, not source content; never restored or treated as code evidence."
-}

@@ -37,5 +37,24 @@ blob-report/
 *.p12
 *.pfx
 
-# Keep SOURCE/, EXTRACTED-SWF/, recovery manifests/XML, generated source
-# snapshots, lockfiles, and selected evidence/ milestone reports/screenshots.
+# Keep generated runtime snapshots, lockfiles and selected public documentation.
+# Historical originals/recovery materials remain local and ignored below.
+
+# Private historical materials and recovery evidence (kept locally, never deleted)
+/SOURCE/
+/EXTRACTED-SWF/
+/EXTRACTED/
+/evidence/
+/tools/
+/random-mii-testing/
+/.local-reference/
+/release/
+/web/src/compatibility/wiiCompatibility.test.mjs
+/web/src/compatibility/repairPresentation.test.ts
+/web/src/render/rendering.test.ts
+/web/src/render/fullCharacter.test.ts
+/web/src/gui/interactions.test.ts
+/web/src/gui/gui.test.ts
+/web/src/model/compatibility.test.ts
+/web/src/files/imageExport.test.ts
+/web/src/files/characterFiles.test.ts

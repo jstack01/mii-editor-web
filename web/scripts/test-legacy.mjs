@@ -1,0 +1,3 @@
+import {existsSync} from 'node:fs';import {spawnSync} from 'node:child_process';
+for(const p of ['../../SOURCE/','../../EXTRACTED-SWF/','../../evidence/'])if(!existsSync(new URL(p,import.meta.url)))throw Error('Optional legacy tests require the private original materials; see docs/BUILDING.md. Public pnpm test requires none.');
+for(const script of ['scripts/generate-character-assets.mjs','scripts/generate-gui-assets.mjs','node_modules/vitest/vitest.mjs']){const r=spawnSync(process.execPath,[script,script.startsWith('scripts/')?'--check':'run'],{stdio:'inherit',env:{...process.env,MII_LEGACY_TESTS:'1'}});if(r.status!==0)process.exit(r.status??1);}

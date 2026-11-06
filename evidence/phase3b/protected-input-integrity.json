@@ -1,8 +1,0 @@
-{
-  "protectedFiles": 1725,
-  "allMatchMilestoneStart": true,
-  "addedModifiedRemoved": [],
-  "baselineHashesSha256": "f405a19d8510e5f383a77c7be57f74daa8bf0ec206c44e6f108ae12ccd023f80",
-  "baselineReference": "evidence/phase2/protected-inputs.sha256.json",
-  "note": "Verified full SOURCE/ and EXTRACTED-SWF/ file set and SHA-256 before and after Phase 3B installation, including ignored OS metadata."
-}

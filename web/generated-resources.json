@@ -1,0 +1,11 @@
+{
+  "description": "Integrity inventory of committed generated runtime resources. Recovery requires private originals; normal builds do not. Historical vectors remain subject to unresolved asset rights.",
+  "sha256": {
+    "src/generated/character-assets.ts": "197b08dd8d153eaa9dabc54a52f00627b38f84255ac537392d6e5bb742cde0e2",
+    "src/generated/default-character.ts": "c960874218859339cb4f9d64a9c60e10740083175075213f1b9b302a57cb0454",
+    "src/generated/gui-assets.ts": "2dbed9c487633b9a5928a6444435912b5acb6bbb2d5c8ab9b45ff045517e8d64",
+    "src/generated/mii-schema.ts": "3eb606aeb4c50c7ecc0c46666db5a5d665fe37ca7e20d19695949d426925aa72",
+    "src/generated/render-cases.json": "d154ce3ac9808bc9f55382d12be72ef3ab019ab595bc66f659389440980af6ee",
+    "src/generated/render-cases.ts": "dc8a7dfb61ea04b9ad4234312c60968acb1d918c0d3609bada6216931c327527"
+  }
+}

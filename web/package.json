@@ -1,16 +1,16 @@
 {
   "name": "mii-editor-web",
-  "version": "0.1.0",
+  "version": "0.1.0-preview.1",
   "private": true,
   "type": "module",
   "engines": {
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "node scripts/generate-character-assets.mjs && node scripts/generate-gui-assets.mjs && vite --host 127.0.0.1",
-    "build": "node scripts/generate-character-assets.mjs && node scripts/generate-gui-assets.mjs && tsc --noEmit && vite build",
+    "dev": "node scripts/verify-generated.mjs && vite --host 127.0.0.1",
+    "build": "node scripts/verify-generated.mjs && tsc --noEmit && vite build && node scripts/copy-notices.mjs",
     "preview": "vite preview --host 127.0.0.1",
-    "test": "node scripts/generate-character-assets.mjs --check && node scripts/generate-gui-assets.mjs --check && vitest run",
+    "test": "node scripts/verify-generated.mjs && vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
     "test:browser": "node scripts/browser-smoke.mjs && node scripts/gui-browser-smoke.mjs && node scripts/interactions-browser.mjs && node scripts/files-browser.mjs && node scripts/compatibility-browser.mjs && node scripts/images-browser.mjs && node scripts/wii-browser.mjs && node scripts/repair-ux-browser.mjs",
@@ -18,12 +18,17 @@
     "test:browser:firefox": "MII_BROWSER_ENGINE=firefox node scripts/interactions-browser.mjs",
     "test:browser:webkit": "MII_BROWSER_ENGINE=webkit node scripts/interactions-browser.mjs",
     "test:wii:browser": "node scripts/wii-browser.mjs",
-    "test:repair:browser": "node scripts/repair-ux-browser.mjs"
+    "test:repair:browser": "node scripts/repair-ux-browser.mjs",
+    "test:legacy": "node scripts/test-legacy.mjs",
+    "assets:recover": "node scripts/generate-character-assets.mjs && node scripts/generate-gui-assets.mjs && node scripts/verify-generated.mjs --update",
+    "release:package": "python3 ../scripts/package-release.py"
   },
   "devDependencies": {
     "playwright": "1.62.1",
     "typescript": "7.0.2",
     "vite": "8.3.5",
     "vitest": "5.1.0"
-  }
+  },
+  "license": "UNLICENSED",
+  "packageManager": "pnpm@11.25.0"
 }

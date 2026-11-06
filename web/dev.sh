@@ -14,6 +14,5 @@ if [ ! -f node_modules/vite/bin/vite.js ]; then
   echo 'Dependencies are missing. Run pnpm install --frozen-lockfile (or npm install) in web/.' >&2
   exit 1
 fi
-"$node_bin" scripts/generate-character-assets.mjs
-"$node_bin" scripts/generate-gui-assets.mjs
+"$node_bin" scripts/verify-generated.mjs
 exec "$node_bin" node_modules/vite/bin/vite.js --host 127.0.0.1 --port 5173 --strictPort "$@"

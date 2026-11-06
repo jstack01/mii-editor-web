@@ -1,0 +1,4 @@
+import {readFileSync,writeFileSync} from 'node:fs';import {createHash} from 'node:crypto';
+const root=new URL('../',import.meta.url),path=new URL('generated-resources.json',root),manifest=JSON.parse(readFileSync(path));
+for(const [name,expected]of Object.entries(manifest.sha256)){if(!name.startsWith('src/generated/')||name.includes('..'))throw Error('Unsafe generated resource path');const actual=createHash('sha256').update(readFileSync(new URL(name,root))).digest('hex');if(process.argv.includes('--update'))manifest.sha256[name]=actual;else if(actual!==expected)throw Error('Generated resource changed: '+name+'. Review recovery changes and explicitly update the inventory.');}
+if(process.argv.includes('--update'))writeFileSync(path,JSON.stringify(manifest,null,2)+'\n');console.log('Verified '+Object.keys(manifest.sha256).length+' committed generated resources; no original Flash files required.');

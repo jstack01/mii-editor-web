@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.bat text eol=crlf
+*.png binary
+
+# Preserve the upstream third-party license text verbatim.
+LICENSES/Vite-LICENSE.md -whitespace
