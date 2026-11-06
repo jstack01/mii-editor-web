@@ -4,6 +4,13 @@ import argparse,hashlib,http.client,json,os,re,subprocess,tarfile,tempfile,time,
 from pathlib import Path
 
 def docker(*args):return subprocess.check_output(['docker',*args],text=True).strip()
+def inspect_selected_image(container_data,expected_platform):
+ # Inspect the immutable image selected by docker run --platform. Older Docker
+ # CLIs do not implement image inspect --platform; container.Image is unambiguous.
+ image=json.loads(docker('image','inspect',container_data['Image']))[0]
+ if image['Os']+'/'+image['Architecture']!=expected_platform:raise AssertionError('Container image architecture differs from requested platform')
+ return image
+
 def main():
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--image',required=True);p.add_argument('--platform',required=True,choices=['linux/amd64','linux/arm64']);p.add_argument('--port',type=int,default=18784);p.add_argument('--output');a=p.parse_args();name='mii-d3-check-'+uuid.uuid4().hex[:10]
  def request(path,method='GET'):
@@ -42,7 +49,7 @@ def main():
    time.sleep(.1)
   else:raise AssertionError('Container restart failed')
   docker('stop','--time','10',name);state=json.loads(docker('inspect',name))[0]['State'];assert state['ExitCode']==0 and not state['OOMKilled']
-  image=json.loads(docker('image','inspect','--platform',a.platform,a.image))[0]
+  image=inspect_selected_image(data,a.platform)
   daemon_arch=docker('info','--format','{{.Architecture}}');native={'aarch64':'arm64','arm64':'arm64','x86_64':'amd64','amd64':'amd64'}.get(daemon_arch,daemon_arch)
   result={'passed':True,'platform':a.platform,'image':a.image,'imageId':image['Id'],'sizeBytes':image['Size'],'runtimeUser':data['Config']['User'],'siteHashes':site,'securityBoundary':True,'gracefulStopExit':state['ExitCode'],'daemonArchitecture':daemon_arch,'architectureExecution':'native relative to Docker engine' if a.platform.split('/')[1]==native else 'emulated relative to Docker engine'}
   if a.output:Path(a.output).write_text(json.dumps(result,indent=2)+'\n')

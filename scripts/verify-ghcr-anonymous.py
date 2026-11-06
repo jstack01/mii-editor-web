@@ -25,14 +25,20 @@ def main():
   endpoint=subprocess.check_output(['docker','context','inspect','--format','{{(index .Endpoints "docker").Host}}'],text=True).strip()
   with tempfile.TemporaryDirectory(prefix='mii-anonymous-docker-') as tmp:
    env={**os.environ,'DOCKER_CONFIG':tmp,'DOCKER_HOST':endpoint};env.pop('DOCKER_CONTEXT',None);env.pop('DOCKER_AUTH_CONFIG',None)
-   for platform in platforms:subprocess.run(['docker','pull','--platform',platform,image+'@'+digest],env=env,check=True)
-   result['anonymousPull']=True
    revisions=set()
    for platform in platforms:
-    info=json.loads(subprocess.check_output(['docker','image','inspect','--platform',platform,image+'@'+digest],env=env,text=True))[0]
+    # Test the public tag users pull, then address its selected leaf by digest
+    # so inspection is unambiguous even on Docker's older classic image store.
+    subprocess.run(['docker','pull','--platform',platform,image+':'+a.version],env=env,check=True)
+    selected=next(m for m in index['manifests'] if m.get('platform',{}).get('os','')+'/'+m.get('platform',{}).get('architecture','')==platform)
+    leaf=image+'@'+selected['digest']
+    subprocess.run(['docker','pull','--platform',platform,leaf],env=env,check=True)
+    info=json.loads(subprocess.check_output(['docker','image','inspect',leaf],env=env,text=True))[0]
+    assert info['Os']+'/'+info['Architecture']==platform
     labels=info['Config']['Labels'];assert labels['org.opencontainers.image.source']=='https://github.com/'+repository
     assert labels['org.opencontainers.image.version']==a.version;revisions.add(labels['org.opencontainers.image.revision'])
    if len(revisions)!=1:raise SystemExit('Platform source revisions differ.')
+   result['anonymousPull']=True
    result['revision']=revisions.pop()
    if a.expected_commit and result['revision']!=a.expected_commit:raise SystemExit('Image revision differs from approved source.')
  if a.output:

@@ -180,3 +180,6 @@ Prepared preview.4 local/static packages plus a versioned Docker starter ZIP con
 ## D3 publication approval
 
 The owner explicitly approved pushing and publishing D3 / preview.4. The manual GHCR workflow and public-visibility/anonymous-pull gates remain mandatory before the GitHub prerelease is created. This approval does not close browser/device gaps or begin Phase 7. Previous releases remain unchanged.
+
+
+D3 publication runner correction: the GitHub runner built/started the image but its older Docker CLI rejected image inspect --platform. The verification helper now inspects the immutable image ID selected by docker run --platform and still requires exact OS/architecture equality. Anonymous verification pulls the public tag and selected leaf digest before inspecting the leaf without that newer flag. A regression test covers the older-CLI path; no editor/runtime behavior or validation is weakened. The first failed run skipped publishing and created no container tag.
