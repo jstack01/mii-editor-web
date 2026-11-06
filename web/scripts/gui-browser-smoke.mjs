@@ -4,7 +4,7 @@ import {spawn} from 'node:child_process';
 import {once} from 'node:events';
 import {mkdirSync,writeFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
-import {chromium} from 'playwright';
+import {chromium} from './browser-engine.mjs';
 const cwd=fileURLToPath(new URL('..',import.meta.url)),preview=process.argv.includes('--preview'),port=preview?5182:5181,origin=`http://127.0.0.1:${port}`;
 const out=process.env.MII_GUI_REPORT_DIR||`${cwd}/test-results/gui`;mkdirSync(out,{recursive:true});
 const server=spawn(process.execPath,['node_modules/vite/bin/vite.js',...(preview?['preview']:[]),'--host','127.0.0.1','--port',String(port),'--strictPort'],{cwd,stdio:'pipe'});let output='';server.stdout.on('data',(c)=>output+=c);server.stderr.on('data',(c)=>output+=c);
@@ -45,4 +45,4 @@ try{
   await page.close();
  }
  assert.deepEqual(errors,[]);assert.deepEqual(external,[]);const report={mode:preview?'production':'development',screens:navigation.map(([id])=>id),pixelDensities:[1,2],nameCreatorByteIsolation:true,headSkinBitIsolation:true,stateAcrossScreens:true,generalControls:true,sourceHoverPress:true,immediateCharacterFramesAndTint:true,keyboard:true,uniformScaling:true,diagnosticsDevelopmentOnly:true,errors,externalRequests:external};writeFileSync(`${out}/${preview?'production':'development'}-gui.json`,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
-}finally{if(browser)await browser.close();server.kill('SIGTERM');await once(server,'exit');}
+}finally{if(browser)await browser.close();if(server.exitCode===null){server.kill('SIGTERM');await once(server,'exit');}}

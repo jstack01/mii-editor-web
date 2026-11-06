@@ -29,3 +29,8 @@ Mac/Windows/Linux package verification on the macOS host does not imply the Wind
 ## D2 publication approval and owner testing
 
 The owner reported successful manual Windows and macOS testing and approved pushing/publishing D2. These are owner-reported results; OS versions and detailed test coverage were not supplied. Earlier unavailable-Windows statements describe the automated development environment, not this later manual result. Real Linux desktop behavior, broader platform/device coverage and hardware compatibility remain unverified. The approved preview.2 is published through the guarded manual process; preview.1 remains unchanged.
+
+
+## Preview.3 / Milestone 6.2
+
+See BROWSER_COMPATIBILITY.md for the exact browser matrix, known failing WebKit forced-offline tests and platform limits. All four local-prepared archives are hash-bound to a clean commit and tested after extraction; config.json is included only in local editions and only its port can affect startup. Both bundled presets are checked through the same editor/persistence/share paths. The running user preview.2 :8080 server is left untouched; :8090 is selected explicitly for macOS package tests. New screenshots are in docs/images/presets-desktop.png and presets-mobile.png. No preview.3 publication is authorized yet.

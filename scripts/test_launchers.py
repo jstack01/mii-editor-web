@@ -36,7 +36,7 @@ class LauncherTests(unittest.TestCase):
         self.assertEqual(self.request('/',method='HEAD')[2],b'')
         for path in ['/../outside.txt','/%2e%2e/outside.txt','/%5coutside.txt','/%00','/%ff','/%zz','/C:foo','/.hidden','/escape.txt']:
             self.assertIn(self.request(path)[0],[403,404],path)
-        for path in ['/serve.py','/secret.py','/empty/']:self.assertEqual(self.request(path)[0],404)
+        for path in ['/serve.py','/config.json','/secret.py','/empty/']:self.assertEqual(self.request(path)[0],404)
         self.assertEqual(self.request('/',host='evil.example')[0],421)
         for method in ['POST','PUT','DELETE','PATCH','CONNECT','OPTIONS']:self.assertEqual(self.request('/',method)[0],405)
     def test_busy_port_no_fallback_or_browser(self):

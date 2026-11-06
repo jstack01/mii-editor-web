@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {spawn} from 'node:child_process';import {once} from 'node:events';
-import {readFileSync,mkdirSync,writeFileSync} from 'node:fs';import {fileURLToPath} from 'node:url';import {chromium} from 'playwright';
+import {readFileSync,mkdirSync,writeFileSync} from 'node:fs';import {fileURLToPath} from 'node:url';import {chromium,engineName} from './browser-engine.mjs';
 const cwd=fileURLToPath(new URL('..',import.meta.url)),preview=process.argv.includes('--preview'),port=preview?5206:5205,origin=`http://127.0.0.1:${port}`,out=`${cwd}/test-results/repair-ux-${preview?'production':'dev'}`;mkdirSync(out,{recursive:true});
 const sample=Buffer.from(JSON.parse(readFileSync(`${cwd}/test-support/fixtures/mii-corpus.json`)).find(s=>s.file==='Fail/FAIL-1.mii').hex,'hex'),errors=[],external=[],checks=[];
 const navigation=[['tab_basic'],['tab_size'],['tab_face'],['tab_face','nav_face2'],['tab_hair'],['tab_eyebrows'],['tab_eyes'],['tab_nose'],['tab_lips'],['tab_accessories'],['tab_accessories','nav_accessories2'],['tab_accessories','nav_accessories3'],['tab_accessories','nav_accessories4']];
@@ -28,5 +28,5 @@ try{
   if(mode==='desktop'){await pick();await page.locator('[data-field="nameText"]').evaluate(e=>{e.value='Newer';e.dispatchEvent(new InputEvent('input',{bubbles:true}));});const newer=await hex();assert.notEqual(newer,repaired);await button('Apply fixes & load').click();assert.equal(await dialog.getAttribute('open'),'');assert.match(await dialog.locator('[role="alert"]').textContent(),/changed/);assert.equal(await hex(),newer);assert.equal(await saved(),newer);await button('Cancel').click();checks.push('A stale repair review cannot overwrite a newer character or its saved data');}
   await page.close();
  }
- assert.deepEqual(errors,[]);assert.deepEqual(external,[]);const report={mode:preview?'production':'development',browser:await browser.version(),viewportCoverage:'Desktop Chrome viewports only; not physical mobile coverage',checks,errors,externalRequests:external};writeFileSync(`${out}/report.json`,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
-}finally{await browser?.close();if(server.exitCode===null){server.kill('SIGTERM');await once(server,'exit');}}
+ assert.deepEqual(errors,[]);assert.deepEqual(external,[]);const report={mode:preview?'production':'development',browser:await browser.version(),viewportCoverage:engineName+' desktop viewports only; not physical mobile coverage',checks,errors,externalRequests:external};writeFileSync(`${out}/report.json`,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
+}finally{await browser?.close();if(server.exitCode===null){if(server.exitCode===null){server.kill('SIGTERM');await once(server,'exit');}}}

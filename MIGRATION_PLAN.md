@@ -42,7 +42,7 @@ Windows launcher execution, a real Linux host, browser/device breadth, HTTPS/hos
 
 ## Remaining roadmap — not completed by making the repository public
 
-### Milestone 6.2 — desktop browser and mobile compatibility (planned; not started)
+### Milestone 6.2 — desktop browser and mobile compatibility (implemented features; available-engine verification delivered; coverage gaps open)
 
 - Verify current Chrome, Firefox, Safari/WebKit and Edge. Install and run Playwright Chromium, Firefox and WebKit runtimes where available and permitted; distinguish branded Safari/Edge testing from engine testing.
 - Verify mobile Safari and Android Chrome on physical devices or suitable environments where available. Add mobile emulation and touch-input tests. Do not claim real-device coverage from desktop emulation alone; record device/OS/browser versions and unavailable targets.
@@ -126,3 +126,20 @@ Milestone 6.2 (real cross-browser/mobile), remaining 6.3 (real Windows/Linux lau
 ## D2 publication approval and owner testing
 
 The owner reported successful manual Windows and macOS testing and approved pushing/publishing D2. These are owner-reported results; OS versions and detailed test coverage were not supplied. Earlier unavailable-Windows statements describe the automated development environment, not this later manual result. Real Linux desktop behavior, broader platform/device coverage and hardware compatibility remain unverified. The approved preview.2 is published through the guarded manual process; preview.1 remains unchanged.
+
+
+## Milestone 6.2 / preview.3 implementation record
+
+Implemented the approved local Default Boy / Default Girl links and structured config.json together with desktop/mobile checks. The reference page’s exact named records are bundled in characterPresets.ts; boy matches the recovered ClassicGUI default. Appearance/nonidentity bytes remain unchanged, while explicit loads allocate fresh normal IDs with unknown system ownership using the existing allocator, then reuse commit, persistence, preview/control and share updates. See docs/PRESETS.md. No historical branding is restored and no runtime historical-site request is made.
+
+All local launchers read config.json through shared Python stdlib code, relative to serve.py. Only port is supported, defaulting to 8080 when file/key is missing. JSON objects and strict integer ports 1024–65535 are required; strings, booleans, floats, malformed JSON and bad ranges fail visibly. Unknown keys are ignored and cannot change 127.0.0.1 binding or other safeguards. Local ZIPs include config.json; static hosting excludes it. Users edit that file and restart, never launcher code. Changing ports changes storage origin; export important characters first. The user's existing preview.2 server at 8080 is preserved; package tests use configured 8090 and dynamic isolated ports.
+
+Fixed mobile stage layout overflow/blank space/tap interference without changing source graphics. Fixed WebKit repair-dialog Tab traversal while preserving autofocus, Shift+Tab/Escape, cancellation, original bytes and stale-review checks. Broadened test-only engine selection and measured pointer-coordinate quantization without changing original slider math or weakening byte equality. See docs/BROWSER_COMPATIBILITY.md for evidence and test changes.
+
+Verification: 199 public / 446 full historical tests, TypeScript/build, 40 Python configuration/launcher/packaging checks, seven source-integrity checks, independent 10,000/10,000 MiiJS acceptance plus both presets. Chrome’s eight development/eight production suites pass. WebKit rendering/XML/GUI/full interactions/compatibility/Wii/repair checks pass in both modes; its two forced-offline files/images suites still fail because local File/Blob reads/downloads fail under the runtime offline switch. Both APIs and real-path/synthetic file probes were investigated; tests are retained unchanged for this failure, and no speculative production workaround is introduced. Separate HTTP-blocked file/image flows pass in Chrome, Chromium and WebKit. This is a disclosed limitation, not a full green WebKit/offline certification.
+
+Playwright Chromium, Firefox and WebKit were installed. Actual host: macOS 27.0.1 ARM64. Chrome 156, bundled Chromium 151 and WebKit 26.5 passed the new four-viewport desktop/emulated touch matrix with screenshots. Firefox 153 could not launch (helper/sandbox/GPU failures); headed mode also failed and security settings were not bypassed. Installed Safari WebDriver is disabled, Edge is unavailable, physical iOS/Android devices/keyboards and native preview.3 Windows/Linux testing remain unavailable. Earlier owner Windows/macOS results apply to preview.2. These gaps stay open under 6.2; do not certify unavailable targets or mark physical emulation as hardware coverage.
+
+Prepared four preview.3 ZIPs (Windows/macOS/Linux launchers plus conventional static hosting), notices/guides/configuration instructions and SHA-256 checksums. Actual extracted packages are verified at root and nested paths with Chrome and Apache, preset links, config-selected ports, import/export/repair and restart persistence. Public clean-source build does not require protected inputs. Selected desktop/mobile screenshots are in docs/images/; detailed runtime reports remain ignored/local. No originals/extracted ActionScript are modified or added to public snapshots. Existing preview.1/preview.2 releases and Git history are preserved.
+
+Commit locally and stop here. **Do not push, tag or publish preview.3 until the owner explicitly approves.** Remaining 6.2 coverage, remaining 6.3 deployment/TLS/platform verification, Phase 7 real Wii/emulator/game destinations and Phase 8 final release stay open. No Phase 7 implementation begins in this milestone.

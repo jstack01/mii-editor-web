@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Foreground, loopback-only static server. Python stdlib parses HTTP, not custom TCP."""
 import argparse
+import json
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 import os
@@ -117,13 +118,43 @@ def fail(message, code=1):
             pass
     return code
 
+DEFAULT_PORT=8080
+
+def load_config(directory):
+    """Known keys only; unknown future keys cannot change binding/security."""
+    path=Path(directory)/'config.json'
+    try:
+        text=path.read_text(encoding='utf-8-sig')
+    except FileNotFoundError:
+        return {'port':DEFAULT_PORT}
+    except (OSError,UnicodeError) as error:
+        raise ValueError('Could not read config.json. Check the file permissions and UTF-8 text encoding.') from error
+    try:
+        def invalid_constant(value):
+            raise ValueError('Non-JSON number')
+        config=json.loads(text,parse_constant=invalid_constant)
+    except (ValueError,RecursionError) as error:
+        raise ValueError('config.json is not valid JSON. Use {"port": 8080}, save the file and restart.') from error
+    if not isinstance(config,dict):
+        raise ValueError('config.json must be a JSON object, for example {"port": 8080}.')
+    port=config.get('port',DEFAULT_PORT)
+    if type(port) is not int or not 1024<=port<=65535:
+        raise ValueError('config.json: port must be a whole JSON number from 1024 to 65535, without quotes.')
+    return {'port':port}
+
 def main(argv=None):
     if sys.version_info<(3,9):
         return fail('Python 3.9 or newer is needed. See START-HERE.md for optional installation instructions.')
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--port',type=int,default=8080,help='Explicit override only; changing ports changes browser storage origin.')
+    parser.add_argument('--port',type=int,help='Developer override of config.json; changing ports changes browser storage origin.')
     parser.add_argument('--no-browser',action='store_true',help='For terminal/testing use; normal launch opens the default browser.')
     args=parser.parse_args(argv)
+    try:
+        config=load_config(Path(__file__).resolve().parent)
+    except ValueError as error:
+        return fail(str(error))
+    if args.port is None:
+        args.port=config['port']
     if not 1024<=args.port<=65535:
         return fail('Choose a port from 1024 to 65535. The normal address uses port 8080.')
     site=Path(__file__).resolve().parent/'website'

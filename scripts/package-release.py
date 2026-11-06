@@ -38,7 +38,7 @@ def create_archive(edition,version,build,timestamp,site):
         note={'macos':'Uses an already-installed Python 3.9+. Apple developer-tools installation stubs are skipped.', 'linux':'Requires an already-installed Python 3.9+. Real Linux desktop testing is still pending.', 'windows':'Requires a real Python 3.9+ installation on PATH. The owner manually tested Windows startup successfully; detailed OS/version coverage was not supplied. PowerShell HTTP.sys was not selected because URL permissions/global bindings do not meet the default no-admin, strict-loopback requirements.'}[edition]
         guide=(ROOT/'distribution/START-HERE.md').read_text().replace('{{START_SCRIPT}}',launcher).replace('{{PLATFORM_NOTE}}',note)
         entries['START-HERE.md']=guide.encode()
-        names=['serve.py',launcher]+(['launcher.sh'] if edition in ['macos','linux'] else [])
+        names=['serve.py','config.json',launcher]+(['launcher.sh'] if edition in ['macos','linux'] else [])
         for name in names:
             data=(ROOT/'distribution'/name).read_bytes()
             if name.endswith('.cmd'):data=data.replace(b'\r\n',b'\n').replace(b'\n',b'\r\n')

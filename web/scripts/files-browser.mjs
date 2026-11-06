@@ -4,7 +4,7 @@ import {spawn} from 'node:child_process';
 import {once} from 'node:events';
 import {readFileSync,mkdirSync,writeFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
-import {chromium} from 'playwright';
+import {chromium} from './browser-engine.mjs';
 const cwd=fileURLToPath(new URL('..',import.meta.url)),preview=process.argv.includes('--preview'),port=preview?5187:5186,origin=`http://127.0.0.1:${port}`,out=`${cwd}/test-results/files-${preview?'production':'dev'}`;mkdirSync(out,{recursive:true});
 const defaultHex=JSON.parse(readFileSync(`${cwd}/test-support/fixtures/default-character.json`)).hex;
 const bytes=Buffer.from(defaultHex,'hex');bytes[0]|=128;bytes.fill(0,2,22);const unicode='水😀';for(let i=0;i<unicode.length;i++)bytes.writeUInt16BE(unicode.charCodeAt(i),2+2*i);bytes[22]=100;bytes[23]=30;bytes.writeUInt16BE((bytes.readUInt16BE(32)&~((7<<13)|(7<<10)))|(5<<13)|(3<<10),32);const fixture=bytes.toString('hex');
@@ -41,4 +41,4 @@ try{
  await context.close();
  for(const scale of [1,2]){const high=await browser.newContext({viewport:{width:900,height:760},deviceScaleFactor:scale});const p=await high.newPage();await referenceInput(p);await p.goto(origin);await p.getByRole('button',{name:'File',exact:true}).click();await p.mouse.move(5,740);await p.locator('#stage').screenshot({path:`${out}/files${scale===2?'@2x':''}.png`,caret:'hide'});await p.getByRole('button',{name:'View and edit XML',exact:true}).click();await p.mouse.move(5,740);await p.locator('#stage').screenshot({path:`${out}/xml${scale===2?'@2x':''}.png`,caret:'hide'});await high.close();}
  assert.deepEqual(errors,[]);assert.deepEqual(external,[]);const report={mode:preview?'production':'development',browser:await browser.version(),checks,errors,externalRequests:external};writeFileSync(`${out}/report.json`,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
-}finally{if(browser)await browser.close();server.kill('SIGTERM');await once(server,'exit');}
+}finally{if(browser)await browser.close();if(server.exitCode===null){server.kill('SIGTERM');await once(server,'exit');}}

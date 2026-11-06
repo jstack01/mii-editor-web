@@ -4,11 +4,25 @@
 
 D2 local ZIPs contain platform-specific scripts and the same compiled `website/`. Extract the complete package, then run `Start Mii Editor.command` (macOS), `start-mii-editor.sh` (Linux), or `Start Mii Editor.cmd` (Windows). An existing real Python 3.9+ is required. Nothing is installed automatically. macOS avoids the Apple developer-tools stub; Windows skips Store aliases and install managers. See LOCAL_LAUNCHERS.md in the source repository for the documented PowerShell/HTTP.sys limitations. The owner reported successful Windows and macOS startup tests; real Linux desktop testing remains pending.
 
-The server serves only website/ at **http://127.0.0.1:8080/**, waits for readiness, opens the default browser and prints a copyable/clickable URL. Stop with Ctrl+C or close its terminal. If 8080 is busy it reports the conflict and never silently changes port. An explicit terminal override (`python3 serve.py --port 8081`) changes the browser-storage origin; use it only deliberately. A failed browser-opening request leaves the site available for manual opening. No administrator or security-policy change is required.
+The server serves only website/ at **http://127.0.0.1:8080/**, waits for readiness, opens the default browser and prints a copyable/clickable URL. Stop with Ctrl+C or close its terminal. If 8080 is busy it reports the conflict and never silently changes port. Change the local port through config.json as described below; do not edit the launcher scripts. A failed browser-opening request leaves the site available for manual opening. No administrator or security-policy change is required.
 
 D1 used 8765: export old characters there before switching to 8080, then reimport. Localhost links point to the recipient's own computer; use a public deployment for public share links. Downloaded scripts can be restricted by the OS/file manager. Do not disable security settings; follow the guide or use an already trusted interpreter explicitly. Linux file managers may open .sh files as text; a terminal invocation is available. Direct file:// opening can fail because JavaScript modules need an HTTP origin.
 
 For an existing server, use the **separate static ZIP** and upload its contents, including legal notices. No launcher, Python, Node.js, Vite, PHP, Go or database is needed on Apache/Nginx/conventional static hosting. The local and static editions use identical compiled website files.
+
+## Change the local port
+
+To change the local server port, open config.json in a text editor, change the number next to port, save the file, and restart Mii Editor.
+
+```json
+{
+  "port": 8090
+}
+```
+
+This opens **http://127.0.0.1:8090/**. The normal default is 8080. Keep config.json beside the startup script and serve.py, outside website/. All three platform launchers use the same Python JSON parser. No parser installation is needed. If the file or port key is missing, the default is 8080. The file must be a JSON object; port must be a JSON integer from 1024 to 65535. Quoted numbers, true/false, decimals, invalid JSON and invalid ports produce a helpful error. Unknown keys are ignored; they cannot change the loopback binding or server security. Only port is currently supported. Never select another port silently when one is occupied.
+
+Changing the port changes the browser storage origin. Characters previously saved at port 8080 may not appear at port 8090. **Export important .mii files before changing ports.** Keep the same browser/profile and chosen port between launches. Keep a backup of your config.json when updating to a new release and copy your chosen port into the new package. No automatic migration between ports is performed. The static-hosting ZIP does not contain or need config.json; Apache/Nginx supplies its own HTTP configuration.
 
 ## Apache at the domain root
 

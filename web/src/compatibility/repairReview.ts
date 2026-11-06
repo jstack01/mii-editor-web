@@ -18,7 +18,10 @@ export class RepairReview {
   this.dialog.addEventListener('keydown',event=>{
    if(event.key!=='Tab')return;
    const items=Array.from(this.dialog.querySelectorAll<HTMLElement>('button:not(:disabled),summary,[tabindex="0"]')).filter(e=>e.getClientRects().length>0);
-   const first=items[0],last=items.at(-1);if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus();}
+   // macOS WebKit can omit HTML buttons from native Tab navigation.
+   // Traverse every visible review control explicitly, retaining the same order.
+   if(!items.length)return;event.preventDefault();const current=items.indexOf(document.activeElement as HTMLElement);
+   const next=current<0?(event.shiftKey?items.length-1:0):(current+(event.shiftKey?-1:1)+items.length)%items.length;items[next]?.focus();
   });
  }
  captureOriginal(candidate:MiiCharacterData,label:string):void {this.backup={hex:candidate.toHex(),label:label.slice(0,255)};try{localStorage.setItem('mii-editor.original.v1',JSON.stringify(this.backup));this.backupSaved=true;}catch{this.backupSaved=false;}}

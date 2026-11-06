@@ -1,6 +1,7 @@
 import {editBirthday,editWiiValue,validateWii,validBirthday,wiiIds} from './compatibility/wiiProfile';
 import {RepairReview} from './compatibility/repairReview';
 import './editor.css';
+import {characterPreset,type CharacterPreset} from './model/characterPresets';
 import {MiiCharacterData} from './model/MiiCharacterData';
 import {startupCharacter,saveCharacter,shareURL} from './storage/browserPersistence';
 import {EditorSession} from './gui/editorSession';
@@ -141,6 +142,11 @@ const review=new RepairReview(()=>model,commit);
 if(!validateWii(model.toBytes()).valid)review.captureOriginal(model,'Restored '+startup.source+' original');
 document.getElementById('review-compatibility')!.addEventListener('click',()=>review.current());
 const fileDialog=new FileDialog({review:(candidate,label,file,accepted)=>review.open(candidate,label,file,accepted),reviewCurrent:()=>review.current(),getModel:()=>model,commit,renderEditor:render});
+for(const link of document.querySelectorAll<HTMLAnchorElement>('[data-preset]'))link.addEventListener('click',event=>{
+ event.preventDefault();if(document.querySelector('dialog[open]'))return;
+ try{const candidate=characterPreset(link.dataset.preset as CharacterPreset);fileDialog.close(false);commit(candidate);document.getElementById('edit-status')!.textContent='';document.getElementById('file-status')!.textContent='Loaded '+link.textContent+'.';}
+ catch(error){document.getElementById('edit-status')!.textContent=error instanceof Error?error.message:String(error);}
+});
 stage.dataset.startupSource=startup.source;storageStatus();
 if(import.meta.env.DEV)document.getElementById('development-tools')!.hidden=false;
 new ResizeObserver(()=>{stage.style.setProperty('--stage-scale',String(viewport.clientWidth/640));}).observe(viewport);

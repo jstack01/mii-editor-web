@@ -20,9 +20,10 @@ class DistributionTests(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory();self.root=Path(self.temp.name)
         self.addCleanup(self.temp.cleanup)
-        for n in ['web/dist/assets/app.js','web/dist/assets/app.css','web/dist/index.html','web/dist/LICENSE.md','web/dist/NOTICES.md','web/dist/LICENSES/Vite-LICENSE.md','web/package.json','distribution/START-HERE.md','docs/HOSTING.md','LICENSE.md','NOTICES.md','LICENSES/Vite-LICENSE.md','distribution/serve.py','distribution/Start Mii Editor.cmd','distribution/Start Mii Editor.command','distribution/start-mii-editor.sh','distribution/launcher.sh','distribution/STATIC-START-HERE.md','SOURCE/private.swf','EXTRACTED-SWF/private.as','evidence/private.xml']:
+        for n in ['web/dist/assets/app.js','web/dist/assets/app.css','web/dist/index.html','web/dist/LICENSE.md','web/dist/NOTICES.md','web/dist/LICENSES/Vite-LICENSE.md','web/package.json','distribution/START-HERE.md','docs/HOSTING.md','LICENSE.md','NOTICES.md','LICENSES/Vite-LICENSE.md','distribution/serve.py','distribution/config.json','distribution/Start Mii Editor.cmd','distribution/Start Mii Editor.command','distribution/start-mii-editor.sh','distribution/launcher.sh','distribution/STATIC-START-HERE.md','SOURCE/private.swf','EXTRACTED-SWF/private.as','evidence/private.xml']:
             p=self.root/n;p.parent.mkdir(parents=True,exist_ok=True);p.write_text('fixture\n')
-        (self.root/'web/package.json').write_text('{"version":"0.1.0-preview.2"}')
+        (self.root/'distribution/config.json').write_text('{"port":8080}')
+        (self.root/'web/package.json').write_text('{"version":"0.1.0-preview.3"}')
     def invoke(self,*args,dirty=False):
         def git(*parts):return 'dirty' if parts[0]=='status' and dirty else '' if parts[0]=='status' else '1804453200' if parts[0]=='show' else 'a'*40
         with patch.object(packager,'ROOT',self.root),patch.object(packager,'git',git),patch.object(sys,'argv',['package-release.py',*args]),contextlib.redirect_stdout(io.StringIO()):packager.main()
@@ -36,6 +37,8 @@ class DistributionTests(unittest.TestCase):
                 for line in z.read(prefix+'FILES.sha256').decode().splitlines():
                     h,n=line.split('  ',1);self.assertEqual(hashlib.sha256(z.read(prefix+n)).hexdigest(),h)
                 static='-static-' in a.name;site='' if static else 'website/'
+                if static:self.assertNotIn(prefix+'config.json',names)
+                else:self.assertEqual(json.loads(z.read(prefix+'config.json')),{'port':8080})
                 sites.append(z.read(prefix+site+'assets/app.js'))
                 info=json.loads(z.read(prefix+site+'BUILD-INFO.json'));self.assertFalse(info['uncommittedSource']);self.assertEqual(info['commit'],'a'*40)
                 if static:self.assertFalse(any(n.endswith(('.py','.cmd','.sh','.command')) for n in names))
@@ -44,9 +47,10 @@ class DistributionTests(unittest.TestCase):
                     launcher='Start Mii Editor.command' if '-macos-' in a.name else 'start-mii-editor.sh'
                     self.assertTrue((z.getinfo(prefix+launcher).external_attr>>16)&0o111)
         self.assertTrue(all(x==sites[0] for x in sites))
-        self.assertEqual(len(json.loads((self.root/'release/release-set-v0.1.0-preview.2.json').read_text())['artifacts']),4)
+        self.assertEqual(len(json.loads((self.root/'release/release-set-v0.1.0-preview.3.json').read_text())['artifacts']),4)
     def test_old_release_cannot_be_overwritten(self):
-        with self.assertRaisesRegex(SystemExit,'Version differs'):self.invoke('--version','v0.1.0-preview.1')
+        for version in ['v0.1.0-preview.1','v0.1.0-preview.2']:
+            with self.assertRaisesRegex(SystemExit,'Version differs'):self.invoke('--version',version)
     def test_unexpected_website_source_rejected(self):
         (self.root/'web/dist/leak.as').write_text('fixture')
         with self.assertRaisesRegex(SystemExit,'Unexpected production file'):self.invoke()
@@ -65,7 +69,7 @@ class DistributionTests(unittest.TestCase):
         desired={'has_issues':False,'has_pull_requests':False,'allow_forking':True}
         self.assertEqual(publisher.repository_patch(desired),{'has_issues':False,'has_pull_requests':False});self.assertTrue(desired['allow_forking'])
     def test_publication_requires_approval_before_any_git_or_gh_work(self):
-        r=subprocess.run([sys.executable,str(HERE/'publish-release.py'),'--repo','example/mii-editor-web','--version','v0.1.0-preview.2','--expected-commit','0'*40],capture_output=True,text=True)
+        r=subprocess.run([sys.executable,str(HERE/'publish-release.py'),'--repo','example/mii-editor-web','--version','v0.1.0-preview.3','--expected-commit','0'*40],capture_output=True,text=True)
         self.assertNotEqual(r.returncode,0);self.assertIn('No upload',r.stderr)
 
 if __name__=='__main__':unittest.main()

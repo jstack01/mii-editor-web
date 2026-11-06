@@ -3,7 +3,7 @@ import { spawn, spawnSync } from 'node:child_process';
 import { once } from 'node:events';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { chromium } from 'playwright';
+import { chromium } from './browser-engine.mjs';
 import { xmlCompatibilityChecks } from './xml-browser-checks.mjs';
 import { fullRenderingBrowserChecks } from './full-rendering-browser-checks.mjs';
 import { renderingBrowserChecks } from './rendering-browser-checks.mjs';

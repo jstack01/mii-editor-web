@@ -18,7 +18,7 @@ A hand-built TCP HTTP parser would increase risk and contradict the requested mi
 
 ## Origin, readiness and lifecycle
 
-The default is **http://127.0.0.1:8080/**, with an exclusive IPv4 loopback bind. An occupied port returns a readable error; it never selects another origin. An explicit developer `--port` override changes the storage origin and is not part of normal double-click startup. D1 used port 8765, so its saved data must be exported/imported deliberately; no storage migration is invented.
+The config.json default is **http://127.0.0.1:8080/**, with an exclusive IPv4 loopback bind. An occupied port returns a readable error; it never selects another origin. Change normal startup through config.json, not launcher script edits. A developer CLI override remains for isolated automated tests; a malformed existing configuration is still rejected. D1 used port 8765, so its saved data must be exported/imported deliberately; no storage migration is invented.
 
 The server binds, starts an in-process serving thread and completes a real local HEAD request (without proxies) before it prints readiness or requests the browser. A browser-opening failure leaves the site running and prints the copyable address. A plain URL is always printed. OSC 8 links are emitted for recognized supporting TTY environments; other terminals can auto-detect the normal URL or users can copy it. Physical terminal hyperlink behavior is not universally verified.
 
@@ -38,3 +38,18 @@ Automated tests must distinguish actual macOS terminal/process tests, LaunchServ
 ## D2 publication approval and owner testing
 
 The owner reported successful manual Windows and macOS testing and approved pushing/publishing D2. These are owner-reported results; OS versions and detailed test coverage were not supplied. Earlier unavailable-Windows statements describe the automated development environment, not this later manual result. Real Linux desktop behavior, broader platform/device coverage and hardware compatibility remain unverified. The approved preview.2 is published through the guarded manual process; preview.1 remains unchanged.
+
+
+## Change the local port
+
+To change the local server port, open config.json in a text editor, change the number next to port, save the file, and restart Mii Editor.
+
+```json
+{
+  "port": 8090
+}
+```
+
+This opens **http://127.0.0.1:8090/**. The normal default is 8080. Keep config.json beside the startup script and serve.py, outside website/. All three platform launchers use the same Python JSON parser. No parser installation is needed. If the file or port key is missing, the default is 8080. The file must be a JSON object; port must be a JSON integer from 1024 to 65535. Quoted numbers, true/false, decimals, invalid JSON and invalid ports produce a helpful error. Unknown keys are ignored; they cannot change the loopback binding or server security. Only port is currently supported. Never select another port silently when one is occupied.
+
+Changing the port changes the browser storage origin. Characters previously saved at port 8080 may not appear at port 8090. **Export important .mii files before changing ports.** Keep the same browser/profile and chosen port between launches. Keep a backup of your config.json when updating to a new release and copy your chosen port into the new package. No automatic migration between ports is performed. The static-hosting ZIP does not contain or need config.json; Apache/Nginx supplies its own HTTP configuration.
