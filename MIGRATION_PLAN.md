@@ -143,3 +143,8 @@ Playwright Chromium, Firefox and WebKit were installed. Actual host: macOS 27.0.
 Prepared four preview.3 ZIPs (Windows/macOS/Linux launchers plus conventional static hosting), notices/guides/configuration instructions and SHA-256 checksums. Actual extracted packages are verified at root and nested paths with Chrome and Apache, preset links, config-selected ports, import/export/repair and restart persistence. Public clean-source build does not require protected inputs. Selected desktop/mobile screenshots are in docs/images/; detailed runtime reports remain ignored/local. No originals/extracted ActionScript are modified or added to public snapshots. Existing preview.1/preview.2 releases and Git history are preserved.
 
 Commit locally and stop here. **Do not push, tag or publish preview.3 until the owner explicitly approves.** Remaining 6.2 coverage, remaining 6.3 deployment/TLS/platform verification, Phase 7 real Wii/emulator/game destinations and Phase 8 final release stay open. No Phase 7 implementation begins in this milestone.
+
+
+## Preview.3 publication approval
+
+The owner reviewed the live preview and explicitly approved pushing and publishing v0.1.0-preview.3. The release includes the four platform/static ZIPs and checksums. Previously documented Firefox/Safari/Edge/device coverage gaps and WebKit forced-offline failures remain open; publication does not certify them or begin Phase 7. Earlier prereleases remain unchanged.

@@ -1,4 +1,4 @@
-## Mii Editor Web v0.1.0-preview.3 — proposed prerelease
+## Mii Editor Web v0.1.0-preview.3 — prerelease
 
 Adds locally bundled **Load: Default Boy | Default Girl** links beneath the original-style editor. They use the historical records linked by https://mii-editor.nekoweb.org/, preserve their appearance and allocate fresh IDs with unknown ownership through the existing software policy. No runtime request to the historical site is needed.
 
@@ -10,4 +10,4 @@ Download the named macos, windows or linux ZIP for local use; choose the static 
 
 **AI-generated / vibe-coded project — unmaintained.** Unofficial, as-is, no planned support or accepted pull requests. New code remains unlicensed; historical vector/glyph rights remain unresolved. See LICENSE.md and NOTICES.md. Original materials were found at https://mii-editor.nekoweb.org/ and https://archive.org/details/mii-editor; their FAQ/metadata credit senocular. Not affiliated with Nintendo or the original developers. Software validation does not guarantee every Wii console/game. Remaining real-browser/device, deployment, Phase 7 destination/hardware and final-release checks remain open.
 
-Prepared locally only. Do not publish or push this milestone until the owner approves preview.3.
+The owner reviewed the local live preview and approved publication. The browser limitations above remain open.

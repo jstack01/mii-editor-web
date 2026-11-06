@@ -31,9 +31,9 @@ This project is not affiliated with or endorsed by Nintendo or the original Mii 
 
 ## Download and start
 
-**v0.1.0-preview.3 is prepared locally, awaiting publication approval.** [Preview.2 remains available](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.2). The existing [preview.1 release](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.1) remains unchanged.
+Download [**v0.1.0-preview.3**](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.3). [Preview.2 remains available](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.2). The existing [preview.1 release](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.1) remains unchanged.
 
-Choose the ZIP for your platform when preview.3 is approved:
+Choose the ZIP for your platform:
 
 | Edition | Startup | Requirement / coverage |
 | --- | --- | --- |
