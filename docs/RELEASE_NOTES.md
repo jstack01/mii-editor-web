@@ -1,26 +1,21 @@
 # Mii Editor Web v0.1.0-preview.5
 
-A software-QA preview with expanded Firefox/Linux coverage, safer drag cleanup and small-screen usability improvements. All editions run the same static editor; the 74-byte Mii format, original graphics and Wii software profile are unchanged.
+Create and edit Miis in the original-style browser interface. Open/save `.mii` and XML files, share characters, and download PNG/JPEG images without Flash or an application backend. This preview is the final planned publication for the current project scope; no future maintenance is promised.
 
-## Download and start
+## Download and run
 
-Choose the **Windows**, **macOS** or **Linux** ZIP, extract it and run its Start Mii Editor script. An already-installed **Python 3.9+** is required. Keep the terminal open; the launcher opens your browser and prints its localhost link. Edit `port` in `config.json` and restart to change the default 8080. Changing the browser origin changes where saved Miis appear; export important files first.
+- **Windows / macOS / Linux:** download your platform ZIP, extract it, and run its **Start Mii Editor** script. An existing **Python 3.9+** installation is required. Keep the launcher open. To change port 8080, edit `port` in `config.json` and restart.
+- **Static hosting:** upload the static ZIP contents to Apache, Nginx or another static web host. No development tools or application backend are needed on the server.
+- **Docker / Compose:** use `ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.5` (AMD64 and ARM64). Extract the Docker starter ZIP and run `docker compose up -d`, then open http://127.0.0.1:8080/. See the [Docker guide](https://github.com/jstack01/mii-editor-web/blob/v0.1.0-preview.5/docs/DOCKER.md).
 
-For ordinary Apache/Nginx/static hosting, choose the **static ZIP**. It needs no development tools, PHP or application backend at runtime. The **Docker starter ZIP** contains Compose, environment example, guides and notices; it uses `ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.5` after approved image publication. See the included START-HERE and checksum file. GitHub's automatic source archives are for development, not the ready-to-run website.
+The attached `SHA256SUMS-v0.1.0-preview.5.txt` covers all five ZIPs. Export important Miis before changing hostname or port; browser saves belong to their original browser origin.
 
-## QA changes and limits
+## Compatibility and notices
 
-- Firefox 153 was exercised on isolated Ubuntu ARM64 with external networking disabled. The macOS runtime still fails to launch on the development host.
-- Mouse drags now stop safely when the browser reports a released button without the usual pointer-up event. Diagnostic layout and modern button targets were improved; mobile numeric fields advertise suitable keyboard hints.
-- Chrome/Chromium and WebKit, emulated phone/tablet viewports, file/image/XML/repair/storage/sharing and actual distributions were tested within the scopes recorded in docs/PHASE8A_QA.md.
-- WebKit forced-offline File/Blob failures remain visible. Independent primitive probes reproduce them without editor code; normal HTTP-blocked/no-external-network flows are separate evidence, not physical Safari offline certification.
-- Native Safari/Edge, Windows desktop and physical iOS/Android coverage remain limited/unverified. No physical-device claim follows from viewport emulation.
-- Phase 7A Dolphin display/reload findings are retained. Zero-owner Miis can display but Mii Channel may refuse editing them. Physical Wii and individual-game testing is **deferred indefinitely by owner decision** and does not block this software release. No Wii/game certification or guessed owner conversion is provided.
+Wii-format exports pass the documented software validation, including 10,000 independently checked randomized records. Isolated Dolphin Mii Channel display/reload tests passed for the documented positive scenarios; this does not establish general import, editability or transfer support. **Physical Wii and individual-game testing is deferred indefinitely**, not certified. Native Safari/Edge, physical mobile coverage and WebKit forced-offline behavior remain limited: see [QA results](https://github.com/jstack01/mii-editor-web/blob/v0.1.0-preview.5/docs/PHASE8A_QA.md) and [Wii/Dolphin findings](https://github.com/jstack01/mii-editor-web/blob/v0.1.0-preview.5/web/PHASE7_VERIFICATION.md).
 
-Mii editing and imports stay in the browser. Opening a shared URL sends its encoded Mii query to the chosen web host; logs/history may retain it. See the included privacy/hosting guides. This project is provided as-is, not a formal security audit.
+**AI-generated / vibe-coded project — unmaintained.** Unofficial and provided as-is without planned support or contribution review. Forks are encouraged subject to applicable rights. New code is unlicensed; historical artwork and derived asset rights remain unresolved. See the [license](https://github.com/jstack01/mii-editor-web/blob/v0.1.0-preview.5/LICENSE.md) and [notices](https://github.com/jstack01/mii-editor-web/blob/v0.1.0-preview.5/NOTICES.md). Not affiliated with or endorsed by Nintendo or the original developers.
 
 ## Original Project and Credits
 
-Original application materials were found at https://mii-editor.nekoweb.org/ and https://archive.org/details/mii-editor; their credits identify senocular as the original developer. Thanks to the original creators and archivists. These hosting sources are not claimed to have created all historical materials.
-
-**AI-generated / vibe-coded project — unmaintained.** Unofficial, provided as-is without planned support or contribution review. Forks are encouraged subject to applicable rights. New code remains unlicensed and historical artwork/vector rights unresolved. See LICENSE.md and NOTICES.md. Not affiliated with or endorsed by Nintendo or the original developers. Software validation does not guarantee compatibility with every Wii console or game.
+Historical materials were found at [mii-editor.nekoweb.org](https://mii-editor.nekoweb.org/) and the [Internet Archive](https://archive.org/details/mii-editor), whose credits identify senocular as the original developer. Thanks to the original creators and archivists; the hosting sites are not claimed to have created all historical materials.

@@ -92,7 +92,7 @@ Prepare preview.4 as four existing ZIPs plus a small Docker starter ZIP and chec
 - Verify actual local launcher/static ZIPs, config.json, startup/shutdown/browser links, root/nested hosting and Docker/Compose/architecture/security behavior. Review privacy, XML safety, package exclusions, documentation, credits and unresolved rights.
 - Prepare preview.5 platform/static ZIPs, Docker starter assets, manifests/checksums and a matching local Docker image when source changes. Commit locally. Physical certification is not a release gate; honest compatibility disclosures remain mandatory.
 
-### Phase 8B — Final Publication (owner approval required; not started)
+### Phase 8B — Completed: Final Publication (v0.1.0-preview.5)
 
 - Publish an owner-approved release based on Phase 8A evidence and remaining limitations. No automatic push, tag, GitHub release or GHCR publication.
 - Preserve prior releases, source history, legal/provenance notices, AI-generated/unmaintained disclaimer and origin-specific browser storage.
@@ -239,3 +239,13 @@ Final Chrome 156/macOS, Firefox 153/Ubuntu ARM64 and Chromium 151/Ubuntu ARM64 m
 The actual extracted Linux script runs on Ubuntu with space/Unicode paths, default 8080/custom 8094, localhost-only binding, readiness/browser-open requests, OSC8 terminal output, occupied-port rejection and clean interrupt/restart. This is headless Linux coverage, not desktop association/double-click coverage. The extracted macOS command launches from another working directory with a custom port, answers HTTP, requests the default browser without a reported failure and shuts down cleanly. Native Finder/quarantine behavior and Windows CMD/console-close behavior remain unverified in automated QA.
 
 Phase 7B remains deferred indefinitely by owner decision and does not block release. Phase 8B is not started: no source push, Git tag, GitHub release or GHCR publication. Final candidate revision and hashes are in the release artifacts, with detailed local reports under ignored release/phase8a/. Approval is required before final homepage-link/candidate-wording updates and publication; prior releases remain intact.
+
+## Phase 8B publication reconciliation (2026-11-10)
+
+Preview.5 was already published on 2026-11-06 following the owner's prior explicit approval. Its immutable release/tag and matching public GHCR image use source revision `27da544cb9b8e1feac14001e4de65529d440b549`; all five ZIPs and the combined checksum file remain unchanged. Earlier "not started", "not uploaded" and preview.4-only statements above describe the historical Phase 8A handoff and are superseded by this publication record.
+
+On 2026-11-10, the local/public ZIP hashes, embedded clean source revisions, internal inventories and exclusions were rechecked. GitHub remains public/forkable with Issues, pull requests, Discussions and Wiki disabled, and preview.1 through preview.5 remain available. The concise README already references preview.5 and retains its 540-pixel screenshot and disclosures. No application source, launcher, codec, artwork, runtime security configuration or published artifact is changed by this documentation reconciliation.
+
+The owner explicitly approved the final documentation reconciliation on 2026-11-10: a documentation-only main-branch commit and a concise update to the existing preview.5 release description. The version tag, ZIP assets, checksum file, image tag and digest are preserved. The release's source revision remains distinct from this subsequent documentation-only main-branch commit. Fresh anonymous pulls of both architectures passed, with the expected version, source labels and unchanged image digest `sha256:7332e088ad3ab3f5ba5ebea5c92fc07a5b189efe27b0601931624578200dbad9`.
+
+Phase 8B is complete and the project is complete for its approved browser-editor scope. Preview.5 remains a preview and the final planned publication for this scope, without a maintenance commitment or additional required development milestones. Phase 7B stays deferred indefinitely by owner decision; physical Wii/game certification, native/device coverage gaps, WebKit offline limitations and unresolved historical asset rights remain disclosed limitations, not passed tests or release blockers.
