@@ -24,3 +24,10 @@ web/src/files/imageExport.test.ts
 web/src/files/characterFiles.test.ts
 web/scripts/generate-character-assets.mjs
 web/scripts/generate-gui-assets.mjs
+
+!LICENSE
+!LICENSE-SCOPE.json
+!ASSET_RIGHTS.md
+!THIRD_PARTY_NOTICES.md
+!CONTAINER_SOURCES.md
+!release-notices.json

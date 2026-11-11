@@ -1,11 +1,9 @@
-# Licensing status
+# Licensing scope
 
-No project license is granted for the newly written application code at this time. The repository owner chose to leave it unlicensed. Public access, an invitation to fork on GitHub, and AI assistance do not create a general permission to redistribute, relicense or commercially reuse the code. Platform-provided rights remain subject to GitHub's terms.
+The standard MIT text is in [LICENSE](LICENSE). It applies **only to eligible modern contributions in the exact files listed in [LICENSE-SCOPE.json](LICENSE-SCOPE.json)**, to the extent jstack01 holds rights in them. It does not assert copyright over purely AI-generated material, facts, APIs or third-party work. The absence of a file from that list means this project does not grant MIT for that file. This is not a license for the complete mixed-rights application.
 
-Historical artwork, embedded glyphs, generated SVG/vector catalogs, recovered graphic data, screenshots and legacy-derived materials have **separate, unresolved rights**. They are not licensed by the repository owner. No ownership of Nintendo characters or the original Mii Editor is claimed. See NOTICES.md before redistribution.
+Historical Mii Editor artwork/GUI, original-derived vectors, extracted glyphs/fonts, screenshots of those assets, inherited source expression, Nintendo intellectual property and third-party components are excluded. Model/renderer/editor ports and generated catalogs remain outside the new grant. Their unresolved status is described in [NOTICES.md](NOTICES.md) and [ASSET_RIGHTS.md](ASSET_RIGHTS.md). No general reuse permission is established for unresolved material. Third-party software retains its own terms, not this owner's MIT grant.
 
-Third-party notices apply only to their identified components. In particular, LICENSES/Vite-LICENSE.md covers Vite and its listed components, including the build-generated module-loading helper; it does not apply an MIT license to this project's code or historical assets.
+The owner accepts the existing historical-material distribution risk and has chosen to keep the public project available. That decision, attribution and responding to legitimate requests **do not establish permission or eliminate liability**. No rightsholder permission has been obtained by this project, and the later My Avatar Editor MIT release has not been treated as a blanket grant for the older application.
 
-This is an unofficial, AI-assisted, unmaintained project provided as-is. No support, maintenance, warranty, fitness, noninfringement or console/game compatibility promise is made.
-
-GitHub describes the distinction between public viewing/forking and a general source license at https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository.
+**AI-generated / vibe-coded project — unmaintained.** Provided as-is, without planned technical support, pull-request review or ongoing maintenance. Forks and independent work are encouraged subject to the rights of each component. The MIT text itself contains no support obligation or extra use restriction. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for bundled software and container source information.

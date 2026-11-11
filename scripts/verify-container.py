@@ -44,13 +44,14 @@ def main():
   assert request('/','POST')[0]==405
   assert request('/?mii='+'00'*74)[2]==request('/')[2]
   assert request('/NOTICES.md')[0]==200
+  for notice in json.loads((Path(__file__).resolve().parents[1]/'release-notices.json').read_text()):assert request('/'+notice)[0]==200,notice
   with tempfile.TemporaryDirectory() as tmp:
    archive=Path(tmp)/'rootfs.tar';docker('export','-o',str(archive),name)
    with tarfile.open(archive) as tar:
     names=tar.getnames();assert not any(any(x in n.split('/') for x in ['SOURCE','EXTRACTED-SWF','.git','node_modules','test-results']) for n in names)
     assert not any(n in names for n in ['usr/bin/node','usr/local/bin/node','usr/bin/python3','usr/local/bin/python3'])
     site={m.name.removeprefix('usr/share/nginx/html/'):hashlib.sha256(tar.extractfile(m).read()).hexdigest() for m in tar.getmembers() if m.isfile() and m.name.startswith('usr/share/nginx/html/')}
-    allowed={'index.html','LICENSE.md','NOTICES.md','LICENSES/Vite-LICENSE.md','BUILD-INFO.json'};assert all(n in allowed or n.startswith('assets/') and n.endswith(('.js','.css','.svg','.png','.jpg','.woff','.woff2')) for n in site)
+    allowed={'index.html','BUILD-INFO.json',*json.loads((Path(__file__).resolve().parents[1]/'release-notices.json').read_text())};assert all(n in allowed or n.startswith('assets/') and n.endswith(('.js','.css','.svg','.png','.jpg','.woff','.woff2')) for n in site)
   docker('restart',name)
   for _ in range(100):
    try:

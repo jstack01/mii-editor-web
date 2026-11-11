@@ -1,0 +1,25 @@
+# Proposed notices update — local draft, NOT APPLIED
+
+Retain all existing provenance and component notices in NOTICES.md. Add the following researched distinctions after review; do not silently replace the current license or claim the complete bundle is MIT.
+
+## Historical application and successor
+
+Original older application materials came from https://mii-editor.nekoweb.org/ and https://archive.org/details/mii-editor, preservation sources credited as such. The author is attributed as senocular, identified in the successor's own copyright notice as Trevor McCauley. No ownership of Nintendo characters, historical art, fonts or the old application is claimed. No Nintendo or original-author endorsement is implied.
+
+The later My Avatar Editor Google Code source archive contains Copyright (c) 2009 Trevor McCauley and an MIT license. That is an established grant for the material it validly covers, not evidence that all older Mii Editor SWFs or Nintendo/font rights are included. If a current component is actually cleared through that later source, identify the precise source mapping and include its complete upstream MIT notice alongside the eligible modern-code notice. Do not add a blanket successor attribution as a substitute for that mapping.
+
+Historical GUI/character vectors and glyphs embedded in the current JS remain subject to the asset-rights inventory. Current root/history/release exposure is a separate record; later license changes do not grant third-party rights retroactively.
+
+## Build and runtime software
+
+Vite's runtime helper and existing bundled license notices retain their upstream terms in LICENSES/Vite-LICENSE.md. TypeScript, Vitest, Playwright, Lightning CSS and other build/test dependencies are separately licensed and are not included as a runtime node_modules tree. Preserve applicable texts if redistributing any tools or binaries. The 84-entry exact dependency inventory should be refreshed for the final release.
+
+Docker adds Nginx Unprivileged/Alpine components under multiple licenses. Preserve LICENSES/Nginx-Unprivileged-LICENSE.txt and Nginx/module copyrights; also provide the complete applicable runtime component notices and corresponding-source access required by the actual GPL/LGPL/MPL/other licenses selected for the final image. The 70-package audit is an input, not a completed source offer. Do not copy this draft with an unfulfilled promise of source availability. A final COMPONENT-SOURCES manifest and any required actual source archive/offer must be prepared and checked before distribution.
+
+Analysis-only external MiiJS (pinned package metadata ISC), RFL research (repository CC0 declaration with third-party limitations) and unlicensed/unclear Java Util are not distributed with the website. Keep that distinction and exact reference pins; do not newly bundle them without review.
+
+## Modern contributions and AI assistance
+
+Only the rights actually held in the expressly scoped modern contributions may be granted under the approved MIT text. The project has substantial AI assistance; no exclusive copyright is claimed over purely machine-generated material or third-party input. Exact holder wording and scope require approval. Existing upstream and asset terms remain effective for their respective content.
+
+**AI-generated / vibe-coded project — unmaintained.** Provided as-is, with no planned support or contribution review. Forks and independent maintenance are encouraged within applicable rights. Software validation and limited Dolphin evidence do not certify physical Wii/game compatibility. Physical hardware testing remains indefinitely deferred by owner decision.

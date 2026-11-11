@@ -27,6 +27,6 @@ For Compose, extract the [Docker starter ZIP](https://github.com/jstack01/mii-ed
 
 Original application materials were found at [mii-editor.nekoweb.org](https://mii-editor.nekoweb.org/) and the [Internet Archive](https://archive.org/details/mii-editor), which credit **senocular** as the original developer. Thanks to the original creators and archivists.
 
-**AI-generated / vibe-coded project — unmaintained.** Unofficial and provided as-is, without planned support or contribution review. Forks are encouraged subject to applicable rights. Not affiliated with or endorsed by Nintendo or the original developers. New code is unlicensed; historical asset rights remain unresolved. Read the [license](LICENSE.md) and [notices](NOTICES.md).
+**AI-generated / vibe-coded project — unmaintained.** Unofficial and provided as-is, without planned support or contribution review. Forks are encouraged subject to applicable rights. Not affiliated with or endorsed by Nintendo or the original developers. MIT covers only the eligible modern contributions listed in [license scope](LICENSE-SCOPE.json); historical assets and inherited code remain separately unresolved. Read the [license](LICENSE.md) and [notices](NOTICES.md).
 
 [Build from source](docs/BUILDING.md) · [Browser compatibility](docs/BROWSER_COMPATIBILITY.md) · [Wii compatibility notice](web/WII_PROFILE.md) · [Wii/Dolphin verification](web/PHASE7_VERIFICATION.md) · [Roadmap](MIGRATION_PLAN.md) · [QA results](docs/PHASE8A_QA.md) · [Privacy](docs/SECURITY_PRIVACY.md)

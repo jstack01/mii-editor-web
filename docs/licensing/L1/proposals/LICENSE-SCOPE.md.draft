@@ -1,0 +1,22 @@
+# Proposed license scope — NOT APPLIED
+
+This document and LICENSE-MIT.txt.draft are review proposals. Active LICENSE.md still states the current unlicensed status. No rights are granted by merely preparing this packet.
+
+Proposed adoption process: confirm the holder name(s), approve a file/portion allowlist from file-inventory.json, and make the scope available beside the canonical root LICENSE. Resolve or explicitly exclude mixed-source portions first. Do not put an unqualified root MIT file over the current tree and call every file MIT. If source is mixed within a file/bundle, retain separate notices for each component. Update package metadata and actual copied notice paths only after approval.
+
+The contemplated MIT grant covers only copyrightable modern contributions the identified licensor lawfully owns or has authority to license. It does not assert new exclusive rights in facts, purely AI-generated material or third-party content. Applicable AI service terms/assignment rights and any human contributor/employer interests must be checked before the copyright line is finalized. The standard MIT text remains standard; it is not modified with noncommercial, no-forks, no-PR or no-support restrictions.
+
+Potential own-code scope: the approved **modern-infrastructure** and eligible **modern-browser** entries in the machine inventory, after embedded-data/snippet review. Examples include distribution/serve.py, new launcher wrappers, release/container helpers, storage adapters and modern repair UI. An example is not a blanket path license or a declaration that all eligible interests are legally proven.
+
+Withheld or separately scoped:
+
+- `web/src/generated/**`, including recovered graphics, original metadata, default data and renderer-case outputs; `web/generated-resources.json` does not turn those into new art.
+- Acknowledged original-guided ports and mixed rendering/editor/model/XML code until component clearance is documented. If rebased on the later MIT MAE source, preserve Copyright (c) 2009 Trevor McCauley and its full MIT permission, rather than claiming that contribution as the new owner's original work.
+- Inherited records/permutations, snapshots and other factual/reference data where rights classification remains unresolved; own test code can be separated.
+- Historical-derived GUI/character vectors, glyph outlines, five screenshots and any original SWF/ActionScript/FLA/AIR/recovery data in current or older history.
+- All upstream software, font and asset material and license texts, including Vite's helper and container OS/Nginx components: their respective terms continue to apply.
+- Nintendo or other third-party names/marks/design rights; neither MIT nor this scope conveys endorsement or trademark permission.
+
+A subsequent rights resolution may add specifically documented assets/components under their own licenses. Do not describe unresolved exclusions as an affirmative permission to redistribute them. A complete runnable application may remain unsuitable for general redistribution until those exclusions are resolved. The owner must separately decide whether a code-only publication meets the intended scope.
+
+Keep the unmaintained/no-support/no-contribution-review statement in project documentation; it describes the owner's intent without restricting licensees' ability to fork and maintain their own versions.

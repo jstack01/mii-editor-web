@@ -15,7 +15,7 @@ No explicit redistribution license or rightsholder permission was located in the
 
 **Removing SWFs and decompiled ActionScript does not remove the asset-rights concern.** The checked-in generated catalogs and prebuilt JavaScript still contain SVG/vector shapes, embedded glyph outlines and display data derived from the historical assets. Screenshots also depict those assets. Their redistribution, modification and commercial-use rights remain unresolved. The repository owner's publication approval is not a substitute for third-party permission. Confirm applicable rights before redistributing or building on those materials; no blanket MIT or other permission is asserted for them.
 
-Newly written application code is also currently unlicensed by the owner's choice; see LICENSE.md. Forks and independent development are encouraged subject to applicable rights, licenses and platform terms. Public availability alone must not be described as an open-source license grant.
+Eligible modern contributions now have a narrowly scoped MIT grant; see LICENSE.md and LICENSE-SCOPE.json. Files/portions outside that list have not been newly licensed. Forks and independent development are encouraged subject to applicable rights, licenses and platform terms. Public availability alone must not be described as an open-source license grant.
 
 ## Build tools and reference implementations
 
@@ -29,3 +29,7 @@ Older Git commits may include original materials. The current source tree and ne
 ## Docker runtime components
 
 Only the Docker edition adds the upstream Nginx Unprivileged/Alpine runtime. Nginx retains its upstream COPYRIGHT in /usr/share/licenses/nginx/COPYRIGHT. The upstream unprivileged image project is Apache-2.0; its license, taken from the pinned base image source revision 679834d1aa245a42e680d380c6b57785cfaa2115, is preserved in LICENSES/Nginx-Unprivileged-LICENSE.txt in this source tree and /usr/share/licenses/nginx-unprivileged/LICENSE in the image. Other base OS components keep their upstream licensing. These component licenses do not license the new application code or historical graphics; the disclosures above remain unchanged. See docs/DOCKER.md for the selected base/version and source links.
+
+## Scoped modern-code license and owner direction (L2)
+
+The standard MIT license applies only to eligible contributions in LICENSE-SCOPE.json, to the extent rights are held. It does not cover historical art/glyphs, inherited source expression or third-party/Nintendo interests. The owner has elected to accept the existing historical-material risk without pursuing permission or replacing the artwork. Neither that choice nor responding to legitimate requests establishes rights or removes liability. Existing unresolved disclosures remain in effect. See ASSET_RIGHTS.md, THIRD_PARTY_NOTICES.md and CONTAINER_SOURCES.md.

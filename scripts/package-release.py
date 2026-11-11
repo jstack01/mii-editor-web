@@ -10,6 +10,7 @@ import subprocess
 import time
 import zipfile
 ROOT=Path(__file__).resolve().parents[1]
+NOTICE_FILES=tuple(json.loads((ROOT/'release-notices.json').read_text()))
 EDITIONS=('macos','linux','windows','static')
 LAUNCHERS={'macos':'Start Mii Editor.command','linux':'start-mii-editor.sh','windows':'Start Mii Editor.cmd'}
 
@@ -23,7 +24,7 @@ def guide_contents(name,version):
         path,separator,fragment=target.partition('#')
         resolved=posixpath.normpath('docs/'+path)
         if resolved.startswith('docs/') and resolved[5:] in USER_GUIDES:output=resolved[5:]
-        elif resolved in {'LICENSE.md','NOTICES.md'}:output=resolved
+        elif resolved in NOTICE_FILES:output=resolved
         else:output='https://github.com/jstack01/mii-editor-web/blob/'+version+'/'+resolved
         return ']('+output+(separator+fragment if separator else '')+')'
     return re.sub(r'\]\(([^)]+)\)',link,text).encode()
@@ -32,7 +33,7 @@ def git(*args):
     return subprocess.check_output(['git',*args],cwd=ROOT,text=True).strip()
 
 def website_files():
-    site=ROOT/'web/dist';allowed={'index.html','LICENSE.md','NOTICES.md','LICENSES/Vite-LICENSE.md'};entries={}
+    site=ROOT/'web/dist';allowed={'index.html',*NOTICE_FILES};entries={}
     for path in sorted(site.rglob('*')):
         if not path.is_file():continue
         name=path.relative_to(site).as_posix()
@@ -44,7 +45,7 @@ def website_files():
 
 def create_archive(edition,version,build,timestamp,site):
     entries={('' if edition=='static' else 'website/')+name:data for name,data in site.items()}
-    for name in ['LICENSE.md','NOTICES.md','LICENSES/Vite-LICENSE.md']:
+    for name in NOTICE_FILES:
         entries[name]=(ROOT/name).read_bytes()
     entries['HOSTING.md']=guide_contents('HOSTING.md',version)
     for guide in ['LOCAL_LAUNCHERS.md','BROWSER_COMPATIBILITY.md','SECURITY_PRIVACY.md']:
@@ -80,10 +81,13 @@ def write_archive(folder,entries,build,timestamp,edition):
 def create_docker_starter(version,build,timestamp):
     entries={'compose.yaml':(ROOT/'compose.yaml').read_bytes(),'.env.example':(ROOT/'.env.example').read_bytes(),
              'START-HERE.md':guide_contents('DOCKER.md',version),'BUILD-INFO.json':(json.dumps(build,indent=2)+'\n').encode()}
-    for name in ['LICENSE.md','NOTICES.md','LICENSES/Vite-LICENSE.md']:
+    for name in NOTICE_FILES:
         entries[name]=(ROOT/name).read_bytes()
     for guide in ['HOSTING.md','BROWSER_COMPATIBILITY.md','SECURITY_PRIVACY.md']:
         if (ROOT/'docs'/guide).exists():entries[guide]=guide_contents(guide,version)
+    for path in sorted((ROOT/'LICENSES/container').rglob('*')):
+        if path.is_file():entries[path.relative_to(ROOT).as_posix()]=path.read_bytes()
+    if (ROOT/'LICENSES/Nginx-Unprivileged-LICENSE.txt').exists():entries['LICENSES/Nginx-Unprivileged-LICENSE.txt']=(ROOT/'LICENSES/Nginx-Unprivileged-LICENSE.txt').read_bytes()
     return write_archive('mii-editor-web-docker-'+version,entries,build,timestamp,'docker')
 
 def main():
@@ -99,7 +103,12 @@ def main():
     artifacts=[create_archive(e,version,build,timestamp,site) for e in EDITIONS if args.edition in ['all',e]]
     supplements=[create_docker_starter(version,build,timestamp)] if (ROOT/'compose.yaml').exists() else []
     output=ROOT/'release';checksum='SHA256SUMS-'+version+'.txt';(output/checksum).write_text(''.join(a['sha256']+'  '+a['filename']+'\n' for a in [*artifacts,*supplements]))
-    result={'format':2,'version':version,'build':build,'artifacts':artifacts,'supplements':supplements,'checksumFile':checksum}
+    source=None
+    source_archive=output/('mii-editor-web-container-sources-'+version+'.tar.gz')
+    if source_archive.exists():
+        source={'filename':source_archive.name,'sha256':hashlib.sha256(source_archive.read_bytes()).hexdigest(),'edition':'container-sources'}
+        with (output/checksum).open('a')as file:file.write(source['sha256']+'  '+source['filename']+'\n')
+    result={'format':2,'version':version,'build':build,'artifacts':artifacts,'supplements':supplements,'checksumFile':checksum,'sourceArchive':source}
     (output/('release-set-'+version+'.json')).write_text(json.dumps(result,indent=2)+'\n')
     for a in [*artifacts,*supplements]:print(str(output/a['filename'])+'\nSHA-256: '+a['sha256'])
     print('No upload was performed.')

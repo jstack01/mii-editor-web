@@ -1,0 +1,1563 @@
+{
+  "scope": "All 19 locally retained published preview archives; remote identities checked separately",
+  "artifacts": [
+    {
+      "archive": "mii-editor-web-docker-v0.1.0-preview.4.zip",
+      "sha256": "0cc2f1127ec3070951323eee4811ba2eb1f512fd5cf0ebca358d44b4da66b7fb",
+      "files": [
+        {
+          "path": "mii-editor-web-docker-v0.1.0-preview.4/.env.example",
+          "bytes": 185,
+          "sha256": "7bf47487b39582adc1e320a9da7cd92b55c55ceed571ab391c7677a3f5b322ad"
+        },
+        {
+          "path": "mii-editor-web-docker-v0.1.0-preview.4/BUILD-INFO.json",
+          "bytes": 190,
+          "sha256": "252814f3a702ae8bfe1eccef8d26a4f5842cd92aa513bb5d420b9d984fa5ff21"
+        },
+        {
+          "path": "mii-editor-web-docker-v0.1.0-preview.4/FILES.sha256",
+          "bytes": 565,
+          "sha256": "7e1139a2b85d2b18f1f701c3e17fd93ce4b89f47a8671a3b187ea07abd7f2c22"
+        },
+        {
+          "path": "mii-editor-web-docker-v0.1.0-preview.4/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-docker-v0.1.0-preview.4/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-docker-v0.1.0-preview.4/NOTICES.md",
+          "bytes": 4149,
+          "sha256": "683ca3385b463aeecece1e3ec5ae5f3fb0177c3f083c0de948f7e6062adb854c"
+        },
+        {
+          "path": "mii-editor-web-docker-v0.1.0-preview.4/START-HERE.md",
+          "bytes": 8166,
+          "sha256": "e79807e06da71f98f5daf415f4be1d2a6de427f1c605d4e5acfb40d34a228633"
+        },
+        {
+          "path": "mii-editor-web-docker-v0.1.0-preview.4/compose.yaml",
+          "bytes": 396,
+          "sha256": "2473cd5715872fab7736636e60d13533129e64d0a20336281b703cbe862642b7"
+        }
+      ],
+      "rightsAssessment": "Compiled JS includes historical vector/glyph catalogs in runtime editions. Starter-only archive contains config/docs/notices; image rights separate."
+    },
+    {
+      "archive": "mii-editor-web-docker-v0.1.0-preview.5.zip",
+      "sha256": "828770eaa0b0ae27a881bf328b761f10556fc4049c89f4b373d826ed17936e74",
+      "files": [
+        {
+          "path": "mii-editor-web-docker-v0.1.0-preview.5/.env.example",
+          "bytes": 185,
+          "sha256": "7bf47487b39582adc1e320a9da7cd92b55c55ceed571ab391c7677a3f5b322ad"
+        },
+        {
+          "path": "mii-editor-web-docker-v0.1.0-preview.5/BROWSER_COMPATIBILITY.md",
+          "bytes": 7484,
+          "sha256": "b4ae3822e083687c12783219b817ccca0533109884b279feceb7d72bc5ef12cb"
+        },
+        {
+          "path": "mii-editor-web-docker-v0.1.0-preview.5/BUILD-INFO.json",
+          "bytes": 190,
+          "sha256": "4ecb885c8fd9557e04990eae55982a5f2cc4eeceac45d522559c3499061489ca"
+        },
+        {
+          "path": "mii-editor-web-docker-v0.1.0-preview.5/FILES.sha256",
+          "bytes": 819,
+          "sha256": "0f775c909ccc2ad09627fd9c86668b6cec0ce3c8c556b71e98fd7cabcbbf928f"
+        },
+        {
+          "path": "mii-editor-web-docker-v0.1.0-preview.5/HOSTING.md",
+          "bytes": 8460,
+          "sha256": "8315edd3a57a4af0e47a85f5ebedad6b416bc61c186f26cbe44cbd405e483a06"
+        },
+        {
+          "path": "mii-editor-web-docker-v0.1.0-preview.5/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-docker-v0.1.0-preview.5/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-docker-v0.1.0-preview.5/NOTICES.md",
+          "bytes": 4149,
+          "sha256": "683ca3385b463aeecece1e3ec5ae5f3fb0177c3f083c0de948f7e6062adb854c"
+        },
+        {
+          "path": "mii-editor-web-docker-v0.1.0-preview.5/SECURITY_PRIVACY.md",
+          "bytes": 5159,
+          "sha256": "90de235703a5c7ebc171824a46ea921a4fe84f01f538a04354552e05882934e3"
+        },
+        {
+          "path": "mii-editor-web-docker-v0.1.0-preview.5/START-HERE.md",
+          "bytes": 8252,
+          "sha256": "f09309bdd5f63ab283fa73035f3c59452b27b300a3066197eafcd79e6c668581"
+        },
+        {
+          "path": "mii-editor-web-docker-v0.1.0-preview.5/compose.yaml",
+          "bytes": 396,
+          "sha256": "7c4dfa46d672561cbc1966c4ac80ac43343981f21e9b40e84cc94dae005a7b0f"
+        }
+      ],
+      "rightsAssessment": "Compiled JS includes historical vector/glyph catalogs in runtime editions. Starter-only archive contains config/docs/notices; image rights separate."
+    },
+    {
+      "archive": "mii-editor-web-linux-v0.1.0-preview.2.zip",
+      "sha256": "5c4e59c6b51b38f57c2466f6a94e5371bd5ec48c9068132e4e58e7097e25ea37",
+      "files": [
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.2/FILES.sha256",
+          "bytes": 1284,
+          "sha256": "5c9c94ac036f7e596ff161f29849f017867263740bae4805626c85a08c6d8b8d"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.2/HOSTING.md",
+          "bytes": 5154,
+          "sha256": "d25d1735d500a3c012caf80c05c9e650a7a910dba35056e78966d21ed618dcfc"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.2/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.2/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.2/NOTICES.md",
+          "bytes": 3411,
+          "sha256": "b093fe1f5350195c4dde373650e948c311b083d6dc4b06be627137e186287b71"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.2/START-HERE.md",
+          "bytes": 3153,
+          "sha256": "f86b304a0bbb37e8a98293279b08f1e9c8377de184a1a0ed92dfefa12bfedb61"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.2/launcher.sh",
+          "bytes": 2656,
+          "sha256": "3561bec3dc90b646d0bb2384bf4a070b233a9e7c40098bd21e2b1af3f75c4aeb"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.2/serve.py",
+          "bytes": 8578,
+          "sha256": "a2df481339b191a573c18ce003e8ad8f5512fde0b36bf93a706479ab8cd3d1ac"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.2/start-mii-editor.sh",
+          "bytes": 114,
+          "sha256": "a43e3923c24ab1d5086568179af60b0d17a156f3576045620add2c395b258381"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.2/website/BUILD-INFO.json",
+          "bytes": 190,
+          "sha256": "ac80063d1e88c9151c77b1715ee8158c726dd463f99ad1348a66d7e2f6e5020a"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.2/website/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.2/website/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.2/website/NOTICES.md",
+          "bytes": 3411,
+          "sha256": "b093fe1f5350195c4dde373650e948c311b083d6dc4b06be627137e186287b71"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.2/website/assets/index-D1Udy9AZ.css",
+          "bytes": 5805,
+          "sha256": "eef60bef0928c527c0f9d7b692ec8a822e82cf446c4db3102b4280c07da919b3"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.2/website/assets/index-DKNrouHT.js",
+          "bytes": 1242102,
+          "sha256": "1dfccd7a5d4cb0a294576a458287c418c897c3c2b63b2427d95de048e2aa6a15"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.2/website/index.html",
+          "bytes": 1033,
+          "sha256": "22f7c5929c40ac48a705349b48eb82061d513e5ca2f7f3b471ce105b5ee291c1"
+        }
+      ],
+      "rightsAssessment": "Compiled JS includes historical vector/glyph catalogs in runtime editions. Starter-only archive contains config/docs/notices; image rights separate."
+    },
+    {
+      "archive": "mii-editor-web-linux-v0.1.0-preview.3.zip",
+      "sha256": "0e385df359c972c51e6d20028a9792fba1e0f1eaf905d75f039f0d830880761f",
+      "files": [
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.3/FILES.sha256",
+          "bytes": 1362,
+          "sha256": "484d5c1d8dab27196632a3334c7af5083333eb9789858a07e79d8a49dafaffe1"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.3/HOSTING.md",
+          "bytes": 6489,
+          "sha256": "02436f8dc0b7f0e9a0aa6d8912670af31faed0ffd4460f8c83b9ac07e424873c"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.3/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.3/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.3/NOTICES.md",
+          "bytes": 3411,
+          "sha256": "b093fe1f5350195c4dde373650e948c311b083d6dc4b06be627137e186287b71"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.3/START-HERE.md",
+          "bytes": 4636,
+          "sha256": "66db438a7429e4868823c6affc5209d08d1b5da4ba6dab3c90860303702f4872"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.3/config.json",
+          "bytes": 19,
+          "sha256": "5bec8c27ef09eaaa2a30f1c0166adf0d27dfe2c98f79b63c817018d79820e7fd"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.3/launcher.sh",
+          "bytes": 2656,
+          "sha256": "3561bec3dc90b646d0bb2384bf4a070b233a9e7c40098bd21e2b1af3f75c4aeb"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.3/serve.py",
+          "bytes": 9917,
+          "sha256": "f6d1d1c9ae8098da18fdc9cc93cc13db3bac9d50bf2a3c7b31c84d7c33d976b5"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.3/start-mii-editor.sh",
+          "bytes": 114,
+          "sha256": "a43e3923c24ab1d5086568179af60b0d17a156f3576045620add2c395b258381"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.3/website/BUILD-INFO.json",
+          "bytes": 190,
+          "sha256": "410cdb58e56fc3caf6b5797a8b18003d87c889d31c1172862092db5981edbb0d"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.3/website/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.3/website/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.3/website/NOTICES.md",
+          "bytes": 3411,
+          "sha256": "b093fe1f5350195c4dde373650e948c311b083d6dc4b06be627137e186287b71"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.3/website/assets/index-BNVzQR5_.js",
+          "bytes": 1242976,
+          "sha256": "6148c5ee9f1bccaa04ce1e506cbd675aefe862dc37a05c99d7ea8492395bce48"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.3/website/assets/index-DiwmFvFc.css",
+          "bytes": 6422,
+          "sha256": "32daf935b4af7e6ef9a5e42e7c0282df1507ac8250535c5a368a7c90ee3ec299"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.3/website/index.html",
+          "bytes": 1257,
+          "sha256": "0979c9f047a503b5c179d3b8bb5c839c7a9c5788ae888026d137249786be3761"
+        }
+      ],
+      "rightsAssessment": "Compiled JS includes historical vector/glyph catalogs in runtime editions. Starter-only archive contains config/docs/notices; image rights separate."
+    },
+    {
+      "archive": "mii-editor-web-linux-v0.1.0-preview.4.zip",
+      "sha256": "b13de7ffde21095c9790614ca8af9376cbc14d150b7141d92481753b412abcfa",
+      "files": [
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.4/FILES.sha256",
+          "bytes": 1362,
+          "sha256": "7169e25d37db2a89b47d29b19728a563b96f1c2da78c449bbe6d31dbb3d49cd1"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.4/HOSTING.md",
+          "bytes": 7271,
+          "sha256": "1803c43dd574ff971a9c101272099900184fe026a9775419f664a3cdaeb5d092"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.4/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.4/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.4/NOTICES.md",
+          "bytes": 4149,
+          "sha256": "683ca3385b463aeecece1e3ec5ae5f3fb0177c3f083c0de948f7e6062adb854c"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.4/START-HERE.md",
+          "bytes": 4636,
+          "sha256": "66db438a7429e4868823c6affc5209d08d1b5da4ba6dab3c90860303702f4872"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.4/config.json",
+          "bytes": 19,
+          "sha256": "5bec8c27ef09eaaa2a30f1c0166adf0d27dfe2c98f79b63c817018d79820e7fd"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.4/launcher.sh",
+          "bytes": 2656,
+          "sha256": "3561bec3dc90b646d0bb2384bf4a070b233a9e7c40098bd21e2b1af3f75c4aeb"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.4/serve.py",
+          "bytes": 9917,
+          "sha256": "f6d1d1c9ae8098da18fdc9cc93cc13db3bac9d50bf2a3c7b31c84d7c33d976b5"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.4/start-mii-editor.sh",
+          "bytes": 114,
+          "sha256": "a43e3923c24ab1d5086568179af60b0d17a156f3576045620add2c395b258381"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.4/website/BUILD-INFO.json",
+          "bytes": 190,
+          "sha256": "252814f3a702ae8bfe1eccef8d26a4f5842cd92aa513bb5d420b9d984fa5ff21"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.4/website/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.4/website/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.4/website/NOTICES.md",
+          "bytes": 4149,
+          "sha256": "683ca3385b463aeecece1e3ec5ae5f3fb0177c3f083c0de948f7e6062adb854c"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.4/website/assets/index-BNVzQR5_.js",
+          "bytes": 1242976,
+          "sha256": "6148c5ee9f1bccaa04ce1e506cbd675aefe862dc37a05c99d7ea8492395bce48"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.4/website/assets/index-DiwmFvFc.css",
+          "bytes": 6422,
+          "sha256": "32daf935b4af7e6ef9a5e42e7c0282df1507ac8250535c5a368a7c90ee3ec299"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.4/website/index.html",
+          "bytes": 1257,
+          "sha256": "0979c9f047a503b5c179d3b8bb5c839c7a9c5788ae888026d137249786be3761"
+        }
+      ],
+      "rightsAssessment": "Compiled JS includes historical vector/glyph catalogs in runtime editions. Starter-only archive contains config/docs/notices; image rights separate."
+    },
+    {
+      "archive": "mii-editor-web-linux-v0.1.0-preview.5.zip",
+      "sha256": "8610a87fc870919b7618263e1960650de12fcfb2d69649713ad3212297caba41",
+      "files": [
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.5/BROWSER_COMPATIBILITY.md",
+          "bytes": 7484,
+          "sha256": "b4ae3822e083687c12783219b817ccca0533109884b279feceb7d72bc5ef12cb"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.5/FILES.sha256",
+          "bytes": 1624,
+          "sha256": "5d41309c035726622f4a334257b8dc1c4c2eac098a82a2f974fa5b5f25732c99"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.5/HOSTING.md",
+          "bytes": 8460,
+          "sha256": "8315edd3a57a4af0e47a85f5ebedad6b416bc61c186f26cbe44cbd405e483a06"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.5/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.5/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.5/LOCAL_LAUNCHERS.md",
+          "bytes": 8764,
+          "sha256": "65967a9b2038795db2b350638b70cb571a20c23878ef62fe538602e53fba479c"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.5/NOTICES.md",
+          "bytes": 4149,
+          "sha256": "683ca3385b463aeecece1e3ec5ae5f3fb0177c3f083c0de948f7e6062adb854c"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.5/SECURITY_PRIVACY.md",
+          "bytes": 5159,
+          "sha256": "90de235703a5c7ebc171824a46ea921a4fe84f01f538a04354552e05882934e3"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.5/START-HERE.md",
+          "bytes": 4521,
+          "sha256": "9e5b3406077cac7e47c750ad56b317385bfa5c9b795f99471db597522848e319"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.5/config.json",
+          "bytes": 19,
+          "sha256": "5bec8c27ef09eaaa2a30f1c0166adf0d27dfe2c98f79b63c817018d79820e7fd"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.5/launcher.sh",
+          "bytes": 2656,
+          "sha256": "3561bec3dc90b646d0bb2384bf4a070b233a9e7c40098bd21e2b1af3f75c4aeb"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.5/serve.py",
+          "bytes": 9975,
+          "sha256": "79443129a18616fa573dc22e189236df5c7217c0956a5405499f45fddb4541ee"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.5/start-mii-editor.sh",
+          "bytes": 114,
+          "sha256": "a43e3923c24ab1d5086568179af60b0d17a156f3576045620add2c395b258381"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.5/website/BUILD-INFO.json",
+          "bytes": 190,
+          "sha256": "4ecb885c8fd9557e04990eae55982a5f2cc4eeceac45d522559c3499061489ca"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.5/website/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.5/website/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.5/website/NOTICES.md",
+          "bytes": 4149,
+          "sha256": "683ca3385b463aeecece1e3ec5ae5f3fb0177c3f083c0de948f7e6062adb854c"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.5/website/assets/index-CJiFHbnk.js",
+          "bytes": 1243471,
+          "sha256": "85c7e959f31c5a80ef3803a7fd8917cad32f6d1491e2070b271680f2c00e9a9b"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.5/website/assets/index-Cnpx4y1s.css",
+          "bytes": 6735,
+          "sha256": "e8b2717b79fe8771a9bfd8d8b6056cc75ea8deaa11b75ab3e49232595ef2c14d"
+        },
+        {
+          "path": "mii-editor-web-linux-v0.1.0-preview.5/website/index.html",
+          "bytes": 1257,
+          "sha256": "279070937ee09379f4aee6bbc132982f1a96010a581fec87cb44a8c3667b8838"
+        }
+      ],
+      "rightsAssessment": "Compiled JS includes historical vector/glyph catalogs in runtime editions. Starter-only archive contains config/docs/notices; image rights separate."
+    },
+    {
+      "archive": "mii-editor-web-macos-v0.1.0-preview.2.zip",
+      "sha256": "109786d13557377409bf3e91aa447bfda3035d128775073089eaf52d7c73d4d7",
+      "files": [
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.2/FILES.sha256",
+          "bytes": 1289,
+          "sha256": "821db108fd9a2f88a0ab9269369c38d3582037a644c674fe407834b7aa6bec40"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.2/HOSTING.md",
+          "bytes": 5154,
+          "sha256": "d25d1735d500a3c012caf80c05c9e650a7a910dba35056e78966d21ed618dcfc"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.2/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.2/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.2/NOTICES.md",
+          "bytes": 3411,
+          "sha256": "b093fe1f5350195c4dde373650e948c311b083d6dc4b06be627137e186287b71"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.2/START-HERE.md",
+          "bytes": 3163,
+          "sha256": "07feb587f5f69ac1a71c41bc0c6d44e83f41667f95109c37a041ca50e57b7c17"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.2/Start Mii Editor.command",
+          "bytes": 114,
+          "sha256": "a43e3923c24ab1d5086568179af60b0d17a156f3576045620add2c395b258381"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.2/launcher.sh",
+          "bytes": 2656,
+          "sha256": "3561bec3dc90b646d0bb2384bf4a070b233a9e7c40098bd21e2b1af3f75c4aeb"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.2/serve.py",
+          "bytes": 8578,
+          "sha256": "a2df481339b191a573c18ce003e8ad8f5512fde0b36bf93a706479ab8cd3d1ac"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.2/website/BUILD-INFO.json",
+          "bytes": 190,
+          "sha256": "ac80063d1e88c9151c77b1715ee8158c726dd463f99ad1348a66d7e2f6e5020a"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.2/website/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.2/website/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.2/website/NOTICES.md",
+          "bytes": 3411,
+          "sha256": "b093fe1f5350195c4dde373650e948c311b083d6dc4b06be627137e186287b71"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.2/website/assets/index-D1Udy9AZ.css",
+          "bytes": 5805,
+          "sha256": "eef60bef0928c527c0f9d7b692ec8a822e82cf446c4db3102b4280c07da919b3"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.2/website/assets/index-DKNrouHT.js",
+          "bytes": 1242102,
+          "sha256": "1dfccd7a5d4cb0a294576a458287c418c897c3c2b63b2427d95de048e2aa6a15"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.2/website/index.html",
+          "bytes": 1033,
+          "sha256": "22f7c5929c40ac48a705349b48eb82061d513e5ca2f7f3b471ce105b5ee291c1"
+        }
+      ],
+      "rightsAssessment": "Compiled JS includes historical vector/glyph catalogs in runtime editions. Starter-only archive contains config/docs/notices; image rights separate."
+    },
+    {
+      "archive": "mii-editor-web-macos-v0.1.0-preview.3.zip",
+      "sha256": "11a9feedbd278450d312676f80b54dfb1640387d60e758c3ac83885f79c603e4",
+      "files": [
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.3/FILES.sha256",
+          "bytes": 1367,
+          "sha256": "c9c1e683e05aa6ce6e74c7351538cd05eb031dd4f6f50168aa6e4b9015c39ae3"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.3/HOSTING.md",
+          "bytes": 6489,
+          "sha256": "02436f8dc0b7f0e9a0aa6d8912670af31faed0ffd4460f8c83b9ac07e424873c"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.3/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.3/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.3/NOTICES.md",
+          "bytes": 3411,
+          "sha256": "b093fe1f5350195c4dde373650e948c311b083d6dc4b06be627137e186287b71"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.3/START-HERE.md",
+          "bytes": 4646,
+          "sha256": "257274be9d016e4531f86e0c570f0beaf968d39cfc8d4464f8a3a6cde4b31783"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.3/Start Mii Editor.command",
+          "bytes": 114,
+          "sha256": "a43e3923c24ab1d5086568179af60b0d17a156f3576045620add2c395b258381"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.3/config.json",
+          "bytes": 19,
+          "sha256": "5bec8c27ef09eaaa2a30f1c0166adf0d27dfe2c98f79b63c817018d79820e7fd"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.3/launcher.sh",
+          "bytes": 2656,
+          "sha256": "3561bec3dc90b646d0bb2384bf4a070b233a9e7c40098bd21e2b1af3f75c4aeb"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.3/serve.py",
+          "bytes": 9917,
+          "sha256": "f6d1d1c9ae8098da18fdc9cc93cc13db3bac9d50bf2a3c7b31c84d7c33d976b5"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.3/website/BUILD-INFO.json",
+          "bytes": 190,
+          "sha256": "410cdb58e56fc3caf6b5797a8b18003d87c889d31c1172862092db5981edbb0d"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.3/website/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.3/website/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.3/website/NOTICES.md",
+          "bytes": 3411,
+          "sha256": "b093fe1f5350195c4dde373650e948c311b083d6dc4b06be627137e186287b71"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.3/website/assets/index-BNVzQR5_.js",
+          "bytes": 1242976,
+          "sha256": "6148c5ee9f1bccaa04ce1e506cbd675aefe862dc37a05c99d7ea8492395bce48"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.3/website/assets/index-DiwmFvFc.css",
+          "bytes": 6422,
+          "sha256": "32daf935b4af7e6ef9a5e42e7c0282df1507ac8250535c5a368a7c90ee3ec299"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.3/website/index.html",
+          "bytes": 1257,
+          "sha256": "0979c9f047a503b5c179d3b8bb5c839c7a9c5788ae888026d137249786be3761"
+        }
+      ],
+      "rightsAssessment": "Compiled JS includes historical vector/glyph catalogs in runtime editions. Starter-only archive contains config/docs/notices; image rights separate."
+    },
+    {
+      "archive": "mii-editor-web-macos-v0.1.0-preview.4.zip",
+      "sha256": "6f1fd11e009c00f578768d8a708e275f0357508573a18b1afb511bb56cdb1579",
+      "files": [
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.4/FILES.sha256",
+          "bytes": 1367,
+          "sha256": "57e4d8cae938cb08686d7450b44735d86e573b73fb45d0aadff5edeed37fa790"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.4/HOSTING.md",
+          "bytes": 7271,
+          "sha256": "1803c43dd574ff971a9c101272099900184fe026a9775419f664a3cdaeb5d092"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.4/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.4/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.4/NOTICES.md",
+          "bytes": 4149,
+          "sha256": "683ca3385b463aeecece1e3ec5ae5f3fb0177c3f083c0de948f7e6062adb854c"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.4/START-HERE.md",
+          "bytes": 4646,
+          "sha256": "257274be9d016e4531f86e0c570f0beaf968d39cfc8d4464f8a3a6cde4b31783"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.4/Start Mii Editor.command",
+          "bytes": 114,
+          "sha256": "a43e3923c24ab1d5086568179af60b0d17a156f3576045620add2c395b258381"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.4/config.json",
+          "bytes": 19,
+          "sha256": "5bec8c27ef09eaaa2a30f1c0166adf0d27dfe2c98f79b63c817018d79820e7fd"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.4/launcher.sh",
+          "bytes": 2656,
+          "sha256": "3561bec3dc90b646d0bb2384bf4a070b233a9e7c40098bd21e2b1af3f75c4aeb"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.4/serve.py",
+          "bytes": 9917,
+          "sha256": "f6d1d1c9ae8098da18fdc9cc93cc13db3bac9d50bf2a3c7b31c84d7c33d976b5"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.4/website/BUILD-INFO.json",
+          "bytes": 190,
+          "sha256": "252814f3a702ae8bfe1eccef8d26a4f5842cd92aa513bb5d420b9d984fa5ff21"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.4/website/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.4/website/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.4/website/NOTICES.md",
+          "bytes": 4149,
+          "sha256": "683ca3385b463aeecece1e3ec5ae5f3fb0177c3f083c0de948f7e6062adb854c"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.4/website/assets/index-BNVzQR5_.js",
+          "bytes": 1242976,
+          "sha256": "6148c5ee9f1bccaa04ce1e506cbd675aefe862dc37a05c99d7ea8492395bce48"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.4/website/assets/index-DiwmFvFc.css",
+          "bytes": 6422,
+          "sha256": "32daf935b4af7e6ef9a5e42e7c0282df1507ac8250535c5a368a7c90ee3ec299"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.4/website/index.html",
+          "bytes": 1257,
+          "sha256": "0979c9f047a503b5c179d3b8bb5c839c7a9c5788ae888026d137249786be3761"
+        }
+      ],
+      "rightsAssessment": "Compiled JS includes historical vector/glyph catalogs in runtime editions. Starter-only archive contains config/docs/notices; image rights separate."
+    },
+    {
+      "archive": "mii-editor-web-macos-v0.1.0-preview.5.zip",
+      "sha256": "6ae5d0b852cc2b956d200e1e9905c785b0263ea7480ada84745a857d1df4b2eb",
+      "files": [
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.5/BROWSER_COMPATIBILITY.md",
+          "bytes": 7484,
+          "sha256": "b4ae3822e083687c12783219b817ccca0533109884b279feceb7d72bc5ef12cb"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.5/FILES.sha256",
+          "bytes": 1629,
+          "sha256": "e169b2e61b98caf84ee781f958622e726268995b309818cb316c60650dd4d627"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.5/HOSTING.md",
+          "bytes": 8460,
+          "sha256": "8315edd3a57a4af0e47a85f5ebedad6b416bc61c186f26cbe44cbd405e483a06"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.5/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.5/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.5/LOCAL_LAUNCHERS.md",
+          "bytes": 8764,
+          "sha256": "65967a9b2038795db2b350638b70cb571a20c23878ef62fe538602e53fba479c"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.5/NOTICES.md",
+          "bytes": 4149,
+          "sha256": "683ca3385b463aeecece1e3ec5ae5f3fb0177c3f083c0de948f7e6062adb854c"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.5/SECURITY_PRIVACY.md",
+          "bytes": 5159,
+          "sha256": "90de235703a5c7ebc171824a46ea921a4fe84f01f538a04354552e05882934e3"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.5/START-HERE.md",
+          "bytes": 4531,
+          "sha256": "8ee0e6e4862f3c32fdff8cce702d05c37a35e742a4df4ce6fc53b7c894c650aa"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.5/Start Mii Editor.command",
+          "bytes": 114,
+          "sha256": "a43e3923c24ab1d5086568179af60b0d17a156f3576045620add2c395b258381"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.5/config.json",
+          "bytes": 19,
+          "sha256": "5bec8c27ef09eaaa2a30f1c0166adf0d27dfe2c98f79b63c817018d79820e7fd"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.5/launcher.sh",
+          "bytes": 2656,
+          "sha256": "3561bec3dc90b646d0bb2384bf4a070b233a9e7c40098bd21e2b1af3f75c4aeb"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.5/serve.py",
+          "bytes": 9975,
+          "sha256": "79443129a18616fa573dc22e189236df5c7217c0956a5405499f45fddb4541ee"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.5/website/BUILD-INFO.json",
+          "bytes": 190,
+          "sha256": "4ecb885c8fd9557e04990eae55982a5f2cc4eeceac45d522559c3499061489ca"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.5/website/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.5/website/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.5/website/NOTICES.md",
+          "bytes": 4149,
+          "sha256": "683ca3385b463aeecece1e3ec5ae5f3fb0177c3f083c0de948f7e6062adb854c"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.5/website/assets/index-CJiFHbnk.js",
+          "bytes": 1243471,
+          "sha256": "85c7e959f31c5a80ef3803a7fd8917cad32f6d1491e2070b271680f2c00e9a9b"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.5/website/assets/index-Cnpx4y1s.css",
+          "bytes": 6735,
+          "sha256": "e8b2717b79fe8771a9bfd8d8b6056cc75ea8deaa11b75ab3e49232595ef2c14d"
+        },
+        {
+          "path": "mii-editor-web-macos-v0.1.0-preview.5/website/index.html",
+          "bytes": 1257,
+          "sha256": "279070937ee09379f4aee6bbc132982f1a96010a581fec87cb44a8c3667b8838"
+        }
+      ],
+      "rightsAssessment": "Compiled JS includes historical vector/glyph catalogs in runtime editions. Starter-only archive contains config/docs/notices; image rights separate."
+    },
+    {
+      "archive": "mii-editor-web-static-v0.1.0-preview.2.zip",
+      "sha256": "caf32dca2779f77e0f155fbc1eb626ae3973aa85d071bc1fb5b47d5a45e212d5",
+      "files": [
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.2/BUILD-INFO.json",
+          "bytes": 190,
+          "sha256": "ac80063d1e88c9151c77b1715ee8158c726dd463f99ad1348a66d7e2f6e5020a"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.2/FILES.sha256",
+          "bytes": 744,
+          "sha256": "33de92e3435645a4a18801895a29c821a1022704e342686163be344569526510"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.2/HOSTING.md",
+          "bytes": 5154,
+          "sha256": "d25d1735d500a3c012caf80c05c9e650a7a910dba35056e78966d21ed618dcfc"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.2/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.2/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.2/NOTICES.md",
+          "bytes": 3411,
+          "sha256": "b093fe1f5350195c4dde373650e948c311b083d6dc4b06be627137e186287b71"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.2/START-HERE.md",
+          "bytes": 1279,
+          "sha256": "236981d7f610af68c172e17d28ed53ff438d2739387fdbc88299f2517f0e2bb5"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.2/assets/index-D1Udy9AZ.css",
+          "bytes": 5805,
+          "sha256": "eef60bef0928c527c0f9d7b692ec8a822e82cf446c4db3102b4280c07da919b3"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.2/assets/index-DKNrouHT.js",
+          "bytes": 1242102,
+          "sha256": "1dfccd7a5d4cb0a294576a458287c418c897c3c2b63b2427d95de048e2aa6a15"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.2/index.html",
+          "bytes": 1033,
+          "sha256": "22f7c5929c40ac48a705349b48eb82061d513e5ca2f7f3b471ce105b5ee291c1"
+        }
+      ],
+      "rightsAssessment": "Compiled JS includes historical vector/glyph catalogs in runtime editions. Starter-only archive contains config/docs/notices; image rights separate."
+    },
+    {
+      "archive": "mii-editor-web-static-v0.1.0-preview.3.zip",
+      "sha256": "89389ded0f2d84c86715adda434d886a6186d097517da3824c46b94d810d17f4",
+      "files": [
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.3/BUILD-INFO.json",
+          "bytes": 190,
+          "sha256": "410cdb58e56fc3caf6b5797a8b18003d87c889d31c1172862092db5981edbb0d"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.3/FILES.sha256",
+          "bytes": 744,
+          "sha256": "833e5b208825f22374689f2ed088f646d9f6f5c93f1ba9053479366f6d2b1940"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.3/HOSTING.md",
+          "bytes": 6489,
+          "sha256": "02436f8dc0b7f0e9a0aa6d8912670af31faed0ffd4460f8c83b9ac07e424873c"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.3/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.3/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.3/NOTICES.md",
+          "bytes": 3411,
+          "sha256": "b093fe1f5350195c4dde373650e948c311b083d6dc4b06be627137e186287b71"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.3/START-HERE.md",
+          "bytes": 1279,
+          "sha256": "236981d7f610af68c172e17d28ed53ff438d2739387fdbc88299f2517f0e2bb5"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.3/assets/index-BNVzQR5_.js",
+          "bytes": 1242976,
+          "sha256": "6148c5ee9f1bccaa04ce1e506cbd675aefe862dc37a05c99d7ea8492395bce48"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.3/assets/index-DiwmFvFc.css",
+          "bytes": 6422,
+          "sha256": "32daf935b4af7e6ef9a5e42e7c0282df1507ac8250535c5a368a7c90ee3ec299"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.3/index.html",
+          "bytes": 1257,
+          "sha256": "0979c9f047a503b5c179d3b8bb5c839c7a9c5788ae888026d137249786be3761"
+        }
+      ],
+      "rightsAssessment": "Compiled JS includes historical vector/glyph catalogs in runtime editions. Starter-only archive contains config/docs/notices; image rights separate."
+    },
+    {
+      "archive": "mii-editor-web-static-v0.1.0-preview.4.zip",
+      "sha256": "111a231638e5b6f7ccac3126e7ba4e68b2ef7e349c6ba0db6e3c2d541f0eec81",
+      "files": [
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.4/BUILD-INFO.json",
+          "bytes": 190,
+          "sha256": "252814f3a702ae8bfe1eccef8d26a4f5842cd92aa513bb5d420b9d984fa5ff21"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.4/FILES.sha256",
+          "bytes": 744,
+          "sha256": "689cd7b236f03b1a21b4c271b54316f283c547b3977a04144b8a2fbb9cefe7e0"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.4/HOSTING.md",
+          "bytes": 7271,
+          "sha256": "1803c43dd574ff971a9c101272099900184fe026a9775419f664a3cdaeb5d092"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.4/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.4/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.4/NOTICES.md",
+          "bytes": 4149,
+          "sha256": "683ca3385b463aeecece1e3ec5ae5f3fb0177c3f083c0de948f7e6062adb854c"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.4/START-HERE.md",
+          "bytes": 1279,
+          "sha256": "236981d7f610af68c172e17d28ed53ff438d2739387fdbc88299f2517f0e2bb5"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.4/assets/index-BNVzQR5_.js",
+          "bytes": 1242976,
+          "sha256": "6148c5ee9f1bccaa04ce1e506cbd675aefe862dc37a05c99d7ea8492395bce48"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.4/assets/index-DiwmFvFc.css",
+          "bytes": 6422,
+          "sha256": "32daf935b4af7e6ef9a5e42e7c0282df1507ac8250535c5a368a7c90ee3ec299"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.4/index.html",
+          "bytes": 1257,
+          "sha256": "0979c9f047a503b5c179d3b8bb5c839c7a9c5788ae888026d137249786be3761"
+        }
+      ],
+      "rightsAssessment": "Compiled JS includes historical vector/glyph catalogs in runtime editions. Starter-only archive contains config/docs/notices; image rights separate."
+    },
+    {
+      "archive": "mii-editor-web-static-v0.1.0-preview.5.zip",
+      "sha256": "f1ec763e6932537283c7cb6b009c8aa7e325192198048e368670283adaa2252e",
+      "files": [
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.5/BROWSER_COMPATIBILITY.md",
+          "bytes": 7484,
+          "sha256": "b4ae3822e083687c12783219b817ccca0533109884b279feceb7d72bc5ef12cb"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.5/BUILD-INFO.json",
+          "bytes": 190,
+          "sha256": "4ecb885c8fd9557e04990eae55982a5f2cc4eeceac45d522559c3499061489ca"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.5/FILES.sha256",
+          "bytes": 1006,
+          "sha256": "0a036449704fd82328bd6298b0eeb2e26bb4830d01ae8cf24150edeaaff715a8"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.5/HOSTING.md",
+          "bytes": 8460,
+          "sha256": "8315edd3a57a4af0e47a85f5ebedad6b416bc61c186f26cbe44cbd405e483a06"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.5/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.5/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.5/LOCAL_LAUNCHERS.md",
+          "bytes": 8764,
+          "sha256": "65967a9b2038795db2b350638b70cb571a20c23878ef62fe538602e53fba479c"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.5/NOTICES.md",
+          "bytes": 4149,
+          "sha256": "683ca3385b463aeecece1e3ec5ae5f3fb0177c3f083c0de948f7e6062adb854c"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.5/SECURITY_PRIVACY.md",
+          "bytes": 5159,
+          "sha256": "90de235703a5c7ebc171824a46ea921a4fe84f01f538a04354552e05882934e3"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.5/START-HERE.md",
+          "bytes": 1279,
+          "sha256": "236981d7f610af68c172e17d28ed53ff438d2739387fdbc88299f2517f0e2bb5"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.5/assets/index-CJiFHbnk.js",
+          "bytes": 1243471,
+          "sha256": "85c7e959f31c5a80ef3803a7fd8917cad32f6d1491e2070b271680f2c00e9a9b"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.5/assets/index-Cnpx4y1s.css",
+          "bytes": 6735,
+          "sha256": "e8b2717b79fe8771a9bfd8d8b6056cc75ea8deaa11b75ab3e49232595ef2c14d"
+        },
+        {
+          "path": "mii-editor-web-static-v0.1.0-preview.5/index.html",
+          "bytes": 1257,
+          "sha256": "279070937ee09379f4aee6bbc132982f1a96010a581fec87cb44a8c3667b8838"
+        }
+      ],
+      "rightsAssessment": "Compiled JS includes historical vector/glyph catalogs in runtime editions. Starter-only archive contains config/docs/notices; image rights separate."
+    },
+    {
+      "archive": "mii-editor-web-v0.1.0-preview.1.zip",
+      "sha256": "bab08dc69b96b8b95bc6d59f27ab4cc94d8eea3a9307f18a4a91fbf2aca12f6d",
+      "files": [
+        {
+          "path": "mii-editor-web-v0.1.0-preview.1/FILES.sha256",
+          "bytes": 1371,
+          "sha256": "336327d6a027abc09ba9317405ae20ec02bb70e0faa3ed61280b7a66d2f03783"
+        },
+        {
+          "path": "mii-editor-web-v0.1.0-preview.1/HOSTING.md",
+          "bytes": 4490,
+          "sha256": "e5d9a972dce1e8025d05938b7dc1c97453aa1e335305abb29807839485b7092e"
+        },
+        {
+          "path": "mii-editor-web-v0.1.0-preview.1/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-v0.1.0-preview.1/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-v0.1.0-preview.1/NOTICES.md",
+          "bytes": 3411,
+          "sha256": "b093fe1f5350195c4dde373650e948c311b083d6dc4b06be627137e186287b71"
+        },
+        {
+          "path": "mii-editor-web-v0.1.0-preview.1/START-HERE.md",
+          "bytes": 1601,
+          "sha256": "e124bc3065952a55bd3426e5a104298a59081b7fdfa3a3d537f834933ce06a9a"
+        },
+        {
+          "path": "mii-editor-web-v0.1.0-preview.1/serve.py",
+          "bytes": 2272,
+          "sha256": "72522aad67d21bbf5dfd6e04864707343e386b562d14704c57634690ebbf79e7"
+        },
+        {
+          "path": "mii-editor-web-v0.1.0-preview.1/start-linux.sh",
+          "bytes": 249,
+          "sha256": "db7db406e107a5f7065340d915aab87585282438014e522c7a0ea310b16ff8e3"
+        },
+        {
+          "path": "mii-editor-web-v0.1.0-preview.1/start-macos.command",
+          "bytes": 249,
+          "sha256": "db7db406e107a5f7065340d915aab87585282438014e522c7a0ea310b16ff8e3"
+        },
+        {
+          "path": "mii-editor-web-v0.1.0-preview.1/start-windows.bat",
+          "bytes": 336,
+          "sha256": "1f1bc8bd6242c99097f0e9fddafbc2c10a766592fcbff80fca71d2038434b234"
+        },
+        {
+          "path": "mii-editor-web-v0.1.0-preview.1/website/BUILD-INFO.json",
+          "bytes": 190,
+          "sha256": "e251ab758be346b1891b81eababf5c62098daa3eae41747cec94440e0b7369da"
+        },
+        {
+          "path": "mii-editor-web-v0.1.0-preview.1/website/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-v0.1.0-preview.1/website/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-v0.1.0-preview.1/website/NOTICES.md",
+          "bytes": 3411,
+          "sha256": "b093fe1f5350195c4dde373650e948c311b083d6dc4b06be627137e186287b71"
+        },
+        {
+          "path": "mii-editor-web-v0.1.0-preview.1/website/assets/index-D1Udy9AZ.css",
+          "bytes": 5805,
+          "sha256": "eef60bef0928c527c0f9d7b692ec8a822e82cf446c4db3102b4280c07da919b3"
+        },
+        {
+          "path": "mii-editor-web-v0.1.0-preview.1/website/assets/index-DKNrouHT.js",
+          "bytes": 1242102,
+          "sha256": "1dfccd7a5d4cb0a294576a458287c418c897c3c2b63b2427d95de048e2aa6a15"
+        },
+        {
+          "path": "mii-editor-web-v0.1.0-preview.1/website/index.html",
+          "bytes": 1033,
+          "sha256": "22f7c5929c40ac48a705349b48eb82061d513e5ca2f7f3b471ce105b5ee291c1"
+        }
+      ],
+      "rightsAssessment": "Compiled JS includes historical vector/glyph catalogs in runtime editions. Starter-only archive contains config/docs/notices; image rights separate."
+    },
+    {
+      "archive": "mii-editor-web-windows-v0.1.0-preview.2.zip",
+      "sha256": "9805d0d6dd64216b30fc09484b20d31f168e57cdd2e8a9cb524fdae8eede44e1",
+      "files": [
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.2/FILES.sha256",
+          "bytes": 1207,
+          "sha256": "d7c03bb4e81af75d4da99504b7f284079561fd3299a819f4aa2cd257ecfd26c4"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.2/HOSTING.md",
+          "bytes": 5154,
+          "sha256": "d25d1735d500a3c012caf80c05c9e650a7a910dba35056e78966d21ed618dcfc"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.2/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.2/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.2/NOTICES.md",
+          "bytes": 3411,
+          "sha256": "b093fe1f5350195c4dde373650e948c311b083d6dc4b06be627137e186287b71"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.2/START-HERE.md",
+          "bytes": 3360,
+          "sha256": "af4307b64a6d2c45d764dbcc56e1a17a7bdce9fef2efde12cdbc12392fb8c5bd"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.2/Start Mii Editor.cmd",
+          "bytes": 1222,
+          "sha256": "faef3dcc4def80955ae9c953cc4a080bf4bac892118777aa6777088819a8ad5b"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.2/serve.py",
+          "bytes": 8578,
+          "sha256": "a2df481339b191a573c18ce003e8ad8f5512fde0b36bf93a706479ab8cd3d1ac"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.2/website/BUILD-INFO.json",
+          "bytes": 190,
+          "sha256": "ac80063d1e88c9151c77b1715ee8158c726dd463f99ad1348a66d7e2f6e5020a"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.2/website/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.2/website/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.2/website/NOTICES.md",
+          "bytes": 3411,
+          "sha256": "b093fe1f5350195c4dde373650e948c311b083d6dc4b06be627137e186287b71"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.2/website/assets/index-D1Udy9AZ.css",
+          "bytes": 5805,
+          "sha256": "eef60bef0928c527c0f9d7b692ec8a822e82cf446c4db3102b4280c07da919b3"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.2/website/assets/index-DKNrouHT.js",
+          "bytes": 1242102,
+          "sha256": "1dfccd7a5d4cb0a294576a458287c418c897c3c2b63b2427d95de048e2aa6a15"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.2/website/index.html",
+          "bytes": 1033,
+          "sha256": "22f7c5929c40ac48a705349b48eb82061d513e5ca2f7f3b471ce105b5ee291c1"
+        }
+      ],
+      "rightsAssessment": "Compiled JS includes historical vector/glyph catalogs in runtime editions. Starter-only archive contains config/docs/notices; image rights separate."
+    },
+    {
+      "archive": "mii-editor-web-windows-v0.1.0-preview.3.zip",
+      "sha256": "24fc6ef7a6774f9db5e987bc2b2e0f2bbce93f2f4146c454a114bfcbbc6d65b6",
+      "files": [
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.3/FILES.sha256",
+          "bytes": 1285,
+          "sha256": "84085856a7acc1eaf2321d229fd96b15dea683d984634cf8f41b8ed6be5c8ea1"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.3/HOSTING.md",
+          "bytes": 6489,
+          "sha256": "02436f8dc0b7f0e9a0aa6d8912670af31faed0ffd4460f8c83b9ac07e424873c"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.3/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.3/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.3/NOTICES.md",
+          "bytes": 3411,
+          "sha256": "b093fe1f5350195c4dde373650e948c311b083d6dc4b06be627137e186287b71"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.3/START-HERE.md",
+          "bytes": 4843,
+          "sha256": "a96bb827fc8b3252950a04ebef9cb2da0a270186354fb6e42033ba2da4c42f70"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.3/Start Mii Editor.cmd",
+          "bytes": 1222,
+          "sha256": "faef3dcc4def80955ae9c953cc4a080bf4bac892118777aa6777088819a8ad5b"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.3/config.json",
+          "bytes": 19,
+          "sha256": "5bec8c27ef09eaaa2a30f1c0166adf0d27dfe2c98f79b63c817018d79820e7fd"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.3/serve.py",
+          "bytes": 9917,
+          "sha256": "f6d1d1c9ae8098da18fdc9cc93cc13db3bac9d50bf2a3c7b31c84d7c33d976b5"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.3/website/BUILD-INFO.json",
+          "bytes": 190,
+          "sha256": "410cdb58e56fc3caf6b5797a8b18003d87c889d31c1172862092db5981edbb0d"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.3/website/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.3/website/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.3/website/NOTICES.md",
+          "bytes": 3411,
+          "sha256": "b093fe1f5350195c4dde373650e948c311b083d6dc4b06be627137e186287b71"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.3/website/assets/index-BNVzQR5_.js",
+          "bytes": 1242976,
+          "sha256": "6148c5ee9f1bccaa04ce1e506cbd675aefe862dc37a05c99d7ea8492395bce48"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.3/website/assets/index-DiwmFvFc.css",
+          "bytes": 6422,
+          "sha256": "32daf935b4af7e6ef9a5e42e7c0282df1507ac8250535c5a368a7c90ee3ec299"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.3/website/index.html",
+          "bytes": 1257,
+          "sha256": "0979c9f047a503b5c179d3b8bb5c839c7a9c5788ae888026d137249786be3761"
+        }
+      ],
+      "rightsAssessment": "Compiled JS includes historical vector/glyph catalogs in runtime editions. Starter-only archive contains config/docs/notices; image rights separate."
+    },
+    {
+      "archive": "mii-editor-web-windows-v0.1.0-preview.4.zip",
+      "sha256": "48cac424240e0c4b6bcb6669700128e9673a91427c46047da16c0b2817514c74",
+      "files": [
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.4/FILES.sha256",
+          "bytes": 1285,
+          "sha256": "4e26621443d2f897af29146ad22ce8527f6ee178c5f183c2dc0cb6d57ef18f47"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.4/HOSTING.md",
+          "bytes": 7271,
+          "sha256": "1803c43dd574ff971a9c101272099900184fe026a9775419f664a3cdaeb5d092"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.4/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.4/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.4/NOTICES.md",
+          "bytes": 4149,
+          "sha256": "683ca3385b463aeecece1e3ec5ae5f3fb0177c3f083c0de948f7e6062adb854c"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.4/START-HERE.md",
+          "bytes": 4843,
+          "sha256": "a96bb827fc8b3252950a04ebef9cb2da0a270186354fb6e42033ba2da4c42f70"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.4/Start Mii Editor.cmd",
+          "bytes": 1222,
+          "sha256": "faef3dcc4def80955ae9c953cc4a080bf4bac892118777aa6777088819a8ad5b"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.4/config.json",
+          "bytes": 19,
+          "sha256": "5bec8c27ef09eaaa2a30f1c0166adf0d27dfe2c98f79b63c817018d79820e7fd"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.4/serve.py",
+          "bytes": 9917,
+          "sha256": "f6d1d1c9ae8098da18fdc9cc93cc13db3bac9d50bf2a3c7b31c84d7c33d976b5"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.4/website/BUILD-INFO.json",
+          "bytes": 190,
+          "sha256": "252814f3a702ae8bfe1eccef8d26a4f5842cd92aa513bb5d420b9d984fa5ff21"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.4/website/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.4/website/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.4/website/NOTICES.md",
+          "bytes": 4149,
+          "sha256": "683ca3385b463aeecece1e3ec5ae5f3fb0177c3f083c0de948f7e6062adb854c"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.4/website/assets/index-BNVzQR5_.js",
+          "bytes": 1242976,
+          "sha256": "6148c5ee9f1bccaa04ce1e506cbd675aefe862dc37a05c99d7ea8492395bce48"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.4/website/assets/index-DiwmFvFc.css",
+          "bytes": 6422,
+          "sha256": "32daf935b4af7e6ef9a5e42e7c0282df1507ac8250535c5a368a7c90ee3ec299"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.4/website/index.html",
+          "bytes": 1257,
+          "sha256": "0979c9f047a503b5c179d3b8bb5c839c7a9c5788ae888026d137249786be3761"
+        }
+      ],
+      "rightsAssessment": "Compiled JS includes historical vector/glyph catalogs in runtime editions. Starter-only archive contains config/docs/notices; image rights separate."
+    },
+    {
+      "archive": "mii-editor-web-windows-v0.1.0-preview.5.zip",
+      "sha256": "fd5044efcf4c14c582df0701fdce3a6945328dd479a4e05514257dd9e90326cd",
+      "files": [
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.5/BROWSER_COMPATIBILITY.md",
+          "bytes": 7484,
+          "sha256": "b4ae3822e083687c12783219b817ccca0533109884b279feceb7d72bc5ef12cb"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.5/FILES.sha256",
+          "bytes": 1547,
+          "sha256": "678c04c850df77afc0c4236bb8a865fb8b26f6f0df10914bf0918a84c2c524c9"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.5/HOSTING.md",
+          "bytes": 8460,
+          "sha256": "8315edd3a57a4af0e47a85f5ebedad6b416bc61c186f26cbe44cbd405e483a06"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.5/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.5/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.5/LOCAL_LAUNCHERS.md",
+          "bytes": 8764,
+          "sha256": "65967a9b2038795db2b350638b70cb571a20c23878ef62fe538602e53fba479c"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.5/NOTICES.md",
+          "bytes": 4149,
+          "sha256": "683ca3385b463aeecece1e3ec5ae5f3fb0177c3f083c0de948f7e6062adb854c"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.5/SECURITY_PRIVACY.md",
+          "bytes": 5159,
+          "sha256": "90de235703a5c7ebc171824a46ea921a4fe84f01f538a04354552e05882934e3"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.5/START-HERE.md",
+          "bytes": 4728,
+          "sha256": "1be8c9978b3f0cd330385d8f488345cf1dcb2338a4ba3dee357c07f78e9251ae"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.5/Start Mii Editor.cmd",
+          "bytes": 1222,
+          "sha256": "faef3dcc4def80955ae9c953cc4a080bf4bac892118777aa6777088819a8ad5b"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.5/config.json",
+          "bytes": 19,
+          "sha256": "5bec8c27ef09eaaa2a30f1c0166adf0d27dfe2c98f79b63c817018d79820e7fd"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.5/serve.py",
+          "bytes": 9975,
+          "sha256": "79443129a18616fa573dc22e189236df5c7217c0956a5405499f45fddb4541ee"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.5/website/BUILD-INFO.json",
+          "bytes": 190,
+          "sha256": "4ecb885c8fd9557e04990eae55982a5f2cc4eeceac45d522559c3499061489ca"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.5/website/LICENSE.md",
+          "bytes": 1397,
+          "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.5/website/LICENSES/Vite-LICENSE.md",
+          "bytes": 98196,
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.5/website/NOTICES.md",
+          "bytes": 4149,
+          "sha256": "683ca3385b463aeecece1e3ec5ae5f3fb0177c3f083c0de948f7e6062adb854c"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.5/website/assets/index-CJiFHbnk.js",
+          "bytes": 1243471,
+          "sha256": "85c7e959f31c5a80ef3803a7fd8917cad32f6d1491e2070b271680f2c00e9a9b"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.5/website/assets/index-Cnpx4y1s.css",
+          "bytes": 6735,
+          "sha256": "e8b2717b79fe8771a9bfd8d8b6056cc75ea8deaa11b75ab3e49232595ef2c14d"
+        },
+        {
+          "path": "mii-editor-web-windows-v0.1.0-preview.5/website/index.html",
+          "bytes": 1257,
+          "sha256": "279070937ee09379f4aee6bbc132982f1a96010a581fec87cb44a8c3667b8838"
+        }
+      ],
+      "rightsAssessment": "Compiled JS includes historical vector/glyph catalogs in runtime editions. Starter-only archive contains config/docs/notices; image rights separate."
+    }
+  ]
+}

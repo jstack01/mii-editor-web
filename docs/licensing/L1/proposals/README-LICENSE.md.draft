@@ -1,0 +1,7 @@
+# Proposed short README replacement — conditional, NOT APPLIED
+
+Use only after the code grant/scope and asset status have been approved. Adjust the final sentence to the actual resolved state; do not leave an implication that unresolved assets are freely usable.
+
+> Eligible modern code is available under the MIT license; see LICENSE-SCOPE.md for its exact coverage. Historical graphics, glyphs, screenshots and other third-party material have separate rights and are not covered by that grant. See NOTICES.md and the asset-rights inventory before redistribution. AI-generated / vibe-coded and unmaintained; forks are encouraged subject to applicable rights. No Nintendo affiliation or endorsement.
+
+Before clearance, keep the existing truthful unlicensed/unresolved statement. Do not switch the README, web/package.json license or OCI metadata to an unqualified “MIT” during this draft audit. If full asset permission is obtained, state its actual terms separately; if assets are omitted, say the offering lacks them. The stable number must not conceal that distinction.

@@ -1,19 +1,21 @@
 # Mii Editor with Docker or Compose
 
-The preview.5 Docker distribution uses **ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.5**. Public package status and anonymous pulls are publication requirements. Earlier ZIP releases remain available.
+**v1.0.0 is a local release candidate; these versioned commands apply only after owner-approved publication. Published preview.5 remains available.**
+
+The preview.5 Docker distribution uses **ghcr.io/jstack01/mii-editor-web:v1.0.0**. Public package status and anonymous pulls are publication requirements. Earlier ZIP releases remain available.
 
 Docker serves the same static editor as the launcher/static ZIP editions. It adds no application backend, database or server-side Mii storage, and does not improve or certify Wii compatibility. Install Docker Engine + Compose on Linux or Docker Desktop with Linux containers on macOS/Windows if not already installed. This does not promise installation-free startup.
 
 ## Direct Docker use 
 
 ```sh
-docker pull ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.5
+docker pull ghcr.io/jstack01/mii-editor-web:v1.0.0
 ```
 
 Run this single-line command (also suitable for PowerShell):
 
 ```sh
-docker run -d --name mii-editor -p 127.0.0.1:8080:8080 --restart unless-stopped --read-only --tmpfs "/tmp:rw,noexec,nosuid,nodev,size=16m,uid=101,gid=101,mode=1770" --cap-drop ALL --security-opt no-new-privileges:true --pids-limit 64 ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.5
+docker run -d --name mii-editor -p 127.0.0.1:8080:8080 --restart unless-stopped --read-only --tmpfs "/tmp:rw,noexec,nosuid,nodev,size=16m,uid=101,gid=101,mode=1770" --cap-drop ALL --security-opt no-new-privileges:true --pids-limit 64 ghcr.io/jstack01/mii-editor-web:v1.0.0
 ```
 
 Open **http://127.0.0.1:8080/**. The container does not open a browser or terminal window automatically. These examples expose only your own computer. If 8080 is occupied, stop the other local launcher/server or choose another host port; Docker will report the conflict rather than select another port. For port 8091, replace `127.0.0.1:8080:8080` with `127.0.0.1:8091:8080` and open http://127.0.0.1:8091/. The container port remains 8080.
@@ -60,7 +62,7 @@ docker compose pull
 docker compose up -d
 ```
 
-The file deliberately pins v0.1.0-preview.5; pulling that unchanged tag does not automatically select future releases. `docker compose down` removes this service/network, not browser saves. No extra services or persistent volumes are required. Keep .env when replacing the Compose file during an update.
+The file deliberately pins v1.0.0; pulling that unchanged tag does not automatically select future releases. `docker compose down` removes this service/network, not browser saves. No extra services or persistent volumes are required. Keep .env when replacing the Compose file during an update.
 
 ## Three separate hosting options
 
@@ -86,7 +88,7 @@ The trailing slash on proxy_pass is significant. Root and nested conventional st
 
 ## Runtime and security
 
-The pinned upstream Nginx Unprivileged 1.30.6 Alpine image runs as UID/GID 101 on internal port 8080. A pinned Node 24 build stage installs the pinned pnpm version and frozen lockfile, verifies committed generated graphics and builds Vite; **none of Node, pnpm, Python, source code, dependencies or original Flash materials enters the final runtime**. An allowlisted .dockerignore prevents originals, credentials, caches and evidence from entering the build context. Legal notices stay in the website; base OS/Nginx components keep their own upstream licenses. The OCI application-license references do not grant historical asset rights or relicense upstream components.
+The pinned upstream Nginx Unprivileged 1.30.6 Alpine slim image runs as UID/GID 101 on internal port 8080. A pinned Node 24 build stage installs the pinned pnpm version and frozen lockfile, verifies committed generated graphics and builds Vite; **none of Node, pnpm, Python, source code, dependencies or original Flash materials enters the final runtime**. An allowlisted .dockerignore prevents originals, credentials, caches and evidence from entering the build context. Legal notices stay in the website; base OS/Nginx components keep their own upstream licenses. The OCI application-license references do not grant historical asset rights or relicense upstream components.
 
 Compose uses read-only root storage, a small ephemeral /tmp, no-new-privileges, all capabilities dropped, a PID limit and no host-directory mounts/privileged mode. Nginx serves GET/HEAD static files, explicit MIME types, no listing or hidden/development paths, and no upload/file-management/backend endpoint. Its existing wget checks `/` for health; SIGQUIT provides graceful shutdown. Container networking listens inside its own namespace; the default **host publishing** is loopback-only. Do not assume a container network is a replacement for your firewall or HTTPS proxy.
 
@@ -94,6 +96,8 @@ Digest pins and the lockfile make build inputs explicit; generated site mtimes/b
 
 ## Existing limitations and notices
 
-**AI-generated / vibe-coded project — unmaintained.** Unofficial, provided as-is, without planned support or accepted pull requests. New code is unlicensed; historical vector/glyph rights remain unresolved. See LICENSE.md and NOTICES.md. Original materials were found at https://mii-editor.nekoweb.org/ and https://archive.org/details/mii-editor; their FAQ/metadata credit senocular. Not affiliated with Nintendo or the original developers.
+**AI-generated / vibe-coded project — unmaintained.** Unofficial, provided as-is, without planned support or accepted pull requests. Eligible modern code has a scoped MIT grant; historical vector/glyph rights remain unresolved. See LICENSE.md and NOTICES.md. Original materials were found at https://mii-editor.nekoweb.org/ and https://archive.org/details/mii-editor; their FAQ/metadata credit senocular. Not affiliated with Nintendo or the original developers.
 
 Software validation does not guarantee every Wii console or game. Native Safari/Edge/device gaps and the exact Firefox/WebKit results remain as disclosed in BROWSER_COMPATIBILITY.md; Docker does not fix or certify those browser behaviors. Phase 7A Dolphin findings are documented; physical Wii/game testing is deferred indefinitely by owner decision and does not block software release. Earlier releases are not overwritten.
+
+The v1 runtime uses the pinned slim variant, dropping unused optional Nginx modules (21 rather than 70 installed packages). Full notices/license texts and source-input metadata are installed in `/usr/share/licenses/mii-editor-runtime/`; see CONTAINER_SOURCES.md and the companion source-information archive. The scoped project MIT does not relicense OS components or unresolved historical assets.

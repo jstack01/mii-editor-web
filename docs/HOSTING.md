@@ -7,7 +7,7 @@
 3. GHCR Docker image: non-root Nginx serves those same static files.
 4. Docker Compose: the same pinned GHCR image, with localhost-only mapping and hardening.
 
-Docker/Compose is prepared for preview.4 but not published until explicitly approved. See DOCKER.md for exact commands and CONTAINER_PUBLISHING.md for public/anonymous verification gates. Docker uses host port mapping/MII_EDITOR_PORT, never launcher config.json; there is no second application configuration system. These choices share the same Mii codec, renderer and software profile, not additional hardware certification.
+Docker/Compose preview.5 is published; v1.0.0 is prepared locally and requires separate publication approval. See DOCKER.md for exact commands and CONTAINER_PUBLISHING.md for public/anonymous verification gates. Docker uses host port mapping/MII_EDITOR_PORT, never launcher config.json; there is no second application configuration system. These choices share the same Mii codec, renderer and software profile, not additional hardware certification.
 
 ## Local editions and static hosting
 

@@ -34,3 +34,14 @@ web/src/style.css
 **/*.pem
 **/*.p12
 **/*.pfx
+
+# Scoped license and concrete runtime notice/source indexes.
+!LICENSE
+!LICENSE-SCOPE.json
+!ASSET_RIGHTS.md
+!THIRD_PARTY_NOTICES.md
+!CONTAINER_SOURCES.md
+!release-notices.json
+!LICENSES/container/
+!LICENSES/container/**
+!web/LICENSE.md

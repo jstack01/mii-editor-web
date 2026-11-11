@@ -4,3 +4,6 @@
 
 # Preserve the upstream third-party license text verbatim.
 LICENSES/Vite-LICENSE.md -whitespace
+
+# Preserve collected upstream legal texts and source-index bytes.
+LICENSES/container/** -text -whitespace

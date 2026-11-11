@@ -73,8 +73,15 @@ def main():
             if public.get('packagePublic') is not True or public.get('repository')!=a.repo or public.get('anonymousPull') is not True or public.get('anonymousManifest') is not True or public.get('revision')!=head or public.get('image')!='ghcr.io/'+a.repo+':'+a.version or set(public.get('platforms',[]))!={'linux/amd64','linux/arm64'}:
                 raise SystemExit('Public container verification does not match the reviewed release.')
             packages.append(str(package))
+        source=release.get('sourceArchive')
+        if source:
+            if source['filename']!='mii-editor-web-container-sources-'+a.version+'.tar.gz':raise SystemExit('Invalid source archive filename.')
+            package=ROOT/'release'/source['filename'];digest=hashlib.sha256(package.read_bytes()).hexdigest()
+            verification=json.loads(package.with_suffix('.verification.json').read_text())
+            if digest!=source['sha256'] or verification.get('archiveSHA256')!=digest or verification.get('passed') is not True:raise SystemExit('Verify the exact source-information archive before publication.')
+            packages.append(str(package))
         checksum=ROOT/'release'/release['checksumFile']
-        expected=''.join(x['sha256']+'  '+x['filename']+'\n' for x in [*release['artifacts'],*supplements])
+        expected=''.join(x['sha256']+'  '+x['filename']+'\n' for x in [*release['artifacts'],*supplements,*([source] if source else [])])
         if checksum.read_text()!=expected:raise SystemExit('Checksum inventory mismatch.')
         packages.append(str(checksum))
     else:
@@ -104,9 +111,9 @@ def main():
         run('git','remote','add','origin',url)
     run('git','push','-u','origin','HEAD:main')
     # No force, history rewrite or automatic publication on ordinary commits.
-    run('git','tag','-a',a.version,'-m','Preview '+a.version,head)
+    run('git','tag','-a',a.version,'-m',('Preview ' if '-' in a.version else 'Release ')+a.version,head)
     run('git','push','origin','refs/tags/'+a.version)
-    run('gh','release','create',a.version,*packages,'--repo',a.repo,'--verify-tag','--prerelease','--title','Mii Editor Web '+a.version,'--notes-file','docs/RELEASE_NOTES.md')
+    run('gh','release','create',a.version,*packages,'--repo',a.repo,'--verify-tag',*(['--prerelease'] if '-' in a.version else ['--latest']),'--title','Mii Editor Web '+a.version,'--notes-file','docs/RELEASE_NOTES.md')
     print('Repository: https://github.com/'+a.repo)
     print('Releases: https://github.com/'+a.repo+'/releases')
     print('Choose the platform or static-hosting ZIP on the Releases page.')

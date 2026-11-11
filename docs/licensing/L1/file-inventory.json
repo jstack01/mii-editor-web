@@ -1,0 +1,1562 @@
+{
+  "auditDate": "2026-11-10",
+  "reviewedLocalRevision": "c374ef230c82413a520ad6765c603a68219e5af4",
+  "reviewedPublicRevision": "33c7679",
+  "coverage": "Every tracked file at audit start; L1 drafts separately listed in README.md",
+  "categories": {
+    "modern-infrastructure": {
+      "origin": "New project launcher, server, build/deployment/config/test infrastructure; AI-assisted history, not a historic artwork grant.",
+      "creator": "Project owner/AI assistance; exact human expressive contributions and applicable agreements not independently proven.",
+      "license": "Currently unlicensed project code",
+      "permission": "No general license currently granted; proposed MIT only for rights actually held.",
+      "authority": "Conditional MIT candidate, not a certified exclusive-copyright finding.",
+      "action": "Owner confirms authority/contributions; preserve any upstream snippets/notices; adopt explicitly scoped MIT only after approval."
+    },
+    "modern-browser": {
+      "origin": "New browser adapters, storage, repair UI and software-profile implementation informed by legacy behavior and independent evidence.",
+      "creator": "Project owner/AI assistance; see file comments and history.",
+      "license": "Currently unlicensed; embedded legacy text/data may require separate scope.",
+      "permission": "No current blanket redistribution grant.",
+      "authority": "Conditional MIT candidate for independently authored portions only.",
+      "action": "Review mixed literals/data and line-level derivation; exclude recovered content from modern-code grant."
+    },
+    "legacy-port": {
+      "origin": "Direct or behavior-guided port of original ActionScript/render/editor/XML logic.",
+      "creator": "Senocular/Trevor McCauley likely for historical expression; new adaptation by project/AI.",
+      "license": "Exact older-source reusable grant unestablished. Later 2009 My Avatar Editor MIT is evidence for specific later files, not blanket retroactive permission.",
+      "permission": "Modification/redistribution/web hosting of inherited expression unresolved.",
+      "authority": "Do not represent whole file as solely owner-licensed MIT yet.",
+      "action": "Obtain permission for old version, document exact match to a licensed later component with retained notices, or independently reimplement functional rules without copying expression."
+    },
+    "historical-vectors": {
+      "origin": "Recovered SOURCE/assets.swf and SOURCE/classicGUI.swf vectors/timelines/registration/color data; generated, not original new artwork.",
+      "creator": "Historical editor author and potentially Nintendo/other artists; allocations unverified.",
+      "license": "No reusable license established for exact source SWFs.",
+      "permission": "Modification/redistribution/public hosting unresolved.",
+      "authority": "Owner cannot unilaterally MIT historical graphics.",
+      "action": "Separate asset notice and permission; replace with independently owned/licensed art or omit complete graphical distribution if rights cannot be established."
+    },
+    "historical-data": {
+      "origin": "Data generated from original ActionScript: fields/permutations/default records/renderer rules/cases.",
+      "creator": "Historical source author; portions are factual interoperability data, not assumed protected or unprotected wholesale.",
+      "license": "No exact-source grant established; facts/functional rules need separate legal characterization.",
+      "permission": "Unresolved for expressive selections/arrangement; no blanket grant inferred.",
+      "authority": "Do not license all generated content solely as new MIT code.",
+      "action": "Trace independently verifiable format facts, preserve provenance, separate generator code from inherited output, seek component clearance where expression is retained."
+    },
+    "historical-presets": {
+      "origin": "Default Boy/Girl records from historical site/ClassicGUI; binary appearance and identity input snapshots.",
+      "creator": "Historical application/site record authors unconfirmed; not new artwork.",
+      "license": "No explicit record reuse grant identified.",
+      "permission": "Unresolved; small factual record values may differ legally from art but no blanket conclusion.",
+      "authority": "MIT may cover new loading/ID-allocation code, not an asserted ownership of inherited record/art.",
+      "action": "Retain source hashes, avoid personal ID claims, request clarification or derive independently owned defaults if needed."
+    },
+    "reference-fixtures": {
+      "origin": "Historical user-supplied Mii records, AS-derived rules, synthetic Phase7 data and independent decoder observations.",
+      "creator": "User/source/reference authors as applicable; factual/synthetic parts not a claim to original-art rights.",
+      "license": "Mixed factual data and own test code; upstream reference scopes separate.",
+      "permission": "Needs per-record/source distinction; no proprietary NAND/game files included.",
+      "authority": "Own assertions/wrappers are MIT candidates; do not assert ownership of all source data.",
+      "action": "Retain corpus provenance and synthetic labels; exclude inherited expressions from blanket MIT scope."
+    },
+    "screenshots": {
+      "origin": "Browser screenshots of renderer and historical-derived interface; new capture does not create underlying-art rights.",
+      "creator": "Capture by project/AI browser tooling; original assets retain respective holders.",
+      "license": "No comprehensive image reuse permission established.",
+      "permission": "Rights to depicted artwork/GUI/glyphs remain unresolved even if capture is new.",
+      "authority": "Cannot offer entire image as exclusively new MIT material.",
+      "action": "Clear underlying rights or replace/remove illustrations when needed; license capture contributions separately only if owned."
+    },
+    "third-party-notices": {
+      "origin": "Copied upstream license texts for Vite/bundled dependencies and Nginx Unprivileged.",
+      "creator": "Named upstream copyright holders.",
+      "license": "As stated in each file (MIT/multiple permissive notices; Apache-2.0).",
+      "permission": "Follow each upstream license; not owner-created MIT.",
+      "authority": "Preserve upstream terms, do not relicense notices wholesale.",
+      "action": "Retain complete texts; supplement Docker package obligations and source access."
+    },
+    "reference-tools": {
+      "origin": "New analysis harness calling independent external tools; reference source fetched only on explicit request, not bundled.",
+      "creator": "Own wrapper contributions plus external sources identified in references.",
+      "license": "Own wrappers unlicensed; MiiJS pinned metadata ISC; RFL repo CC0 declaration; Java Util license unestablished.",
+      "permission": "Do not infer third-party/Nintendo clearance from repository declarations; no production bundling.",
+      "authority": "Wrapper portions conditional MIT candidates; external work cannot be relicensed by owner.",
+      "action": "Keep external sources outside distribution; document pin/license uncertainty and obtain permission before any redistribution."
+    },
+    "project-docs": {
+      "origin": "AI-assisted factual project documentation, configs and notices; contains third-party names/links and occasional historical-derived examples.",
+      "creator": "Project contributions; cannot distinguish human/AI creativity by Git author label.",
+      "license": "Currently unlicensed except separately identified third-party material.",
+      "permission": "Proposed MIT for eligible prose/config only; quotes/assets excluded.",
+      "authority": "Conditional for rights actually held, not new ownership of facts or third-party quotes.",
+      "action": "Keep legal disclosures and rights inventory; use scope/AI statement and separate third-party attribution."
+    }
+  },
+  "files": [
+    {
+      "path": ".dockerignore",
+      "sha256": "b7f68998f899be2ecd6a0a70801992ff800d01a2ce5ed0b31d3034aa9f85df92",
+      "bytes": 687,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": ".env.example",
+      "sha256": "7bf47487b39582adc1e320a9da7cd92b55c55ceed571ab391c7677a3f5b322ad",
+      "bytes": 185,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": ".gitattributes",
+      "sha256": "21b6b62ccb56d20fe46fe21305ee6892e671a61bb10d07339749bc1323904e73",
+      "bytes": 149,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": ".github/workflows/container.yaml",
+      "sha256": "1230d299db562a719712d9349d5e422be4b3fa3cbcfaa45225a6f61e604579d2",
+      "bytes": 3644,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": ".github/workflows/pages.yaml",
+      "sha256": "7d6533a7222019874aafefb5f94cd2add261885d2c6abcf562b284f77a47b0d2",
+      "bytes": 1051,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "791f766fdd4eabe24a489d75fc266f83cf03662b4626c066c4cae9c91a195175",
+      "bytes": 1156,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "1f8407e6182a99f45411ae746689fc81ffe5007c139c6b1a619edf3a987cb518",
+      "bytes": 640,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "Dockerfile",
+      "sha256": "49ece5ebc53570d900209d733034d4bd874a076acafbff6d4fd10894e5013a40",
+      "bytes": 2658,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "LICENSE.md",
+      "sha256": "306719bbb6ddbaa58405b268e8918754b2b5af30e1101858fb9e489ffdc191d3",
+      "bytes": 1397,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "LICENSES/Nginx-Unprivileged-LICENSE.txt",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357,
+      "category": "third-party-notices",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Preserve upstream terms, do not relicense notices wholesale."
+    },
+    {
+      "path": "LICENSES/Vite-LICENSE.md",
+      "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13",
+      "bytes": 98196,
+      "category": "third-party-notices",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Preserve upstream terms, do not relicense notices wholesale."
+    },
+    {
+      "path": "MIGRATION_PLAN.md",
+      "sha256": "849812e727b4275aa9461d0c871c393b5dbb42ffbf749074fee042842cf49c18",
+      "bytes": 47958,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "NOTICES.md",
+      "sha256": "683ca3385b463aeecece1e3ec5ae5f3fb0177c3f083c0de948f7e6062adb854c",
+      "bytes": 4149,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "README.md",
+      "sha256": "fbe3f30f32efb14451578503c52e7dc8a78dbb0b8f11883aedb3b9bf8b04f247",
+      "bytes": 3134,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "compose.yaml",
+      "sha256": "7c4dfa46d672561cbc1966c4ac80ac43343981f21e9b40e84cc94dae005a7b0f",
+      "bytes": 396,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "distribution/START-HERE.md",
+      "sha256": "4991dc142b752b9714bffb54262effce2840130556096003deebd4544ede379d",
+      "bytes": 4448,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "distribution/STATIC-START-HERE.md",
+      "sha256": "236981d7f610af68c172e17d28ed53ff438d2739387fdbc88299f2517f0e2bb5",
+      "bytes": 1279,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "distribution/Start Mii Editor.cmd",
+      "sha256": "7dd93be3eabbaa7127b0e2220c295c95d57bf348f6ce1f44c87fff4b228e0d3d",
+      "bytes": 1188,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "distribution/Start Mii Editor.command",
+      "sha256": "a43e3923c24ab1d5086568179af60b0d17a156f3576045620add2c395b258381",
+      "bytes": 114,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "distribution/config.json",
+      "sha256": "5bec8c27ef09eaaa2a30f1c0166adf0d27dfe2c98f79b63c817018d79820e7fd",
+      "bytes": 19,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "distribution/launcher.sh",
+      "sha256": "3561bec3dc90b646d0bb2384bf4a070b233a9e7c40098bd21e2b1af3f75c4aeb",
+      "bytes": 2656,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "distribution/serve.py",
+      "sha256": "79443129a18616fa573dc22e189236df5c7217c0956a5405499f45fddb4541ee",
+      "bytes": 9975,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "distribution/start-linux.sh",
+      "sha256": "3d7f956ab4a481c606a9b7236b4545ae9e5a2b196c9821e672bc9d3989680edf",
+      "bytes": 202,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "distribution/start-macos.command",
+      "sha256": "1a0d0d014097c45ff80676443b4237be0970f32b421cb9ef9b731e53117b2317",
+      "bytes": 207,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "distribution/start-mii-editor.sh",
+      "sha256": "a43e3923c24ab1d5086568179af60b0d17a156f3576045620add2c395b258381",
+      "bytes": 114,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "distribution/start-windows.bat",
+      "sha256": "421cef4ab5f1bf1316d5f33d85b4514d10aff61c1a8c0c7680f13aabb8a43594",
+      "bytes": 136,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "docker/finalize-build.mjs",
+      "sha256": "258c25036b735d12dee3b99e7c9bda1633ae88941b06fff250523da7c6838f2a",
+      "bytes": 976,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "docker/nginx.conf",
+      "sha256": "7ae2cff0d3a446f4fbb0ed650a5570a5c0e7bc2a033383a64bbd705edf72c809",
+      "bytes": 1138,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "docs/BROWSER_COMPATIBILITY.md",
+      "sha256": "247d92d6d38b8a253fbd332bb91744a2bd51d75abaf44c34dbee69a87b28c814",
+      "bytes": 7158,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "docs/BUILDING.md",
+      "sha256": "8156002424316579702ceecb6c50945048434d5b2db4209e749e4461b2947aa2",
+      "bytes": 4995,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "docs/CONTAINER_PUBLISHING.md",
+      "sha256": "5e1176ec77c26c8345a11b8f5de65f31bda68227614805656181c9b054efeec2",
+      "bytes": 7412,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "docs/DISTRIBUTION_VERIFICATION.md",
+      "sha256": "5db67e94906142ee38b9c1b2ee382cbe85244c577560073b4fbf8c75b92cbb6e",
+      "bytes": 6919,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "docs/DOCKER.md",
+      "sha256": "f09309bdd5f63ab283fa73035f3c59452b27b300a3066197eafcd79e6c668581",
+      "bytes": 8252,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "docs/DOCKER_VERIFICATION.md",
+      "sha256": "6503d24adf4d977df2cdb95e840f390b30334e28c866f0325d6eb7b29b5c9196",
+      "bytes": 7480,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "docs/GITHUB_PAGES.md",
+      "sha256": "dad84cc484d6a68fb05b94856c9322293f1858fcf7c234be59fb1d9d347ff60a",
+      "bytes": 6704,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "docs/HOSTING.md",
+      "sha256": "3cac3709dad917956c65cb803648da51049d1337880a41deca57027372fef10e",
+      "bytes": 8390,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "docs/LOCAL_LAUNCHERS.md",
+      "sha256": "b3b9f9b72c72b902de184d766663d82e1096f835f345f4053c7c22bd6aaf357d",
+      "bytes": 8694,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "docs/PHASE8A_QA.md",
+      "sha256": "5d1971f3afe69e962e9195369648bd96db88c3de756c2b7056d2840fd72f2276",
+      "bytes": 7939,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "docs/PRESETS.md",
+      "sha256": "c9c2632ace9cdf8c9a4b4cbebe67c1fafa9e5ac8421cb95aa7ff4874c7de305d",
+      "bytes": 1650,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "docs/PUBLISHING.md",
+      "sha256": "00a3fe7c396b0fe3112551efba2aa65ee9a2959ad23f971f256489ab66ff08b8",
+      "bytes": 10998,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "docs/RELEASE_NOTES.md",
+      "sha256": "cd1dd6cb437fd2b5a3c5d4dd86fb0c337c7c5f3d5c271f505d982ceb8e6bcf0c",
+      "bytes": 2888,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "docs/SECURITY_PRIVACY.md",
+      "sha256": "ecc75aa22c8821762e993663fa4b42acdfa26b098c2366fd00f29615c1a4582a",
+      "bytes": 5095,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "docs/WII_DOLPHIN_TESTING.md",
+      "sha256": "d640e8aae3796179132786afa481430c2735b48d29ee92b22dd1ba8864af4267",
+      "bytes": 5685,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "docs/images/editor.png",
+      "sha256": "46e502e3a73861c684759c0c5c0c3e7900d88a4ac5ddaed4621bff9eaaf2be31",
+      "bytes": 135851,
+      "category": "screenshots",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Cannot offer entire image as exclusively new MIT material."
+    },
+    {
+      "path": "docs/images/phase8a-landscape.png",
+      "sha256": "a7e91083fb3b4a92abbbaaff5e2f12d407a9e29774c6a87e771301119cb25f20",
+      "bytes": 132981,
+      "category": "screenshots",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Cannot offer entire image as exclusively new MIT material."
+    },
+    {
+      "path": "docs/images/phase8a-phone.png",
+      "sha256": "4488a82feaaec9760de70dce588746ea7b293ae17c96acb8a26ce8577ab158ef",
+      "bytes": 79866,
+      "category": "screenshots",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Cannot offer entire image as exclusively new MIT material."
+    },
+    {
+      "path": "docs/images/presets-desktop.png",
+      "sha256": "3f64acddd08ee6700e0bdd5b85a0f572b3e85a416db5924f159b137ffd617f32",
+      "bytes": 133322,
+      "category": "screenshots",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Cannot offer entire image as exclusively new MIT material."
+    },
+    {
+      "path": "docs/images/presets-mobile.png",
+      "sha256": "2f26672594a399b8ee6e9b1006b543d757ea7d2ce132d85f59515ee144f43a80",
+      "bytes": 77217,
+      "category": "screenshots",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Cannot offer entire image as exclusively new MIT material."
+    },
+    {
+      "path": "docs/reference-versions.json",
+      "sha256": "d1b5aa8b485de5dfe5aaa2c2d8106fe70f97aed66aa1cde539ed1a8068deb17b",
+      "bytes": 6240,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "optional-tools/phase7a/README.md",
+      "sha256": "2b38f9d386c7dcce405a5fa00bec186f47a61ca4d6584e44b95f5d56364c855f",
+      "bytes": 3032,
+      "category": "reference-tools",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Wrapper portions conditional MIT candidates; external work cannot be relicensed by owner."
+    },
+    {
+      "path": "optional-tools/phase7a/ReferenceDatabase.java",
+      "sha256": "a310dee75e4c0b21c68a8252128cf188a876f4240ec05261099c633b38feb19b",
+      "bytes": 983,
+      "category": "reference-tools",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Wrapper portions conditional MIT candidates; external work cannot be relicensed by owner."
+    },
+    {
+      "path": "optional-tools/phase7a/database_probe.py",
+      "sha256": "27c5f40e4a432457225f30d467e639b7b4cd114d54d22e84ec46033ac0d61275",
+      "bytes": 6217,
+      "category": "reference-tools",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Wrapper portions conditional MIT candidates; external work cannot be relicensed by owner."
+    },
+    {
+      "path": "optional-tools/phase7a/fixtures/records.json",
+      "sha256": "8a8b8a6f9d42ef8980133cb3a166b96e1d77dbd44d86e32c1267ebad6e0c1e1b",
+      "bytes": 6947,
+      "category": "reference-fixtures",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Own assertions/wrappers are MIT candidates; do not assert ownership of all source data."
+    },
+    {
+      "path": "optional-tools/phase7a/fixtures/results.json",
+      "sha256": "a49f53c8d4537da917f57d0565edcbd36b7ec92ed4af8ac328a05da27005c73b",
+      "bytes": 3979,
+      "category": "reference-fixtures",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Own assertions/wrappers are MIT candidates; do not assert ownership of all source data."
+    },
+    {
+      "path": "optional-tools/qa/Dockerfile",
+      "sha256": "66492a88e7ba4a3c3fdf9289201fdce4cb332e0eb645ffa6dc48c43b038a264f",
+      "bytes": 646,
+      "category": "reference-tools",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Wrapper portions conditional MIT candidates; external work cannot be relicensed by owner."
+    },
+    {
+      "path": "optional-tools/qa/Dockerfile.dockerignore",
+      "sha256": "86865d5b06c66807a97cee5cd1337f6a3f63db0b9c4b105dd6ef0bf63645bddd",
+      "bytes": 655,
+      "category": "reference-tools",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Wrapper portions conditional MIT candidates; external work cannot be relicensed by owner."
+    },
+    {
+      "path": "optional-tools/qa/README.md",
+      "sha256": "69caaa6b29f40558656f77c2d194ed803015de208fb0acb9a4469f17dbe406cc",
+      "bytes": 2521,
+      "category": "reference-tools",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Wrapper portions conditional MIT candidates; external work cannot be relicensed by owner."
+    },
+    {
+      "path": "optional-tools/validate-miijs.mjs",
+      "sha256": "a202b8bff045ec8ca643768be94fcca03aba7353e1f8425c92fd4dc2aa808074",
+      "bytes": 4554,
+      "category": "reference-tools",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Wrapper portions conditional MIT candidates; external work cannot be relicensed by owner."
+    },
+    {
+      "path": "scripts/check-container-version.py",
+      "sha256": "b852a6d950644cb34d74e761defed5673056da348a2927702fea15249a734963",
+      "bytes": 1447,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "scripts/package-release.py",
+      "sha256": "394d6abb700a34a30631e2613b77891d172a7f1b006a85dfd79c570fcdd325d4",
+      "bytes": 7704,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "scripts/prepare-pages.py",
+      "sha256": "a16492f1954c28b365fa526fce3e1974fac0d1fe98593d0d97bdfe4b6b320f84",
+      "bytes": 5267,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "scripts/publish-release.py",
+      "sha256": "24ad8a79f46e642533b502c3c03066e64c4a0674af1a2f74897ed87b5af486ca",
+      "bytes": 8450,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "scripts/repository-settings.json",
+      "sha256": "b9e044ff8485de24d42fb2aca6b5c1cf0f7f0a216b7dafeb474fd00a758f9218",
+      "bytes": 155,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "scripts/test_config.py",
+      "sha256": "f0a84fd914cb5c31ed2628a7ba522351b55ca68e3a725369536e716010a44243",
+      "bytes": 3751,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "scripts/test_containers.py",
+      "sha256": "f772d6424070e6dcf190d85d73eb85b77d4eb9e78ed5b403b7c445d260ead14c",
+      "bytes": 7162,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "scripts/test_distribution.py",
+      "sha256": "b8e4e0abd759dd86224d758642c890233a613798e7594b1590f9bf50c657df23",
+      "bytes": 9244,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "scripts/test_launchers.py",
+      "sha256": "4a6b40fec1b8241b0a0c9965874f0c316b9d94b499a33217786074eeea13dc97",
+      "bytes": 7233,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "scripts/test_phase7a.py",
+      "sha256": "8bbc193289f9c34a6e390e6bd06df187b6c04ea8338dd7cfbad36a2d7ea5723c",
+      "bytes": 4709,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "scripts/verify-container.py",
+      "sha256": "dd85566d453c418aa687d706b384c27022808a4c45746ad3f52887768e0d3517",
+      "bytes": 5689,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "scripts/verify-docker-starter.py",
+      "sha256": "abfddb8b971a28e29c2936c1015ed588688a57ede783bdd369ec9ab08c883148",
+      "bytes": 2001,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "scripts/verify-ghcr-anonymous.py",
+      "sha256": "5af03ba857856ab1261080079d90168f375aec5c6bbf09b8a85387aabfb0a404",
+      "bytes": 5515,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/.gitignore",
+      "sha256": "c7b289d39c1cc59488519f7da31330587e2bcf835fb4374b8e4322caff3fa524",
+      "bytes": 51,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/.node-version",
+      "sha256": "68ca3fba3b7e864770cb61aeb306d4bd4354b68ab4dd38450860c5d823e42a53",
+      "bytes": 3,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/.npmrc",
+      "sha256": "be85cc462e740587626bbcbb1c3ed1c40b26e62ec072e8cbd2768f23915c28e6",
+      "bytes": 16,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/DATA_COMPATIBILITY.md",
+      "sha256": "3240ae9050fc60b971cdb8ffddbfbb7d26f7747f46fd1409d29ada23bcd67abe",
+      "bytes": 8115,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/EDITOR_INTERACTIONS.md",
+      "sha256": "adb5a0d858c91268d7abe1587cd71bfab62b597db91c68b88cb0fcd5ee950744",
+      "bytes": 6354,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/FILE_OPERATIONS.md",
+      "sha256": "b7ae4ad44c8af0a7b73434ee240014d9065757bc75cffa24b29ab6a5ed4b9d59",
+      "bytes": 7056,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/GUI_RECONSTRUCTION.md",
+      "sha256": "939000b5beae92461996761beca38100eea959c0d9f690a3498ee7e89f43b264",
+      "bytes": 9252,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/IMAGE_EXPORT.md",
+      "sha256": "ff8f5217f2f8633fbd3c2ac65cd0ae99b501a0431152af909da98daea0718f87",
+      "bytes": 6501,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/PHASE7_VERIFICATION.md",
+      "sha256": "fabb02935cebc505313ecb55960f0e7b126eafe655fd5fd7f560326b0e028f0b",
+      "bytes": 12130,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/README.md",
+      "sha256": "61e1cf642b13edc87ae8cd4f83e5814926fb336b5d0a363ea869bedd52e516cf",
+      "bytes": 1618,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/RENDERING_PROOF.md",
+      "sha256": "6f61fdc7eff9c10025a0ca6041d5536c4c62fbc1850e7187421b0d6749400d35",
+      "bytes": 7722,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/REPAIR_UX.md",
+      "sha256": "992a133efadc80f5849974aed36fb750a32cf1fd58a1a8262781785c221c28b0",
+      "bytes": 5411,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/STORAGE_CONTRACT.md",
+      "sha256": "614186b85ceb66eaa12b66c40794a1cecc763f10effe23dc0c5c1bbc8739fbbb",
+      "bytes": 7834,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/WII_COMPATIBILITY.md",
+      "sha256": "3bd9badb639836caa364d9cbbac74d2b04fcc895f8963719c014ab8f4c4da1c5",
+      "bytes": 8722,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/WII_PROFILE.md",
+      "sha256": "5528906f2e372e5dd0d97a75f6be4513cc02048e66e4742c622afaa806ef459b",
+      "bytes": 13336,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/dev.sh",
+      "sha256": "e0b5bd8ff9c1195bad8d617d6f51b22f0b71f4c29690621f7309782111d86c08",
+      "bytes": 683,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/diagnostics.html",
+      "sha256": "69116f0a675201a74cb4866258f2788f908c1c4ddc0281be3c78f265f05d65b4",
+      "bytes": 3252,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/generated-resources.json",
+      "sha256": "d1050722a68f574848499f84300a1e14badf94ef906c4f17cb87dbc719db2dae",
+      "bytes": 861,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/index.html",
+      "sha256": "31f578ccf61cbe7df06c591f1370870b241bafba43739a057e3060dfc39ec2fa",
+      "bytes": 1271,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/package.json",
+      "sha256": "891b6737c38786c5d418f9d726b8d9f13ef19561e35af5363ba7e8a2b9ba2db2",
+      "bytes": 2382,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/pnpm-lock.yaml",
+      "sha256": "8163640e7f3ac9f8fae6964c7838df65f5147668838a4c601d8d514f04db7bc9",
+      "bytes": 28191,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/scripts/browser-engine.mjs",
+      "sha256": "566f473a4ee14032d8684040440d669d30014c276486243f0d09cc508b7fa712",
+      "bytes": 729,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/browser-smoke.mjs",
+      "sha256": "445030ea2160ac345a5b404b3dc5bc24a617eab9290d9cfcaaf9a3f266c76595",
+      "bytes": 6615,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/compatibility-browser.mjs",
+      "sha256": "53dc900bb74632fa51f3f6fee0a67df6769c3813ee02072fbc5c7aac47f10c35",
+      "bytes": 5385,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/container-browser.mjs",
+      "sha256": "a0a62ef96250a4f4b0258b62c60d8fa3992bddb33b7898d3b5993fffda6861f0",
+      "bytes": 1578,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/copy-notices.mjs",
+      "sha256": "100294fce8392919ed9f738d9c4880a0f91bb0867c35539866b6a8ccec1ac9fc",
+      "bytes": 311,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/deployment-checks.mjs",
+      "sha256": "c254e8b9b73233398db64b90f3d9ddc7a2dfe45fddf115837fd41d76356a0785",
+      "bytes": 5829,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/diagnostics-vite.config.mjs",
+      "sha256": "5a1ffa0163f6ccebf7e77df493242d18dea62629fd16a926ed602c6e5473d7d9",
+      "bytes": 317,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/distribution-browser.mjs",
+      "sha256": "b940a142e90f480f618efd4f4480ddc8cedbf733e316b9f590a755c17d3217a0",
+      "bytes": 6812,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/drag-release-browser.mjs",
+      "sha256": "bb05fad6b48e8c990b278ee1fc142961c9a7191c3676a95e3309b4c265149c93",
+      "bytes": 3710,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/files-browser.mjs",
+      "sha256": "537177f36423e8291e15124f66e751606686d64cf0f16ba5c888a6bcae4ff019",
+      "bytes": 14112,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/full-rendering-browser-checks.mjs",
+      "sha256": "43a57da5ca47e4dfd01137c9b189c12a5eb78fafe0edd1d7629c9be092ba8661",
+      "bytes": 5296,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/generate-character-assets.mjs",
+      "sha256": "6c632989fd9d2b99ff2fd04951205a5884b513c01bc65e3c8bec7ef456271833",
+      "bytes": 8086,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/generate-default.mjs",
+      "sha256": "bcb1515e0dfebae3eb29d3212409d027d36ec39776c79609e54380539991bc0c",
+      "bytes": 1171,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/generate-gui-assets.mjs",
+      "sha256": "e2da72fd34f5dfbdd90def1fdb31620559049572d1452864facd1d777cf39f10",
+      "bytes": 8527,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/generate-source-data.mjs",
+      "sha256": "f2adf1e52662896fec35643dac09e1823ada8a51ddd636a30534b4a78f2032bc",
+      "bytes": 3113,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/gui-browser-smoke.mjs",
+      "sha256": "2ec0135795240e9afaa887ea28bd07e59779722cb9164e49b483199b10e47b6d",
+      "bytes": 9220,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/images-browser.mjs",
+      "sha256": "de07aa36481e5a453997e6485089b2b32f9dfc1f9d7b7549dba53ecdb2b906e9",
+      "bytes": 18674,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/interactions-browser.mjs",
+      "sha256": "78b70e53cbab2c9cc681e86a53211ad00d2ab7d2c4ea95eca9f4862e11d302fe",
+      "bytes": 14880,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/legacy-tests.json",
+      "sha256": "6b34c1aba6be4e28ae30d13500463da4be58aa4f5499783e72ca03b7456d006a",
+      "bytes": 343,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/mobile-qa-browser.mjs",
+      "sha256": "4d47d93d491ab3fac6db3af8b8837e7bf3b4eafd00826008ffe4c0ea57fc9a39",
+      "bytes": 8141,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/offline-browser-probe.mjs",
+      "sha256": "47b94f720eeeaad9a99c050c7f02583409940e98cbbabd98e70495f2a852c325",
+      "bytes": 3964,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/pages-browser.mjs",
+      "sha256": "4483639d3762e634f3cb68260efdd8bc9d852ba9ddd8019f1350be979e584933",
+      "bytes": 3200,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/pointer-boundary-probe.mjs",
+      "sha256": "9e5fde5f7a8e6f2a5bd1a2c2ad3218c6584448ef6a4727d6871ffe22c98ed90f",
+      "bytes": 1589,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/presets-mobile-browser.mjs",
+      "sha256": "74eb8e5c235afec60ff08ae29cc2c39a659545e708a9306a7dec8cc77a0a5a40",
+      "bytes": 7038,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/qa-browser-suite.mjs",
+      "sha256": "2a3714e9dd0e6c0a8a6fb47edf139ecbf67ddab23a29c41d7193e00982265586",
+      "bytes": 1961,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/reference-input.mjs",
+      "sha256": "5537b5f447446d9004a72115d036eedde3ef780b601b9f7141b43fe6e910144d",
+      "bytes": 716,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/rendering-browser-checks.mjs",
+      "sha256": "1193acc21afe392bb9875ec332f5e7b1b16a6597b69a7c59c8f7a67a8881d1f8",
+      "bytes": 7728,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/repair-status-race-browser.mjs",
+      "sha256": "98ea133cbb854b02feddf9edf6dc8f263f27024b18d884743687127e5963a9b7",
+      "bytes": 2865,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/repair-ux-browser.mjs",
+      "sha256": "302c7de169e7e0cee0403a65791b9ad99efc78195a8640ae6761047bd6e15223",
+      "bytes": 10002,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/test-legacy.mjs",
+      "sha256": "d4b64dbe4e073594de16d45331a142d6026f58ac8724637e71caf1d767aebf14",
+      "bytes": 655,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/verify-generated.mjs",
+      "sha256": "b5a353103eb562e348394658f6e6f6701948ebc8be4b23a792dbeba04f80b65a",
+      "bytes": 907,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/wii-browser.mjs",
+      "sha256": "35f24551b3e812a9abb3aa0b135ef9b6b67b80ae6b46ccd27de5f59f5e2a2c7c",
+      "bytes": 16053,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/scripts/xml-browser-checks.mjs",
+      "sha256": "72c5296361113fd63c0a64c5878246faa745dc6747bb4101bf81e1c8b3512f86",
+      "bytes": 10576,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/src/compatibility/repairPresentation.ts",
+      "sha256": "07d5aff439c180d3e3098c1c166d6fd627c42f9176e46d1207556e996d052cb8",
+      "bytes": 2735,
+      "category": "modern-browser",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate for independently authored portions only."
+    },
+    {
+      "path": "web/src/compatibility/repairReview.ts",
+      "sha256": "5744bc590c77d0ee3256c175f5f4adf32ba9146394125ab652f35ca2097659f2",
+      "bytes": 9667,
+      "category": "modern-browser",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate for independently authored portions only."
+    },
+    {
+      "path": "web/src/compatibility/wiiCompatibility.ts",
+      "sha256": "35f11d46fbe326c40d03a56828b78956e04f25f5a5318acaa47a58b1611be20d",
+      "bytes": 7339,
+      "category": "modern-browser",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate for independently authored portions only."
+    },
+    {
+      "path": "web/src/compatibility/wiiProfile.test.mjs",
+      "sha256": "114fc9d2e0d11f109654c768c409adfbd55861330dc0f73e05708ba5a3e568c0",
+      "bytes": 11269,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/src/compatibility/wiiProfile.ts",
+      "sha256": "1a1ce1cd3bee351061058aa6b0303c15b67afca08b14ec956889364c3f99f554",
+      "bytes": 12320,
+      "category": "modern-browser",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate for independently authored portions only."
+    },
+    {
+      "path": "web/src/diagnostics.ts",
+      "sha256": "129583b165873626cdbeeb1139fcee20ea6c46c6cb1902aa2f19294ad7055ca4",
+      "bytes": 5214,
+      "category": "modern-browser",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate for independently authored portions only."
+    },
+    {
+      "path": "web/src/editor.css",
+      "sha256": "0ad392758ce4731b659f5ffab53380b0aedd2d667f74940bf4ae2126fdb3cfab",
+      "bytes": 7208,
+      "category": "modern-browser",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate for independently authored portions only."
+    },
+    {
+      "path": "web/src/files/characterFiles.ts",
+      "sha256": "da873397628153765afee80ea66fd7403d0c4dcd6cb4795ba06e46ecc0d635da",
+      "bytes": 6993,
+      "category": "modern-browser",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate for independently authored portions only."
+    },
+    {
+      "path": "web/src/files/fileDialog.ts",
+      "sha256": "e6fd9d816963b0a16d41427d0df6c32d7c701be38c507a7b9f111210a40ee75e",
+      "bytes": 11462,
+      "category": "modern-browser",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate for independently authored portions only."
+    },
+    {
+      "path": "web/src/files/fileScene.ts",
+      "sha256": "583348361ea40df8ecd44392b84ad636f96d5274259fc792ccfb8ccac2c2773c",
+      "bytes": 1866,
+      "category": "legacy-port",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not represent whole file as solely owner-licensed MIT yet."
+    },
+    {
+      "path": "web/src/files/imageExport.ts",
+      "sha256": "1449ccf813ad81f74f08317395f77ca45c0010389657684ded1e22b6ffa70ecd",
+      "bytes": 3627,
+      "category": "modern-browser",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate for independently authored portions only."
+    },
+    {
+      "path": "web/src/files/imagePage.ts",
+      "sha256": "593289565ac6e753e4e5f3fafa511dad9511f38e4ed4704957de3d9a67373c1d",
+      "bytes": 13442,
+      "category": "modern-browser",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate for independently authored portions only."
+    },
+    {
+      "path": "web/src/files/xmlScroll.ts",
+      "sha256": "d39e8878807973d630c3e882fe8a4facfb3b1dfb0a848b4282aa47108a57a797",
+      "bytes": 3890,
+      "category": "legacy-port",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not represent whole file as solely owner-licensed MIT yet."
+    },
+    {
+      "path": "web/src/generated/character-assets.ts",
+      "sha256": "197b08dd8d153eaa9dabc54a52f00627b38f84255ac537392d6e5bb742cde0e2",
+      "bytes": 604104,
+      "category": "historical-vectors",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Owner cannot unilaterally MIT historical graphics."
+    },
+    {
+      "path": "web/src/generated/default-character.ts",
+      "sha256": "c960874218859339cb4f9d64a9c60e10740083175075213f1b9b302a57cb0454",
+      "bytes": 400,
+      "category": "historical-data",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not license all generated content solely as new MIT code."
+    },
+    {
+      "path": "web/src/generated/gui-assets.ts",
+      "sha256": "2dbed9c487633b9a5928a6444435912b5acb6bbb2d5c8ab9b45ff045517e8d64",
+      "bytes": 632761,
+      "category": "historical-vectors",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Owner cannot unilaterally MIT historical graphics."
+    },
+    {
+      "path": "web/src/generated/mii-schema.ts",
+      "sha256": "3eb606aeb4c50c7ecc0c46666db5a5d665fe37ca7e20d19695949d426925aa72",
+      "bytes": 6120,
+      "category": "historical-data",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not license all generated content solely as new MIT code."
+    },
+    {
+      "path": "web/src/generated/render-cases.json",
+      "sha256": "d154ce3ac9808bc9f55382d12be72ef3ab019ab595bc66f659389440980af6ee",
+      "bytes": 4924,
+      "category": "historical-data",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not license all generated content solely as new MIT code."
+    },
+    {
+      "path": "web/src/generated/render-cases.ts",
+      "sha256": "dc8a7dfb61ea04b9ad4234312c60968acb1d918c0d3609bada6216931c327527",
+      "bytes": 5043,
+      "category": "historical-data",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not license all generated content solely as new MIT code."
+    },
+    {
+      "path": "web/src/gui/editorSession.ts",
+      "sha256": "73337226ab47a868113a3e4dd3fddd6d2fe10a4f92f166df07df10aeb54b97ab",
+      "bytes": 1931,
+      "category": "legacy-port",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not represent whole file as solely owner-licensed MIT yet."
+    },
+    {
+      "path": "web/src/gui/guiScene.ts",
+      "sha256": "48dc54f199b6b854d2dd19128fdec993c3102e7d2adc2bff60a73601aec7b4d7",
+      "bytes": 3477,
+      "category": "legacy-port",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not represent whole file as solely owner-licensed MIT yet."
+    },
+    {
+      "path": "web/src/gui/nineSlice.ts",
+      "sha256": "adba02daca2cbe6461efa7a92730ec5fd38a68b0e487272db580d2efb0b8fcdc",
+      "bytes": 2637,
+      "category": "modern-browser",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate for independently authored portions only."
+    },
+    {
+      "path": "web/src/gui/screens.ts",
+      "sha256": "4b70eb4b2f37ce1733be9589b0238110b3c8f9ccdd488391321c2382ff2350f1",
+      "bytes": 1702,
+      "category": "legacy-port",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not represent whole file as solely owner-licensed MIT yet."
+    },
+    {
+      "path": "web/src/gui/slider.ts",
+      "sha256": "8f4b20b48972a8a9bf34f19e9d3cd53d3bb1593dc0a4575e0bd402dc4a7d7210",
+      "bytes": 3158,
+      "category": "modern-browser",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate for independently authored portions only."
+    },
+    {
+      "path": "web/src/gui/svgDom.ts",
+      "sha256": "bee455b2a4033510ede14573f1f0aab6c0b6637a21b2a8be7ec801411f678022",
+      "bytes": 1516,
+      "category": "modern-browser",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate for independently authored portions only."
+    },
+    {
+      "path": "web/src/main.ts",
+      "sha256": "fd1b75c150f6fe90b00cc38b9b40c01beefb9f4e5ec62a8b741dcac5988db28c",
+      "bytes": 16510,
+      "category": "modern-browser",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate for independently authored portions only."
+    },
+    {
+      "path": "web/src/model/MiiCharacterData.test.ts",
+      "sha256": "fa99bfdf75b6e9d3bd6207a5a783eff09813248b1f70341d44bc4ab5546d7bb1",
+      "bytes": 4636,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/src/model/MiiCharacterData.ts",
+      "sha256": "2823eea051b03ae16a714fc21b54f4ddb23c127da4f83649749fa755ff25bc94",
+      "bytes": 8012,
+      "category": "legacy-port",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not represent whole file as solely owner-licensed MIT yet."
+    },
+    {
+      "path": "web/src/model/MiiDataValue.ts",
+      "sha256": "c760f5dc17eaeff308115754e84fd1f687193970d164c9042b5b83de662dc885",
+      "bytes": 1165,
+      "category": "legacy-port",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not represent whole file as solely owner-licensed MIT yet."
+    },
+    {
+      "path": "web/src/model/Range.ts",
+      "sha256": "fdcc1efa8c53b91bdbd9989420ad5d8ed7afca96a77e9a57189548be0a4e89b5",
+      "bytes": 1061,
+      "category": "legacy-port",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not represent whole file as solely owner-licensed MIT yet."
+    },
+    {
+      "path": "web/src/model/characterPresets.test.ts",
+      "sha256": "054ed7afd02ce48e4815fe8c0153499da57f40ea87bf9ab3e4a2658dd509794f",
+      "bytes": 1683,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/src/model/characterPresets.ts",
+      "sha256": "57dfc92dfc4813a0866de2828fe8cd8f23cf7fc0bd373d93fda7f15684436fc0",
+      "bytes": 1116,
+      "category": "historical-presets",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "MIT may cover new loading/ID-allocation code, not an asserted ownership of inherited record/art."
+    },
+    {
+      "path": "web/src/model/featureOrder.ts",
+      "sha256": "d9428e69af1499fdd9c95de694dbf91d3f223235d59250d404cb3ed35910a27c",
+      "bytes": 857,
+      "category": "legacy-port",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not represent whole file as solely owner-licensed MIT yet."
+    },
+    {
+      "path": "web/src/model/miiXml.ts",
+      "sha256": "e4a3a4de1e802d45d9132380400490dbc4f834907a50825993d8a1e3d2363b91",
+      "bytes": 5189,
+      "category": "legacy-port",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not represent whole file as solely owner-licensed MIT yet."
+    },
+    {
+      "path": "web/src/model/publicCompatibility.test.mjs",
+      "sha256": "8ba7502134f624b99c83a55c273f8798884be85a2ba015546b780126d453cf07",
+      "bytes": 3464,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/src/render/bodyScene.ts",
+      "sha256": "ddd2d9ab0ed765c647537c2a7532cb1b7cdfc17db681231868c70aedf9684856",
+      "bytes": 3419,
+      "category": "legacy-port",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not represent whole file as solely owner-licensed MIT yet."
+    },
+    {
+      "path": "web/src/render/color.ts",
+      "sha256": "60d09e6c004c2fc3ed50b514f3219f2aa536c2d385f32a72edf95eeb64d36355",
+      "bytes": 1287,
+      "category": "legacy-port",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not represent whole file as solely owner-licensed MIT yet."
+    },
+    {
+      "path": "web/src/render/filters.ts",
+      "sha256": "fe939a21365c455ad8280657a05c581970f84f7baa3da59dd6cd94f9cec61683",
+      "bytes": 1038,
+      "category": "legacy-port",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not represent whole file as solely owner-licensed MIT yet."
+    },
+    {
+      "path": "web/src/render/geometry.ts",
+      "sha256": "2872235cd7aa9a2bb18e60dd221a0d94dfd0044ef76ab8d7e00f81145b223cec",
+      "bytes": 2337,
+      "category": "legacy-port",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not represent whole file as solely owner-licensed MIT yet."
+    },
+    {
+      "path": "web/src/render/headScene.ts",
+      "sha256": "6f32d02b3eaee5b9d7cad90d65fa386dc1559cd8cc0e6a0b2e238c4bbf3a4c34",
+      "bytes": 9278,
+      "category": "legacy-port",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not represent whole file as solely owner-licensed MIT yet."
+    },
+    {
+      "path": "web/src/render/svgRenderer.ts",
+      "sha256": "f74cf7abf909da52d0d1e704581fffd6cfabeed591665d2e856609ce5a13e846",
+      "bytes": 8715,
+      "category": "legacy-port",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not represent whole file as solely owner-licensed MIT yet."
+    },
+    {
+      "path": "web/src/render/types.ts",
+      "sha256": "b5bf59d40360440a73de101376e9a6bc447bddef3dcfd10fba3991d63507a0aa",
+      "bytes": 1853,
+      "category": "legacy-port",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not represent whole file as solely owner-licensed MIT yet."
+    },
+    {
+      "path": "web/src/storage/browserPersistence.test.ts",
+      "sha256": "53754e211e3657c9c3ca5a9fa65b62a18c3640a3cb9f368b81fba03faf83d170",
+      "bytes": 3548,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/src/storage/browserPersistence.ts",
+      "sha256": "e846fad8f373b1f1021383da36acfb1606ad70542fc5667ffb60ab4b8e9e69ab",
+      "bytes": 2361,
+      "category": "modern-browser",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate for independently authored portions only."
+    },
+    {
+      "path": "web/src/style.css",
+      "sha256": "eac343bed0b80dc00ce1ca9405c568389058d8e996385ee81670d54927c697db",
+      "bytes": 4111,
+      "category": "modern-browser",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate for independently authored portions only."
+    },
+    {
+      "path": "web/src/vite-env.d.ts",
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+      "bytes": 38,
+      "category": "modern-browser",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate for independently authored portions only."
+    },
+    {
+      "path": "web/test-support/LegacyEditorSession.ts",
+      "sha256": "0d61f994ebb9ec4bf9604c7586dc489af745e39626bb32e0fa88ae972545120c",
+      "bytes": 1961,
+      "category": "legacy-port",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not represent whole file as solely owner-licensed MIT yet."
+    },
+    {
+      "path": "web/test-support/fixtures/README.md",
+      "sha256": "90db669f2066286d8966668bf8ea667e56f262ec7fe7a4fea3ca95bc46e9efdf",
+      "bytes": 652,
+      "category": "reference-fixtures",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Own assertions/wrappers are MIT candidates; do not assert ownership of all source data."
+    },
+    {
+      "path": "web/test-support/fixtures/default-character.json",
+      "sha256": "dedba4531ec9ccb6793478c36af5225eb7bc343a3a3c6d306fe6ad460106e88b",
+      "bytes": 354,
+      "category": "reference-fixtures",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Own assertions/wrappers are MIT candidates; do not assert ownership of all source data."
+    },
+    {
+      "path": "web/test-support/fixtures/legacy-schema.json",
+      "sha256": "cd8bd0e2bc15fd94a134a5781d712591ed9048a60d86742802dcc4e8dafccabf",
+      "bytes": 8169,
+      "category": "reference-fixtures",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Own assertions/wrappers are MIT candidates; do not assert ownership of all source data."
+    },
+    {
+      "path": "web/test-support/fixtures/mii-corpus.json",
+      "sha256": "0bf5fe652cea70e8af8da0c298232cde3538a18fc04782f959ea26ae9c61132c",
+      "bytes": 10023,
+      "category": "reference-fixtures",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Own assertions/wrappers are MIT candidates; do not assert ownership of all source data."
+    },
+    {
+      "path": "web/test-support/fixtures/rcd-fields.json",
+      "sha256": "34f579c894d4312a401c78d8ce70ad8c0c2c99314911139fee3fa5b53e05a5d3",
+      "bytes": 4482,
+      "category": "reference-fixtures",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Own assertions/wrappers are MIT candidates; do not assert ownership of all source data."
+    },
+    {
+      "path": "web/test-support/fixtures/rfl-rules.json",
+      "sha256": "04dc1dc2c40d9252755873b1a1225ff9627c8d106c110f481257d5115a599b77",
+      "bytes": 1916,
+      "category": "reference-fixtures",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Own assertions/wrappers are MIT candidates; do not assert ownership of all source data."
+    },
+    {
+      "path": "web/test-support/legacyRandomize.ts",
+      "sha256": "328a5b337d50dd39b648f4360e37e62df879ce5ad295be4c95085046e2871dcf",
+      "bytes": 583,
+      "category": "legacy-port",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Do not represent whole file as solely owner-licensed MIT yet."
+    },
+    {
+      "path": "web/test-support/phase7a.integration.test.ts",
+      "sha256": "2aeddacb623c96e8ffa8869091a1a539b5271ee6cb4ddd582e08b53774c05e07",
+      "bytes": 2500,
+      "category": "modern-infrastructure",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional MIT candidate, not a certified exclusive-copyright finding."
+    },
+    {
+      "path": "web/tsconfig.json",
+      "sha256": "68adb9c0347665cc2cb84896cbf2e29afa80a73ed23199f086e91dcb29d5021c",
+      "bytes": 865,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/vite.config.mjs",
+      "sha256": "63414beb8c2af1d17602a41851f4e2be374862ebfa855d145ede73ab7952c6fb",
+      "bytes": 307,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    },
+    {
+      "path": "web/vitest.config.mjs",
+      "sha256": "9aa049a576e70cb9996189b7c4223b13974a3c7fc327b8e7af147d0dc8d5e224",
+      "bytes": 317,
+      "category": "project-docs",
+      "status": "draft assessment; no license applied",
+      "authorityToMIT": "Conditional for rights actually held, not new ownership of facts or third-party quotes."
+    }
+  ]
+}

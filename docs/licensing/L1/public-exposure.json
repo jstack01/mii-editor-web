@@ -1,0 +1,162 @@
+{
+  "reviewed": "2026-11-10",
+  "releases": [
+    {
+      "tag": "v0.1.0-preview.1",
+      "url": "https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.1",
+      "prerelease": true,
+      "assets": [
+        {
+          "name": "mii-editor-web-v0.1.0-preview.1.zip",
+          "sha256": "sha256:bab08dc69b96b8b95bc6d59f27ab4cc94d8eea3a9307f18a4a91fbf2aca12f6d",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.1/mii-editor-web-v0.1.0-preview.1.zip"
+        },
+        {
+          "name": "mii-editor-web-v0.1.0-preview.1.zip.sha256",
+          "sha256": "sha256:b6dba0219b0c502c40bb9c89177ae45a626f003b5e11a8d26e4a9d3b251ff5f5",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.1/mii-editor-web-v0.1.0-preview.1.zip.sha256"
+        }
+      ]
+    },
+    {
+      "tag": "v0.1.0-preview.2",
+      "url": "https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.2",
+      "prerelease": true,
+      "assets": [
+        {
+          "name": "mii-editor-web-linux-v0.1.0-preview.2.zip",
+          "sha256": "sha256:5c4e59c6b51b38f57c2466f6a94e5371bd5ec48c9068132e4e58e7097e25ea37",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.2/mii-editor-web-linux-v0.1.0-preview.2.zip"
+        },
+        {
+          "name": "mii-editor-web-macos-v0.1.0-preview.2.zip",
+          "sha256": "sha256:109786d13557377409bf3e91aa447bfda3035d128775073089eaf52d7c73d4d7",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.2/mii-editor-web-macos-v0.1.0-preview.2.zip"
+        },
+        {
+          "name": "mii-editor-web-static-v0.1.0-preview.2.zip",
+          "sha256": "sha256:caf32dca2779f77e0f155fbc1eb626ae3973aa85d071bc1fb5b47d5a45e212d5",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.2/mii-editor-web-static-v0.1.0-preview.2.zip"
+        },
+        {
+          "name": "mii-editor-web-windows-v0.1.0-preview.2.zip",
+          "sha256": "sha256:9805d0d6dd64216b30fc09484b20d31f168e57cdd2e8a9cb524fdae8eede44e1",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.2/mii-editor-web-windows-v0.1.0-preview.2.zip"
+        },
+        {
+          "name": "SHA256SUMS-v0.1.0-preview.2.txt",
+          "sha256": "sha256:7542300469f4d112ba6e0d5b0dcffb768674e437b89f16b7a68455151dc276ab",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.2/SHA256SUMS-v0.1.0-preview.2.txt"
+        }
+      ]
+    },
+    {
+      "tag": "v0.1.0-preview.3",
+      "url": "https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.3",
+      "prerelease": true,
+      "assets": [
+        {
+          "name": "mii-editor-web-linux-v0.1.0-preview.3.zip",
+          "sha256": "sha256:0e385df359c972c51e6d20028a9792fba1e0f1eaf905d75f039f0d830880761f",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.3/mii-editor-web-linux-v0.1.0-preview.3.zip"
+        },
+        {
+          "name": "mii-editor-web-macos-v0.1.0-preview.3.zip",
+          "sha256": "sha256:11a9feedbd278450d312676f80b54dfb1640387d60e758c3ac83885f79c603e4",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.3/mii-editor-web-macos-v0.1.0-preview.3.zip"
+        },
+        {
+          "name": "mii-editor-web-static-v0.1.0-preview.3.zip",
+          "sha256": "sha256:89389ded0f2d84c86715adda434d886a6186d097517da3824c46b94d810d17f4",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.3/mii-editor-web-static-v0.1.0-preview.3.zip"
+        },
+        {
+          "name": "mii-editor-web-windows-v0.1.0-preview.3.zip",
+          "sha256": "sha256:24fc6ef7a6774f9db5e987bc2b2e0f2bbce93f2f4146c454a114bfcbbc6d65b6",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.3/mii-editor-web-windows-v0.1.0-preview.3.zip"
+        },
+        {
+          "name": "SHA256SUMS-v0.1.0-preview.3.txt",
+          "sha256": "sha256:f61a802c1db3a4cf0c6bea5f9618de5ea7da27faa50cc832ea223955c9283754",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.3/SHA256SUMS-v0.1.0-preview.3.txt"
+        }
+      ]
+    },
+    {
+      "tag": "v0.1.0-preview.4",
+      "url": "https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.4",
+      "prerelease": true,
+      "assets": [
+        {
+          "name": "mii-editor-web-docker-v0.1.0-preview.4.zip",
+          "sha256": "sha256:0cc2f1127ec3070951323eee4811ba2eb1f512fd5cf0ebca358d44b4da66b7fb",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.4/mii-editor-web-docker-v0.1.0-preview.4.zip"
+        },
+        {
+          "name": "mii-editor-web-linux-v0.1.0-preview.4.zip",
+          "sha256": "sha256:b13de7ffde21095c9790614ca8af9376cbc14d150b7141d92481753b412abcfa",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.4/mii-editor-web-linux-v0.1.0-preview.4.zip"
+        },
+        {
+          "name": "mii-editor-web-macos-v0.1.0-preview.4.zip",
+          "sha256": "sha256:6f1fd11e009c00f578768d8a708e275f0357508573a18b1afb511bb56cdb1579",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.4/mii-editor-web-macos-v0.1.0-preview.4.zip"
+        },
+        {
+          "name": "mii-editor-web-static-v0.1.0-preview.4.zip",
+          "sha256": "sha256:111a231638e5b6f7ccac3126e7ba4e68b2ef7e349c6ba0db6e3c2d541f0eec81",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.4/mii-editor-web-static-v0.1.0-preview.4.zip"
+        },
+        {
+          "name": "mii-editor-web-windows-v0.1.0-preview.4.zip",
+          "sha256": "sha256:48cac424240e0c4b6bcb6669700128e9673a91427c46047da16c0b2817514c74",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.4/mii-editor-web-windows-v0.1.0-preview.4.zip"
+        },
+        {
+          "name": "SHA256SUMS-v0.1.0-preview.4.txt",
+          "sha256": "sha256:5242d7b2cfdc5438a8697b25da558e1f548a7e9219fd1d31f91fb63d6fa24e26",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.4/SHA256SUMS-v0.1.0-preview.4.txt"
+        }
+      ]
+    },
+    {
+      "tag": "v0.1.0-preview.5",
+      "url": "https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.5",
+      "prerelease": true,
+      "assets": [
+        {
+          "name": "mii-editor-web-docker-v0.1.0-preview.5.zip",
+          "sha256": "sha256:828770eaa0b0ae27a881bf328b761f10556fc4049c89f4b373d826ed17936e74",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.5/mii-editor-web-docker-v0.1.0-preview.5.zip"
+        },
+        {
+          "name": "mii-editor-web-linux-v0.1.0-preview.5.zip",
+          "sha256": "sha256:8610a87fc870919b7618263e1960650de12fcfb2d69649713ad3212297caba41",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.5/mii-editor-web-linux-v0.1.0-preview.5.zip"
+        },
+        {
+          "name": "mii-editor-web-macos-v0.1.0-preview.5.zip",
+          "sha256": "sha256:6ae5d0b852cc2b956d200e1e9905c785b0263ea7480ada84745a857d1df4b2eb",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.5/mii-editor-web-macos-v0.1.0-preview.5.zip"
+        },
+        {
+          "name": "mii-editor-web-static-v0.1.0-preview.5.zip",
+          "sha256": "sha256:f1ec763e6932537283c7cb6b009c8aa7e325192198048e368670283adaa2252e",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.5/mii-editor-web-static-v0.1.0-preview.5.zip"
+        },
+        {
+          "name": "mii-editor-web-windows-v0.1.0-preview.5.zip",
+          "sha256": "sha256:fd5044efcf4c14c582df0701fdce3a6945328dd479a4e05514257dd9e90326cd",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.5/mii-editor-web-windows-v0.1.0-preview.5.zip"
+        },
+        {
+          "name": "SHA256SUMS-v0.1.0-preview.5.txt",
+          "sha256": "sha256:4b080b35669cd29286c1b1a85ebc0976f2a29ff88a6d61898bba01688da0e968",
+          "url": "https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.5/SHA256SUMS-v0.1.0-preview.5.txt"
+        }
+      ]
+    }
+  ],
+  "pagesEnabled": false,
+  "historySample": "b9b362e5e7527eb32ab2e66eb25f57c805771439"
+}

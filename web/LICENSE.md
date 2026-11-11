@@ -1,0 +1,9 @@
+# Licensing scope
+
+The standard MIT text is in [LICENSE](../LICENSE). It applies **only to eligible modern contributions in the exact files listed in [LICENSE-SCOPE.json](../LICENSE-SCOPE.json)**, to the extent jstack01 holds rights in them. It does not assert copyright over purely AI-generated material, facts, APIs or third-party work. The absence of a file from that list means this project does not grant MIT for that file. This is not a license for the complete mixed-rights application.
+
+Historical Mii Editor artwork/GUI, original-derived vectors, extracted glyphs/fonts, screenshots of those assets, inherited source expression, Nintendo intellectual property and third-party components are excluded. Model/renderer/editor ports and generated catalogs remain outside the new grant. Their unresolved status is described in [NOTICES.md](../NOTICES.md) and [ASSET_RIGHTS.md](../ASSET_RIGHTS.md). No general reuse permission is established for unresolved material. Third-party software retains its own terms, not this owner's MIT grant.
+
+The owner accepts the existing historical-material distribution risk and has chosen to keep the public project available. That decision, attribution and responding to legitimate requests **do not establish permission or eliminate liability**. No rightsholder permission has been obtained by this project, and the later My Avatar Editor MIT release has not been treated as a blanket grant for the older application.
+
+**AI-generated / vibe-coded project — unmaintained.** Provided as-is, without planned technical support, pull-request review or ongoing maintenance. Forks and independent work are encouraged subject to the rights of each component. The MIT text itself contains no support obligation or extra use restriction. See [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md) for bundled software and container source information.

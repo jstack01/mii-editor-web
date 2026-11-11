@@ -22,6 +22,9 @@ class DistributionTests(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         for n in ['web/dist/assets/app.js','web/dist/assets/app.css','web/dist/index.html','web/dist/LICENSE.md','web/dist/NOTICES.md','web/dist/LICENSES/Vite-LICENSE.md','web/package.json','distribution/START-HERE.md','docs/HOSTING.md','docs/LOCAL_LAUNCHERS.md','docs/BROWSER_COMPATIBILITY.md','docs/SECURITY_PRIVACY.md','LICENSE.md','NOTICES.md','LICENSES/Vite-LICENSE.md','distribution/serve.py','distribution/config.json','distribution/Start Mii Editor.cmd','distribution/Start Mii Editor.command','distribution/start-mii-editor.sh','distribution/launcher.sh','distribution/STATIC-START-HERE.md','SOURCE/private.swf','EXTRACTED-SWF/private.as','evidence/private.xml']:
             p=self.root/n;p.parent.mkdir(parents=True,exist_ok=True);p.write_text('fixture\n')
+        for n in packager.NOTICE_FILES:
+            for base in [self.root,self.root/'web/dist']:
+                f=base/n;f.parent.mkdir(parents=True,exist_ok=True);f.write_text('notice fixture\n')
         (self.root/'distribution/config.json').write_text('{"port":8080}')
         (self.root/'web/package.json').write_text('{"version":"0.1.0-preview.4"}')
     def invoke(self,*args,dirty=False):

@@ -6,4 +6,4 @@ No startup script, Python, Node.js, Vite, PHP, Go, database or runtime applicati
 
 Shared URLs use the current hosted origin/path. HTTPS is recommended on a public site. Browser storage belongs to the origin; export important Miis before changing domains, protocol or port.
 
-AI-generated / vibe-coded project — unmaintained; unofficial and provided as-is. No planned support or accepted pull requests. New code is unlicensed; original-derived asset rights remain unresolved. Read LICENSE.md/NOTICES.md. No broad mobile/browser or physical Wii/game certification is claimed. The original application is credited to senocular by the Nekoweb FAQ and Internet Archive metadata; those sites are preservation sources.
+AI-generated / vibe-coded project — unmaintained; unofficial and provided as-is. No planned support or accepted pull requests. Eligible modern code has a scoped MIT grant; original-derived asset rights remain unresolved. Read LICENSE.md/NOTICES.md. No broad mobile/browser or physical Wii/game certification is claimed. The original application is credited to senocular by the Nekoweb FAQ and Internet Archive metadata; those sites are preservation sources.

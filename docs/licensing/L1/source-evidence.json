@@ -1,0 +1,56 @@
+[
+  {
+    "url": "https://storage.googleapis.com/google-code-archive-source/v2/code.google.com/myavatareditor/source-archive.zip",
+    "retrieved": "2026-11-10",
+    "sha256": "61dcbec3dcd319986e2ebcc7f47695fae8615912c74a0f3ceed232050bfc5471",
+    "bytes": 3520905
+  },
+  {
+    "url": "https://storage.googleapis.com/google-code-archive/v2/code.google.com/myavatareditor/project.json",
+    "retrieved": "2026-11-10",
+    "sha256": "abc09cd56ad58b7f31e9ae0b2fb9801fc523e03363c13b70075d6c91dde28e43",
+    "bytes": 913
+  },
+  {
+    "url": "https://raw.githubusercontent.com/kharaone/myavatareditor/4b6f5aadb512acaa79fc7c5e1dcf7f02657cde42/License.txt",
+    "retrieved": "2026-11-10",
+    "sha256": "fabe04c3449ec8c777c6a1e04f08fdaf04b4f495f6359dee41c25c3cd866384f",
+    "bytes": 1065
+  },
+  {
+    "url": "https://archive.org/download/mii-editor/MiiEditorair.zip",
+    "retrieved": "2026-11-10",
+    "sha256": "4f7b7362ba0aa374fc2bacdd862c57b723811736e862387a04d402fe483ed900",
+    "bytes": 168541
+  },
+  {
+    "url": "https://archive.org/metadata/mii-editor",
+    "retrieved": "2026-11-10",
+    "sha256": "37ab900a147716720638d44f5709975768cc01a9ab8a30fe6b317a76109d04dd",
+    "bytes": 3615
+  },
+  {
+    "url": "https://myavatareditor.blogspot.com/2008/",
+    "retrieved": "2026-11-10",
+    "sha256": "61e9d941d5455ae8152cec045748bda241d336a0576bed6b09cc975762b28391",
+    "bytes": 87307
+  },
+  {
+    "url": "https://myavatareditor.blogspot.com/2009/",
+    "retrieved": "2026-11-10",
+    "sha256": "4ee3556feef2134ffc7d8e79f873b09197a5e32c007abde2611e21b59c6b42fc",
+    "bytes": 171923
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Stewared/MiiJS/de10c3c5237fbf18da88ac860f5c0ac7ad1a3b4b/package.json",
+    "retrieved": "2026-11-10",
+    "sha256": "cab2a85221cbe05ed10a25508185a3b2dae1358e1cfbdeabc0ff5b268f5eb250",
+    "bytes": 2336
+  },
+  {
+    "url": "https://raw.githubusercontent.com/doldecomp/ogws/e5a4d369011062fe243aa63f6c2e2853854c395d/LICENSE",
+    "retrieved": "2026-11-10",
+    "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+    "bytes": 7048
+  }
+]

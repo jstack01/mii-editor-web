@@ -9,7 +9,7 @@ def main():
   for n in z.namelist():
    path=Path(n);assert not path.is_absolute() and '..' not in path.parts
   z.extractall(tmp);folder=next(Path(tmp).iterdir())
-  names={p.relative_to(folder).as_posix() for p in folder.rglob('*') if p.is_file()};required={'compose.yaml','.env.example','START-HERE.md','LICENSE.md','NOTICES.md','LICENSES/Vite-LICENSE.md','BUILD-INFO.json','FILES.sha256'};guides={'HOSTING.md','BROWSER_COMPATIBILITY.md','SECURITY_PRIVACY.md'};assert required<=names and names<=required|guides
+  names={p.relative_to(folder).as_posix() for p in folder.rglob('*') if p.is_file()};required={'compose.yaml','.env.example','START-HERE.md','LICENSE.md','NOTICES.md','LICENSES/Vite-LICENSE.md','BUILD-INFO.json','FILES.sha256'};modern=set(json.loads((Path(__file__).resolve().parents[1]/'release-notices.json').read_text())) if json.loads((folder/'BUILD-INFO.json').read_text())['version']=='v1.0.0' else set();required|=modern;runtime={p.relative_to(Path(__file__).resolve().parents[1]).as_posix() for p in (Path(__file__).resolve().parents[1]/'LICENSES/container').rglob('*') if p.is_file()}|{'LICENSES/Nginx-Unprivileged-LICENSE.txt'} if modern else set();required|=runtime;guides={'HOSTING.md','BROWSER_COMPATIBILITY.md','SECURITY_PRIVACY.md'};assert required<=names and names<=required|guides
   if json.loads((folder/'BUILD-INFO.json').read_text())['version']=='v0.1.0-preview.5':assert guides<=names
   for line in (folder/'FILES.sha256').read_text().splitlines():
    h,n=line.split('  ',1);assert hashlib.sha256((folder/n).read_bytes()).hexdigest()==h

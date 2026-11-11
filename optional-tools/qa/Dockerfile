@@ -4,7 +4,7 @@ WORKDIR /work
 COPY web/package.json web/pnpm-lock.yaml ./web/
 RUN cd web && pnpm install --frozen-lockfile --ignore-scripts
 COPY web ./web
-COPY LICENSE.md NOTICES.md ./
+COPY LICENSE LICENSE.md LICENSE-SCOPE.json NOTICES.md ASSET_RIGHTS.md THIRD_PARTY_NOTICES.md CONTAINER_SOURCES.md release-notices.json ./
 COPY LICENSES/Vite-LICENSE.md ./LICENSES/Vite-LICENSE.md
 COPY optional-tools/phase7a/fixtures/records.json ./optional-tools/phase7a/fixtures/records.json
 RUN cd web && pnpm build && chmod -R a+rwX /work

@@ -1,0 +1,562 @@
+[
+  {
+    "name": "alpine-baselayout",
+    "version": "3.7.2-r1",
+    "license": "GPL-2.0-only",
+    "origin": "alpine-baselayout",
+    "url": "https://gitlab.alpinelinux.org/alpine/aports/-/tree/master/main/alpine-baselayout",
+    "arch": "aarch64"
+  },
+  {
+    "name": "alpine-baselayout-data",
+    "version": "3.7.2-r1",
+    "license": "GPL-2.0-only",
+    "origin": "alpine-baselayout",
+    "url": "https://gitlab.alpinelinux.org/alpine/aports/-/tree/master/main/alpine-baselayout",
+    "arch": "aarch64"
+  },
+  {
+    "name": "alpine-keys",
+    "version": "2.6-r0",
+    "license": "MIT",
+    "origin": "alpine-keys",
+    "url": "https://alpinelinux.org",
+    "arch": "aarch64"
+  },
+  {
+    "name": "alpine-release",
+    "version": "3.24.3-r0",
+    "license": "MIT",
+    "origin": "alpine-base",
+    "url": "https://alpinelinux.org",
+    "arch": "aarch64"
+  },
+  {
+    "name": "aom-libs",
+    "version": "3.14.1-r0",
+    "license": "BSD-2-Clause AND custom",
+    "origin": "aom",
+    "url": "https://aomedia.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "apk-tools",
+    "version": "3.0.8-r0",
+    "license": "GPL-2.0-only",
+    "origin": "apk-tools",
+    "url": "https://gitlab.alpinelinux.org/alpine/apk-tools",
+    "arch": "aarch64"
+  },
+  {
+    "name": "brotli-libs",
+    "version": "1.2.1-r0",
+    "license": "MIT",
+    "origin": "brotli",
+    "url": "https://github.com/google/brotli",
+    "arch": "aarch64"
+  },
+  {
+    "name": "busybox",
+    "version": "1.37.0-r31",
+    "license": "GPL-2.0-only",
+    "origin": "busybox",
+    "url": "https://busybox.net/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "busybox-binsh",
+    "version": "1.37.0-r31",
+    "license": "GPL-2.0-only",
+    "origin": "busybox",
+    "url": "https://busybox.net/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "c-ares",
+    "version": "1.34.9-r0",
+    "license": "MIT",
+    "origin": "c-ares",
+    "url": "https://c-ares.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "ca-certificates",
+    "version": "20261020-r0",
+    "license": "MPL-2.0 AND MIT",
+    "origin": "ca-certificates",
+    "url": "https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "ca-certificates-bundle",
+    "version": "20261020-r0",
+    "license": "MPL-2.0 AND MIT",
+    "origin": "ca-certificates",
+    "url": "https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "curl",
+    "version": "8.23.0-r0",
+    "license": "curl",
+    "origin": "curl",
+    "url": "https://curl.se/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "fontconfig",
+    "version": "2.17.1-r1",
+    "license": "MIT",
+    "origin": "fontconfig",
+    "url": "https://www.freedesktop.org/wiki/Software/fontconfig",
+    "arch": "aarch64"
+  },
+  {
+    "name": "freetype",
+    "version": "2.14.3-r0",
+    "license": "FTL OR GPL-2.0-or-later",
+    "origin": "freetype",
+    "url": "https://www.freetype.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "geoip",
+    "version": "1.6.12-r6",
+    "license": "LGPL-2.1-or-later",
+    "origin": "geoip",
+    "url": "http://www.maxmind.com/app/ip-location",
+    "arch": "aarch64"
+  },
+  {
+    "name": "gettext-envsubst",
+    "version": "1.0-r0",
+    "license": "GPL-3.0-or-later AND LGPL-2.1-or-later AND MIT",
+    "origin": "gettext",
+    "url": "https://www.gnu.org/software/gettext/gettext.html",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libapk",
+    "version": "3.0.8-r0",
+    "license": "GPL-2.0-only",
+    "origin": "apk-tools",
+    "url": "https://gitlab.alpinelinux.org/alpine/apk-tools",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libavif",
+    "version": "1.4.1-r0",
+    "license": "BSD-2-Clause",
+    "origin": "libavif",
+    "url": "https://aomediacodec.github.io/av1-avif/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libbsd",
+    "version": "0.12.2-r0",
+    "license": "BSD-3-Clause",
+    "origin": "libbsd",
+    "url": "https://libbsd.freedesktop.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libbz2",
+    "version": "1.0.8-r6",
+    "license": "bzip2-1.0.6",
+    "origin": "bzip2",
+    "url": "https://sourceware.org/bzip2/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libcrypto3",
+    "version": "3.5.9-r0",
+    "license": "Apache-2.0",
+    "origin": "openssl",
+    "url": "https://www.openssl.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libcurl",
+    "version": "8.23.0-r0",
+    "license": "curl",
+    "origin": "curl",
+    "url": "https://curl.se/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libdav1d",
+    "version": "1.5.3-r0",
+    "license": "BSD-2-Clause",
+    "origin": "dav1d",
+    "url": "https://code.videolan.org/videolan/dav1d",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libedit",
+    "version": "20260508.3.1-r1",
+    "license": "BSD-3-Clause",
+    "origin": "libedit",
+    "url": "https://www.thrysoee.dk/editline",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libexpat",
+    "version": "2.9.0-r0",
+    "license": "MIT",
+    "origin": "expat",
+    "url": "https://libexpat.github.io/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libgcc",
+    "version": "15.2.0-r5",
+    "license": "GPL-2.0-or-later AND LGPL-2.1-or-later",
+    "origin": "gcc",
+    "url": "https://gcc.gnu.org",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libgd",
+    "version": "2.3.3-r10",
+    "license": "GD",
+    "origin": "gd",
+    "url": "https://libgd.github.io/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libice",
+    "version": "1.1.2-r0",
+    "license": "X11",
+    "origin": "libice",
+    "url": "https://xorg.freedesktop.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libidn2",
+    "version": "2.3.8-r0",
+    "license": "GPL-2.0-or-later OR LGPL-3.0-or-later",
+    "origin": "libidn2",
+    "url": "https://www.gnu.org/software/libidn#libidn2",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libintl",
+    "version": "1.0-r0",
+    "license": "LGPL-2.1-or-later",
+    "origin": "gettext",
+    "url": "https://www.gnu.org/software/gettext/gettext.html",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libjpeg-turbo",
+    "version": "3.1.3-r0",
+    "license": "BSD-3-Clause AND IJG AND Zlib",
+    "origin": "libjpeg-turbo",
+    "url": "https://libjpeg-turbo.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libmd",
+    "version": "1.2.0-r0",
+    "license": "BSD-3-Clause AND BSD-2-Clause AND ISC AND Beerware AND Public Domain",
+    "origin": "libmd",
+    "url": "https://www.hadrons.org/software/libmd/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libncursesw",
+    "version": "6.6_p20260516-r0",
+    "license": "X11",
+    "origin": "ncurses",
+    "url": "https://invisible-island.net/ncurses/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libpng",
+    "version": "1.6.59-r0",
+    "license": "Libpng",
+    "origin": "libpng",
+    "url": "http://www.libpng.org",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libpsl",
+    "version": "0.21.5-r3",
+    "license": "MIT",
+    "origin": "libpsl",
+    "url": "https://rockdaboot.github.io/libpsl",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libsharpyuv",
+    "version": "1.6.0-r0",
+    "license": "BSD-3-Clause",
+    "origin": "libwebp",
+    "url": "https://developers.google.com/speed/webp",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libsm",
+    "version": "1.2.6-r0",
+    "license": "MIT",
+    "origin": "libsm",
+    "url": "https://xorg.freedesktop.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libssl3",
+    "version": "3.5.9-r0",
+    "license": "Apache-2.0",
+    "origin": "openssl",
+    "url": "https://www.openssl.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libstdc++",
+    "version": "15.2.0-r5",
+    "license": "GPL-2.0-or-later AND LGPL-2.1-or-later",
+    "origin": "gcc",
+    "url": "https://gcc.gnu.org",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libunistring",
+    "version": "1.4.2-r0",
+    "license": "GPL-2.0-or-later OR LGPL-3.0-or-later",
+    "origin": "libunistring",
+    "url": "https://www.gnu.org/software/libunistring/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libuuid",
+    "version": "2.42.3-r1",
+    "license": "BSD-3-Clause",
+    "origin": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libwebp",
+    "version": "1.6.0-r0",
+    "license": "BSD-3-Clause",
+    "origin": "libwebp",
+    "url": "https://developers.google.com/speed/webp",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libx11",
+    "version": "1.8.14-r0",
+    "license": "X11",
+    "origin": "libx11",
+    "url": "https://xorg.freedesktop.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libxau",
+    "version": "1.0.12-r0",
+    "license": "MIT",
+    "origin": "libxau",
+    "url": "https://xorg.freedesktop.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libxcb",
+    "version": "1.17.0-r2",
+    "license": "MIT",
+    "origin": "libxcb",
+    "url": "https://xcb.freedesktop.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libxdmcp",
+    "version": "1.1.5-r1",
+    "license": "MIT",
+    "origin": "libxdmcp",
+    "url": "https://xorg.freedesktop.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libxext",
+    "version": "1.3.7-r0",
+    "license": "MIT",
+    "origin": "libxext",
+    "url": "https://xorg.freedesktop.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libxml2",
+    "version": "2.13.9-r2",
+    "license": "MIT",
+    "origin": "libxml2",
+    "url": "https://gitlab.gnome.org/GNOME/libxml2",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libxpm",
+    "version": "3.5.20-r0",
+    "license": "X11",
+    "origin": "libxpm",
+    "url": "https://xorg.freedesktop.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libxslt",
+    "version": "1.1.43-r3",
+    "license": "X11",
+    "origin": "libxslt",
+    "url": "http://xmlsoft.org/XSLT/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libxt",
+    "version": "1.3.1-r0",
+    "license": "MIT",
+    "origin": "libxt",
+    "url": "https://xorg.freedesktop.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "libyuv",
+    "version": "0.0.1928-r0",
+    "license": "BSD-3-Clause",
+    "origin": "libyuv",
+    "url": "https://chromium.googlesource.com/libyuv/libyuv/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "musl",
+    "version": "1.2.6-r3",
+    "license": "MIT",
+    "origin": "musl",
+    "url": "https://musl.libc.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "musl-utils",
+    "version": "1.2.6-r3",
+    "license": "MIT AND BSD-2-Clause AND GPL-2.0-or-later",
+    "origin": "musl",
+    "url": "https://musl.libc.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "ncurses-terminfo-base",
+    "version": "6.6_p20260516-r0",
+    "license": "X11",
+    "origin": "ncurses",
+    "url": "https://invisible-island.net/ncurses/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "nghttp2-libs",
+    "version": "1.70.0-r0",
+    "license": "MIT",
+    "origin": "nghttp2",
+    "url": "https://nghttp2.org",
+    "arch": "aarch64"
+  },
+  {
+    "name": "nginx",
+    "version": "1.30.6-r1",
+    "license": "2-clause BSD-like license",
+    "origin": "nginx",
+    "url": "https://nginx.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "nginx-module-geoip",
+    "version": "1.30.6-r1",
+    "license": "2-clause BSD-like license",
+    "origin": "nginx-module-geoip",
+    "url": "https://nginx.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "nginx-module-image-filter",
+    "version": "1.30.6-r1",
+    "license": "2-clause BSD-like license",
+    "origin": "nginx-module-image-filter",
+    "url": "https://nginx.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "nginx-module-njs",
+    "version": "1.30.6.1.0.2-r1",
+    "license": "2-clause BSD-like license",
+    "origin": "nginx-module-njs",
+    "url": "https://nginx.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "nginx-module-xslt",
+    "version": "1.30.6-r1",
+    "license": "2-clause BSD-like license",
+    "origin": "nginx-module-xslt",
+    "url": "https://nginx.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "pcre2",
+    "version": "10.49-r0",
+    "license": "BSD-3-Clause",
+    "origin": "pcre2",
+    "url": "https://pcre.org/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "scanelf",
+    "version": "1.3.9-r1",
+    "license": "GPL-2.0-only",
+    "origin": "pax-utils",
+    "url": "https://wiki.gentoo.org/wiki/Hardened/PaX_Utilities",
+    "arch": "aarch64"
+  },
+  {
+    "name": "ssl_client",
+    "version": "1.37.0-r31",
+    "license": "GPL-2.0-only",
+    "origin": "busybox",
+    "url": "https://busybox.net/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "tiff",
+    "version": "4.7.2-r0",
+    "license": "libtiff",
+    "origin": "tiff",
+    "url": "https://gitlab.com/libtiff/libtiff",
+    "arch": "aarch64"
+  },
+  {
+    "name": "tzdata",
+    "version": "2026e-r0",
+    "license": "Public-Domain",
+    "origin": "tzdata",
+    "url": "https://www.iana.org/time-zones",
+    "arch": "aarch64"
+  },
+  {
+    "name": "xz-libs",
+    "version": "5.8.4-r0",
+    "license": "GPL-2.0-or-later AND 0BSD AND Public-Domain AND LGPL-2.1-or-later",
+    "origin": "xz",
+    "url": "https://tukaani.org/xz/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "zlib",
+    "version": "1.3.2-r1",
+    "license": "Zlib",
+    "origin": "zlib",
+    "url": "https://zlib.net/",
+    "arch": "aarch64"
+  },
+  {
+    "name": "zstd-libs",
+    "version": "1.5.7-r2",
+    "license": "BSD-3-Clause OR GPL-2.0-or-later",
+    "origin": "zstd",
+    "url": "https://facebook.github.io/zstd/",
+    "arch": "aarch64"
+  }
+]

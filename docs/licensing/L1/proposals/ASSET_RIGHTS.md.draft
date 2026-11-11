@@ -1,0 +1,18 @@
+# Historical assets and fonts — proposed separate notice, NOT APPLIED
+
+The modern-code MIT proposal does not cover the recovered artwork, static glyph outlines, original display data, inherited source expression or screenshots of that material. Conversion from SWF to SVG/TypeScript/JavaScript is not proof of a new independent copyright or a grant of permission.
+
+Source: the older Mii Editor materials found at https://mii-editor.nekoweb.org/ and https://archive.org/details/mii-editor, attributed to senocular/Trevor McCauley. The later My Avatar Editor source has a verified 2009 MIT notice, but its applicability to the exact older package or particular inherited component has not been established generally. Preserve any verified upstream notice for a component actually adopted under it.
+
+Affected current graphic outputs:
+
+- web/src/generated/character-assets.ts (character vectors and timelines).
+- web/src/generated/gui-assets.ts (GUI vectors, static text/glyph paths and timelines).
+- Compiled assets/index-*.js in the website, every runtime ZIP, the Docker website and any future Pages delivery.
+- docs/images/*.png illustrating this historical-derived UI/art.
+
+GUI source font 273 identifies Arial Bold with 44 glyphs, used by 33 static text symbols; font 356 identifies Arial Bold Italic with 13 glyphs, used by two static text symbols. No font-program license/source has been verified for this extraction. Ordinary CSS requests for installed system fonts are separate from this bundled outline data. See the font inventory for symbol IDs and resolution options.
+
+No blanket reuse, modification, redistribution, commercial-use or public-hosting permission is asserted for unresolved content. Attribution is required where applicable but is not a substitute for permission. Nintendo and other holders retain their respective interests; no affiliation or endorsement is implied. The owner makes no claim to original Nintendo characters, the historical Flash application, underlying font software or artwork.
+
+Before a new complete stable distribution or demo, record a lawful basis for each retained category or replace/omit it with approval. If written permission is obtained, identify the grantor, date, exact source hashes/files, permitted uses, limitations and downstream/fork scope; attach the authorized notice and retain the evidence. This draft is not such permission.
