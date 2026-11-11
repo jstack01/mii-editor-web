@@ -1,8 +1,8 @@
 # Mii Editor with Docker or Compose
 
-**v1.0.0 is a local release candidate; these versioned commands apply only after owner-approved publication. Published preview.5 remains available.**
+**v1.0.0 is published.** Previous previews remain available.
 
-The preview.5 Docker distribution uses **ghcr.io/jstack01/mii-editor-web:v1.0.0**. Public package status and anonymous pulls are publication requirements. Earlier ZIP releases remain available.
+The stable v1.0.0 Docker distribution uses **ghcr.io/jstack01/mii-editor-web:v1.0.0**. Public package status and anonymous pulls are publication requirements. Earlier ZIP releases remain available.
 
 Docker serves the same static editor as the launcher/static ZIP editions. It adds no application backend, database or server-side Mii storage, and does not improve or certify Wii compatibility. Install Docker Engine + Compose on Linux or Docker Desktop with Linux containers on macOS/Windows if not already installed. This does not promise installation-free startup.
 

@@ -6,22 +6,22 @@ Create and edit Miis in your browser using the original-style interface and reco
 
 ## Download & Start
 
-Download the ZIP for [Windows](https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.5/mii-editor-web-windows-v0.1.0-preview.5.zip), [macOS](https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.5/mii-editor-web-macos-v0.1.0-preview.5.zip), or [Linux](https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.5/mii-editor-web-linux-v0.1.0-preview.5.zip), extract it, and run its **Start Mii Editor** script. An existing **Python 3.9+** installation is required. Keep the launcher window open while using the editor.
+Download the ZIP for [Windows](https://github.com/jstack01/mii-editor-web/releases/download/v1.0.0/mii-editor-web-windows-v1.0.0.zip), [macOS](https://github.com/jstack01/mii-editor-web/releases/download/v1.0.0/mii-editor-web-macos-v1.0.0.zip), or [Linux](https://github.com/jstack01/mii-editor-web/releases/download/v1.0.0/mii-editor-web-linux-v1.0.0.zip), extract it, and run its **Start Mii Editor** script. An existing **Python 3.9+** installation is required. Keep the launcher window open while using the editor.
 
 To change the local server port, edit `port` in `config.json` and restart the launcher. The default is **8080**. This file applies to the script launchers, not Docker. [Launcher guide](docs/LOCAL_LAUNCHERS.md).
 
-For an existing web server, download the [static website ZIP](https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.5/mii-editor-web-static-v0.1.0-preview.5.zip). See [hosting instructions](docs/HOSTING.md) or [all release downloads](https://github.com/jstack01/mii-editor-web/releases/tag/v0.1.0-preview.5).
+For an existing web server, download the [static website ZIP](https://github.com/jstack01/mii-editor-web/releases/download/v1.0.0/mii-editor-web-static-v1.0.0.zip). See [hosting instructions](docs/HOSTING.md) or [all release downloads](https://github.com/jstack01/mii-editor-web/releases/tag/v1.0.0).
 
 ## Docker
 
 ```sh
-docker pull ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.5
-docker run -d --name mii-editor -p 127.0.0.1:8080:8080 --restart unless-stopped ghcr.io/jstack01/mii-editor-web:v0.1.0-preview.5
+docker pull ghcr.io/jstack01/mii-editor-web:v1.0.0
+docker run -d --name mii-editor -p 127.0.0.1:8080:8080 --restart unless-stopped ghcr.io/jstack01/mii-editor-web:v1.0.0
 ```
 
 Open **http://127.0.0.1:8080/**. No GitHub sign-in is required.
 
-For Compose, extract the [Docker starter ZIP](https://github.com/jstack01/mii-editor-web/releases/download/v0.1.0-preview.5/mii-editor-web-docker-v0.1.0-preview.5.zip), then run `docker compose up -d`. Change the host port through Docker’s port mapping or `MII_EDITOR_PORT` in Compose’s `.env` file. [Docker/Compose guide](docs/DOCKER.md).
+For Compose, extract the [Docker starter ZIP](https://github.com/jstack01/mii-editor-web/releases/download/v1.0.0/mii-editor-web-docker-v1.0.0.zip), then run `docker compose up -d`. Change the host port through Docker’s port mapping or `MII_EDITOR_PORT` in Compose’s `.env` file. [Docker/Compose guide](docs/DOCKER.md).
 
 ## Original Project and Credits
 

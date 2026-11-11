@@ -1,5 +1,7 @@
 # L2 — Practical licensing and v1.0.0 candidate
 
+**Historical preparation record:** v1.0.0 was subsequently published and verified under L3 on November 11, 2026. See MIGRATION_PLAN.md for the final result. Candidate-only statements below describe the prepublication checks; the immutable released source remains 842f2558ac3a5a61c6c479cf7b3a6a075d4a4f87.
+
 Local preparation only. The owner accepts existing historical-material distribution risk, keeps the appearance and public previews, declines permission outreach/replacement research, and understands this is not a rights grant or liability waiver. Nothing in L2 authorizes publishing, a Git tag, image upload or Pages. Physical Wii/game testing remains indefinitely deferred and is not a software release gate.
 
 ## Adopted scope
