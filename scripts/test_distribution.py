@@ -105,4 +105,33 @@ class DistributionTests(unittest.TestCase):
         r=subprocess.run([sys.executable,str(HERE/'publish-release.py'),'--repo','example/mii-editor-web','--version','v0.1.0-preview.4','--expected-commit','0'*40],capture_output=True,text=True)
         self.assertNotEqual(r.returncode,0);self.assertIn('No upload',r.stderr)
 
+
+class PagesStagingTests(unittest.TestCase):
+    def setUp(self):
+        self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup);self.root=Path(self.temp.name)
+        spec=importlib.util.spec_from_file_location('pages_staging',HERE/'prepare-pages.py');self.pages=importlib.util.module_from_spec(spec);spec.loader.exec_module(self.pages)
+        self.pages.ROOT=self.root;self.pages.OUTPUT=self.root/'release/pages-site'
+    def archive(self,commit=None):
+        entries={'index.html':b'<html><head></head><body><script src="./assets/app.js"></script></body></html>','assets/app.js':b'console.log("fixture")', 'HOSTING.md':b'not a runtime file','SOURCE/private.swf':b'must not be staged','private.env':b'not served'}
+        for name in ['LICENSE','LICENSE.md','LICENSE-SCOPE.json','NOTICES.md','ASSET_RIGHTS.md','THIRD_PARTY_NOTICES.md','CONTAINER_SOURCES.md','LICENSES/Vite-LICENSE.md']:entries[name]=b'notice fixture'
+        entries['BUILD-INFO.json']=json.dumps({'version':self.pages.VERSION,'commit':commit or self.pages.REVISION,'uncommittedSource':False}).encode()
+        entries['FILES.sha256']=''.join(hashlib.sha256(data).hexdigest()+'  '+name+'\n' for name,data in entries.items()).encode()
+        path=self.root/'static.zip'
+        with zipfile.ZipFile(path,'w')as z:
+            for name,data in entries.items():z.writestr('mii-editor-web-static-'+self.pages.VERSION+'/'+name,data)
+        self.pages.SHA256=hashlib.sha256(path.read_bytes()).hexdigest();return path
+    def test_stable_release_pins(self):
+        self.assertEqual(self.pages.VERSION,'v1.0.0');self.assertEqual(self.pages.REVISION,'842f2558ac3a5a61c6c479cf7b3a6a075d4a4f87');self.assertEqual(self.pages.SHA256,'6a93a43a19b14c1a23785d63796dccceae9876cad02aa37de5cef2b4ef0a9ea5')
+    def test_exact_notices_and_assets_only(self):
+        self.pages.prepare(self.archive());out=self.pages.OUTPUT
+        self.assertEqual((out/'assets/app.js').read_bytes(),b'console.log("fixture")');self.assertTrue((out/'LICENSE-SCOPE.json').is_file());self.assertTrue((out/'ASSET_RIGHTS.md').is_file())
+        self.assertFalse((out/'HOSTING.md').exists());self.assertFalse((out/'SOURCE').exists());self.assertFalse((out/'private.env').exists())
+        self.assertIn('no-referrer',(out/'index.html').read_text());self.assertIn('separate, unresolved rights',(out/'index.html').read_text())
+    def test_replaced_zip_fails_before_touching_existing_site(self):
+        archive=self.archive();self.pages.OUTPUT.mkdir(parents=True);marker=self.pages.OUTPUT/'keep';marker.write_text('unchanged');archive.write_bytes(b'tampered')
+        with self.assertRaisesRegex(ValueError,'checksum mismatch'):self.pages.prepare(archive)
+        self.assertEqual(marker.read_text(),'unchanged')
+    def test_wrong_source_revision_fails_even_for_trusted_checksum(self):
+        with self.assertRaisesRegex(ValueError,'provenance'):self.pages.prepare(self.archive(commit='0'*40))
+
 if __name__=='__main__':unittest.main()

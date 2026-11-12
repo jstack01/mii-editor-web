@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Stage the immutable preview.5 static release for an optional Pages demo. No upload."""
+"""Stage the immutable v1.0.0 static release for an optional Pages demo. No upload."""
 import argparse
 import hashlib
 import json
@@ -9,13 +9,13 @@ from urllib.request import urlopen
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = 'v0.1.0-preview.5'
-REVISION = '27da544cb9b8e1feac14001e4de65529d440b549'
+VERSION = 'v1.0.0'
+REVISION = '842f2558ac3a5a61c6c479cf7b3a6a075d4a4f87'
 ARCHIVE = 'mii-editor-web-static-' + VERSION + '.zip'
-SHA256 = 'f1ec763e6932537283c7cb6b009c8aa7e325192198048e368670283adaa2252e'
+SHA256 = '6a93a43a19b14c1a23785d63796dccceae9876cad02aa37de5cef2b4ef0a9ea5'
 URL = 'https://github.com/jstack01/mii-editor-web/releases/download/' + VERSION + '/' + ARCHIVE
 OUTPUT = ROOT / 'release/pages-site'
-FOOTER = '''<footer style="max-width:640px;margin:1.5rem auto;padding:0 1rem;font:14px/1.5 system-ui;color:#34484b"><p><strong>AI-generated / vibe-coded project — unmaintained.</strong> Unofficial, provided as-is. No Nintendo affiliation or endorsement. Software validation does not guarantee every Wii console or game.</p><p>Original materials: <a href="https://mii-editor.nekoweb.org/" rel="noreferrer">mii-editor.nekoweb.org</a> and <a href="https://archive.org/details/mii-editor" rel="noreferrer">Internet Archive</a>; original developer credited as senocular.</p><p><a href="./LICENSE.md">Licensing</a> · <a href="./NOTICES.md">Credits and unresolved historical asset rights</a> · <a href="https://github.com/jstack01/mii-editor-web" rel="noreferrer">Project and downloads</a></p><p>Edits stay in your browser. Opening a shared URL sends its Mii query to GitHub; GitHub Pages logs visitor IP addresses. Browser saves are specific to this browser origin. No application analytics or accounts.</p></footer>'''
+FOOTER = '''<footer style="max-width:640px;margin:1.5rem auto;padding:0 1rem;font:14px/1.5 system-ui;color:#34484b"><p><strong>AI-generated / vibe-coded project — unmaintained.</strong> Unofficial, provided as-is. No Nintendo affiliation or endorsement. Software validation does not guarantee every Wii console or game.</p><p>Original materials: <a href="https://mii-editor.nekoweb.org/" rel="noreferrer">mii-editor.nekoweb.org</a> and <a href="https://archive.org/details/mii-editor" rel="noreferrer">Internet Archive</a>; original developer Trevor McCauley / senocular.</p><p><a href="./LICENSE.md">Scoped MIT license</a> · <a href="./NOTICES.md">Credits and unresolved historical asset rights</a> · <a href="https://github.com/jstack01/mii-editor-web" rel="noreferrer">Project and downloads</a></p><p>MIT covers only eligible modern contributions listed in the <a href="./LICENSE-SCOPE.json">license scope</a>. Historical graphics, fonts and inherited material have separate, unresolved rights. <a href="./ASSET_RIGHTS.md">Asset rights</a>.</p><p>Edits stay in your browser. Opening a shared URL sends its Mii query to GitHub; GitHub Pages logs visitor IP addresses. Browser saves are specific to this browser origin. No application analytics or accounts.</p></footer>'''
 
 
 def prepare(archive):
@@ -38,7 +38,7 @@ def prepare(archive):
             digest, name = line.split('  ', 1)
             if hashlib.sha256(z.read(prefix + name)).hexdigest() != digest:
                 raise ValueError('Internal inventory mismatch: ' + name)
-        required = {'index.html', 'BUILD-INFO.json', 'LICENSE.md', 'NOTICES.md', 'LICENSES/Vite-LICENSE.md'}
+        required = {'index.html', 'BUILD-INFO.json', 'LICENSE', 'LICENSE.md', 'LICENSE-SCOPE.json', 'NOTICES.md', 'ASSET_RIGHTS.md', 'THIRD_PARTY_NOTICES.md', 'CONTAINER_SOURCES.md', 'LICENSES/Vite-LICENSE.md'}
         entries = {n[len(prefix):]: z.read(n) for n in names
                    if n[len(prefix):] in required or n[len(prefix):].startswith('assets/')}
         if not required <= entries.keys() or not any(n.endswith('.js') for n in entries):
