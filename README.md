@@ -2,6 +2,8 @@
 
 Create and edit Miis in your browser using the original-style interface and recovered graphics. Open/save `.mii` and XML files, share characters, and export PNG/JPEG images—without Flash or an application backend.
 
+**[Try Mii Editor Online](https://jstack01.github.io/mii-editor-web/)**
+
 <img src="docs/images/presets-desktop.png" alt="Mii Editor showing the default girl and character editing controls" width="540">
 
 ## Download & Start
